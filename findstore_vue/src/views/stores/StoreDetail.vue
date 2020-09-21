@@ -31,6 +31,8 @@
   </v-card>
 </template>
 
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 <script>
 import axios from "axios";
 
@@ -77,6 +79,7 @@ export default {
         } 
       });
     },
+    
     addScript() {
       const script = document.createElement('script');
       script.onload = () => kakao.maps.load(this.initMap);

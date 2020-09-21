@@ -32,6 +32,14 @@ export default [
     view: "meeting/MeetingList",
     name: "meetinglist"
   },
+
+  //모임 상세페이지
+  {
+    path: "/meeting/:m_id",
+    view : "meeting/MeetingDetail",
+    name : "meetingDetail"
+  },
+
   // store
   {
     path: "/store",

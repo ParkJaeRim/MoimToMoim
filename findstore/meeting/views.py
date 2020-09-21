@@ -30,11 +30,13 @@ def create(request):
         return Response(serializer.data)
 
 
-# @api_view(['GET'])
-# def detail(request, article_pk):
-#     article = get_object_or_404(Article, pk=article_pk)
-#     serializer = ArticleSerializer(article)
-#     return Response(serializer.data)
+@api_view(['GET'])
+def detail(request, m_id):
+    meeting = get_object_or_404(Meeting, pk = m_id)
+    serializer = MeetingSerializer(meeting)
+    return Response(serializer.data)
+
+
 
 
 # @api_view(['GET','POST'])
