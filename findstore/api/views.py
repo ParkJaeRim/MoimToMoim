@@ -39,3 +39,9 @@ def storedetail(request, store_id):
     store = get_object_or_404(models.Store, pk=store_id)
     serializer = serializers.StoreSerializer(store)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def storereview(request, store_id):
+    reviews = models.Reviews.objects.filter(res_id=store_id)
+    serializer = serializers.ReviewsSerializer(reviews, many=True)
+    return Response(serializer.data)

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "api",
     'accounts',
     'articles',
+    'meeting',
     
     # DRF - token auth
     'rest_framework.authtoken',

@@ -13,4 +13,5 @@ app_name = 'api'
 
 urlpatterns = [
     path('store/<store_id>', views.storedetail, name='storedetail'),
+    path('store/reviews/<store_id>', views.storereview, name='storereview'),
 ]

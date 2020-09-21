@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon @click="isLogin" class="ml-auto"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" absolute temporary :right="true">
       <v-list nav dense>
         <v-list-item-group v-model="group" active-class=" text--accent-4">
           <v-list-item :to="{name: 'meetinglist'}">
@@ -14,14 +14,7 @@
             <v-list-item-title>모임리스트</v-list-item-title>
           </v-list-item>
 
-          <!-- <v-list-item :to="{name: 'home'}">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item> -->
-
-          <v-list-item v-if="!isLoggedIn" :to="{name: 'login'}">
+          <v-list-item v-if="!isLoggedIn" :to="{name: 'home'}">
             <v-list-item-icon>
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>

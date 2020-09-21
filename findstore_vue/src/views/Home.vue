@@ -85,7 +85,7 @@ export default {
         .post(SERVER_URL + "/rest-auth/login/", this.loginData)
         .then((res) => {
           this.$cookies.set("auth-token", res.data.key);
-          this.$router.push({ name: "home" });
+          this.$router.push({ name: "meeting" });
         })
         .catch((err) => {
           console.log(err.response.data);
