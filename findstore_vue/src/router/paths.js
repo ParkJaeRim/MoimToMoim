@@ -6,11 +6,6 @@ export default [
   },
   // 유저
   {
-    path: "/login",
-    view: "accounts/Login",
-    name: "login"
-  },
-  {
     path: "/signup",
     view: "accounts/Signup",
     name: "signup"
@@ -30,5 +25,17 @@ export default [
     path: "/article",
     view: "articles/ArticleList",
     name: "articlelist"
+  },
+  // meeting
+  {
+    path: "/meeting",
+    view: "meeting/MeetingList",
+    name: "meetinglist"
+  },
+  // store
+  {
+    path: "/store",
+    view: "stores/StoreDetail",
+    name: "storedetail"
   },
 ];
