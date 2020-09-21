@@ -29,6 +29,11 @@ export default [
   // meeting
   {
     path: "/meeting",
+    view: "meeting/MeetingMain",
+    name: "meetingmain"
+  },
+  {
+    path: "/meeting",
     view: "meeting/MeetingList",
     name: "meetinglist"
   },
