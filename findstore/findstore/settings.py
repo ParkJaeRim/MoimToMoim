@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'knox',
     # DRF
     "rest_framework",
     'corsheaders',
@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     "api",
     'accounts',
     'articles',
-    'meeting',
-
+    
     # DRF - token auth
     'rest_framework.authtoken',
 
@@ -56,6 +55,8 @@ INSTALLED_APPS = [
     'rest_auth',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.openid',
     'rest_auth.registration',
 ]
 
@@ -144,17 +145,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 AUTH_USER_MODEL = 'accounts.User'
 
+LOGIN_URL = '/accounts/login/'
 # rest-auth
 SITE_ID = 1
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
     ]
 }
 

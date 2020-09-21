@@ -63,6 +63,7 @@ export default {
   
   methods: {
     login() {
+      console.log(this.loginData);
       axios
         .post(SERVER_URL + "/rest-auth/login/", this.loginData)
         .then((res) => {
