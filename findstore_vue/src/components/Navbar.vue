@@ -21,7 +21,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item> -->
 
-          <v-list-item v-if="!isLoggedIn" :to="{name: 'login'}">
+          <v-list-item v-if="!isLoggedIn" :to="{name: 'home'}">
             <v-list-item-icon>
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
