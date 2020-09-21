@@ -17,7 +17,16 @@
 
           <v-col cols="12" md="4">
             <v-text-field
-              v-model="signupData.password1"
+              v-model="signupData.email"
+              :rules="emailRules"
+              label="email"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="signupData.password"
               :rules="passwordRules"
               :counter="10"
               :type="show1 ? 'text' : 'password'"
@@ -40,6 +49,35 @@
               required
             ></v-text-field>
           </v-col>
+
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="signupData.nickname"
+              :counter="10"
+              :type="show2 ? 'text' : 'nickname'"
+              label="nickname"
+              @click:append="show2 = !show2"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="signupData.age"
+              :type="show2 ? 'text' : 'age'"
+              label="age"
+              @click:append="show2 = !show2"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" md="4">
+            <v-container fluid>
+              <v-checkbox v-model="signupData.sex" label="Male" value="1"></v-checkbox>
+              <v-checkbox v-model="signupData.sex" label="Female" value="2"></v-checkbox>
+            </v-container>
+          </v-col>
+
         </v-row>
         <v-btn rounded color="primary" dark @click="signup">Submit</v-btn>
       </v-container>
@@ -61,8 +99,12 @@ export default {
       valid: false,
       signupData: {
         username: "",
-        password1: "",
-        password2: ""
+        email:"",
+        password: "",
+        password2: "",
+        nickname:"",
+        sex:"",
+        age:""
       },
       nameRules: [
         (v) => !!v || "Name is required",
@@ -72,13 +114,18 @@ export default {
         (value) => !!value || "Required.",
         (v) => v.length >= 8 || "Min 8 characters",
       ],
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+/.test(v) || "E-mail must be valid",
+      ]
     };
   },
   methods: {
     signup() {
-      axios.post(SERVER_URL + '/rest-auth/signup/', this.signupData)
-        .then(() => {
-          // this.$cookies.set('auth-token', res.data.key)
+      console.log(this.signupData)
+      axios.post(SERVER_URL + '/accounts/register/', this.signupData)
+        .then((res) => {
+          this.$cookies.set('auth-token', res.data.key)
           this.$router.push({ name: 'home' })
         })
         .catch((err) => {
