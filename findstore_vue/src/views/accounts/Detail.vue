@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-card fluid>
       <v-layout column>
             <v-container>
                 <v-div cols="12" sm="6" md="4">
@@ -9,9 +9,13 @@
                 <v-div cols="12" sm="6" md="4">
                   <v-text-field v-model="form.sex" label="Sex"></v-text-field>
                 </v-div>
+                <br>
+                <v-div cols="12" sm="6" md="4">
+                  <v-text-field v-model="form.age" label="Age"></v-text-field>
+                </v-div>
             </v-container>
       </v-layout>
-  </v-container>
+  </v-card>
 </template>
 <script>
 import axios from "axios";
