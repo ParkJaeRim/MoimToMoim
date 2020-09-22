@@ -4,8 +4,7 @@ from . import views
 app_name = 'promise'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('create', views.create, name='create'),
-    path('detail/<m_id>', views.detail, name='detail'),
-    path('list', views.promiselist, name='promiselist'),
+    path('<int:meeting_id>/', views.promiselist, name='promiselist'),
+    path('<int:meeting_id>/create/', views.create, name='create'),
+    path('<int:meeting_id>/detail/<int:promise_id>', views.detail, name='detail'),
 ]
