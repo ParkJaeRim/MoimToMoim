@@ -152,8 +152,8 @@ export default {
       };
       axios
         .post(SERVER_URL + "/promise/1/create/", this.promiseData, config)
-        .then((res) => {
-          console.log(res);
+        .then(() => {
+          this.$router.push({ name: 'makepromise2' })
         })
         .catch((err) => console.log(err.response));
     },

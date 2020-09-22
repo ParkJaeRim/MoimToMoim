@@ -6,8 +6,9 @@ from meeting.models import Meeting
 class Promise(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateField()
-    gu =  models.CharField(max_length=200)
-    dong =  models.CharField(max_length=200)
+    gu = models.CharField(max_length=200)
+    dong = models.CharField(max_length=200)
+    isfinish = models.IntegerField(default=0)
     storelist = models.TextField(null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE, related_name="meeting")
