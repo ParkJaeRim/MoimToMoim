@@ -54,10 +54,9 @@ export default [
     view: "promise/MakePromise1",
     name: "promise"
   },
-  // 약속 코스 추가 수정 완료
   {
-    path: "/course",
-    view: "promise/CourseEdit",
-    name: "courseEdit"
+    path: "/promise2/:p_id",
+    view: "promise/MakePromise2",
+    name: "makepromise2"
   },
 ];
