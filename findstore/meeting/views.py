@@ -27,7 +27,6 @@ def create(request):
     serializer = MeetingSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(user=request.user)
-        serializer.save(meeting=request.meeting)
         return Response(serializer.data)
 
 
