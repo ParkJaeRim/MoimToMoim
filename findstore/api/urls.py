@@ -5,7 +5,7 @@ from . import views
 
 
 router = DefaultRouter(trailing_slash=False)
-router.register(r"stores", views.StoreViewSet, basename="stores")
+router.register("stores", views.StoreViewSet, basename="stores")
 
 urlpatterns = router.urls
 
@@ -14,4 +14,5 @@ app_name = 'api'
 urlpatterns = [
     path('store/<store_id>', views.storedetail, name='storedetail'),
     path('store/reviews/<store_id>', views.storereview, name='storereview'),
+    path('store/firstrecommend/<store_id>', views.storerecommend, name='storerecommend'),
 ]
