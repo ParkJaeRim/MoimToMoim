@@ -20,6 +20,11 @@ export default [
     view: "accounts/Detail",
     name: "detail"
   },
+  {
+    path: "/detailmain",
+    view: "accounts/DetailMain",
+    name: "detailmain"
+  },
   // Article
   {
     path: "/article",
@@ -32,18 +37,21 @@ export default [
     view: "meeting/MeetingList",
     name: "meetinglist"
   },
-
-  //모임 상세페이지
   {
     path: "/meeting/:m_id",
     view : "meeting/MeetingDetail",
     name : "meetingDetail"
   },
-
   // store
   {
     path: "/store",
     view: "stores/StoreDetail",
     name: "storedetail"
+  },
+  // promise
+  {
+    path: "/promise",
+    view: "promise/MakePromise1",
+    name: "promise"
   },
 ];

@@ -45,3 +45,11 @@ def storereview(request, store_id):
     reviews = models.Reviews.objects.filter(res_id=store_id)
     serializer = serializers.ReviewsSerializer(reviews, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def storerecommend(request,store_id): # 랭킹 상위 10위까지
+    print("test")
+    recommend = models.Store.objects.all().order_by("-rating")[:10]
+    serializer = serializers.StoreSerializer(recommend, many=True)
+    return Response(serializer.data)
+

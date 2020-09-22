@@ -20,13 +20,16 @@
 
 <script>
 import axios from "axios";
-const SERVER_URL = "http://127.0.0.1:8000";
+import constants from "../../lib/constants";
+
+const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "MeetingDetail",
   data() {
     return {
       meetingDetail: {},
+      firstRecommend: {},
     };
   },
 
@@ -38,6 +41,7 @@ export default {
   },
   created() {
     this.detailData();
+    this.detailRecommend();
   },
   methods: {
    detailData() {
@@ -45,6 +49,14 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+        })
+        .catch((err) => console.log(err.res));
+    },
+    detailRecommend() {
+      axios
+        .get(SERVER_URL + "/api/store/firstrecommend/")
+        .then((res) => {
+          this.firstRecommend = res.data;
         })
         .catch((err) => console.log(err.res));
     },
