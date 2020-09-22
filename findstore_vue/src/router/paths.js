@@ -20,6 +20,17 @@ export default [
     view: "accounts/Detail",
     name: "detail"
   },
+  {
+    path: "/detailmain",
+    view: "accounts/DetailMain",
+    name: "detailmain"
+  },
+  // Article
+  {
+    path: "/article",
+    view: "articles/ArticleList",
+    name: "articlelist"
+  },
   // meeting
   {
     path: "/meeting",
