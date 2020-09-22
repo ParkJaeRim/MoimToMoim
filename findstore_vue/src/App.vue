@@ -15,10 +15,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
-  width: 400px;
-  height: 600px;
-  margin-right: auto;
-  margin-left: auto;
-}
+/* #app {
+  width: 100%;
+} */
 </style>
