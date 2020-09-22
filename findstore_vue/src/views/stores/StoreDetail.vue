@@ -12,9 +12,7 @@
     </v-carousel>
     <v-card-text class="text--primary">
       <span class="display-1">{{storeInfo.name}}</span>
-      <v-chip class="ma-2" color="success" outlined small>
-        {{storeInfo.rating}}
-      </v-chip>
+      <v-chip class="ma-2" color="success" outlined small>{{storeInfo.rating}}</v-chip>
       <div>tel: {{storeInfo.tel}}</div>
     </v-card-text>
     <v-img class="white--text align-end" height="200">
@@ -44,8 +42,20 @@
                 <div v-if="cnt_menu > i">{{menu}}</div>
               </div>
               <div class="text-right">
-                <v-btn text small v-if="menu_full" color="primary" @click="cnt_menu = 100; menu_full=false">전체메뉴</v-btn>
-                <v-btn text small v-if="!menu_full" color="primary" @click="cnt_menu = 3; menu_full=true">접기</v-btn>
+                <v-btn
+                  text
+                  small
+                  v-if="menu_full"
+                  color="primary"
+                  @click="cnt_menu = 100; menu_full=false"
+                >전체메뉴</v-btn>
+                <v-btn
+                  text
+                  small
+                  v-if="!menu_full"
+                  color="primary"
+                  @click="cnt_menu = 3; menu_full=true"
+                >접기</v-btn>
               </div>
             </th>
           </tr>
@@ -55,20 +65,19 @@
 
     <!-- <div v-for="(review, j) in reviews" :key="review.id">
       {{review}}
-    </div> -->
+    </div>-->
 
     <!-- <v-card-actions>
       <v-btn color="orange" text>Share</v-btn>
 
       <v-btn color="orange" text>Explore</v-btn>
-    </v-card-actions> -->
+    </v-card-actions>-->
   </v-card>
 </template>
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script>
-
 import axios from "axios";
 import constants from "../../lib/constants";
 
@@ -120,7 +129,7 @@ export default {
         }
       });
     },
-    
+
     addScript() {
       const script = document.createElement("script");
       script.onload = () => kakao.maps.load(this.initMap);
@@ -134,7 +143,7 @@ export default {
         .get(SERVER_URL + "/api/store/5")
         .then((res) => {
           this.storeInfo = res.data;
-          this.storeInfo.price = Number(res.data.price)
+          this.storeInfo.price = Number(res.data.price);
           this.menus = res.data.menu.split("//");
           // console.log(this.storeInfo);
           this.menuImg = res.data.img.split("|");

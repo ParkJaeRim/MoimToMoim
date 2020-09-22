@@ -54,4 +54,9 @@ export default [
     view: "promise/MakePromise1",
     name: "promise"
   },
+  {
+    path: "/promise2/:p_id",
+    view: "promise/MakePromise2",
+    name: "makepromise2"
+  },
 ];
