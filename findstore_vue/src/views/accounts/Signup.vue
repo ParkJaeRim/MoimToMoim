@@ -74,7 +74,7 @@
           <v-col cols="12" md="4">
             <v-container fluid>
               <v-checkbox v-model="signupData.sex" label="Male" value="1"></v-checkbox>
-              <v-checkbox v-model="signupData.sex" label="Female" value="2"></v-checkbox>
+              <v-checkbox v-model="signupData.sex" label="Female" value="0"></v-checkbox>
             </v-container>
           </v-col>
 
