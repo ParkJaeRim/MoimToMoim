@@ -8,6 +8,6 @@ class Promise(models.Model):
     date = models.DateField()
     gu =  models.CharField(max_length=200)
     dong =  models.CharField(max_length=200)
+    storelist = models.TextField(null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE, related_name="meeting")
-    storelist = models.TextField()
