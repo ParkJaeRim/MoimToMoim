@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate
+from rest_framework.decorators import api_view, permission_classes
 from knox.models import AuthToken
 from rest_framework.authentication import TokenAuthentication
 from .serializers import CreateUserSerializer, UserSerializer, LoginUserSerializer, UserUpdateSerializer, UserDeleteSerializer
@@ -31,14 +32,9 @@ class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginUserSerializer
     
     def post(self, request, *args, **kwargs):
-        print(request.data)
         serializer = self.get_serializer(data=request.data)
-        print("1")
-        print(serializer)
         serializer.is_valid(raise_exception=True)
-        print("2")
         user = serializer.validated_data
-        print("3")
         return Response(
             {
                 "uid": UserSerializer(
@@ -65,6 +61,15 @@ class UpdateAPI(generics.RetrieveUpdateAPIView):
     def get_object(self):
         return self.request.user
 
-class DeleteAPI(generics.RetrieveDestroyAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserDeleteSerializer
+# class DeleteAPI(generics.RetrieveDestroyAPIView):
+#     article = get_object_or_404(User, username = article_username)
+#     queryset = User.objects.all()
+#     serializer_class = UserDeleteSerializer
+
+@api_view(['GET'])
+def DeleteUser(request, username):
+    user = get_object_or_404(User, username=username)
+    # print(user)
+    user.delete()
+    return Response()
+

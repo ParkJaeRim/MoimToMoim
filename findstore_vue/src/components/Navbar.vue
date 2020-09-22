@@ -1,44 +1,25 @@
 <template>
-  <div class="overflow-hidden">
-    <v-app-bar dense>
-      <v-app-bar-nav-icon @click="isLogin" class="ml-auto"></v-app-bar-nav-icon>
-    </v-app-bar>
+  <v-bottom-navigation>
+    <v-btn height="100%" :to="{name: 'meetinglist'}">
+      <span>Moim</span>
+      <v-icon>far fa-calendar-alt</v-icon>
+    </v-btn>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary :right="true">
-      <v-list nav dense>
-        <v-list-item-group v-model="group" active-class=" text--accent-4">
-          <v-list-item :to="{name: 'meetinglist'}">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>모임리스트</v-list-item-title>
-          </v-list-item>
+    <v-btn height="100%" v-if="!isLoggedIn" :to="{name: 'home'}">
+      <span>Login</span>
+      <v-icon>fas fa-key</v-icon>
+    </v-btn>
 
-          <v-list-item v-if="!isLoggedIn" :to="{name: 'home'}">
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Login</v-list-item-title>
-          </v-list-item>
+    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'home'}">
+      <span>MyPage</span>
+      <v-icon>fas fa-user-circle</v-icon>
+    </v-btn>
 
-          <v-list-item v-if="isLoggedIn" @click.native="logout">
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Logout</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item :to="{name: 'articlelist'}">
-            <v-list-item-icon>
-              <v-icon>fas fa-list</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Article</v-list-item-title>
-          </v-list-item>
-
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
-  </div>
+    <v-btn height="100%" v-if="isLoggedIn" @click.native="logout">
+      <span>logout</span>
+      <v-icon>fas fa-key</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
 
 <script>
@@ -49,10 +30,11 @@ const SERVER_URL = "http://127.0.0.1:8000";
 export default {
   data() {
     return {
-      drawer: false,
-      group: null,
       isLoggedIn: false,
     };
+  },
+  created() {
+    this.isLogin()
   },
   methods: {
     logout() {
@@ -67,6 +49,7 @@ export default {
         .finally(() => {
           this.$cookies.remove("auth-token");
           this.$router.push({ name: "home" });
+          this.isLogin()
         });
     },
     isLogin() {
@@ -74,10 +57,8 @@ export default {
       this.drawer = true;
     },
   },
-  watch: {
-    group() {
-      this.drawer = false;
-    },
-  },
 };
 </script>
+
+<style scoped>
+</style>

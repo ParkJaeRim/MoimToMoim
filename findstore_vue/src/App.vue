@@ -7,19 +7,15 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-
 export default {
   components: {
-    Navbar
+    Navbar,
   },
 };
 </script>
 
 <style scoped>
-#app {
-  width: 400px;
-  height: 600px;
-  margin-right: auto;
-  margin-left: auto;
-}
+/* #app {
+  width: 100%;
+} */
 </style>
