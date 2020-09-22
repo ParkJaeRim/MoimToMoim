@@ -25,9 +25,12 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-dialog v-model="dialog" max-width="500px">
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn color="purple lighten-3" dark class="mb-2" v-bind="attrs" v-on="on">모임 생성</v-btn>
+    <v-dialog v-model="dialog" calss>
+      <template v-slot:activator="{ on, attrs }" >
+        <v-btn color="pink" dark large fab v-bind="attrs" v-on="on" class="fixed">
+                <v-icon>mdi-plus</v-icon>
+        </v-btn>
+        <!-- <v-btn color="purple lighten-3" dark class="mb-2" v-bind="attrs" v-on="on" >모임 생성</v-btn> -->
       </template>
       <v-card>
         <v-card-title>
@@ -94,9 +97,8 @@
 
 <script>
 import axios from "axios";
-import constants from "../../lib/constants";
 
-const SERVER_URL = constants.ServerUrl;
+const SERVER_URL = "http://127.0.0.1:8000";
 
 export default {
   name: "MeetingList",
@@ -235,5 +237,10 @@ export default {
   margin-top:70px;
   font-size:40px; 
   font-family:'Nanum Brush Script'
+}
+.fixed{
+  position: fixed;
+  right: 10px;
+  bottom : 30px;
 }
 </style>
