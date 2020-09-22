@@ -118,6 +118,7 @@ export default {
         }
       });
     },
+    
     addScript() {
       const script = document.createElement("script");
       script.onload = () => kakao.maps.load(this.initMap);

@@ -3,29 +3,23 @@
     <v-container>
       <v-row dense>
         <v-col v-for="(meeting, i) in meetings" :key="i" cols="12">
-          <v-card class="mx-auto" max-width="400">
+          <v-card class="mx-auto" max-width="400" @click="meetingDetail(meeting.id)"> 
             <v-img
               :src="meeting.background_img"
               class="white--text align-center text-center"
               height="200px"
             >
-              <v-chip class="ma-2" label>
-                <v-card-title>{{meeting.title}}</v-card-title>
-              </v-chip>
-
-              <!-- <v-card-subtitle class="pb-0">Number 10</v-card-subtitle> -->
-              <v-card-text class="text--primary">
-                <v-chip class="ma-2" label>
-                  <div>인원수 : {{meeting.ppl}}</div>
-                </v-chip>
-                <v-chip class="ma-2" label>
-                  <div>평균연령 : {{meeting.avg_age}}</div>
-                </v-chip>
+            <div class="transbox">
+              <v-card-text>
+                  <div class="meeting_title">{{meeting.title}}</div>
+                  <!-- <div>인원수 : {{meeting.ppl}}</div>
+                  <div>평균연령 : {{meeting.avg_age}}</div> -->
               </v-card-text>
               <!-- <template v-slot:item="{ item }">
                 <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
                 <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
               </template>-->
+            </div>
             </v-img>
           </v-card>
         </v-col>
@@ -33,26 +27,55 @@
     </v-container>
     <v-dialog v-model="dialog" max-width="500px">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">New Item</v-btn>
+        <v-btn color="purple lighten-3" dark class="mb-2" v-bind="attrs" v-on="on">모임 생성</v-btn>
       </template>
       <v-card>
         <v-card-title>
-          <span class="headline">{{ formTitle }}</span>
+          <span class="headline" >{{ formTitle }}</span>
         </v-card-title>
 
         <v-card-text>
           <v-container>
             <v-row>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="editedItem.title" label="Title"></v-text-field>
+              <v-col cols="12" sm="6" md="12">
+                <v-text-field v-model="editedItem.title" label="모임 이름"></v-text-field>
               </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="editedItem.avg_age" label="연령대"></v-text-field>
+            </v-row>
+            <v-row>
+            <v-col cols="12" sm="6" md="12">
+              <v-btn-toggle v-model="editedItem.avg_age"  tile color="purple lighten-1" group>
+              <v-btn value="20">
+                20대
+              </v-btn>
+              <v-btn value="30">
+                30대
+              </v-btn>
+              <v-btn value="40">
+                40대
+              </v-btn>
+              </v-btn-toggle>
+            </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="12">
+              <v-btn-toggle v-model="editedItem.ppl"  tile color="purple lighten-1" group>
+              <v-btn value="2">
+                연인
+              </v-btn>
+              <v-btn value="3">
+                친구
+              </v-btn>
+              <v-btn value="4">
+                가족
+              </v-btn>
+              <v-btn value="5">
+                단체
+              </v-btn>
+              </v-btn-toggle>
               </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field v-model="editedItem.ppl" label="인원수"></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="12">
                 <v-file-input label="Background_img" @change="onChangeImages"></v-file-input>
               </v-col>
             </v-row>
@@ -61,8 +84,8 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-          <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+          <v-btn color="purple lighten-1" text @click="save">생성</v-btn>
+          <v-btn color="purple lighten-1" text @click="close">취소</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -99,11 +122,13 @@ export default {
         ppl: "",
         background_img: "",
       },
+
     };
   },
+
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editedIndex === -1 ? "모임 생성" : "모임 수정";
     },
   },
 
@@ -185,9 +210,29 @@ export default {
           console.log(error.response.data);
         });
     },
+
+    meetingDetail(m_id) {
+      this.$router.push({
+        name : "meetingDetail",
+        params: {
+          m_id: m_id,
+        },
+      });    
+    },
   },
 };
 </script>
 
 <style scoped>
+.transbox{
+    text-align:center;  
+    height: 200px;
+    background-color: rgba(118, 126, 154, 0.5);
+}
+.meeting_title{
+  height:200px;
+  margin-top:70px;
+  font-size:40px; 
+  font-family:'Nanum Brush Script'
+}
 </style>
