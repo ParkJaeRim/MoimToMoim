@@ -33,6 +33,7 @@
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "~2.0.7",
+    "vue-concise-slider": "^3.4.4",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.3.0"
   },

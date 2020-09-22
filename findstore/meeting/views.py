@@ -39,6 +39,7 @@ def detail(request, m_id):
 
 
 
+
 # @api_view(['GET','POST'])
 # # @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
