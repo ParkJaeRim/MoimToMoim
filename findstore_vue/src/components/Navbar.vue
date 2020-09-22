@@ -28,11 +28,11 @@
             <v-list-item-title>Logout</v-list-item-title>
           </v-list-item>
 
-          <v-list-item :to="{name: 'articlelist'}">
+          <v-list-item :to="{name: 'detail'}">
             <v-list-item-icon>
               <v-icon>fas fa-list</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Article</v-list-item-title>
+            <v-list-item-title>디테일</v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>
