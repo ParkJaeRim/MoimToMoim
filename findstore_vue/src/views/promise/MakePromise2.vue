@@ -1,40 +1,60 @@
 <template>
-  <div>
-    <v-card class="mx-auto" max-width="400">
-      <v-card-title></v-card-title>
+  <v-card>
+    <v-card-text class="text--primary">
+      <span class="display-1">{{promiseList.title}}</span>
+      <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
+      <div>{{promiseList.date}}</div>
+      <div>{{promiseList.gu}} {{promiseList.dong}}</div>
+    </v-card-text>
+    <v-img class="white--text align-end" height="200">
+      <div id="map" style="height:200px;"></div>
+    </v-img>
 
-      <v-img class="white--text align-end" height="200">
-        <div id="map" style="height:200px;"></div>
-      </v-img>
+    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
 
-      <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+    <v-card-text class="text--primary">
+      <div>Whitehaven Beach</div>
 
-      <v-card-text class="text--primary">
-        <div>Whitehaven Beach</div>
+      <div>Whitsunday Island, Whitsunday Islands</div>
+    </v-card-text>
 
-        <div>Whitsunday Island, Whitsunday Islands</div>
-      </v-card-text>
+    <v-card-actions>
+      <v-btn color="orange" text>Share</v-btn>
 
-      <v-card-actions>
-        <v-btn color="orange" text>Share</v-btn>
-
-        <v-btn color="orange" text>Explore</v-btn>
-      </v-card-actions>
-    </v-card>
-  </div>
+      <v-btn color="orange" text>Explore</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script>
+import axios from "axios";
+import constants from "../../lib/constants";
+
+const SERVER_URL = constants.ServerUrl;
+
 export default {
   name: "makepromise2",
   data() {
-    return {};
+    return {
+      promiseList: {},
+    };
   },
-  created() {},
+  created() {
+    this.GetPromise();
+  },
   mounted() {
     window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+  },
+  computed: {
+    finalCheck() {
+      var stday = this.promiseList.date;
+      var today = new Date();
+      var count = new Date(stday);
+      var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+      return dday;
+    },
   },
   methods: {
     initMap() {
@@ -61,13 +81,22 @@ export default {
         }
       });
     },
-    
+
     addScript() {
       const script = document.createElement("script");
       script.onload = () => kakao.maps.load(this.initMap);
       script.src =
         "http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=e03da05ed9076293090e181433ecc1c4&libraries=services";
       document.head.appendChild(script);
+    },
+    GetPromise() {
+      const p_id = this.$route.params.p_id;
+      axios
+        .get(SERVER_URL + "/promise/1/detail/" + p_id)
+        .then((res) => {
+          this.promiseList = res.data;
+        })
+        .catch((err) => console.log(err.response));
     },
   },
 };

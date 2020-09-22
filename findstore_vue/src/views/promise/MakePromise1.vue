@@ -144,7 +144,6 @@ export default {
   methods: {
     makePromise() {
       this.promiseData.date = this.picker;
-      console.log(this.promiseData);
       const config = {
         headers: {
           Authorization: `Token ${this.$cookies.get("auth-token")}`,
@@ -152,8 +151,11 @@ export default {
       };
       axios
         .post(SERVER_URL + "/promise/1/create/", this.promiseData, config)
-        .then(() => {
-          this.$router.push({ name: 'makepromise2' })
+        .then((res) => {
+          this.$router.push({ 
+            name: 'makepromise2',
+            params: {p_id: res.data.id}
+          })
         })
         .catch((err) => console.log(err.response));
     },
