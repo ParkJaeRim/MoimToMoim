@@ -20,30 +20,27 @@ export default [
     view: "accounts/Detail",
     name: "detail"
   },
-  // Article
-  {
-    path: "/article",
-    view: "articles/ArticleList",
-    name: "articlelist"
-  },
   // meeting
   {
     path: "/meeting",
     view: "meeting/MeetingList",
     name: "meetinglist"
   },
-
-  //모임 상세페이지
   {
     path: "/meeting/:m_id",
     view : "meeting/MeetingDetail",
     name : "meetingDetail"
   },
-
   // store
   {
     path: "/store",
     view: "stores/StoreDetail",
     name: "storedetail"
+  },
+  // promise
+  {
+    path: "/promise",
+    view: "promise/MakePromise1",
+    name: "promise"
   },
 ];

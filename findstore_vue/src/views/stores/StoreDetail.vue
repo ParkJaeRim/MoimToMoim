@@ -70,8 +70,9 @@
 <script>
 
 import axios from "axios";
+import constants from "../../lib/constants";
 
-const SERVER_URL = "http://127.0.0.1:8000";
+const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "StoreDetail",
