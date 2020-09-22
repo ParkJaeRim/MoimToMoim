@@ -94,7 +94,7 @@ export default {
        currentPage: 0,
        tracking: false,
        slidesToScroll: 2,
-       loop: true
+       loop: false
      },
       style: {
         'width': '31.5%',
