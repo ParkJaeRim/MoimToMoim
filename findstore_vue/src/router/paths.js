@@ -59,4 +59,10 @@ export default [
     view: "promise/MakePromise2",
     name: "makepromise2"
   },
+  // 코스 추가 수정 삭제
+  {
+    path: "/course",
+    view: "promise/CourseEdit",
+    name: "courseEdit"
+  },
 ];

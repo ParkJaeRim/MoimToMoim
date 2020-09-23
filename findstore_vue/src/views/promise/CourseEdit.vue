@@ -13,11 +13,13 @@ import constants from "../../lib/constants";
 const SERVER_URL = constants.ServerUrl;
 
 export default {
-  name: "CourseEdit",
+  name: "courseEdit",
 
   data() {
     return {
       storeInfos: [],
+      area: "강남구 신사동",
+      level: 7,
     };
   },
 
@@ -42,28 +44,28 @@ export default {
       var zoomControl = new kakao.maps.ZoomControl();
       
       map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-      // console.log(this.storeInfos.length)
 
       var len = this.storeInfos.length
+      console.log(this.storeInfos);
+      geocoder.addressSearch(this.area, function (result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+          var coord = new kakao.maps.LatLng(result[0].y, result[0].x);
+          map.setCenter(coord);
+        }
+      });
+
       for (let index = 0; index < len; index++) {
         geocoder.addressSearch(this.storeInfos[index].address, function (result, status) {
           if (status === kakao.maps.services.Status.OK) {
             var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-            console.log("index" + coords)
-            // console.log(coords.Ga)
-            // has = has + coords.Ha
-            // gas = gas + coords.Ga
             var marker = new kakao.maps.Marker({
               map: map,
               position: coords,
             });
-            map.setCenter(coords);
           }
         });
       }
       
-      map.setZoomable(true);
-
     },
 
     addScript() {
@@ -92,5 +94,6 @@ export default {
       ]
     },
   },
+
 };
 </script>
