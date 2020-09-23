@@ -35,8 +35,7 @@ def create(request, meeting_id):
 
 
 @api_view(['GET'])
-def detail(request, meeting_id, promise_id):
-    target_meeting = get_object_or_404(Meeting, id=meeting_id)
+def detail(request, promise_id):
     target_promise = get_object_or_404(Promise, id=promise_id)
     serializer = PromiseSerializer(target_promise)
     return Response(serializer.data)

@@ -50,9 +50,9 @@ export default [
   },
   // promise
   {
-    path: "/promise",
+    path: "/promise/:m_id",
     view: "promise/MakePromise1",
-    name: "promise"
+    name: "makepromise1"
   },
   {
     path: "/promise2/:p_id",

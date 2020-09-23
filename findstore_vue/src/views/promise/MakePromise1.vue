@@ -31,9 +31,7 @@
     </div>
     <hr />
     <div v-if="promiseData.dong && promiseData.title" class="d-flex justify-end">
-      <v-btn color="blue-grey" class="white--text" small @click="makePromise">
-        다음
-      </v-btn>
+      <v-btn color="blue-grey" class="white--text" small @click="makePromise">다음</v-btn>
     </div>
   </v-container>
 </template>
@@ -48,7 +46,7 @@ export default {
   name: "MakePromise1",
   data() {
     return {
-      guList: ["마포구", "용산구", "성동구", "강남구"],
+      guList: ["마포구", "성북구", "성동구", "강남구"],
       dongList: [
         [
           "공덕동",
@@ -69,22 +67,26 @@ export default {
           "상암동",
         ],
         [
-          "남영동",
-          "보광동",
-          "서빙고동",
-          "용문동",
-          "용산2가동",
-          "원효로제1동",
-          "원효로제2동",
-          "이촌제1동",
-          "이촌제2동",
-          "이태원제1동",
-          "이태원제2동",
-          "청파동",
-          "한강로동",
-          "한남동",
-          "효창동",
-          "후암동",
+          "길음제1동",
+          "길음제2동",
+          "돈암제1동",
+          "돈암제2동",
+          "동선동",
+          "보문동",
+          "삼선동",
+          "석관동",
+          "성북동",
+          "안암동",
+          "월곡제1동",
+          "월곡제2동",
+          "장위제1동",
+          "장위제2동",
+          "장위제3동",
+          "정릉제1동",
+          "정릉제2동",
+          "정릉제3동",
+          "정릉제4동",
+          "종암동",
         ],
         [
           "금호1가동",
@@ -143,6 +145,7 @@ export default {
   },
   methods: {
     makePromise() {
+      const m_id = this.$route.params.m_id;
       this.promiseData.date = this.picker;
       const config = {
         headers: {
@@ -150,12 +153,12 @@ export default {
         },
       };
       axios
-        .post(SERVER_URL + "/promise/1/create/", this.promiseData, config)
+        .post(SERVER_URL + "/promise/" + m_id +"/create/", this.promiseData, config)
         .then((res) => {
-          this.$router.push({ 
-            name: 'makepromise2',
-            params: {p_id: res.data.id}
-          })
+          this.$router.push({
+            name: "makepromise2",
+            params: { p_id: res.data.id },
+          });
         })
         .catch((err) => console.log(err.response));
     },
