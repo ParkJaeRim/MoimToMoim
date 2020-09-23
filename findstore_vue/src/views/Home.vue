@@ -1,11 +1,11 @@
 <template>
+<v-container>
   <v-row justify="center">
     <v-col md="10" class="py-0">
-      <container>
       <v-img
         src="../assets/img/main.jpg"
         aspect-ratio="1"
-        max-width="470"
+        max-width="400"
         max-height="250"
       />
         <template v-slot:placeholder>
@@ -13,7 +13,6 @@
             <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
           </v-row>
         </template>
-      </container>
       <br />
 
       <v-container>
@@ -42,6 +41,7 @@
           </v-col>
         </v-row>
         <br />
+        <br/>
         <div class="d-flex justify-space-between">
           <v-btn text color="primary" :to="{name: 'signup'}">Join</v-btn>
           <v-btn text color="primary" @click="login">login</v-btn>
@@ -49,6 +49,7 @@
       </v-container>
     </v-col>
   </v-row>
+</v-container>
 </template>
 
 
