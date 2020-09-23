@@ -1,22 +1,46 @@
 <template>
-  <v-container style="max-width: auto;">
+  <v-container fluid style="max-width: auto;">
     <v-img height="200">
       <div id="map" style="height:200px;"></div>
     </v-img>
     <template>
       <v-timeline dense clipped>
-        <v-timeline-item v-for="(n, i) in storeInfos" :key="i" :src="n" color="red lighten-2" large>
-          <template v-slot:opposite>
-            <span>{{i+1}}</span>
-          </template>
-          <v-card class="elevation-2">
-            <v-card-title>{{n.name}}</v-card-title>
-            <v-img :src="n.img"></v-img>
-            <v-card-text>{{n.category}}</v-card-text>
-          </v-card>
-        </v-timeline-item>
+        <v-slide-x-transition group>
+          <v-timeline-item
+            v-for="(n, i) in storeInfos"
+            :key="i"
+            :src="n"
+            color="deep-purple lighten-4"
+            medium
+          >
+            <template v-slot:icon>
+              <span height="200">{{i+1}}</span>
+            </template>
+            <v-row justify="space-between" @click="goDetail(n.name)">
+              <v-col class="image-left" cols="5">
+                <v-img :src="n.img"></v-img>
+              </v-col>
+              <v-col cols="7">
+                <v-row class="headline" v-text="n.name"></v-row>
+                <v-row v-text="n.category"></v-row>
+              </v-col>
+            </v-row>
+            <v-row v-text="n.address"></v-row>
+          </v-timeline-item>
+        </v-slide-x-transition>
       </v-timeline>
     </template>
+    <template>
+      <div class="text-right">
+        <v-btn class="ma-2" tile color="brown darken-1" dark>추가</v-btn>
+        <v-btn class="ma-2" tile color="deep-orange lighten-1" dark>수정</v-btn>
+        <v-btn class="ma-2" tile color="yellow darken-1" dark>삭제</v-btn>
+      </div>
+    </template>
+  </v-container>
+</template> 
+  </v-container>
+</template>
   </v-container>
 </template>  
 
@@ -44,7 +68,9 @@ export default {
   },
 
   mounted() {
-    window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
+    setTimeout(() => {
+      window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
+    }, 100);
   },
 
   methods: {
@@ -112,7 +138,35 @@ export default {
           img:
             "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
         },
+        // {
+        //   id: 2,
+        //   name: "롸카두들내쉬빌핫치킨",
+        //   address: "서울시 강남구 신사동 646-8",
+        //   category: "브런치 / 버거 / 샌드위치",
+        //   img:
+        //     "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
+        // },
+        // {
+        //   id: 3,
+        //   name: "시라카와",
+        //   address: "서울시 강남구 신사동 664-24 1F",
+        //   category: "이자카야 / 오뎅 / 꼬치",
+        //   img:
+        //     "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
+        // },
+        // {
+        //   id: 5,
+        //   name: "시라카와",
+        //   address: "서울시 강남구 신사동 664-24 1F",
+        //   category: "이자카야 / 오뎅 / 꼬치",
+        //   img:
+        //     "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
+        // },
       ];
+    },
+
+    goDetail(i) {
+      alert(i + " 상세정보로이동");
     },
   },
 };
