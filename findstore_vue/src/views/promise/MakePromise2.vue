@@ -6,9 +6,29 @@
       <div>{{promiseList.date}}</div>
       <div>{{promiseList.gu}} {{promiseList.dong}}</div>
     </v-card-text>
+    <v-row class="m-0">
+      <v-col class="p-0" cols="6">
+        <v-btn block color="blue-grey" dark>먹거리</v-btn>
+      </v-col>
+      <v-col class="p-0" cols="6">
+        <v-btn block color="blue-grey" dark>놀거리</v-btn>
+      </v-col>
+    </v-row>
     <v-img class="white--text align-end" height="200">
       <div id="map" style="height:200px;"></div>
     </v-img>
+
+    <v-row class="m-0">
+      <v-col cols="4">
+        <v-select :items="items" label="분류" dense outlined></v-select>
+      </v-col>
+      <v-col class="p-0" cols="6">
+        <v-text-field placeholder="Placeholder"></v-text-field>
+      </v-col>
+      <v-col class="pt-5" cols="2">
+        <v-icon>fas fa-search</v-icon>
+      </v-col>
+    </v-row>
 
     <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
 
@@ -39,6 +59,8 @@ export default {
   data() {
     return {
       promiseList: {},
+      address: "",
+      items: ["카테고리", "가게명"],
     };
   },
   created() {
@@ -69,7 +91,7 @@ export default {
 
       var zoomControl = new kakao.maps.ZoomControl();
       map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-      geocoder.addressSearch("강남구", function (result, status) {
+      geocoder.addressSearch(this.address, function (result, status) {
         if (status === kakao.maps.services.Status.OK) {
           var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
           var marker = new kakao.maps.Marker({
@@ -92,9 +114,11 @@ export default {
     GetPromise() {
       const p_id = this.$route.params.p_id;
       axios
-        .get(SERVER_URL + "/promise/1/detail/" + p_id)
+        .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           this.promiseList = res.data;
+          this.address = res.data.gu + " " + res.data.dong;
+          console.log(this.promiseList);
         })
         .catch((err) => console.log(err.response));
     },
