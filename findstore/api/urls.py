@@ -14,5 +14,8 @@ app_name = 'api'
 urlpatterns = [
     path('store/<store_id>', views.storedetail, name='storedetail'),
     path('store/reviews/<store_id>', views.storereview, name='storereview'),
+    path('store/reviews/test/<store_id>', views.testreview, name='testreview'),
+    
+    path('store/review2/create', views.reviewcreate, name='reviewcreate'),
     path('store/firstrecommend/<store_id>', views.storerecommend, name='storerecommend'),
 ]

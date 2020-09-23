@@ -9,8 +9,17 @@ from rest_framework.permissions import IsAuthenticated
 
 from . import models, serializers
 from accounts.serializers import UserSerializer
-
 from django.contrib.auth import get_user_model
+
+from collections import defaultdict
+import pandas as pd
+import numpy as np
+import surprise # run 'pip install scikit-surprise' to install surprise
+from surprise import SVD
+from surprise import Dataset
+from surprise.model_selection import cross_validate
+from surprise import Reader
+
 
 
 User=get_user_model()
@@ -48,8 +57,62 @@ def storereview(request, store_id):
 
 @api_view(['GET'])
 def storerecommend(request,store_id): # 랭킹 상위 10위까지
-    print("test")
     recommend = models.Store.objects.all().order_by("-rating")[:10]
     serializer = serializers.StoreSerializer(recommend, many=True)
     return Response(serializer.data)
 
+def get_top_n(predictions, n=10):
+
+    # First map the predictions to each user.
+    top_n = defaultdict(list)
+    for uid, iid, true_r, est, _ in predictions:
+        top_n[uid].append((iid, est))
+
+    # Then sort the predictions for each user and retrieve the k highest ones.
+    for uid, user_ratings in top_n.items():
+        user_ratings.sort(key=lambda x: x[1], reverse=True)
+        top_n[uid] = user_ratings[:n]
+
+    return top_n
+
+@api_view(['GET'])
+def reviewcreate(request):
+    serializer = serializers.TestReviewsSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        return Response(serializer.data)
+    
+@api_view(['GET'])
+def testreview(request,store_id):
+    serializer = serializers.TestReviewsSerializer(data=request.data)
+    qs = models.TestReviews.objects.all()
+    qs2 = models.Reviews.objects.all()
+    q1 = qs.values('res_id', 'user_name','rating')
+    q2 = qs2.values('res_id', 'user_name','rating')
+    df1 = pd.DataFrame.from_records(q1)
+    df2 = pd.DataFrame.from_records(q2)
+    print(df1)
+    print(df2)
+    df = pd.concat([df1,df2]).reset_index()
+    print(df)
+
+    # Load the dataset (download it if needed)
+    reader = Reader(rating_scale=(0.5, 5.0))
+    data = Dataset.load_from_df(df[["user_name","res_id","rating"]],reader)
+    trainset = data.build_full_trainset()
+    algo = SVD()
+    algo.fit(trainset)
+
+    # Than predict ratings for all pairs (u, i) that are NOT in the training set.
+    # testset = trainset.build_full_trainset()
+    testset = trainset.build_anti_testset()
+    predictions = algo.test(testset)
+
+    top_n = get_top_n(predictions, n=10)
+
+    # Print the recommended items for each user
+    for uid, user_ratings in top_n.items():
+        if uid == store_id:
+            print(user_ratings)
+    
+    return Response(serializer.data)
