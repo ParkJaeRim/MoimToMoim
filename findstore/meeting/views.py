@@ -37,9 +37,6 @@ def detail(request, m_id):
     return Response(serializer.data)
 
 
-
-
-
 # @api_view(['GET','POST'])
 # # @api_view(['GET'])
 # @permission_classes([IsAuthenticated])

@@ -54,4 +54,10 @@ export default [
     view: "promise/MakePromise1",
     name: "promise"
   },
+
+  {
+    path: "/promise/:mid/create",
+    view: "promise/MakePromise1",
+    name: "makePromise"
+  },
 ];

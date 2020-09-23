@@ -1,4 +1,5 @@
 <template>
+<v-container>
   <v-row justify="center">
     <v-col md="10" class="py-0">
       <container>
@@ -49,6 +50,7 @@
       </v-container>
     </v-col>
   </v-row>
+</v-container>
 </template>
 
 
