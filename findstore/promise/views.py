@@ -22,6 +22,15 @@ def promiselist(request, meeting_id):
     serializer = PromiseSerializer(promises, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def userpromiselist(request, user_name):
+    target_user = get_object_or_404(User, username=user_name)  # 유저는 외래키로 일단 담아놔 
+    print(target_user)
+    # promises = Promise.objects.all() # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
+    promises = Promise.objects.filter(user_id = target_user) # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
+    print(promises)
+    serializer = PromiseSerializer(promises, many=True)
+    return Response(serializer.data)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -35,8 +44,7 @@ def create(request, meeting_id):
 
 
 @api_view(['GET'])
-def detail(request, meeting_id, promise_id):
-    target_meeting = get_object_or_404(Meeting, id=meeting_id)
+def detail(request, promise_id):
     target_promise = get_object_or_404(Promise, id=promise_id)
     serializer = PromiseSerializer(target_promise)
     return Response(serializer.data)

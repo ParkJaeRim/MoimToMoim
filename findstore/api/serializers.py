@@ -1,4 +1,4 @@
-from .models import Store, Reviews
+from .models import Store, Reviews, TestReviews
 from rest_framework import serializers
 
 
@@ -11,4 +11,9 @@ class StoreSerializer(serializers.ModelSerializer):
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reviews
+        fields = '__all__'
+
+class TestReviewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TestReviews
         fields = '__all__'

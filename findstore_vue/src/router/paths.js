@@ -25,12 +25,6 @@ export default [
     view: "accounts/DetailMain",
     name: "detailmain"
   },
-  // Article
-  {
-    path: "/article",
-    view: "articles/ArticleList",
-    name: "articlelist"
-  },
   // meeting
   {
     path: "/meeting",
@@ -44,19 +38,25 @@ export default [
   },
   // store
   {
-    path: "/store",
+    path: "/store/:s_id",
     view: "stores/StoreDetail",
     name: "storedetail"
   },
   // promise
   {
-    path: "/promise",
+    path: "/promise/:m_id",
     view: "promise/MakePromise1",
-    name: "promise"
+    name: "makepromise1"
   },
   {
     path: "/promise2/:p_id",
     view: "promise/MakePromise2",
     name: "makepromise2"
+  },
+  // 코스 추가 수정 삭제
+  {
+    path: "/course",
+    view: "promise/CourseEdit",
+    name: "courseEdit"
   },
 ];
