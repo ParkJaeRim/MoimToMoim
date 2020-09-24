@@ -86,8 +86,9 @@
 import axios from "axios";
 import { slider, slideritem } from "vue-concise-slider";
 
-const SERVER_URL = "http://127.0.0.1:8000";
+import constants from "../../lib/constants";
 
+const SERVER_URL = constants.ServerUrl;
 export default {
   name: "promiseList",
   data: () => {
