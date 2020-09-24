@@ -59,4 +59,10 @@ export default [
     view: "promise/CourseEdit",
     name: "courseEdit"
   },
+
+  {
+    path: "/promise/:mid/create",
+    view: "promise/MakePromise1",
+    name: "makePromise"
+  },
 ];
