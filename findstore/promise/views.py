@@ -47,7 +47,13 @@ def create(request, meeting_id):
 def detail(request, promise_id):
     target_promise = get_object_or_404(Promise, id=promise_id)
     serializer = PromiseSerializer(target_promise)
+    reslist = resChange(serializer.data['storelist'])
+    # serializer.data['user'].update(reslist)
+    print(serializer.data['user'])
+    # serializer.data['reslist'] = reslist
+    # print(serializer.data['reslist'])
     return Response(serializer.data)
+    # return Response(reslist)
 
 
 

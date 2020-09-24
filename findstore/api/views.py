@@ -110,10 +110,7 @@ def testreview(request,store_id):
 
     df1 = pd.DataFrame.from_records(q1)
     df2 = pd.DataFrame.from_records(q2)
-    print(df1)
-    print(df2)
     df = pd.concat([df1,df2]).reset_index()
-    print(df)
 
     # Load the dataset (download it if needed)
     reader = Reader(rating_scale=(0.5, 5.0))
