@@ -10,7 +10,7 @@
       <v-icon>fas fa-key</v-icon>
     </v-btn>
 
-    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'home'}">
+    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'detailmain'}">
       <span>MyPage</span>
       <v-icon>fas fa-user-circle</v-icon>
     </v-btn>
