@@ -120,8 +120,8 @@ export default {
   data() {
     return {
       storeInfos: [],
-      order: [1,2,3,4,5],
-      orderStore :[],
+      order: [1, 2, 3, 4, 5],
+      orderStore: [],
       temp: [],
       area: "강남구 신사동",
       level: 7,
@@ -229,7 +229,7 @@ export default {
             "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
         },
       ];
-      this.temp = this.storeInfos.slice()
+      this.temp = this.storeInfos.slice();
       console.log(this.storeInfos);
     },
 
@@ -242,11 +242,19 @@ export default {
     },
 
     up(index) {
-
+      var newValue = [];
+      newValue = this.temp.slice();
+      newValue[index] = this.temp[index - 1];
+      newValue[index - 1] = this.temp[index];
+      this.temp = newValue.slice();
     },
 
     down(index) {
-
+      var newValue = [];
+      newValue = this.temp.slice();
+      newValue[index] = this.temp[index + 1];
+      newValue[index + 1] = this.temp[index];
+      this.temp = newValue.slice();
     },
 
     save() {
