@@ -38,7 +38,7 @@
       </div>
     </template>
   </v-container>
-  
+</template>
   
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
