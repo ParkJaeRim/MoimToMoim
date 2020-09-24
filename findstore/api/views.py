@@ -134,3 +134,15 @@ def testreview(request,store_id):
             print(user_ratings)
     
     return Response(serializer.data)
+
+def resChange(resList):
+    res = []
+    resNum = resList.split('/')
+    for n in resNum:
+        try:
+            store = get_object_or_404(models.Store, pk=n)
+            serializer = serializers.StoreSerializer(store)
+            res.append(serializer.data)
+        except:
+            continue
+    return res

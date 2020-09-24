@@ -127,7 +127,7 @@ export default {
   methods: {
     makePromise(m_id) {
       this.$router.push({
-        name : "makePromise",
+        name : "makepromise1",
         params: {
           m_id: m_id,
         },
