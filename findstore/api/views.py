@@ -57,11 +57,32 @@ def storereview(request, store_id):
     return Response(serializer.data)
 
 @api_view(['GET'])
+<<<<<<< HEAD
+def storerecommend(request, store_id): # 랭킹 상위 10위까지
+    print("test")
+=======
 def storerecommend(request,store_id): # 랭킹 상위 10위까지
+>>>>>>> 607f08a2737559cf9f4c1160aac4bf7900f29d86
     recommend = models.Store.objects.all().order_by("-rating")[:10]
     serializer = serializers.StoreSerializer(recommend, many=True)
     return Response(serializer.data)
 
+<<<<<<< HEAD
+@api_view(['POST'])
+def searchrecommend(request, choice):
+    if choice == 'eating':
+        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+    elif choice == 'playing':
+        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+    else:
+        return Response()
+    if request.data['selected'] == '카테고리':
+        store = store.filter(category__icontains = request.data['keyword'])
+    else:
+        store = store.filter(name__icontains = request.data['keyword'])
+    store = store.order_by('-rating')[:10]
+    serializer = serializers.StoreSerializer(store, many=True)
+=======
 def get_top_n(predictions, n=10):
 
     # First map the predictions to each user.
@@ -116,4 +137,5 @@ def testreview(request,store_id):
         if uid == store_id:
             print(user_ratings)
     
+>>>>>>> 607f08a2737559cf9f4c1160aac4bf7900f29d86
     return Response(serializer.data)
