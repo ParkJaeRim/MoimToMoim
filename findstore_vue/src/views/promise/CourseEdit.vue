@@ -39,17 +39,17 @@
         <v-btn class="ma-2" tile color="brown darken-1" dark>추가</v-btn>
 
         <v-dialog v-model="dialog" calss>
-          <template v-slot:activator="{ on, attrs }">
+          <template v-slot:activator="{ on }">
             <v-btn
               class="ma-2"
               tile
               color="deep-orange lighten-1"
               dark
-              v-bind="attrs"
               v-on="on"
               >수정</v-btn
             >
           </template>
+
           <v-card>
             <v-card-title>
               <span class="headline">코스 순서 변경</span>
@@ -58,44 +58,43 @@
             <v-container>
               <transition-group name="list" tag="div">
                 <v-card
-                  v-for="(itm, index) in storeInfos"
-                  :key="index"
-                  :src="itm"
+                  v-for="(item, index) in temp"
+                  :key="item.id"
                   outlined
                   class="mt-3"
                 >
                   <v-row>
-
-                  <v-col>
-                  <v-card-text>
-                    {{itm.name}}
-                    <slot :item="itm.name" :index="index" />
-                  </v-card-text>
-                  </v-col>
-                  <v-col class = "right">
-                    <v-btn
-                      :disabled="index + 1 >= storeInfos.length"
-                      @click="down(index)"
-                      icon
-                    >
-                      <v-icon> mdi-arrow-down </v-icon>
-                    </v-btn>
-                    <v-btn :disabled="index === 0" @click="up(index)" icon>
-                      <v-icon> mdi-arrow-up </v-icon>
-                    </v-btn>
-                    <v-btn @click="remove(index)" icon>
-                      <v-icon> mdi-close </v-icon>
-                    </v-btn>
-                  </v-col>
+                    <v-col>
+                      <v-card-text>
+                        {{ item.name }}
+                        <slot :item="item" :index="index" />
+                      </v-card-text>
+                    </v-col>
+                    <v-col class="right">
+                      <v-btn
+                        :disabled="index + 1 >= temp.length"
+                        @click="down(index)"
+                        icon
+                      >
+                        <v-icon> mdi-arrow-down </v-icon>
+                      </v-btn>
+                      <v-btn :disabled="index === 0" @click="up(index)" icon>
+                        <v-icon> mdi-arrow-up </v-icon>
+                      </v-btn>
+                      <v-btn @click="remove(index)" icon>
+                        <v-icon> mdi-close </v-icon>
+                      </v-btn>
+                    </v-col>
                   </v-row>
-
                 </v-card>
               </transition-group>
             </v-container>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="purple lighten-1" text @click="save">수정완료</v-btn>
+              <v-btn color="purple lighten-1" text @click="save"
+                >수정완료</v-btn
+              >
               <v-btn color="purple lighten-1" text @click="close">취소</v-btn>
             </v-card-actions>
           </v-card>
@@ -121,17 +120,14 @@ export default {
   data() {
     return {
       storeInfos: [],
+      order: [1,2,3,4,5],
+      orderStore :[],
+      temp: [],
       area: "강남구 신사동",
       level: 7,
       dialog: false,
       counter: 10,
     };
-  },
-
-  watch: {
-    dialog(val) {
-      val || this.close();
-    },
   },
 
   created() {
@@ -159,7 +155,6 @@ export default {
       map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
       var len = this.storeInfos.length;
-      console.log(this.storeInfos);
       geocoder.addressSearch(this.area, function (result, status) {
         if (status === kakao.maps.services.Status.OK) {
           var coord = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -195,31 +190,31 @@ export default {
       this.storeInfos = [
         {
           id: 1,
-          name: "롸카두들내쉬빌핫치킨",
+          name: "1번",
           address: "서울시 강남구 신사동 646-8",
           category: "브런치 / 버거 / 샌드위치",
           img:
             "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
         },
         {
-          id: 19,
-          name: "시라카와",
+          id: 2,
+          name: "2번",
           address: "서울시 강남구 신사동 664-24 1F",
           category: "이자카야 / 오뎅 / 꼬치",
           img:
             "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
         },
         {
-          id: 2,
-          name: "롸카두들내쉬빌핫치킨",
+          id: 3,
+          name: "3번",
           address: "서울시 강남구 신사동 646-8",
           category: "브런치 / 버거 / 샌드위치",
           img:
             "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
         },
         {
-          id: 3,
-          name: "시라카와",
+          id: 4,
+          name: "4번",
           address: "서울시 강남구 신사동 664-24 1F",
           category: "이자카야 / 오뎅 / 꼬치",
           img:
@@ -227,48 +222,42 @@ export default {
         },
         {
           id: 5,
-          name: "시라카와",
+          name: "5번",
           address: "서울시 강남구 신사동 664-24 1F",
           category: "이자카야 / 오뎅 / 꼬치",
           img:
             "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
         },
       ];
+      this.temp = this.storeInfos.slice()
+      console.log(this.storeInfos);
     },
 
     goDetail(i) {
       alert(i + " 상세정보로이동");
     },
-      
-      remove(index) {
-        // const newValue = [
-        //   ...this.value.slice(0, index),
-        //   ...this.value.slice(index + 1),
-        // ];
-        // this.$emit("input", newValue);
-      },
 
-      up(index) {
-        // const newValue = [...this.value];
-        // newValue[index] = this.value[index - 1];
-        // newValue[index - 1] = this.value[index];
-        // this.$emit("input", newValue);
-      },
-
-      down(index) {
-        // const newValue = [...this.value];
-        // newValue[index] = this.value[index + 1];
-        // newValue[index + 1] = this.value[index];
-        // this.$emit("input", newValue);
-      },
-
-      close() {
-        this.dialog = false;
-      },
-
-      save() {},
+    remove(index) {
+      this.temp.splice(index, 1);
     },
 
+    up(index) {
+
+    },
+
+    down(index) {
+
+    },
+
+    save() {
+      this.storeInfos = this.temp.slice();
+      this.dialog = false;
+    },
+
+    close() {
+      this.dialog = false;
+    },
+  },
 };
 </script>
 
