@@ -1,7 +1,8 @@
 export default {
     TITLE: "Moim으로 모임",
-    // ServerUrl: "http://i3b205.p.ssafy.io:8080",
-    ServerUrl: "http://localhost:8000",
+    ServerUrl: "http://j3b301.p.ssafy.io:8000",
+    
+    // ServerUrl: "http://localhost:8000",
     // URL_TYPE: {
     //   MAIN : "mainpage",
     //   ADMIN : "adminpage",
