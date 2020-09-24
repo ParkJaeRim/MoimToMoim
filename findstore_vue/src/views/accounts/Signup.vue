@@ -128,6 +128,7 @@ export default {
         .then((res) => {
           this.$cookies.set('auth-token', res.data.key)
           this.$router.push({ name: 'home' })
+          
         })
         .catch((err) => {
           // if (err.response.data[0] == "A user with that username already exists.") {
@@ -138,6 +139,8 @@ export default {
           console.log(err.response.data);
         })
     },
+
+    
   }
 };
 </script>
