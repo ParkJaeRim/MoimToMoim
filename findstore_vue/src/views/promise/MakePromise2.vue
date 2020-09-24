@@ -158,10 +158,11 @@ export default {
         params: { s_id: s_id }
       })
     },
-    
+
     courseAdd(storeId) {
       this.promiseList.storelist += storeId + "/"
-      const p_id = this.$route.params.p_id;
+      const p_id = this.$route.params.p_id
+      console.log(this.promiseList);
       axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
       .then(res => {
         console.log(res.data);
