@@ -259,6 +259,7 @@ export default {
 
     save() {
       this.storeInfos = this.temp.slice();
+      this.initMap();
       this.dialog = false;
     },
 
