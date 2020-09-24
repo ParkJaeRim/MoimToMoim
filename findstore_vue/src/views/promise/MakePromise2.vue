@@ -1,5 +1,6 @@
 <template>
   <v-card>
+    <FooterList />
     <v-card-text class="text--primary">
       <span class="display-1">{{promiseList.title}}</span>
       <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
@@ -8,10 +9,10 @@
     </v-card-text>
     <v-row class="m-0">
       <v-col class="p-0" cols="6">
-        <v-btn block color="blue-grey" dark>먹거리</v-btn>
+        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'eating'">먹거리</v-btn>
       </v-col>
       <v-col class="p-0" cols="6">
-        <v-btn block color="blue-grey" dark>놀거리</v-btn>
+        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'playing'">놀거리</v-btn>
       </v-col>
     </v-row>
     <v-img class="white--text align-end" height="200">
@@ -19,30 +20,29 @@
     </v-img>
 
     <v-row class="m-0">
-      <v-col cols="4">
-        <v-select :items="items" label="분류" dense outlined></v-select>
+      <v-col class="pb-0" cols="4">
+        <v-select v-model="searchData.selected" :items="items" label="분류" dense outlined></v-select>
       </v-col>
       <v-col class="p-0" cols="6">
-        <v-text-field placeholder="Placeholder"></v-text-field>
+        <v-text-field v-model="searchData.keyword" placeholder="Placeholder"></v-text-field>
       </v-col>
-      <v-col class="pt-5" cols="2">
-        <v-icon>fas fa-search</v-icon>
+      <v-col class="pt-5 pb-0" cols="2">
+        <v-icon @click="searchStore">fas fa-search</v-icon>
       </v-col>
     </v-row>
 
-    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn color="orange" text>Share</v-btn>
-
-      <v-btn color="orange" text>Explore</v-btn>
-    </v-card-actions>
+    <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="grey lighten-2" outlined>
+      <v-btn small class="add" color="warning" dark>add</v-btn>
+      <v-list-item @click="marker(store.address)">
+        <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
+        <v-list-item-content>
+          <v-list-item-title class="headline mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
+          <div>{{store.category}}</div>
+          <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-icon @click="goStoreDetail(store.id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
+    </v-card>
   </v-card>
 </template>
 
@@ -51,23 +51,37 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import FooterList from "../../components/FooterList"
 
 const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "makepromise2",
+  components: {
+    FooterList
+  },
   data() {
     return {
       promiseList: {},
       address: "",
       items: ["카테고리", "가게명"],
+      choice: "eating",
+      searchData: {
+        gu: "",
+        dong: "",
+        selected: "가게명",
+        keyword: "",
+      },
+      searchStoreList: {},
     };
   },
   created() {
-    this.GetPromise();
+    this.getPromise();
   },
   mounted() {
-    window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+    setTimeout(() => {
+      window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+    }, 200);
   },
   computed: {
     finalCheck() {
@@ -111,20 +125,46 @@ export default {
         "http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=e03da05ed9076293090e181433ecc1c4&libraries=services";
       document.head.appendChild(script);
     },
-    GetPromise() {
+    getPromise() {
       const p_id = this.$route.params.p_id;
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           this.promiseList = res.data;
           this.address = res.data.gu + " " + res.data.dong;
-          console.log(this.promiseList);
         })
         .catch((err) => console.log(err.response));
+    },
+    searchStore() {
+      this.searchData.gu = this.promiseList.gu;
+      this.searchData.dong = this.promiseList.dong;
+      axios
+        .post(
+          SERVER_URL + "/api/store/storerecommend/" + this.choice,
+          this.searchData
+        )
+        .then((res) => {
+          this.searchStoreList = res.data;
+        })
+        .catch((err) => console.log(err.response));
+    },
+    marker(ad) {
+      this.address = ad
+      this.initMap()
+    },
+    goStoreDetail(s_id) {
+      this.$router.push({
+        name: "storedetail",
+        params: { s_id: s_id }
+      })
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
+.add {
+  position: absolute;
+  right: 0;
+}
 </style>
