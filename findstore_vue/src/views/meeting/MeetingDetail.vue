@@ -3,12 +3,12 @@
     <v-container>
       <div align="center" justify="center">
         <v-row dense class="each-row mx-auto">
-          <v-col cols="8" md="8" sm="4" style="font-size: 20px">
+          <v-col cols="8" md="8" sm="4" style="font-size: 25px">
             "{{meetingDetail.title}}"의
             <br />약속을 준비하세요 !
           </v-col>
-          <v-col col="4" md="4" sm="2" align="center" justify="center">
-            <v-btn color="deep-purple lighten-4" fab large dark>
+          <v-col col="4" md="4" sm="2">
+            <v-btn color="deep-purple lighten-4" fab large dark @click="goMakePromise">
               <v-icon large>mdi-plus</v-icon>
             </v-btn>
           </v-col>

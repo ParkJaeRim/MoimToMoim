@@ -25,12 +25,6 @@ export default [
     view: "accounts/DetailMain",
     name: "detailmain"
   },
-  // Article
-  {
-    path: "/article",
-    view: "articles/ArticleList",
-    name: "articlelist"
-  },
   // meeting
   {
     path: "/meeting",
@@ -44,7 +38,7 @@ export default [
   },
   // store
   {
-    path: "/store",
+    path: "/store/:s_id",
     view: "stores/StoreDetail",
     name: "storedetail"
   },
