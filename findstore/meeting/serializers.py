@@ -10,6 +10,7 @@ class MeetingSerializer(serializers.ModelSerializer):
         model = Meeting
         # fields = ('id', 'title', 'background_img', 'avg_age', 'ppl', 'user')
         fields = '__all__'
+        
 class RecommendSerializer(serializers.ModelSerializer):
     store = StoreSerializer(required=False)
     class Meta:
