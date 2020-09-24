@@ -37,34 +37,22 @@ def detail(request, m_id):
     return Response(serializer.data)
 
 
-
-
-
-# @api_view(['GET','POST'])
-# # @api_view(['GET'])
+@api_view(['POST'])
 # @permission_classes([IsAuthenticated])
-# def modify(request, article_pk):
-#     article = get_object_or_404(Article, pk=article_pk)
-#     if request.user != article.user:
-#         return Response()
-
-#     if request.method == 'GET':
-#         serializer = ArticleSerializer(article)
-#         return Response(serializer.data)
-
-#     if request.method == 'POST':
-#         serializer = ArticleSerializer(data=request.data)
-#         temp = serializer.initial_data
-#         article.title = temp['title']
-#         article.content = temp['content']
-#         article.save()
-#     return Response()
+def modify(request, m_id):
+    meeting = get_object_or_404(Meeting, pk=m_id)
+    serializer = MeetingSerializer(data=request.data)
+    temp = serializer.initial_data
+    meeting.title = temp['title']
+    meeting.content = temp['background_img']
+    meeting.save()
+    return Response()
 
 
-# @api_view(['POST'])
+@api_view(['POST'])
 # @permission_classes([IsAuthenticated])
-# def delete(request, article_id):
-#     article = get_object_or_404(Article, id=article_id)
-#     if request.user == article.user:
-#         article.delete()
-#     return Response()
+def delete(request, m_id):
+    meeting = get_object_or_404(Meeting, id=m_id)
+    # if request.user == article.user:
+    meeting.delete()
+    return Response()

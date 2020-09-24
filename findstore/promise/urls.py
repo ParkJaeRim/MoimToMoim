@@ -7,5 +7,6 @@ urlpatterns = [
     path('<int:meeting_id>/', views.promiselist, name='promiselist'),
     path('<int:meeting_id>/create/', views.create, name='create'),
     path('detail/<int:promise_id>', views.detail, name='detail'),
-    path('<str:user_name>/list/', views.userpromiselist,name='userpromiselist')
+    path('<str:user_name>/list/', views.userpromiselist, name='userpromiselist'),
+    path('update/<int:promise_id>', views.updatepromise, name='updatepromise'),
 ]

@@ -62,6 +62,7 @@ def storerecommend(request,store_id): # 랭킹 상위 10위까지
     serializer = serializers.StoreSerializer(recommend, many=True)
     return Response(serializer.data)
 
+
 @api_view(['POST'])
 def searchrecommend(request, choice):
     if choice == 'eating':
@@ -136,8 +137,18 @@ def testreview(request,store_id):
     # Print the recommended items for each user
     for uid, user_ratings in top_n.items():
         if uid == store_id:
-            for user_rating in user_ratings:
-                models.Recommand(user_id=uid,rating=user_rating[1],res_id=user_rating[0],address=store_addr.get(user_rating[0])).save()
-            break
+            print(user_ratings)
+    
     return Response(serializer.data)
 
+def resChange(resList):
+    res = []
+    resNum = resList.split('/')
+    for n in resNum:
+        try:
+            store = get_object_or_404(models.Store, pk=n)
+            serializer = serializers.StoreSerializer(store)
+            res.append(serializer.data)
+        except:
+            continue
+    return res

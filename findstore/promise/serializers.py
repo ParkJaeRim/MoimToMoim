@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from accounts.serializers import UserSerializer
 from meeting.serializers import MeetingSerializer
-from api.serializers import StoreSerializer
 
 from .models import Promise
 from meeting.models import Meeting
