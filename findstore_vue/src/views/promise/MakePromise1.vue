@@ -14,7 +14,7 @@
       <v-btn
         v-for="(gu, i) in guList"
         :key="i"
-        class="mx-1"
+        class="m-1"
         rounded
         @click="promiseData.gu = gu; gu_cnt = i; promiseData.dong=''"
       >{{gu}}</v-btn>
@@ -31,9 +31,7 @@
     </div>
     <hr />
     <div v-if="promiseData.dong && promiseData.title" class="d-flex justify-end">
-      <v-btn color="blue-grey" class="white--text" small @click="makePromise">
-        다음
-      </v-btn>
+      <v-btn color="blue-grey" class="white--text" small @click="makePromise">다음</v-btn>
     </div>
   </v-container>
 </template>
@@ -48,84 +46,63 @@ export default {
   name: "MakePromise1",
   data() {
     return {
-      guList: ["마포구", "용산구", "성동구", "강남구"],
+      guList: ["마포구", "성북구", "성동구", "강남구"],
       dongList: [
         [
           "공덕동",
-          "아현동",
-          "도화동",
-          "용강동",
+          "노고산동",
+          "당인동",
           "대흥동",
-          "염리동",
-          "신수동",
-          "서강동",
-          "서교동",
-          "합정동",
-          "망원제1동",
-          "망원제2동",
-          "연남동",
-          "성산재1동",
-          "성산제2동",
+          "도화동",
+          "동교동",
+          "망원동",
+          "상수동",
           "상암동",
+          "서교동",
+          "성산동",
+          "신공덕동",
+          "신수동",
+          "연남동",
+          "염리동",
+          "용강동",
+          "창전동",
+          "합정동",
         ],
         [
-          "남영동",
-          "보광동",
-          "서빙고동",
-          "용문동",
-          "용산2가동",
-          "원효로제1동",
-          "원효로제2동",
-          "이촌제1동",
-          "이촌제2동",
-          "이태원제1동",
-          "이태원제2동",
-          "청파동",
-          "한강로동",
-          "한남동",
-          "효창동",
-          "후암동",
+          "동선동",
+          "동소문동",
+          "보문동",
+          "삼선동",
+          "석관동",
+          "성북동",
+          "안암동",
+          "정릉동",
+          "하월곡동",
         ],
         [
-          "금호1가동",
-          "금호2.3가동",
-          "금호4가동",
+          "금호동",
+          "도선동",
           "마장동",
           "사근동",
-          "성수1가제1동",
-          "성수1가제2동",
-          "성수2가제1동",
-          "성수2가제3동",
-          "송정동",
+          "성수1가",
+          "성수2가",
           "옥수동",
-          "왕십리도선동",
-          "왕십리제2동",
-          "용답동",
-          "응봉동",
-          "행당제1동",
-          "행당제2동",
+          "행당동",
+          "혹익동",
+          "송정동",
         ],
         [
-          "개포1동",
-          "개포2동",
-          "개포4동",
-          "논현1동",
-          "논현2동",
-          "대치1동",
-          "대치2동",
-          "대치4동",
-          "도곡1동",
-          "도곡2동",
-          "삼성1동",
-          "삼성2동",
+          "개포동",
+          "논현동",
+          "대치동",
+          "도곡동",
+          "삼성동",
           "세곡동",
           "수서동",
           "신사동",
           "압구정동",
-          "역삼1동",
-          "역삼2동",
-          "일원1동",
-          "일원2동",
+          "역삼동",
+          "일원동",
           "일원본동",
           "청담동",
         ],
@@ -137,23 +114,27 @@ export default {
         date: "",
         gu: "",
         dong: "",
+        storelise:"1/4/7",
       },
       picker: new Date().toISOString().substr(0, 10),
     };
   },
   methods: {
     makePromise() {
+      const m_id = this.$route.params.m_id;
       this.promiseData.date = this.picker;
-      console.log(this.promiseData);
       const config = {
         headers: {
           Authorization: `Token ${this.$cookies.get("auth-token")}`,
         },
       };
       axios
-        .post(SERVER_URL + "/promise/1/create/", this.promiseData, config)
-        .then(() => {
-          this.$router.push({ name: 'makepromise2' })
+        .post(SERVER_URL + "/promise/" + m_id +"/create/", this.promiseData, config)
+        .then((res) => {
+          this.$router.push({
+            name: "makepromise2",
+            params: { p_id: res.data.id },
+          });
         })
         .catch((err) => console.log(err.response));
     },

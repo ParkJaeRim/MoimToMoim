@@ -34,3 +34,17 @@ class Reviews(models.Model):
     sex = models.IntegerField(null=True)
     age = models.IntegerField(null=True)
     ppl = models.IntegerField(null=True)
+
+class TestReviews(models.Model):
+    res_id = models.IntegerField()
+    res_name = models.CharField(max_length=200, null=True)
+    user_name = models.CharField(max_length=200, null=True)
+    rating = models.IntegerField(null=True)
+    review = models.CharField(max_length=200, null=True)
+    sex = models.IntegerField(null=True)
+    age = models.IntegerField(null=True)
+    ppl = models.IntegerField(null=True)
+
+class Recommand(models.Model):
+    user_id = models.IntegerField()
+    recommnad_list = models.CharField(max_length=500, null=True)

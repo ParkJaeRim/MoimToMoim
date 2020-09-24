@@ -34,6 +34,7 @@
       <v-row class="each-row mx-auto" >
         취향 추천
       </v-row>
+      <v-row class="each-row mx-auto">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem v-for="(item,i) in likes" :key="i" :style="styleRecom">
@@ -48,10 +49,11 @@
               </div>
             </v-img>
           </slideritem>
-        </slider>                             
+        </slider>
       </v-row>
       <hr>
       <!--                 핫플레이스 추천                           -->
+      <v-row class="each-row mx-auto">핫플레이스 추천</v-row>
       <v-row class="each-row mx-auto">
         핫플레이스 추천
       </v-row>    
@@ -77,7 +79,7 @@
 
 <script>
 import axios from "axios";
-import { slider, slideritem } from 'vue-concise-slider'
+import { slider, slideritem } from "vue-concise-slider";
 
 const SERVER_URL = "http://127.0.0.1:8000";
 
@@ -173,7 +175,7 @@ export default {
 }
 .each-row{
   vertical-align: middle;
-  margin-top : 30px;
+  margin-top: 30px;
 }
 
 .promise{

@@ -1,5 +1,6 @@
 <template>
   <v-card class="mx-auto">
+    <FooterList />
     <v-carousel
       :continuous="true"
       :cycle="true"
@@ -11,10 +12,9 @@
       <v-carousel-item v-for="(image, i) in menuImg" :key="i" :src="image"></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary">
+      <v-btn small class="add" color="warning" dark>add</v-btn>
       <span class="display-1">{{storeInfo.name}}</span>
-      <v-chip class="ma-2" color="success" outlined small>
-        {{storeInfo.rating}}
-      </v-chip>
+      <v-chip class="ma-2" color="success" outlined small>{{storeInfo.rating}}</v-chip>
       <div>tel: {{storeInfo.tel}}</div>
     </v-card-text>
     <v-img class="white--text align-end" height="200">
@@ -40,42 +40,46 @@
             <th>메뉴</th>
             <th>
               <div v-for="(menu, i) in menus" :key="i">
-                <!-- <p>{{i}}, {{menu}}</p> -->
                 <div v-if="cnt_menu > i">{{menu}}</div>
               </div>
               <div class="text-right">
-                <v-btn text small v-if="menu_full" color="primary" @click="cnt_menu = 100; menu_full=false">전체메뉴</v-btn>
-                <v-btn text small v-if="!menu_full" color="primary" @click="cnt_menu = 3; menu_full=true">접기</v-btn>
+                <v-btn
+                  text
+                  small
+                  v-if="menu_full"
+                  color="primary"
+                  @click="cnt_menu = 100; menu_full=false"
+                >전체메뉴</v-btn>
+                <v-btn
+                  text
+                  small
+                  v-if="!menu_full"
+                  color="primary"
+                  @click="cnt_menu = 3; menu_full=true"
+                >접기</v-btn>
               </div>
             </th>
           </tr>
         </thead>
       </v-simple-table>
     </v-card-text>
-
-    <!-- <div v-for="(review, j) in reviews" :key="review.id">
-      {{review}}
-    </div> -->
-
-    <!-- <v-card-actions>
-      <v-btn color="orange" text>Share</v-btn>
-
-      <v-btn color="orange" text>Explore</v-btn>
-    </v-card-actions> -->
   </v-card>
 </template>
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script>
-
 import axios from "axios";
 import constants from "../../lib/constants";
+import FooterList from "../../components/FooterList"
 
 const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "StoreDetail",
+  components: {
+    FooterList
+  },
   data() {
     return {
       storeInfo: {},
@@ -90,10 +94,11 @@ export default {
   },
   created() {
     this.GetStoreInfo();
-    // this.GetReviews()
   },
   mounted() {
-    window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+    setTimeout(() => {
+      window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+    }, 500);
   },
   methods: {
     initMap() {
@@ -120,7 +125,7 @@ export default {
         }
       });
     },
-    
+
     addScript() {
       const script = document.createElement("script");
       script.onload = () => kakao.maps.load(this.initMap);
@@ -130,25 +135,24 @@ export default {
     },
 
     GetStoreInfo() {
+      const store_id = this.$route.params.s_id
       axios
-        .get(SERVER_URL + "/api/store/5")
+        .get(SERVER_URL + "/api/store/" + store_id)
         .then((res) => {
           this.storeInfo = res.data;
-          this.storeInfo.price = Number(res.data.price)
+          this.storeInfo.price = Number(res.data.price);
           this.menus = res.data.menu.split("//");
-          // console.log(this.storeInfo);
           this.menuImg = res.data.img.split("|");
         })
         .catch((err) => console.error(err.response));
     },
-
-    // GetReviews() {
-    //   axios.get(SERVER_URL + "/api/store/reviews/5")
-    //   .then((res) => {
-    //     this.reviews = res.data
-    //   })
-    //   .catch((err) => console.log(err))
-    // }
   },
 };
 </script>
+
+<style scoped>
+.add {
+  position: absolute;
+  right: 5px;
+}
+</style>
