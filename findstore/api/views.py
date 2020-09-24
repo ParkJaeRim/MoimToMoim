@@ -77,6 +77,7 @@ def searchrecommend(request, choice):
         store = store.filter(name__icontains = request.data['keyword'])
     store = store.order_by('-rating')[:10]
     serializer = serializers.StoreSerializer(store, many=True)
+    return Response(serializer.data)
 
 
 def get_top_n(predictions, n=10):
@@ -87,10 +88,9 @@ def get_top_n(predictions, n=10):
         top_n[uid].append((iid, est))
 
     # Then sort the predictions for each user and retrieve the k highest ones.
-    for uid, user_ratings in top_n.items():
-        user_ratings.sort(key=lambda x: x[1], reverse=True)
-        top_n[uid] = user_ratings[:n]
-
+    # for uid, user_ratings in top_n.items():
+    #     user_ratings.sort(key=lambda x: x[1], reverse=True)
+    #     top_n[uid] = user_ratings[:]
     return top_n
 
 @api_view(['GET'])
@@ -105,8 +105,14 @@ def testreview(request,store_id):
     serializer = serializers.TestReviewsSerializer(data=request.data)
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
+    store_qs = models.Store.objects.all()
     q1 = qs.values('res_id', 'user_name','rating')
     q2 = qs2.values('res_id', 'user_name','rating')
+    store_q = store_qs.values_list('id','address')
+    store_addr = {}
+    for s in store_q:
+        store_addr[s[0]] = s[1]
+
     df1 = pd.DataFrame.from_records(q1)
     df2 = pd.DataFrame.from_records(q2)
     print(df1)
