@@ -77,6 +77,7 @@ def searchrecommend(request, choice):
         store = store.filter(name__icontains = request.data['keyword'])
     store = store.order_by('-rating')[:10]
     serializer = serializers.StoreSerializer(store, many=True)
+    return Response(serializer.data)
 
 
 def get_top_n(predictions, n=10):
