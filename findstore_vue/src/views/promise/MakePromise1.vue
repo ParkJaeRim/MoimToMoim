@@ -114,7 +114,7 @@ export default {
         date: "",
         gu: "",
         dong: "",
-        storelise:"1/4/7",
+        storelist: "",
       },
       picker: new Date().toISOString().substr(0, 10),
     };

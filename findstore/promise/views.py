@@ -8,6 +8,7 @@ from .models import Promise
 from meeting.models import Meeting
 from .serializers import PromiseSerializer
 from accounts.serializers import UserSerializer
+from api.views import resChange
 
 from django.contrib.auth import get_user_model
 
@@ -37,7 +38,6 @@ def userpromiselist(request, user_name):
 def create(request, meeting_id):
     target_meeting = get_object_or_404(Meeting, id=meeting_id)
     serializer = PromiseSerializer(data=request.data)
-    print(serializer)
     if serializer.is_valid(raise_exception=True):
         serializer.save(meeting=target_meeting, user=request.user)
         return Response(serializer.data)
@@ -47,4 +47,23 @@ def create(request, meeting_id):
 def detail(request, promise_id):
     target_promise = get_object_or_404(Promise, id=promise_id)
     serializer = PromiseSerializer(target_promise)
+    reslist = resChange(serializer.data['storelist'])
+    # serializer.data['user'].update(reslist)
+    print(serializer.data['user'])
+    # serializer.data['reslist'] = reslist
+    # print(serializer.data['reslist'])
     return Response(serializer.data)
+    # return Response(reslist)
+
+
+
+@api_view(['POST'])
+def updatepromise(request, promise_id):
+    promise = get_object_or_404(Promise, id=promise_id)
+    serializer = PromiseSerializer(data=request.data)
+    temp = serializer.initial_data
+    promise.storelist = temp['storelist']
+    promise.save()
+    return Response()
+
+

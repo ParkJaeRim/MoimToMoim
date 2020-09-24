@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-row dense>
+      <v-row dense class="mx-auto">
         <v-col v-for="(meeting, i) in meetings" :key="i" cols="12">
           <v-card class="mx-auto" max-width="400" @click="meetingDetail(meeting.id)"> 
             <v-img
@@ -25,12 +25,11 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-dialog v-model="dialog" calss>
-      <template v-slot:activator="{ on, attrs }" >
-        <v-btn color="pink" dark large fab v-bind="attrs" v-on="on" class="fixed">
+    <v-dialog v-model="dialog" calss >
+      <template v-slot:activator="{ on, attrs }"  >
+        <v-btn color="pink" dark large fab v-bind="attrs" v-on="on" class="fixed" >
                 <v-icon>mdi-plus</v-icon>
         </v-btn>
-        <!-- <v-btn color="purple lighten-3" dark class="mb-2" v-bind="attrs" v-on="on" >모임 생성</v-btn> -->
       </template>
       <v-card>
         <v-card-title>
@@ -98,7 +97,9 @@
 <script>
 import axios from "axios";
 
-const SERVER_URL = "http://127.0.0.1:8000";
+import constants from "../../lib/constants";
+
+const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "MeetingList",
@@ -227,6 +228,10 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+*{
+  font-family: 'Jua', sans-serif;
+}
 .transbox{
     text-align:center;  
     height: 200px;
@@ -240,7 +245,7 @@ export default {
 }
 .fixed{
   position: fixed;
-  right: 10px;
+  right: 20px;
   bottom : 30px;
 }
 </style>

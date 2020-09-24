@@ -32,7 +32,7 @@
     </v-row>
 
     <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="grey lighten-2" outlined>
-      <v-btn small class="add" color="warning" dark>add</v-btn>
+      <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
       <v-list-item @click="marker(store.address)">
         <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
         <v-list-item-content>
@@ -158,6 +158,17 @@ export default {
         params: { s_id: s_id }
       })
     },
+
+    courseAdd(storeId) {
+      this.promiseList.storelist += storeId + "/"
+      const p_id = this.$route.params.p_id
+      console.log(this.promiseList);
+      axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.log(err.response))
+    }
   },
 };
 </script>
@@ -165,6 +176,7 @@ export default {
 <style scoped>
 .add {
   position: absolute;
+  z-index: 1;
   right: 0;
 }
 </style>

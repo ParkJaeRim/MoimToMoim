@@ -10,7 +10,7 @@
       <v-icon>fas fa-key</v-icon>
     </v-btn>
 
-    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'home'}">
+    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'detailmain'}">
       <span>MyPage</span>
       <v-icon>fas fa-user-circle</v-icon>
     </v-btn>
@@ -24,8 +24,9 @@
 
 <script>
 import axios from "axios";
+import constants from "../lib/constants";
 
-const SERVER_URL = "http://127.0.0.1:8000";
+const SERVER_URL = constants.ServerUrl;
 
 export default {
   data() {
