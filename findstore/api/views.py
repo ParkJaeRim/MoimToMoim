@@ -15,6 +15,7 @@ from django.contrib.auth import get_user_model
 from collections import defaultdict
 import pandas as pd
 import numpy as np
+import surprise
 from surprise import SVD
 from surprise import Dataset
 from surprise.model_selection import cross_validate
