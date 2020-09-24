@@ -12,7 +12,7 @@
       <v-carousel-item v-for="(image, i) in menuImg" :key="i" :src="image"></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary">
-      <v-btn small class="add" color="warning" dark>add</v-btn>
+      <v-btn @click="courseAdd(storeInfo.id)" small class="add" color="warning" dark>add</v-btn>
       <span class="display-1">{{storeInfo.name}}</span>
       <v-chip class="ma-2" color="success" outlined small>{{storeInfo.rating}}</v-chip>
       <div>tel: {{storeInfo.tel}}</div>
@@ -146,6 +146,9 @@ export default {
         })
         .catch((err) => console.error(err.response));
     },
+    courseAdd(storeId) {
+      console.log(storeId);
+    }
   },
 };
 </script>
@@ -153,6 +156,7 @@ export default {
 <style scoped>
 .add {
   position: absolute;
+  z-index: 1;
   right: 5px;
 }
 </style>
