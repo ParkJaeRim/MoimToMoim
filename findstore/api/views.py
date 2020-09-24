@@ -86,11 +86,6 @@ def get_top_n(predictions, n=10):
     top_n = defaultdict(list)
     for uid, iid, true_r, est, _ in predictions:
         top_n[uid].append((iid, est))
-
-    # Then sort the predictions for each user and retrieve the k highest ones.
-    # for uid, user_ratings in top_n.items():
-    #     user_ratings.sort(key=lambda x: x[1], reverse=True)
-    #     top_n[uid] = user_ratings[:]
     return top_n
 
 @api_view(['GET'])
@@ -137,8 +132,9 @@ def testreview(request,store_id):
     # Print the recommended items for each user
     for uid, user_ratings in top_n.items():
         if uid == store_id:
-            print(user_ratings)
-    
+            for user_rating in user_ratings:
+                models.Recommand(user_id=uid,rating=user_rating[1],res_id=user_rating[0],address=store_addr.get(user_rating[0])).save()
+            break
     return Response(serializer.data)
 
 def resChange(resList):
