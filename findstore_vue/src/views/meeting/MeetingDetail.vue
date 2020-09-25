@@ -31,19 +31,16 @@
         </slider>      
       </v-row>
       <hr>
-      <v-row class="each-row mx-auto" >
-        취향 추천
-      </v-row>
       <v-row class="each-row mx-auto">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
-          <slideritem v-for="(item,i) in likes" :key="i" :style="styleRecom">
-            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px">
+          <slideritem v-for="(item,i) in likes" :key="i" :style="styleRecom" >
+            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px" @click="goStoreDetail(item.id)">
               <div class="transbox white--text">
                 <div class="store_name">{{item.name}}</div>
               </div>
             </v-img>
-            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px">
+            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px" @click="goStoreDetail(item.id)">
                   <div class="transbox white--text">
                 <div class="store_name">{{item.name}}</div>
               </div>
@@ -55,17 +52,14 @@
       <!--                 핫플레이스 추천                           -->
       <v-row class="each-row mx-auto">핫플레이스 추천</v-row>
       <v-row class="each-row mx-auto">
-        핫플레이스 추천
-      </v-row>    
-      <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
-         <slideritem v-for="(item,i) in likes" :key="i" :style="styleRecom">
-            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px">
+         <slideritem v-for="(item,i) in hotplace" :key="i" :style="styleRecom">
+            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px" @click="goStoreDetail(item.id)">
               <div class="transbox white--text">
                 <div class="store_name">{{item.name}}</div>
               </div>
             </v-img>
-            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px">
+            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px" @click="goStoreDetail(item.id)">
                   <div class="transbox white--text">
                 <div class="store_name">{{item.name}}</div>
               </div>
@@ -91,15 +85,16 @@ export default {
     return {
       meetingDetail: {},
       promise:{},
-      likes: [
-      {name: "열혈쭈꾸미",img: "https://img.siksinhot.com/place/1488649917463166.jpg?w=307&h=300&c=Y"}, 
-      {name: "스트라다로스터스",img: "http://asq.kr/XSBD406YwxIP"},
-      {name: "커피식탁",img: "http://asq.kr/WRWkki34BEFy"},
-      {name: "야상해",img: ""},
-      {name: "아빠손칼국수",img: ""},
-      {name: "그린브라우니",img: ""},
-      ],
+      hotplace: {},
       countday:{},
+      likes:[   
+        {id: 1,name: "롸카두들내쉬빌핫치킨",img: "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322"},
+      {id: 2,name: "마띠아바자르",img: "https://mp-seoul-image-production-s3.mangoplate.com/399290/439642_1597548133594_6110"},
+        {id : 3, name: "비전스트롤",img: "https://mp-seoul-image-production-s3.mangoplate.com/1105479_1596164462459216.jpg"}, 
+      {id: 4,name: "오늘의 위로",img: "https://mp-seoul-image-production-s3.mangoplate.com/21015_1496393429425221.jpg"},
+      {id: 5,name: "아메노히커피점",img: "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/104601_1490349745059944.jpg"},
+      {id: 6,name: "비로소커피",img: "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/565213_1466144085926374.jpg"},
+      ],
       options: {
         pagination: false,  
         currentPage: 0,
@@ -127,19 +122,29 @@ export default {
   methods: {
     makePromise(m_id) {
       this.$router.push({
-        name : "makePromise",
+        name : "makepromise1",
         params: {
           m_id: m_id,
         },
       });    
     },
 
+    goStoreDetail(s_id){
+      this.$router.push({
+        name : "storedetail",
+        params:{
+          s_id : s_id,
+        }
+      });
+    },
+    
     detailData() {
       axios
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
           this.promiseData()
+          this.gethotplace()
         })
         .catch((err) => console.log(err.res));
     },
@@ -161,20 +166,22 @@ export default {
             this.countday[i]=dday;
           }
         }
-
-
       })
       .catch((err) => console.log("?"+err.res));
-    }
+    },
+
+    gethotplace(){
+      axios.get(SERVER_URL +"/api/store/firstrecommend/"+ this.$route.params.s_id)
+      .then((res) => {
+        this.hotplace = res.data;
+      }).catch((err) => console.log(err.res));
+    },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-*{
-  font-family: 'Jua', sans-serif;
-}
+
 .each-row{
   vertical-align: middle;
   margin-top: 30px;

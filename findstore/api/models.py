@@ -45,6 +45,9 @@ class TestReviews(models.Model):
     age = models.IntegerField(null=True)
     ppl = models.IntegerField(null=True)
 
+
 class Recommand(models.Model):
-    user_id = models.IntegerField()
-    recommnad_list = models.CharField(max_length=500, null=True)
+    user_id = models.CharField(max_length=200)
+    res_id = models.CharField(max_length=200, null=True)
+    rating = models.FloatField(null=True)
+    address = models.CharField(max_length=200, null=True)
