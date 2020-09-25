@@ -31,6 +31,7 @@ for mf in MangoPlate:
             for i in range(3,12):
                 if len(str(mf[i])) <= 3:
                      mf[i] = dc[i]
+                     
 df = pd.DataFrame(MangoPlate)
 df.columns = ['name','address','tel','category','main_mn','price','menu','opng_tm','rating','rvw_cnt','tags','img','id']
 df = df[['id','name','address','tel','category','main_mn','price','menu','opng_tm','rating','rvw_cnt','tags','img']]

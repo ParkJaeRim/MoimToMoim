@@ -155,18 +155,15 @@ export default {
     goStoreDetail(s_id) {
       this.$router.push({
         name: "storedetail",
-        params: { s_id: s_id }
+        params: { p_id: this.$route.params.p_id, s_id: s_id }
       })
     },
 
     courseAdd(storeId) {
       this.promiseList.storelist += storeId + "/"
       const p_id = this.$route.params.p_id
-      console.log(this.promiseList);
       axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
-      .then(res => {
-        console.log(res.data);
-      })
+      .then(() => {})
       .catch(err => console.log(err.response))
     }
   },
