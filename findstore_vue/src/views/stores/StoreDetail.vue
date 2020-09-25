@@ -13,7 +13,7 @@
     </v-carousel>
     <v-card-text class="text--primary">
       <v-btn @click="courseAdd(storeInfo.id)" small class="add" color="warning" dark>add</v-btn>
-      <span class="display-1">{{storeInfo.name}}</span>
+      <span class="display">{{storeInfo.name}}</span>
       <v-chip class="ma-2" color="success" outlined small>{{storeInfo.rating}}</v-chip>
       <div>tel: {{storeInfo.tel}}</div>
     </v-card-text>
@@ -25,20 +25,21 @@
       <v-simple-table class="text-left">
         <thead>
           <tr>
-            <th>메인메뉴</th>
+            <th width="25%">메인메뉴</th>
             <th>{{storeInfo.main_mn}}</th>
           </tr>
         </thead>
         <thead>
           <tr>
-            <th>가격대</th>
+            <th width="25%">가격대</th>
             <th>{{storeInfo.price}}</th>
           </tr>
         </thead>
         <thead>
           <tr>
-            <th>메뉴</th>
+            <th width="25%">메뉴</th>
             <th>
+              <br>
               <div v-for="(menu, i) in menus" :key="i">
                 <div v-if="cnt_menu > i">{{menu}}</div>
               </div>
@@ -158,5 +159,10 @@ export default {
   position: absolute;
   z-index: 1;
   right: 5px;
+}
+
+.display{
+  font-family: 'Jua', sans-serif; 
+  font-size : 25px;
 }
 </style>
