@@ -9,7 +9,11 @@
       delimiter-icon="mdi-minus"
       height="200"
     >
-      <v-carousel-item v-for="(image, i) in menuImg" :key="i" :src="image"></v-carousel-item>
+      <v-carousel-item
+        v-for="(image, i) in menuImg"
+        :key="i"
+        :src="image"
+      ></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary">
       <v-btn @click="courseAdd(storeInfo.id)" small class="add" color="warning" dark>add</v-btn>
@@ -18,7 +22,7 @@
       <div>tel: {{storeInfo.tel}}</div>
     </v-card-text>
     <v-img class="white--text align-end" height="200">
-      <div id="map" style="height:200px;"></div>
+      <div id="map" style="height: 200px"></div>
     </v-img>
 
     <v-card-text class="text--primary">
@@ -41,7 +45,7 @@
             <th>
               <br>
               <div v-for="(menu, i) in menus" :key="i">
-                <div v-if="cnt_menu > i">{{menu}}</div>
+                <div v-if="cnt_menu > i">{{ menu }}</div>
               </div>
               <div class="text-right">
                 <v-btn
@@ -49,15 +53,23 @@
                   small
                   v-if="menu_full"
                   color="primary"
-                  @click="cnt_menu = 100; menu_full=false"
-                >전체메뉴</v-btn>
+                  @click="
+                    cnt_menu = 100;
+                    menu_full = false;
+                  "
+                  >전체메뉴</v-btn
+                >
                 <v-btn
                   text
                   small
                   v-if="!menu_full"
                   color="primary"
-                  @click="cnt_menu = 3; menu_full=true"
-                >접기</v-btn>
+                  @click="
+                    cnt_menu = 3;
+                    menu_full = true;
+                  "
+                  >접기</v-btn
+                >
               </div>
             </th>
           </tr>
@@ -72,14 +84,14 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
-import FooterList from "../../components/FooterList"
+import FooterList from "../../components/FooterList";
 
 const SERVER_URL = constants.ServerUrl;
 
 export default {
   name: "StoreDetail",
   components: {
-    FooterList
+    FooterList,
   },
   data() {
     return {
@@ -136,7 +148,7 @@ export default {
     },
 
     GetStoreInfo() {
-      const store_id = this.$route.params.s_id
+      const store_id = this.$route.params.s_id;
       axios
         .get(SERVER_URL + "/api/store/" + store_id)
         .then((res) => {
@@ -148,8 +160,20 @@ export default {
         .catch((err) => console.error(err.response));
     },
     courseAdd(storeId) {
-      console.log(storeId);
-    }
+      const p_id = this.$route.params.p_id;
+      axios
+        .get(SERVER_URL + "/promise/detail/" + p_id)
+        .then((res) => {
+          const promiseList = res.data;
+          promiseList.storelist += storeId + "/";
+          const p_id = this.$route.params.p_id;
+          axios
+            .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
+            .then(() => {})
+            .catch((err) => console.log(err.response));
+        })
+        .catch((err) => console.log(err.response));
+    },
   },
 };
 </script>

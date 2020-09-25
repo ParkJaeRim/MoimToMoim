@@ -38,7 +38,7 @@ export default [
   },
   // store
   {
-    path: "/store/:s_id",
+    path: "/:p_id/store/:s_id",
     view: "stores/StoreDetail",
     name: "storedetail"
   },
@@ -55,7 +55,7 @@ export default [
   },
   // 코스 추가 수정 삭제
   {
-    path: "/course",
+    path: "/course/:p_id",
     view: "promise/CourseEdit",
     name: "courseEdit"
   },
