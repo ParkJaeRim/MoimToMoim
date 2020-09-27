@@ -1,9 +1,16 @@
 <template>
   <div>
-    <v-container fluid style="max-width: auto">
+    <v-card>
+    <v-card-text class="text--primary">
+      <span class="display-1">{{promiseList.title}}</span>
+      <v-chip class="ma-1" color="success" outlined small>D-{{finalCheck}}</v-chip>
+      <div>{{promiseList.date}}</div>
+      <div>{{promiseList.gu}} {{promiseList.dong}}</div>
+    </v-card-text>
       <v-img height="200">
         <div id="map" style="height: 200px"></div>
       </v-img>
+    </v-card>
 
       <template>
         <v-timeline dense clipped>
@@ -32,7 +39,6 @@
           </v-slide-x-transition>
         </v-timeline>
       </template>
-    </v-container>
 
     <template>
       <div class="text-right">
@@ -119,6 +125,7 @@ export default {
 
   data() {
     return {
+      promiseList: [],
       storeInfos: [],
       course: "",
       temp: [],
@@ -137,6 +144,16 @@ export default {
     setTimeout(() => {
       window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
     }, 100);
+  },
+
+  computed: {
+    finalCheck() {
+      var stday = this.promiseList.date;
+      var today = new Date();
+      var count = new Date(stday);
+      var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+      return dday;
+    },
   },
   
   watch: {
