@@ -18,7 +18,7 @@
               <template v-slot:icon>
                 <span height="200">{{ i + 1 }}</span>
               </template>
-              <v-row justify="space-between" @click="goDetail(n.name)">
+              <v-row justify="space-between" @click="goDetail(n.id)">
                 <v-col class="image-left" cols="5">
                   <v-img :src="n.img"></v-img>
                 </v-col>
@@ -237,8 +237,11 @@ export default {
       alert("완료 페이지가 없슴");
     },
 
-    goDetail(i) {
-      alert(i + " 상세정보로이동");
+    goDetail(s_id) {
+      this.$router.push({
+        name: "storedetail",
+        params: { p_id: this.$route.params.p_id, s_id: s_id }
+      })
     },
 
     remove(index) {
