@@ -100,7 +100,7 @@
           </v-card>
         </v-dialog>
 
-        <v-btn class="ma-2" tile color="yellow darken-1" dark>완료</v-btn>
+        <v-btn class="ma-2" tile color="yellow darken-1" dark @click="finishCourse()">완료</v-btn>
       </div>
     </template>
   </div>
@@ -120,9 +120,9 @@ export default {
   data() {
     return {
       storeInfos: [],
-      // order: {},
+      course: "",
       temp: [],
-      area: "강남구 신사동",
+      area: "",
       level: 7,
       dialog: false,
       counter: 10,
@@ -139,17 +139,15 @@ export default {
     }, 100);
   },
   
-  computed: {
-    order: function () {
-      console.log("computed");
-      for (let index = 0; index < storeInfos.length; index++) {
+  watch: {
+    // 질문이 변경될 때 마다 이 기능이 실행됩니다.
+    storeInfos: function () {
+      this.course = "";
+      for (let index = 0; index < this.storeInfos.length; index++) {
         const element = this.storeInfos[index];
-        const orderTemp = [];
-        orderTemp += element.id + "/"
+        this.course += element.id + "/";
       }
-      console.log("orderTemp"+orderTemp)
-      return orderTemp 
-    },
+    }
   },
 
   methods: {
@@ -200,40 +198,44 @@ export default {
 
     getCourseOrder() {
       const p_id = this.$route.params.p_id;
-      console.log(p_id);
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
-          this.storeInfos = res.data.reslist;
+          this.promiseList = res.data;
+          this.storeInfos = res.data.reslist;  
           this.temp = this.storeInfos.slice();
-          console.log("temp" + this.temp);
-          console.log("storeInfos" + this.storeInfos);
+          this.area = res.data.gu + " " + res.data.dong;
         })
         .catch((err) => console.log(err.response));
     },
 
     courseAdd() {
       const p_id = this.$route.params.p_id;
+      const newpromiseList = this.promiseList;
+      newpromiseList.storelist = this.course;
       axios
-        .get(SERVER_URL + "/promise/detail/" + p_id)
-        .then((res) => {
-          const promiseList = res.data;
-          console.log("order" + this.order)
-          promiseList.storelist = order;
-          const p_id = this.$route.params.p_id;
-          axios
-            .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
-            .then(() => {})
-            .catch((err) => console.log(err.response));
-        })
-        .catch((err) => console.log(err.response));
+        .post(SERVER_URL + "/promise/update/" + p_id, newpromiseList)
+        .then(() => {})
+        .catch((err) => console.log(err.response)
+      );
+
       this.$router.push({
         name: "makepromise2",
         params: { p_id: this.$route.params.p_id },
       });
     },
 
-    finishCourse() {},
+    finishCourse() {
+      const p_id = this.$route.params.p_id;
+      const newpromiseList = this.promiseList;
+      newpromiseList.storelist = this.course;
+      axios
+        .post(SERVER_URL + "/promise/update/" + p_id, newpromiseList)
+        .then(() => {})
+        .catch((err) => console.log(err.response)
+      );
+      alert("완료 페이지가 없슴");
+    },
 
     goDetail(i) {
       alert(i + " 상세정보로이동");
