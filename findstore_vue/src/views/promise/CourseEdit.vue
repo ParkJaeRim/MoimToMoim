@@ -36,7 +36,7 @@
 
     <template>
       <div class="text-right">
-        <v-btn class="ma-2" tile color="brown darken-1" dark>추가</v-btn>
+        <v-btn class="ma-2" tile color="brown darken-1" dark @click="courseAdd()">추가</v-btn>
 
         <v-dialog v-model="dialog" calss>
           <template v-slot:activator="{ on }">
@@ -120,8 +120,7 @@ export default {
   data() {
     return {
       storeInfos: [],
-      order: [1, 2, 3, 4, 5],
-      orderStore: [],
+      // order: {},
       temp: [],
       area: "강남구 신사동",
       level: 7,
@@ -131,13 +130,26 @@ export default {
   },
 
   created() {
-    this.getStoreInfo();
+    this.getCourseOrder();
   },
 
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
     }, 100);
+  },
+  
+  computed: {
+    order: function () {
+      console.log("computed");
+      for (let index = 0; index < storeInfos.length; index++) {
+        const element = this.storeInfos[index];
+        const orderTemp = [];
+        orderTemp += element.id + "/"
+      }
+      console.log("orderTemp"+orderTemp)
+      return orderTemp 
+    },
   },
 
   methods: {
@@ -186,52 +198,42 @@ export default {
       document.head.appendChild(script);
     },
 
-    getStoreInfo() {
-      this.storeInfos = [
-        {
-          id: 1,
-          name: "1번",
-          address: "서울시 강남구 신사동 646-8",
-          category: "브런치 / 버거 / 샌드위치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
-        },
-        {
-          id: 2,
-          name: "2번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-        {
-          id: 3,
-          name: "3번",
-          address: "서울시 강남구 신사동 646-8",
-          category: "브런치 / 버거 / 샌드위치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
-        },
-        {
-          id: 4,
-          name: "4번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-        {
-          id: 5,
-          name: "5번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-      ];
-      this.temp = this.storeInfos.slice();
-      console.log(this.storeInfos);
+    getCourseOrder() {
+      const p_id = this.$route.params.p_id;
+      console.log(p_id);
+      axios
+        .get(SERVER_URL + "/promise/detail/" + p_id)
+        .then((res) => {
+          this.storeInfos = res.data.reslist;
+          this.temp = this.storeInfos.slice();
+          console.log("temp" + this.temp);
+          console.log("storeInfos" + this.storeInfos);
+        })
+        .catch((err) => console.log(err.response));
     },
+
+    courseAdd() {
+      const p_id = this.$route.params.p_id;
+      axios
+        .get(SERVER_URL + "/promise/detail/" + p_id)
+        .then((res) => {
+          const promiseList = res.data;
+          console.log("order" + this.order)
+          promiseList.storelist = order;
+          const p_id = this.$route.params.p_id;
+          axios
+            .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
+            .then(() => {})
+            .catch((err) => console.log(err.response));
+        })
+        .catch((err) => console.log(err.response));
+      this.$router.push({
+        name: "makepromise2",
+        params: { p_id: this.$route.params.p_id },
+      });
+    },
+
+    finishCourse() {},
 
     goDetail(i) {
       alert(i + " 상세정보로이동");
