@@ -80,7 +80,9 @@ export default {
       ],
     };
   },
-
+  created() {
+    this.isLogin()
+  },
   methods: {
     login() {
       axios
@@ -93,6 +95,12 @@ export default {
           console.log(err.response.data);
           alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
         });
+    },
+    isLogin() {
+      if (this.$cookies.isKey("auth-token")) {
+        alert("로그인이 되어 있습니다.")
+        this.$router.push({ name: "meetinglist" });
+      }
     },
   },
 };
