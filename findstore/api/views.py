@@ -80,33 +80,48 @@ def searchrecommend(request, choice):
     return Response(serializer.data)
 
 
-def get_top_n(predictions, n=10):
-
-    # First map the predictions to each user.
-    top_n = defaultdict(list)
-    for uid, iid, true_r, est, _ in predictions:
-        top_n[uid].append((iid, est))
-    return top_n
-
 @api_view(['GET'])
 def reviewcreate(request):
     serializer = serializers.TestReviewsSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
+        testreview(request)
         return Response(serializer.data)
-    
-@api_view(['GET'])
-def testreview(request,store_id):
+
+def meetingCreate(meeting_id):
+     
+    store_qs = models.Store.objects.all()
+    for store in store_qs:
+        models.Recommand(user_id=meeting_id,rating=store.rating,res_id=store.id,
+        address=store.address,name=store.name,category=store.category).save()
+
+def get_top_n(predictions, meeting_id):
+
+    # First map the predictions to each user.
+    top_n = defaultdict(list)
+    dic = {}
+    for uid, iid, true_r, est, _ in predictions:
+        top_n[uid].append((iid, est))
+    for uid, user_ratings in top_n.items():
+        if uid==meeting_id:
+            for user_rating in user_ratings:
+                dic[user_rating[0]] =user_rating[1]
+    return dic
+
+def testreview(request):
+    print(request.data)
+    meeting_id = str(request.data.get('user_name'))
+    print(meeting_id)
     serializer = serializers.TestReviewsSerializer(data=request.data)
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
     q1 = qs.values('res_id', 'user_name','rating')
     q2 = qs2.values('res_id', 'user_name','rating')
-    store_q = store_qs.values_list('id','address')
+    store_q = store_qs.values_list('id','address','name','category')
     store_addr = {}
     for s in store_q:
-        store_addr[s[0]] = s[1]
+        store_addr[s[0]] = s[1:]
 
     df1 = pd.DataFrame.from_records(q1)
     df2 = pd.DataFrame.from_records(q2)
@@ -118,21 +133,28 @@ def testreview(request,store_id):
     trainset = data.build_full_trainset()
     algo = SVD()
     algo.fit(trainset)
-
     # Than predict ratings for all pairs (u, i) that are NOT in the training set.
     # testset = trainset.build_full_trainset()
     testset = trainset.build_anti_testset()
     predictions = algo.test(testset)
 
-    top_n = get_top_n(predictions, n=10)
-
+    top_n = get_top_n(predictions,meeting_id)
+    print(top_n)
     # Print the recommended items for each user
-    for uid, user_ratings in top_n.items():
-        if uid == store_id:
-            for user_rating in user_ratings:
-                models.Recommand(user_id=uid,rating=user_rating[1],res_id=user_rating[0],address=store_addr.get(user_rating[0])).save()
-            break
-    return Response(serializer.data)
+    print("------------------------------------------------------")
+    count = 0;
+    recom_qs = models.Recommand.objects.all().filter(user_id=meeting_id)
+    print(recom_qs)
+    print("------------------------------------------------------")
+    for recom in recom_qs:
+        recom.rating = top_n.get(int(recom.res_id))
+        recom.save()
+        print(recom.rating)
+        # for user_rating in user_ratings:
+        #     user_info = store_addr.get(user_rating[0])
+        #     models.Recommand(id=0,user_id=uid,rating=user_rating[1],res_id=user_rating[0],
+        #     address=user_info[0],name=user_info[1],category=user_info[2]).save()
+    
 
 def resChange(resList):
     res = []

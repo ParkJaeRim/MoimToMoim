@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Meeting
 from .serializers import MeetingSerializer
 from accounts.serializers import UserSerializer
-
+from api.views import meetingCreate
 from django.contrib.auth import get_user_model
 
 
@@ -29,6 +29,8 @@ def create(request):
     serializer = MeetingSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(user=request.user)
+        meeting = Meeting.objects.all().last()
+        meetingCreate(meeting.id)
         return Response(serializer.data)
 
 @api_view(['POST'])
