@@ -123,12 +123,10 @@ export default {
   },
   methods: {
     signup() {
-      console.log(this.signupData)
       axios.post(SERVER_URL + '/accounts/register/', this.signupData)
         .then((res) => {
-          this.$cookies.set('auth-token', res.data.key)
+          console.log(res.data);
           this.$router.push({ name: 'home' })
-          
         })
         .catch((err) => {
           // if (err.response.data[0] == "A user with that username already exists.") {
