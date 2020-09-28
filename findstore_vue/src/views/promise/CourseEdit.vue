@@ -9,122 +9,130 @@
         <div>{{ promiseList.date }}</div>
         <div>{{ promiseList.gu }} {{ promiseList.dong }}</div>
       </v-card-text>
-      <v-img height="200">
+      <v-img class="white--text align-end" height="200">
         <div id="map" style="height: 200px"></div>
       </v-img>
     </v-card>
 
-    <template>
-      <v-timeline dense clipped>
-        <v-slide-x-transition group>
-          <v-timeline-item
-            v-for="(n, i) in storeInfos"
-            :key="i"
-            :src="n"
-            color="deep-purple lighten-4"
-            medium
-          >
-            <template v-slot:icon>
-              <span height="200">{{ i + 1 }}</span>
-            </template>
-            <v-row justify="space-between" @click="goDetail(n.id)">
-              <v-col class="image-left" cols="5">
-                <v-img :src="n.img"></v-img>
-              </v-col>
-              <v-col cols="7">
-                <v-row class="headline" v-text="n.name"></v-row>
-                <v-row v-text="n.category"></v-row>
-              </v-col>
-            </v-row>
-            <v-row v-text="n.address"></v-row>
-          </v-timeline-item>
-        </v-slide-x-transition>
-      </v-timeline>
-    </template>
-
-    <template>
-      <div class="text-right">
-        <v-btn
-          class="ma-2"
-          tile
-          color="brown darken-1"
-          dark
-          @click="courseAdd()"
-          >추가</v-btn
-        >
-
-        <v-dialog v-model="dialog" calss>
-          <template v-slot:activator="{ on }">
-            <v-btn
-              class="ma-2"
-              tile
-              color="deep-orange lighten-1"
-              dark
-              v-on="on"
-              >수정</v-btn
+    <v-container>
+      <template>
+        <v-timeline dense clipped>
+          <v-slide-x-transition group>
+            <v-timeline-item
+              v-for="(n, i) in storeInfos"
+              :key="i"
+              :src="n"
+              color="deep-purple lighten-4"
+              medium
             >
-          </template>
+              <template v-slot:icon width="200"> 
+                <span height="200">{{ i + 1 }}</span>
+              </template>
 
-          <v-card>
-            <v-card-title>
-              <span class="headline">코스 순서 변경</span>
-            </v-card-title>
+              <v-card>
+                <v-list-item @click="goDetail(n.id)">
+                  <v-img
+                    :src="n.img"
+                    class="mr-3"
+                    style="height: 80px; max-width: 80px"
+                  ></v-img>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1">{{ n.name }}</v-list-item-title>
+                    <v-list-item-subtitle>{{ n.category }}</v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-card>
+            </v-timeline-item>
+          </v-slide-x-transition>
+        </v-timeline>
+      </template>
 
-            <v-container>
-              <transition-group name="list" tag="div">
-                <v-card
-                  v-for="(item, index) in temp"
-                  :key="item.id"
-                  outlined
-                  class="mt-3"
-                >
-                  <v-row>
-                    <v-col>
-                      <v-card-text>
-                        {{ item.name }}
-                        <slot :item="item" :index="index" />
-                      </v-card-text>
-                    </v-col>
-                    <v-col class="right">
-                      <v-btn
-                        :disabled="index + 1 >= temp.length"
-                        @click="down(index)"
-                        icon
-                      >
-                        <v-icon> mdi-arrow-down </v-icon>
-                      </v-btn>
-                      <v-btn :disabled="index === 0" @click="up(index)" icon>
-                        <v-icon> mdi-arrow-up </v-icon>
-                      </v-btn>
-                      <v-btn @click="remove(index)" icon>
-                        <v-icon> mdi-close </v-icon>
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-card>
-              </transition-group>
-            </v-container>
+      <template>
+        <div class="text-right">
+          <v-btn
+            class="ma-2"
+            tile
+            color="brown darken-1"
+            dark
+            @click="courseAdd()"
+            >추가</v-btn
+          >
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="purple lighten-1" text @click="save()"
-                >수정완료</v-btn
+          <v-dialog v-model="dialog" calss>
+            <template v-slot:activator="{ on }">
+              <v-btn
+                class="ma-2"
+                tile
+                color="deep-orange lighten-1"
+                dark
+                v-on="on"
+                >수정</v-btn
               >
-              <v-btn color="purple lighten-1" text @click="close()">취소</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
+            </template>
 
-        <v-btn
-          class="ma-2"
-          tile
-          color="yellow darken-1"
-          dark
-          @click="finishCourse()"
-          >완료</v-btn
-        >
-      </div>
-    </template>
+            <v-card>
+              <v-card-title>
+                <span class="headline">코스 순서 변경</span>
+              </v-card-title>
+
+              <v-container>
+                <transition-group name="list" tag="div">
+                  <v-card
+                    v-for="(item, index) in temp"
+                    :key="item.id"
+                    outlined
+                    class="mt-3"
+                  >
+                    <v-row>
+                      <v-col>
+                        <v-card-text>
+                          {{ item.name }}
+                          <slot :item="item" :index="index" />
+                        </v-card-text>
+                      </v-col>
+                      <v-col class="right">
+                        <v-btn
+                          :disabled="index + 1 >= temp.length"
+                          @click="down(index)"
+                          icon
+                        >
+                          <v-icon> mdi-arrow-down </v-icon>
+                        </v-btn>
+                        <v-btn :disabled="index === 0" @click="up(index)" icon>
+                          <v-icon> mdi-arrow-up </v-icon>
+                        </v-btn>
+                        <v-btn @click="remove(index)" icon>
+                          <v-icon> mdi-close </v-icon>
+                        </v-btn>
+                      </v-col>
+                    </v-row>
+                  </v-card>
+                </transition-group>
+              </v-container>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="purple lighten-1" text @click="save()"
+                  >수정완료</v-btn
+                >
+                <v-btn color="purple lighten-1" text @click="close()"
+                  >취소</v-btn
+                >
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+
+          <v-btn
+            class="ma-2"
+            tile
+            color="yellow darken-1"
+            dark
+            @click="finishCourse()"
+            >완료</v-btn
+          >
+        </div>
+      </template>
+    </v-container>
   </div>
 </template>  
 
@@ -211,9 +219,14 @@ export default {
         ) {
           if (status === kakao.maps.services.Status.OK) {
             var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-            var marker = new kakao.maps.Marker({
+            var content =
+              '<div style ="opacity: 0.8; font-size:18px; width:30px; height:30px; background:#B39DDB; border-radius:50%; text-align:center; line-height:30px"><div class="center" style ="color:black">' +
+              (index + 1) +
+              "</div></div>";
+            var customOverlay = new kakao.maps.CustomOverlay({
               map: map,
               position: coords,
+              content: content,
             });
           }
         });
@@ -250,13 +263,13 @@ export default {
 
     finishCourse() {
       const m_id = this.promiseList.meeting.id;
-      console.log(m_id)
+      console.log(m_id);
       this.$router.push({
-        name : "meetingDetail",
+        name: "meetingDetail",
         params: {
           m_id: m_id,
         },
-      });    
+      });
     },
 
     goDetail(s_id) {
@@ -327,4 +340,5 @@ export default {
 .list-move {
   transition: transform 0.5s ease-out;
 }
+
 </style>
