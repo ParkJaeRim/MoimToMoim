@@ -63,7 +63,9 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py initialize
 python manage.py initialize2
+python manage.py initialize3
 python manage.py runserver
+
 ```
 
 **Frontend**

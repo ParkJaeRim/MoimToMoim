@@ -91,6 +91,7 @@ export default {
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
+          console.log(res.data);
           this.course = res.data.reslist;
         })
         .catch((err) => console.log(err.response));
