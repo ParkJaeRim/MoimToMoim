@@ -21,7 +21,13 @@ def promiselist(request, meeting_id):
     target_meeting = get_object_or_404(Meeting, id=meeting_id)
     promises = Promise.objects.filter(meeting = target_meeting)
     serializer = PromiseSerializer(promises, many=True)
-    return Response(serializer.data)
+    asd = []
+    for i in range(len(serializer.data)):
+        reslist = resChange(serializer.data[i]['storelist'])
+        newdict = {'reslist': reslist}
+        newdict.update(serializer.data[i])
+        asd.append(newdict)
+    return Response(asd)
 
 @api_view(['GET'])
 def userpromiselist(request, user_name):
@@ -31,7 +37,13 @@ def userpromiselist(request, user_name):
     promises = Promise.objects.filter(user_id = target_user) # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
     print(promises)
     serializer = PromiseSerializer(promises, many=True)
-    return Response(serializer.data)
+    asd = []
+    for i in range(len(serializer.data)):
+        reslist = resChange(serializer.data[i]['storelist'])
+        newdict = {'reslist': reslist}
+        newdict.update(serializer.data[i])
+        asd.append(newdict)
+    return Response(asd)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
