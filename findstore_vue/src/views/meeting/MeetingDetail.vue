@@ -16,17 +16,17 @@
       <v-row class="each-row mx-auto" align="center" justify="center">
         <slider ref="slider" :options="options">
           <slideritem v-for="(item,i) in promise" :key="i" class="promise deep-purple lighten-5" style="font-size : 18px; border-radius: 25px;">
-            <v-col cols ="5">
-              <v-responsive class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3" height="80" width="80">
-                {{item.dong}}
-              </v-responsive>
-            </v-col>
-            <v-col  cols="7">
-              <v-row> {{item.title}} </v-row>
-              <v-row> {{item.date.substring(2,4)}}년 {{item.date.substring(5,7)}}월 {{item.date.substring(8,10)}}일  </v-row>
-              <v-row> {{item.storelist}} </v-row>
-              <v-row class="font-weight-bold red--text">D-{{countday[i]}}</v-row>
-             </v-col>
+              <v-col cols ="5" @click="goPromise(item.id)">
+                <v-responsive class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3" height="80" width="80">
+                  {{item.dong}}
+                </v-responsive>
+              </v-col>
+              <v-col  cols="7" @click="goPromise(item.id)">
+                <v-row> {{item.title}} </v-row>
+                <v-row> {{item.date.substring(2,4)}}년 {{item.date.substring(5,7)}}월 {{item.date.substring(8,10)}}일  </v-row>
+                <v-row> {{item.storelist}} </v-row>
+                <v-row class="font-weight-bold red--text">D-{{countday[i]}}</v-row>
+              </v-col>
           </slideritem>
         </slider>      
       </v-row>
@@ -133,7 +133,7 @@ export default {
       this.$router.push({
         name : "storedetail",
         params:{
-          s_id : s_id,
+          p_id: 0, s_id : s_id,
         }
       });
     },
@@ -175,6 +175,15 @@ export default {
       .then((res) => {
         this.hotplace = res.data;
       }).catch((err) => console.log(err.res));
+    },
+
+    goPromise(p_id) {
+      this.$router.push({
+        name : "courseEdit",
+        params: {
+          p_id: p_id,
+        },
+      });
     },
   },
 };

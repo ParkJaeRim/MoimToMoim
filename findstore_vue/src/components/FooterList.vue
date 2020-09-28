@@ -96,7 +96,6 @@ export default {
         .catch((err) => console.log(err.response));
     },
     goCourse() {
-      console.log(1);
       this.$router.push({
         name: "courseEdit",
         params: { p_id: this.$route.params.p_id },

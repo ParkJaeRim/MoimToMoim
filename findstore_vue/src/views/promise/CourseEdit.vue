@@ -143,7 +143,7 @@ export default {
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
-    }, 100);
+    }, 500);
   },
 
   computed: {
