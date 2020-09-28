@@ -47,7 +47,10 @@ class TestReviews(models.Model):
 
 
 class Recommand(models.Model):
+    id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=200)
     res_id = models.CharField(max_length=200, null=True)
     rating = models.FloatField(null=True)
     address = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    category = models.CharField(max_length=200, null=True)
