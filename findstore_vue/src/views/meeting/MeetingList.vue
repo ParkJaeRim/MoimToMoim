@@ -129,6 +129,7 @@ export default {
   name: "MeetingList",
   data() {
     return {
+      user:[],
       meetings: [],
       dialog: false,
       headers: [
@@ -180,8 +181,13 @@ export default {
   },
   methods: {
     GetMeeting() {
+      const config = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get("auth-token")}`,
+        },
+      };
       axios
-        .get(SERVER_URL + "/meeting/")
+        .get(SERVER_URL + "/meeting/",config)
         .then((res) => {
           this.meetings = res.data;
         })
