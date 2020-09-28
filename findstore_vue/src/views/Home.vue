@@ -80,19 +80,26 @@ export default {
       ],
     };
   },
-
+  created() {
+    this.isLogin()
+  },
   methods: {
     login() {
       axios
         .post(SERVER_URL + "/rest-auth/login/", this.loginData)
         .then((res) => {
           this.$cookies.set("auth-token", res.data.key);
-          this.$router.push({ name: "meetinglist" });
+          this.isLogin();
         })
         .catch((err) => {
           console.log(err.response.data);
           alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
         });
+    },
+    isLogin() {
+      if (this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "meetinglist" });
+      }
     },
   },
 };

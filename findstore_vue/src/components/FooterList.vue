@@ -91,12 +91,12 @@ export default {
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
+          console.log(res.data);
           this.course = res.data.reslist;
         })
         .catch((err) => console.log(err.response));
     },
     goCourse() {
-      console.log(1);
       this.$router.push({
         name: "courseEdit",
         params: { p_id: this.$route.params.p_id },

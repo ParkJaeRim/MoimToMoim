@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto">
-    <FooterList />
+    <FooterList v-if="pidCheck" />
     <v-carousel
       :continuous="true"
       :cycle="true"
@@ -16,10 +16,20 @@
       ></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary">
-      <v-btn @click="courseAdd(storeInfo.id)" small class="add" color="warning" dark>add</v-btn>
-      <span class="display">{{storeInfo.name}}</span>
-      <v-chip class="ma-2" color="success" outlined small>{{storeInfo.rating}}</v-chip>
-      <div>tel: {{storeInfo.tel}}</div>
+      <v-btn
+        @click="courseAdd(storeInfo.id)"
+        small
+        v-if="pidCheck"
+        class="add"
+        color="warning"
+        dark
+        >add</v-btn
+      >
+      <span class="display">{{ storeInfo.name }}</span>
+      <v-chip class="ma-2" color="success" outlined small>{{
+        storeInfo.rating
+      }}</v-chip>
+      <div>tel: {{ storeInfo.tel }}</div>
     </v-card-text>
     <v-img class="white--text align-end" height="200">
       <div id="map" style="height: 200px"></div>
@@ -30,20 +40,20 @@
         <thead>
           <tr>
             <th width="25%">메인메뉴</th>
-            <th>{{storeInfo.main_mn}}</th>
+            <th>{{ storeInfo.main_mn }}</th>
           </tr>
         </thead>
         <thead>
           <tr>
             <th width="25%">가격대</th>
-            <th>{{storeInfo.price}}</th>
+            <th>{{ storeInfo.price }}</th>
           </tr>
         </thead>
         <thead>
           <tr>
             <th width="25%">메뉴</th>
             <th>
-              <br>
+              <br />
               <div v-for="(menu, i) in menus" :key="i">
                 <div v-if="cnt_menu > i">{{ menu }}</div>
               </div>
@@ -104,6 +114,15 @@ export default {
       menu_full: true,
       cnt_review: 2,
     };
+  },
+  computed: {
+    pidCheck() {
+      if (this.$route.params.p_id == 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
   created() {
     this.GetStoreInfo();
@@ -185,8 +204,8 @@ export default {
   right: 5px;
 }
 
-.display{
-  font-family: 'Jua', sans-serif; 
-  font-size : 25px;
+.display {
+  font-family: "Jua", sans-serif;
+  font-size: 25px;
 }
 </style>

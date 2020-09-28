@@ -50,7 +50,7 @@ export default {
         .finally(() => {
           this.$cookies.remove("auth-token");
           this.$router.push({ name: "home" });
-          this.isLogin()
+          this.isLogin();
         });
     },
     isLogin() {
