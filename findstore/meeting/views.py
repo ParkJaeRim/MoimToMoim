@@ -15,8 +15,10 @@ User=get_user_model()
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def index(request):
     meetings = Meeting.objects.all().order_by('-pk')
+    # meetingss = Meeting.objects.filter(user = request.user)
     serializer = MeetingSerializer(meetings, many=True)
     return Response(serializer.data)
 

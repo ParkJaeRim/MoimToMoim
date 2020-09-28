@@ -25,6 +25,7 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import swal from 'sweetalert2';
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -62,19 +63,32 @@ export default {
         });
     },
     userDelete() {
-      console.log(this.form);
-      axios
+      swal.fire({
+        title: "회원 탈퇴",
+        text: "탈퇴하시겠습니까 ?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: "OK",
+      }).then((res) => {
+        console.log(res)
+        if(res.isConfirmed) {
+        axios
         .get(SERVER_URL + "/accounts/delete/" + this.form.username)
         .then(() => {
           this.$cookies.remove("auth-token");
           alert("회원탈퇴되었습니다.");
-          // this.$router.go();
+          this.$router.go()
         })
         .catch((err) => {
-          alert("입력 정보를 호가인해주세요.");
+          alert("입력 정보를 확인해주세요.");
           console.log(err);
         });
+        }
+      })
     },
+
     userData() {
       const config = {
         headers: {
