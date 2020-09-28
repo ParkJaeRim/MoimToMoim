@@ -1,9 +1,16 @@
 <template>
   <div>
-    <v-container fluid style="max-width: auto">
+    <v-card>
+    <v-card-text class="text--primary">
+      <span class="display-1">{{promiseList.title}}</span>
+      <v-chip class="ma-1" color="success" outlined small>D-{{finalCheck}}</v-chip>
+      <div>{{promiseList.date}}</div>
+      <div>{{promiseList.gu}} {{promiseList.dong}}</div>
+    </v-card-text>
       <v-img height="200">
         <div id="map" style="height: 200px"></div>
       </v-img>
+    </v-card>
 
       <template>
         <v-timeline dense clipped>
@@ -18,7 +25,7 @@
               <template v-slot:icon>
                 <span height="200">{{ i + 1 }}</span>
               </template>
-              <v-row justify="space-between" @click="goDetail(n.name)">
+              <v-row justify="space-between" @click="goDetail(n.id)">
                 <v-col class="image-left" cols="5">
                   <v-img :src="n.img"></v-img>
                 </v-col>
@@ -32,11 +39,10 @@
           </v-slide-x-transition>
         </v-timeline>
       </template>
-    </v-container>
 
     <template>
       <div class="text-right">
-        <v-btn class="ma-2" tile color="brown darken-1" dark>추가</v-btn>
+        <v-btn class="ma-2" tile color="brown darken-1" dark @click="courseAdd()">추가</v-btn>
 
         <v-dialog v-model="dialog" calss>
           <template v-slot:activator="{ on }">
@@ -100,7 +106,7 @@
           </v-card>
         </v-dialog>
 
-        <v-btn class="ma-2" tile color="yellow darken-1" dark>완료</v-btn>
+        <v-btn class="ma-2" tile color="yellow darken-1" dark @click="finishCourse()">완료</v-btn>
       </div>
     </template>
   </div>
@@ -119,11 +125,11 @@ export default {
 
   data() {
     return {
+      promiseList: [],
       storeInfos: [],
-      order: [1, 2, 3, 4, 5],
-      orderStore: [],
+      course: "",
       temp: [],
-      area: "강남구 신사동",
+      area: "",
       level: 7,
       dialog: false,
       counter: 10,
@@ -131,13 +137,34 @@ export default {
   },
 
   created() {
-    this.getStoreInfo();
+    this.getCourseOrder();
   },
 
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakap.maps ? this.initMap() : this.addScript();
     }, 100);
+  },
+
+  computed: {
+    finalCheck() {
+      var stday = this.promiseList.date;
+      var today = new Date();
+      var count = new Date(stday);
+      var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+      return dday;
+    },
+  },
+  
+  watch: {
+    // 질문이 변경될 때 마다 이 기능이 실행됩니다.
+    storeInfos: function () {
+      this.course = "";
+      for (let index = 0; index < this.storeInfos.length; index++) {
+        const element = this.storeInfos[index];
+        this.course += element.id + "/";
+      }
+    }
   },
 
   methods: {
@@ -186,55 +213,52 @@ export default {
       document.head.appendChild(script);
     },
 
-    getStoreInfo() {
-      this.storeInfos = [
-        {
-          id: 1,
-          name: "1번",
-          address: "서울시 강남구 신사동 646-8",
-          category: "브런치 / 버거 / 샌드위치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
-        },
-        {
-          id: 2,
-          name: "2번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-        {
-          id: 3,
-          name: "3번",
-          address: "서울시 강남구 신사동 646-8",
-          category: "브런치 / 버거 / 샌드위치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
-        },
-        {
-          id: 4,
-          name: "4번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-        {
-          id: 5,
-          name: "5번",
-          address: "서울시 강남구 신사동 664-24 1F",
-          category: "이자카야 / 오뎅 / 꼬치",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/513273_1598598343472200.jpg",
-        },
-      ];
-      this.temp = this.storeInfos.slice();
-      console.log(this.storeInfos);
+    getCourseOrder() {
+      const p_id = this.$route.params.p_id;
+      axios
+        .get(SERVER_URL + "/promise/detail/" + p_id)
+        .then((res) => {
+          this.promiseList = res.data;
+          this.storeInfos = res.data.reslist;  
+          this.temp = this.storeInfos.slice();
+          this.area = res.data.gu + " " + res.data.dong;
+        })
+        .catch((err) => console.log(err.response));
     },
 
-    goDetail(i) {
-      alert(i + " 상세정보로이동");
+    courseAdd() {
+      const p_id = this.$route.params.p_id;
+      const newpromiseList = this.promiseList;
+      newpromiseList.storelist = this.course;
+      axios
+        .post(SERVER_URL + "/promise/update/" + p_id, newpromiseList)
+        .then(() => {})
+        .catch((err) => console.log(err.response)
+      );
+
+      this.$router.push({
+        name: "makepromise2",
+        params: { p_id: this.$route.params.p_id },
+      });
+    },
+
+    finishCourse() {
+      const p_id = this.$route.params.p_id;
+      const newpromiseList = this.promiseList;
+      newpromiseList.storelist = this.course;
+      axios
+        .post(SERVER_URL + "/promise/update/" + p_id, newpromiseList)
+        .then(() => {})
+        .catch((err) => console.log(err.response)
+      );
+      alert("완료 페이지가 없슴");
+    },
+
+    goDetail(s_id) {
+      this.$router.push({
+        name: "storedetail",
+        params: { p_id: this.$route.params.p_id, s_id: s_id }
+      })
     },
 
     remove(index) {
