@@ -62,13 +62,14 @@ export default {
         });
     },
     userDelete() {
-      console.log(this.form);
-      axios
+        axios
         .get(SERVER_URL + "/accounts/delete/" + this.form.username)
         .then(() => {
           this.$cookies.remove("auth-token");
           alert("회원탈퇴되었습니다.");
-          // this.$router.go();
+          this.$router.push({
+          name: "home",
+          });
         })
         .catch((err) => {
           alert("입력 정보를 호가인해주세요.");
