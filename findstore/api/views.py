@@ -89,14 +89,13 @@ def reviewcreate(request):
         return Response(serializer.data)
 
 def meetingCreate(meeting_id):
-     
     store_qs = models.Store.objects.all()
     for store in store_qs:
         models.Recommand(user_id=meeting_id,rating=store.rating,res_id=store.id,
         address=store.address,name=store.name,category=store.category).save()
 
-def get_top_n(predictions, meeting_id):
 
+def get_top_n(predictions, meeting_id):
     # First map the predictions to each user.
     top_n = defaultdict(list)
     dic = {}
@@ -109,10 +108,7 @@ def get_top_n(predictions, meeting_id):
     return dic
 
 def testreview(request):
-    print(request.data)
     meeting_id = str(request.data.get('user_name'))
-    print(meeting_id)
-    serializer = serializers.TestReviewsSerializer(data=request.data)
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
@@ -139,21 +135,12 @@ def testreview(request):
     predictions = algo.test(testset)
 
     top_n = get_top_n(predictions,meeting_id)
-    print(top_n)
     # Print the recommended items for each user
-    print("------------------------------------------------------")
-    count = 0;
     recom_qs = models.Recommand.objects.all().filter(user_id=meeting_id)
-    print(recom_qs)
-    print("------------------------------------------------------")
+
     for recom in recom_qs:
         recom.rating = top_n.get(int(recom.res_id))
         recom.save()
-        print(recom.rating)
-        # for user_rating in user_ratings:
-        #     user_info = store_addr.get(user_rating[0])
-        #     models.Recommand(id=0,user_id=uid,rating=user_rating[1],res_id=user_rating[0],
-        #     address=user_info[0],name=user_info[1],category=user_info[2]).save()
     
 
 def resChange(resList):

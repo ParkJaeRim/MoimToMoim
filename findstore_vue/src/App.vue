@@ -1,8 +1,20 @@
 <template>
-  <v-app id='app'>
-    <navbar />
-    <router-view />
-  </v-app>
+  <div>
+    <v-row>
+      <v-col class="d-none d-sm-block p-0" sm="6">
+        <v-img
+          src="@/assets/img/mainimg.png"
+          height="100%"
+        ></v-img>
+      </v-col>
+      <v-col class="p-0" align="center" cols="12" sm="6">
+        <v-app class="phone">
+          <navbar />
+          <router-view />
+        </v-app>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -19,5 +31,9 @@ export default {
 *{
   font-family: 'Jua', sans-serif;
   font-size: 13px;
+}
+.phone {
+  max-width: 400px;
+  border: solid 1px rgba(0, 0, 0, 0.258);
 }
 </style>

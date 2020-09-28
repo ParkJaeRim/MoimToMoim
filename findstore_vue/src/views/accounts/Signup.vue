@@ -144,7 +144,7 @@ export default {
               this.$cookies.set("auth-token", res.data.key);
               this.createIndv(res.data.key);
             })
-            .catch((err) => {
+            .catch(() => {
               alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
             });
         })
@@ -166,14 +166,14 @@ export default {
       };
 
       const initmeeting = {
-        title: "나",
+        title: "혼자놀기",
         avg_age: "30",
         ppl: "1",
         background_img: "http://asq.kr/nsfFB40GtBBr",
       };
 
       axios
-        .post(SERVER_URL + "/meeting/indvcreate/", initmeeting, config)
+        .post(SERVER_URL + "/meeting/create/", initmeeting, config)
         .then(() => {
           this.$router.push({ name: "meetinglist" });
         })
