@@ -17,8 +17,7 @@ User=get_user_model()
 @api_view(['GET'])
 def index(request):
     meetings = Meeting.objects.all().order_by('-pk')
-    meetingss = Meeting.objects.filter(user = request.user)
-    serializer = MeetingSerializer(meetingss, many=True)
+    serializer = MeetingSerializer(meetings, many=True)
     return Response(serializer.data)
 
 

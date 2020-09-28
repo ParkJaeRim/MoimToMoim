@@ -143,7 +143,6 @@ export default {
             .then((res) => {
               this.$cookies.set("auth-token", res.data.key);
               this.createIndv(res.data.key);
-              this.$router.push({ name: "meetinglist" });
             })
             .catch((err) => {
               alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
@@ -176,6 +175,7 @@ export default {
       axios
         .post(SERVER_URL + "/meeting/indvcreate/", initmeeting, config)
         .then(() => {
+          this.$router.push({ name: "meetinglist" });
         })
         .catch((error) => {
           console.log(error);
