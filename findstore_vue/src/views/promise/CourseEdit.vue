@@ -249,9 +249,14 @@ export default {
     },
 
     finishCourse() {
+      const m_id = this.promiseList.meeting.id;
+      console.log(m_id)
       this.$router.push({
-        name: "detailmain",
-      });
+        name : "meetingDetail",
+        params: {
+          m_id: m_id,
+        },
+      });    
     },
 
     goDetail(s_id) {
