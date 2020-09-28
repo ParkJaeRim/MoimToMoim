@@ -15,7 +15,6 @@ class RegistrationAPI(generics.GenericAPIView):
         # if len(request.data["username"]) < 6 or len(request.data["password"]) < 4:
             # body = {"message": "short field"}
             # return Response(body, status=status.HTTP_400_BAD_REQUEST)
-        print(request.data)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
