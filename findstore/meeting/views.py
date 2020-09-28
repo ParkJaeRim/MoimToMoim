@@ -31,6 +31,14 @@ def create(request):
         serializer.save(user=request.user)
         return Response(serializer.data)
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def Indvcreate(request):
+    print(request)
+    serializer = MeetingSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(user=request.user)
+        return Response(serializer.data)
 
 @api_view(['GET'])
 def detail(request, m_id):
