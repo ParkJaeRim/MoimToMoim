@@ -25,12 +25,35 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-dialog v-model="dialog" calss >
-      <template v-slot:activator="{ on, attrs }"  >
-        <v-btn color="pink" dark large fab v-bind="attrs" v-on="on" class="fixed" >
-                <v-icon>mdi-plus</v-icon>
+
+    <v-speed-dial
+      v-model="fab"
+      :top="top"
+      :bottom="bottom"
+      :right="right"
+      :left="left"
+      :direction="direction"
+      :open-on-hover="hover"
+      :transition="transition"
+    >
+      <template v-slot:activator>
+        <v-btn v-model="fab" color="pink" dark large fab>
+          <v-icon v-if="fab">mdi-close</v-icon>
+          <v-icon v-else>mdi-menu</v-icon>
         </v-btn>
       </template>
+      <v-btn fab dark small color="red" >
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
+      <v-btn fab dark small color="purple" @click.stop="dialog = true">
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+    </v-speed-dial>
+
+
+    <!-- DIALOG -->
+
+    <v-dialog v-model="dialog" calss >
       <v-card>
         <v-card-title>
           <span class="headline" >{{ formTitle }}</span>
@@ -83,7 +106,6 @@
             </v-row>
           </v-container>
         </v-card-text>
-
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="purple lighten-1" text @click="save">생성</v-btn>
@@ -91,6 +113,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+
   </div>
 </template>
 
@@ -126,6 +150,16 @@ export default {
         ppl: "",
         background_img: "",
       },
+      direction: 'top',
+      fab: false,
+      fling: false,
+      hover: false,
+      tabs: null,
+      top: false,
+      right: true,
+      bottom: true,
+      left: false,
+      transition: 'slide-y-reverse-transition',
 
     };
   },
@@ -247,5 +281,15 @@ export default {
   position: fixed;
   right: 20px;
   bottom : 30px;
+}
+
+.v-speed-dial {
+  position: absolute;
+  right: 20px;
+  bottom : 30px;
+}
+
+#create .v-btn--floating {
+  position: relative;
 }
 </style>
