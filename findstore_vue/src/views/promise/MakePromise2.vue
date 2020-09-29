@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <FooterList />
-    <v-card-text class="text--primary">
+    <v-card-text class="text--primary text-left">
       <span class="display-1">{{promiseList.title}}</span>
       <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
       <div>{{promiseList.date}}</div>
@@ -9,10 +9,10 @@
     </v-card-text>
     <v-row class="m-0">
       <v-col class="p-0" cols="6">
-        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'eating'">먹거리</v-btn>
+        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'eating'; searchStore()">먹거리</v-btn>
       </v-col>
       <v-col class="p-0" cols="6">
-        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'playing'">놀거리</v-btn>
+        <v-btn block color="deep-purple lighten-3" dark @click="choice = 'playing'; searchStore()">놀거리</v-btn>
       </v-col>
     </v-row>
     <v-img class="white--text align-end" height="200">
@@ -30,7 +30,6 @@
         <v-icon @click="searchStore">fas fa-search</v-icon>
       </v-col>
     </v-row>
-
     <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="grey lighten-2" outlined>
       <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
       <v-list-item @click="marker(store.address)">
@@ -64,7 +63,7 @@ export default {
     return {
       promiseList: {},
       address: "",
-      items: ["카테고리", "가게명"],
+      items: ["가게명", "카테고리"],
       choice: "eating",
       searchData: {
         gu: "",

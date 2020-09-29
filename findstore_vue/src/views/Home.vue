@@ -4,7 +4,6 @@
     <v-col md="10" class="py-0">
       <v-img
         src="@/assets/img/mainimg.png"
-        aspect-ratio="1"
         max-width="400"
         max-height="250"
       />
