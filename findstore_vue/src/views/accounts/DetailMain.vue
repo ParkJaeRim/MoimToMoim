@@ -23,12 +23,21 @@
         <v-row align="center" justify="center">
           <v-col class="text-center" col="6">
             <div>
-              <v-btn text color="primary" style="font-size: 25px" @click="promiseList.isfinish = 0">{{
-                promiseListIsfinish0.length
-              }}</v-btn>
+              <v-btn
+                text
+                color="primary"
+                style="font-size: 25px"
+                @click="promiseList.isfinish = 0"
+                >{{ promiseListIsfinish0.length }}</v-btn
+              >
             </div>
             <div>
-              <v-btn text style="font-size: 19px" @click="promiseList.isfinish = 0">내 약속</v-btn>
+              <v-btn
+                text
+                style="font-size: 19px"
+                @click="promiseList.isfinish = 0"
+                >내 약속</v-btn
+              >
             </div>
           </v-col>
         </v-row>
@@ -36,17 +45,26 @@
         <v-row align="center" justify="center">
           <v-col class="text-center" col="6">
             <div>
-              <v-btn text color="primary" style="font-size: 25px" @click="promiseList.isfinish = 1">{{
-                promiseListIsfinish1.length 
-              }} </v-btn>
+              <v-btn
+                text
+                color="primary"
+                style="font-size: 25px"
+                @click="promiseList.isfinish = 1"
+                >{{ promiseListIsfinish1.length }}
+              </v-btn>
             </div>
             <div>
-              <v-btn text style="font-size: 19px" @click="promiseList.isfinish = 1" >완료</v-btn>
+              <v-btn
+                text
+                style="font-size: 19px"
+                @click="promiseList.isfinish = 1"
+                >완료</v-btn
+              >
             </div>
           </v-col>
         </v-row>
       </div>
-<!-- 
+      <!-- 
         <div v-if = !promiseList.isfinish>
           promiseList = promiseListIsfinish0
         </div>
@@ -54,7 +72,7 @@
           promiseList = promiseListIsfinish1
         </div> -->
       <div v-for="item in promiseList" :key="item.id">
-        <br/><br/>
+        <br /><br />
         <v-row>
           <v-col cols="9" class="pr-0 pb-0">
             <p class="text-truncate" style="font-size: 15px">
@@ -150,6 +168,8 @@ export default {
     slider,
     slideritem,
   },
+
+  
 
   created() {
     this.userData();
