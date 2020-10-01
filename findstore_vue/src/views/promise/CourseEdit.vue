@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-text class="text--primary">
-        <span class="display-1">{{ promiseList.title }}</span>
+        <span class="h2">{{ promiseList.title }}</span>
         <v-chip class="ma-1" color="success" outlined small
           >D-{{ finalCheck }}</v-chip
         >
@@ -37,7 +37,7 @@
                     style="height: 80px; max-width: 80px"
                   ></v-img>
                   <v-list-item-content>
-                    <v-list-item-title class="headline mb-1">{{ n.name }}</v-list-item-title>
+                    <v-list-item-title class="h4 mb-1">{{ n.name }}</v-list-item-title>
                     <v-list-item-subtitle>{{ n.category }}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
@@ -58,7 +58,7 @@
             >추가</v-btn
           >
 
-          <v-dialog v-model="dialog" calss>
+          <v-dialog v-model="dialog" calss max-width="500px">
             <template v-slot:activator="{ on }">
               <v-btn
                 class="ma-2"
@@ -72,7 +72,7 @@
 
             <v-card>
               <v-card-title>
-                <span class="headline">코스 순서 변경</span>
+                <span class="h3">코스 순서 변경</span>
               </v-card-title>
 
               <v-container>

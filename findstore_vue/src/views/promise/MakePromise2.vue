@@ -2,7 +2,7 @@
   <v-card>
     <FooterList />
     <v-card-text class="text--primary text-left">
-      <span class="display-1">{{promiseList.title}}</span>
+      <span class="h2">{{promiseList.title}}</span>
       <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
       <div>{{promiseList.date}}</div>
       <div>{{promiseList.gu}} {{promiseList.dong}}</div>
@@ -35,7 +35,7 @@
       <v-list-item @click="marker(store.address)">
         <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
         <v-list-item-content>
-          <v-list-item-title class="headline mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
+          <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
           <div>{{store.category}}</div>
           <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
         </v-list-item-content>
