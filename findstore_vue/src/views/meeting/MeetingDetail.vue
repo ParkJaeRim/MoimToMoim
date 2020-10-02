@@ -2,71 +2,164 @@
   <div>
     <v-container>
       <div align="center" justify="center">
-        <v-row dense class="each-row mx-auto" >
-          <v-col cols="8"  md="8" sm="4" style ="font-size: 20px" >
-          "{{meetingDetail.title}}"의 <br> 약속을 준비하세요 !
+        <v-row dense class="each-row mx-auto">
+          <v-col cols="8" md="8" sm="4" style="font-size: 20px">
+            
+            <v-badge inline color="deep-purple lighten-4" lighten-5 icon="mdi-lead-pencil" >
+               <a href="#" @click.stop="ModifyDialog = true" class="h3">{{
+                meetingDetail.title
+              }} </a></v-badge
+            >의 <br />
+            약속을 준비하세요 !
           </v-col>
-          <v-col col ="4" md="4" sm = "2" >
-            <v-btn color="deep-purple lighten-4" fab large dark @click="makePromise(meetingDetail.id)">
-              <v-icon large >mdi-plus</v-icon>
+          <v-col col="4" md="4" sm="2">
+            <v-btn
+              color="deep-purple lighten-4"
+              fab
+              large
+              dark
+              @click="makePromise(meetingDetail.id)"
+            >
+              <v-icon large>mdi-plus</v-icon>
             </v-btn>
           </v-col>
         </v-row>
       </div>
+
       <v-row class="each-row mx-auto" align="center" justify="center">
         <slider ref="slider" :options="options">
-          <slideritem v-for="(item,i) in promise" :key="i" class="promise deep-purple lighten-5" style="font-size : 18px; border-radius: 25px;">
-              <v-col cols ="5" @click="goPromise(item.id)">
-                <v-responsive class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3" height="80" width="80">
-                  {{item.dong}}
-                </v-responsive>
-              </v-col>
-              <v-col  cols="7" @click="goPromise(item.id)">
-                <v-row> {{item.title}} </v-row>
-                <v-row> {{item.date.substring(2,4)}}년 {{item.date.substring(5,7)}}월 {{item.date.substring(8,10)}}일  </v-row>
-                <v-row> {{item.storelist}} </v-row>
-                <v-row class="font-weight-bold red--text">D-{{countday[i]}}</v-row>
-              </v-col>
+          <slideritem
+            v-for="(item, i) in sortedArray"
+            :key="i"
+            class="promise deep-purple lighten-5"
+            style="font-size : 18px; border-radius: 25px;"
+          >
+            <v-col cols="5" @click="goPromise(promise[sortedArray[i][0]].id)">
+              <v-responsive
+                class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3"
+                height="80"
+                width="80"
+              >
+                {{ promise[sortedArray[i][0]].dong }}
+              </v-responsive>
+            </v-col>
+            <v-col cols="7" @click="goPromise(promise[sortedArray[i][0]].id)">
+              <v-row> {{ promise[sortedArray[i][0]].title }} </v-row>
+              <v-row>
+                {{ promise[sortedArray[i][0]].date.substring(2, 4) }}년
+                {{ promise[sortedArray[i][0]].date.substring(5, 7) }}월
+                {{ promise[sortedArray[i][0]].date.substring(8, 10) }}일
+              </v-row>
+              <v-row> {{ promise[sortedArray[i][0]].storelist }} </v-row>
+              <v-row class="font-weight-bold red--text"
+                >D-{{ sortedArray[i][1] }}</v-row
+              >
+            </v-col>
           </slideritem>
-        </slider>      
+        </slider>
       </v-row>
-      <hr>
-      <v-row class="each-row mx-auto">취향 추천</v-row>
+      <hr />
+      <v-row class="h5 each-row mx-auto">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
-          <slideritem v-for="(item,i) in likes" :key="i" :style="styleRecom" >
-            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px" @click="goStoreDetail(item.id)">
+          <slideritem v-for="(item, i) in likes" :key="i" :style="styleRecom">
+            <v-img
+              v-if="item.img !== null"
+              class="white--text"
+              :src="item.img"
+              width="120px"
+              height="150px"
+              @click="goStoreDetail(item.id)"
+            >
               <div class="transbox white--text">
-                <div class="store_name">{{item.name}}</div>
+                <div class="store_name">{{ item.name }}</div>
               </div>
             </v-img>
-            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px" @click="goStoreDetail(item.id)">
-                  <div class="transbox white--text">
-                <div class="store_name">{{item.name}}</div>
+            <v-img
+              v-if="item.img == null"
+              class="white--text one"
+              src="http://asq.kr/JNlr0nxp6EQN"
+              width="170px"
+              height="170px"
+              @click="goStoreDetail(item.id)"
+            >
+              <div class="transbox white--text">
+                <div class="store_name">{{ item.name }}</div>
               </div>
             </v-img>
           </slideritem>
         </slider>
       </v-row>
-      <hr>
+      <hr />
       <!--                 핫플레이스 추천                           -->
-      <v-row class="each-row mx-auto">핫플레이스 추천</v-row>
+      <v-row class="h5 each-row mx-auto">핫플레이스 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
-         <slideritem v-for="(item,i) in hotplace" :key="i" :style="styleRecom">
-            <v-img v-if="item.img!==null" class="white--text" :src="item.img" width="120px" height="150px" @click="goStoreDetail(item.id)">
+          <slideritem
+            v-for="(item, i) in hotplace"
+            :key="i"
+            :style="styleRecom"
+          >
+            <v-img
+              v-if="item.img !== null"
+              class="white--text"
+              :src="item.img"
+              width="120px"
+              height="150px"
+              @click="goStoreDetail(item.id)"
+            >
               <div class="transbox white--text">
-                <div class="store_name">{{item.name}}</div>
+                <div class="store_name">{{ item.name }}</div>
               </div>
             </v-img>
-            <v-img v-if="item.img==null" class="white--text one" src="http://asq.kr/JNlr0nxp6EQN" width="170px" height="170px" @click="goStoreDetail(item.id)">
-                  <div class="transbox white--text">
-                <div class="store_name">{{item.name}}</div>
+            <v-img
+              v-if="item.img == null"
+              class="white--text one"
+              src="http://asq.kr/JNlr0nxp6EQN"
+              width="170px"
+              height="170px"
+              @click="goStoreDetail(item.id)"
+            >
+              <div class="transbox white--text">
+                <div class="store_name">{{ item.name }}</div>
               </div>
             </v-img>
           </slideritem>
-        </slider>      
+        </slider>
       </v-row>
+      <!-- Modify Dialog -->
+      <v-dialog v-model="ModifyDialog" calss max-width="500px">
+        <v-card>
+          <v-card-title>
+            <span class="h3">모임 수정</span>
+          </v-card-title>
+
+          <v-card-text>
+            <v-container>
+              <v-row align="center" justify="center">
+                <v-col cols="5" sm="4" md="5"> 모임 이름 :</v-col>
+                <v-col cols="7" sm="4" md="7">
+                  <v-text-field v-model="modifyItem.title"></v-text-field>
+                </v-col>
+              </v-row>
+              <v-row align="center" justify="center">
+                <v-col cols="5" sm="4" md="5"> 대표 이미지 :</v-col>
+                <v-col cols="7" sm="4" md="7">
+                  <v-file-input
+                    label="Background_img"
+                    @change="onChangeImages"
+                  ></v-file-input>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="purple lighten-1" text @click="save">수정</v-btn>
+            <v-btn color="purple lighten-1" text @click="close">취소</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-container>
   </div>
 </template>
@@ -84,31 +177,71 @@ export default {
   data() {
     return {
       meetingDetail: {},
-      promise:{},
+      promise: {},
       hotplace: {},
-      countday:{},
-      likes:[   
-        {id: 1,name: "롸카두들내쉬빌핫치킨",img: "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322"},
-      {id: 2,name: "마띠아바자르",img: "https://mp-seoul-image-production-s3.mangoplate.com/399290/439642_1597548133594_6110"},
-        {id : 3, name: "비전스트롤",img: "https://mp-seoul-image-production-s3.mangoplate.com/1105479_1596164462459216.jpg"}, 
-      {id: 4,name: "오늘의 위로",img: "https://mp-seoul-image-production-s3.mangoplate.com/21015_1496393429425221.jpg"},
-      {id: 5,name: "아메노히커피점",img: "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/104601_1490349745059944.jpg"},
-      {id: 6,name: "비로소커피",img: "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/565213_1466144085926374.jpg"},
+      countday: {},
+      likes: [
+        {
+          id: 1,
+          name: "롸카두들내쉬빌핫치킨",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
+        },
+        {
+          id: 2,
+          name: "마띠아바자르",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/399290/439642_1597548133594_6110",
+        },
+        {
+          id: 3,
+          name: "비전스트롤",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/1105479_1596164462459216.jpg",
+        },
+        {
+          id: 4,
+          name: "오늘의 위로",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/21015_1496393429425221.jpg",
+        },
+        {
+          id: 5,
+          name: "아메노히커피점",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/104601_1490349745059944.jpg",
+        },
+        {
+          id: 6,
+          name: "비로소커피",
+          img:
+            "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/565213_1466144085926374.jpg",
+        },
       ],
       options: {
-        pagination: false,  
+        pagination: false,
         currentPage: 0,
         tracking: false,
-        deviation: '200',
+        deviation: "200",
         slidesToScroll: 1,
-        loop: false
-     },
+        loop: false,
+      },
       styleRecom: {
-        'width': '31.5%',
-        'margin-right': '2%',
-        'font-size' : '13px'
-      }
-    }
+        width: "31.5%",
+        "margin-right": "2%",
+        "font-size": "13px",
+      },
+      ModifyDialog: false,
+      modifyItem: {
+        title: "",
+        background_img: "",
+      },
+      defaultItem: {
+        title: "",
+        background_img: "",
+      },
+      sortedArray: [],
+    };
   },
   components: {
     slider,
@@ -122,94 +255,157 @@ export default {
   methods: {
     makePromise(m_id) {
       this.$router.push({
-        name : "makepromise1",
+        name: "makepromise1",
         params: {
           m_id: m_id,
         },
-      });    
-    },
-
-    goStoreDetail(s_id){
-      this.$router.push({
-        name : "storedetail",
-        params:{
-          p_id: 0, s_id : s_id,
-        }
       });
     },
-    
+
+    goStoreDetail(s_id) {
+      this.$router.push({
+        name: "storedetail",
+        params: {
+          p_id: 0,
+          s_id: s_id,
+        },
+      });
+    },
+
+    goModify() {
+      this.$router.push({
+        name: "",
+      });
+    },
+
     detailData() {
       axios
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
-          this.promiseData()
-          this.gethotplace()
+          this.promiseData();
+          this.gethotplace();
         })
         .catch((err) => console.log(err.res));
     },
 
-    promiseData(){
+    promiseData() {
       axios
-      .get(SERVER_URL+"/promise/"+ this.$route.params.m_id)
-      .then((res) => {
-        this.promise = res.data;
-        for (let i = 0; i < this.promise.length; i++) {       
-          var today = new Date();
-          today.setHours(0, 0, 0, 0);
-          var count = new Date(this.promise[i].date);
-          count.setHours(0, 0, 0, 0);
-          var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
-          if (dday <= 0) {
-            this.countday[i]="Day";
-          } else {
-            this.countday[i]=dday;
+        .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
+        .then((res) => {
+          this.promise = res.data;
+          for (let i = 0; i < this.promise.length; i++) {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            var count = new Date(this.promise[i].date);
+            count.setHours(0, 0, 0, 0);
+            var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+            if (dday <= 0) {
+              this.countday[i] = "Day";
+            } else {
+              this.countday[i] = dday;
+            }
           }
-        }
-      })
-      .catch((err) => console.log("?"+err.res));
+          for (var i in this.countday) {
+            this.sortedArray.push([i, this.countday[i]]);
+          }
+          this.sortedArray.sort();
+          this.sortedArray.reverse();
+        })
+        .catch((err) => console.log(err.res));
     },
 
-    gethotplace(){
-      axios.get(SERVER_URL +"/api/store/firstrecommend/"+ this.$route.params.s_id)
-      .then((res) => {
-        this.hotplace = res.data;
-      }).catch((err) => console.log(err.res));
+    gethotplace() {
+      axios
+        .get(
+          SERVER_URL + "/api/store/firstrecommend/" + this.$route.params.s_id
+        )
+        .then((res) => {
+          this.hotplace = res.data;
+        })
+        .catch((err) => console.log(err.res));
     },
 
     goPromise(p_id) {
       this.$router.push({
-        name : "courseEdit",
+        name: "courseEdit",
         params: {
           p_id: p_id,
         },
       });
+    },
+
+    save() {
+      const config = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get("auth-token")}`,
+        },
+      };
+      axios
+        .post(
+          SERVER_URL + "/meeting/modify/" + this.$route.params.m_id,
+          this.modifyItem,
+          config
+        )
+        .then(() => {
+          this.detailData();
+          this.close();
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    },
+
+    close() {
+      this.ModifyDialog = false;
+      this.$nextTick(() => {
+        this.modifyItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      });
+    },
+
+    onChangeImages(e) {
+      const selectedImage = e;
+      this.createBase64Image(selectedImage);
+    },
+    createBase64Image(fileObject) {
+      this.modifyItem.background_img = new Image();
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.modifyItem.background_img = e.target.result;
+      };
+      reader.readAsDataURL(fileObject);
+    },
+
+    removeImage() {
+      this.modifyItem.background_img = "";
     },
   },
 };
 </script>
 
 <style scoped>
-
-.each-row{
+.each-row {
   vertical-align: middle;
   margin-top: 30px;
 }
 
-.promise{
+.promise {
   color: black;
 }
-.transbox{
-    text-align:center;  
-    background-color: rgba(118, 126, 154, 0.4);
-    height:100%;
-
+.transbox {
+  text-align: center;
+  background-color: rgba(118, 126, 154, 0.4);
+  height: 100%;
 }
 
-.store_name{
+.store_name {
   font-size: 14px;
   font-weight: 400;
-  padding-top : 50%;
-  }
-
+  padding-top: 50%;
+}
+a {
+  color: #BA68C8;
+  text-decoration: underline;
+}
 </style>

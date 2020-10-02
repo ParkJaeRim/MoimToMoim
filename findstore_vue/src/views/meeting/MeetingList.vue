@@ -56,7 +56,7 @@
 
     <!-- DIALOG1 -->
 
-    <v-dialog v-model="dialog" calss>
+    <v-dialog v-model="dialog" calss max-width="500px">
       <v-card>
         <v-card-title>
           <span class="h3">{{ formTitle }}</span>
@@ -135,7 +135,7 @@
 
     <!-- deleteItem DIALOG -->
 
-    <v-dialog v-model="deleteMeeting" calss>
+    <v-dialog v-model="deleteMeeting" calss max-width="500px">
       <v-card>
         <v-card-title>
           <span class="h3">모임 삭제</span>
