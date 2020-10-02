@@ -58,7 +58,7 @@
             >추가</v-btn
           >
 
-          <v-dialog v-model="dialog" calss>
+          <v-dialog v-model="dialog" width=600>
             <template v-slot:activator="{ on }">
               <v-btn
                 class="ma-2"
@@ -70,7 +70,7 @@
               >
             </template>
 
-            <v-card>
+            <v-card >
               <v-card-title>
                 <span class="headline">코스 순서 변경</span>
               </v-card-title>
