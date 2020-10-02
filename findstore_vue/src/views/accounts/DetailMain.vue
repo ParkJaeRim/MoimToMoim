@@ -14,7 +14,7 @@
             <h1>{{ headers.nickname }}</h1>
           </v-col>
           <v-col class="each-row mx-auto" align="end">
-            <v-icon>fas fa-cog</v-icon>
+            <v-icon @click="goDetail">fas fa-cog</v-icon>
           </v-col>
         </v-row>
       </div>
@@ -221,6 +221,11 @@ export default {
         },
       });
     },
+    goDetail() {
+      this.$router.push({
+        name: "detail",
+      });
+    }
   },
 };
 </script>
