@@ -66,9 +66,9 @@ def storerecommend(request,store_id): # 랭킹 상위 10위까지
 @api_view(['POST'])
 def searchrecommend(request, choice):
     if choice == 'eating':
-        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     elif choice == 'playing':
-        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
     if request.data['selected'] == '카테고리':
@@ -76,7 +76,10 @@ def searchrecommend(request, choice):
     else:
         store = store.filter(name__icontains = request.data['keyword'])
     store = store.order_by('-rating')[:10]
-    serializer = serializers.StoreSerializer(store, many=True)
+    if choice == 'eating':
+        serializer = serializers.RecommandSerializer(store, many=True)
+    elif choice == 'playing':
+        serializer = serializers.EnterStoreSerializer(store, many=True)
     return Response(serializer.data)
 
 

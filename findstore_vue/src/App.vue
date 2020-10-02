@@ -3,7 +3,7 @@
     <v-col class="d-none d-sm-block p-0" sm="6">
       <v-img
         src="@/assets/img/mainimg.png"
-        height="100%"
+        height="750"
       ></v-img>
     </v-col>
     <v-col class="p-0" align="center" cols="12" sm="6">
