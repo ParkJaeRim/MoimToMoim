@@ -4,7 +4,7 @@
       <v-card-text class="text--primary">
         <span class="display-1">{{ promiseList.title }}</span>
         <v-chip class="ma-1" color="success" outlined small
-          >D-{{ finalCheck }}</v-chip
+          >D{{ finalCheck }}</v-chip
         >
         <div>{{ promiseList.date }}</div>
         <div>{{ promiseList.gu }} {{ promiseList.dong }}</div>
@@ -130,6 +130,14 @@
             @click="finishCourse()"
             >완료</v-btn
           >
+          <v-btn
+            class="ma-2"
+            tile
+            color="yellow darken-1"
+            dark
+            @click="deleteCourse()"
+            >삭제</v-btn
+          >
         </div>
       </template>
     </v-container>
@@ -149,6 +157,7 @@ export default {
 
   data() {
     return {
+      today : new Date(),
       promiseList: [],
       storeInfos: [],
       course: "",
@@ -173,9 +182,17 @@ export default {
   computed: {
     finalCheck() {
       var stday = this.promiseList.date;
-      var today = new Date();
+      console.log(this.today)
       var count = new Date(stday);
-      var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+      var dday = Math.floor((this.today - count) / 1000 / 24 / 60 / 60);
+      if (dday == 0) {
+        dday = "-day" 
+      }
+      else if(dday < 0) {
+        dday = dday
+      } else {
+        dday = "+" + dday
+      }
       return dday;
     },
   },
