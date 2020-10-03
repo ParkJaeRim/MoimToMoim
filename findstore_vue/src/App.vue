@@ -1,13 +1,13 @@
 <template>
   <v-row>
     <v-col class="d-none d-sm-block p-0" sm="6">
-      <v-img
-        src="@/assets/img/mainimg.png"
-        height="750"
-      ></v-img>
+      <v-img src="@/assets/img/mainimg.png" height="750"></v-img>
     </v-col>
     <v-col class="p-0" align="center" cols="12" sm="6">
       <v-app class="phone">
+        <v-btn color="deep-purple lighten-3" dark class="backBnt" fab small onclick="history.back()">
+          <v-icon dark>mdi-arrow-left</v-icon>
+        </v-btn>
         <navbar />
         <router-view />
       </v-app>
@@ -25,13 +25,19 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-*{
-  font-family: 'Jua', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+* {
+  font-family: "Jua", sans-serif;
   font-size: 13px;
 }
 .phone {
   max-width: 400px;
   border: solid 1px rgba(0, 0, 0, 0.258);
+}
+.backBnt {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
 }
 </style>

@@ -90,7 +90,6 @@ export default {
           this.$cookies.set("auth-token", res.data.key);
           this.$router.go();
           this.isLogin();
-
         })
         .catch((err) => {
           console.log(err.response.data);
