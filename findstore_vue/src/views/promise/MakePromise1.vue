@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-date-picker v-model="picker"></v-date-picker>
+      <v-date-picker v-model="picker" :min="today"></v-date-picker>
     </v-row>
     <v-text-field
       class="mx-10"
@@ -14,6 +14,7 @@
       <v-btn
         v-for="(gu, i) in guList"
         :key="i"
+        :color="promiseData.gu == gu ? 'purple lighten-4' : ''"
         class="m-1"
         rounded
         @click="promiseData.gu = gu; gu_cnt = i; promiseData.dong=''"
@@ -22,8 +23,9 @@
     <div class="text-center">
       <hr />
       <v-btn
-        v-for="(dong, i) in dongList[gu_cnt]"
-        :key="i"
+        v-for="(dong, di) in dongList[gu_cnt]"
+        :key="di"
+        :color="promiseData.dong == dong ? 'purple lighten-4' : ''"
         class="m-1"
         rounded
         @click="promiseData.dong = dong"
@@ -119,7 +121,42 @@ export default {
       picker: new Date().toISOString().substr(0, 10),
     };
   },
+  computed: {
+    today () {
+      var today = new Date().toISOString().substr(0, 10)
+      return today
+    }
+  },
+  created() {
+    this.isUser();
+  },
   methods: {
+    isUser() {
+      const config = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get("auth-token")}`,
+        },
+      };
+      axios
+        .get(SERVER_URL + "/rest-auth/user/", config)
+        .then((res) => {
+          const userInfo = res.data.username
+          axios
+            .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
+            .then((res) => {
+              if (res.data.user.username != userInfo) {
+                this.$router.push({
+                  name: "meetinglist"
+                })
+                alert("잘못된 접근입니다.")
+              }
+            })
+            .catch((err) => console.error(err.response));
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    },
     makePromise() {
       const m_id = this.$route.params.m_id;
       this.promiseData.date = this.picker;
