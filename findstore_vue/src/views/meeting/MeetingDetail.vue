@@ -36,23 +36,22 @@
           >
             <v-col cols="5" @click="goPromise(promise[dueday[i].idx].id)">
               <v-responsive
-                class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3"
+                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 orange--text"
                 height="80"
                 width="80"
-              >
-                {{ promise[dueday[i].idx].dong }}
+              >D-{{ dueday[i].remain }}
+               
               </v-responsive>
             </v-col>
             <v-col cols="7" @click="goPromise(promise[dueday[i].idx].id)">
               <v-row> {{  promise[dueday[i].idx].title }} </v-row>
+              <v-row> {{ promise[dueday[i].idx].storelist }} </v-row>
               <v-row>
-                {{  promise[dueday[i].idx].date.substring(2, 4) }}년
-                {{  promise[dueday[i].idx].date.substring(5, 7) }}월
+                <v-icon >mdi-calendar </v-icon>
+                 {{  promise[dueday[i].idx].date.substring(5, 7) }}월
                 {{  promise[dueday[i].idx].date.substring(8, 10) }}일
               </v-row>
-              <v-row> {{ promise[dueday[i].idx].storelist }} </v-row>
-              <v-row class="font-weight-bold red--text"
-                >D-{{ dueday[i].remain }}</v-row
+                <v-row><v-icon >mdi-pin </v-icon>  {{ promise[dueday[i].idx].gu }} {{ promise[dueday[i].idx].dong }}</v-row
               >
             </v-col>
           </slideritem>
@@ -251,8 +250,6 @@ export default {
     this.detailData();
   },
 
-  
-
   methods: {
     makePromise(m_id) {
       this.$router.push({
@@ -291,38 +288,44 @@ export default {
     },
 
 
-
     promiseData() {
       axios
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
+
           for (let i = 0; i < this.promise.length; i++) {
             var object={};
-
             var today = new Date();
             today.setHours(0, 0, 0, 0);
             var count = new Date(this.promise[i].date);
             count.setHours(0, 0, 0, 0);
             var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
-            if (dday <= 0) {
+            if (dday == 0) {
               object.store_id= this.promise[i].id;
               object.remain = "Day";
               object.idx = i;
               this.dueday.push(object);
-            } else {
+            } else if (dday > 0) {
               object.store_id= this.promise[i].id;
               object.remain = dday;
               object.idx = i;
               this.dueday.push(object);
             }
+
+            var arr= this.promise[i].storelist.split("/")
+            arr = arr.slice(0, arr.length-1);
+            console.log(arr)
+            // 여기서 이제 코스 뽑아줘야합니다....But how...?
           }
           this.dueday.sort(function (a,b){
             return a.remain-b.remain;
           });
+
         })
         .catch((err) => console.log(err.res));
     },
+
 
     gethotplace() {
       axios
