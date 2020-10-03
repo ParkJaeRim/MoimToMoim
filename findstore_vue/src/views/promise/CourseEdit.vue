@@ -135,7 +135,7 @@
             tile
             color="yellow darken-1"
             dark
-            @click="deleteCourse()"
+            @click="deleteCourse"
             >삭제</v-btn
           >
         </div>
@@ -149,6 +149,7 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -182,7 +183,6 @@ export default {
   computed: {
     finalCheck() {
       var stday = this.promiseList.date;
-      console.log(this.today)
       var count = new Date(stday);
       var dday = Math.floor((this.today - count) / 1000 / 24 / 60 / 60);
       if (dday == 0) {
@@ -287,6 +287,18 @@ export default {
           m_id: m_id,
         },
       });
+    },
+
+    deleteCourse() {
+      const p_id = this.$route.params.p_id;
+    
+      axios
+      .post(SERVER_URL + "/promise/delete/" + p_id)
+      .then(() => {
+         this.$router.push({
+        name: "detailmain"})
+      })
+      .catch((err) => console.log(err.response));
     },
 
     goDetail(s_id) {

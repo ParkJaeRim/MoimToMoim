@@ -75,7 +75,7 @@
         <br /><br />
         <v-row>
           <v-col cols="9" class="pr-0 pb-0">
-            <p class="text-truncate" style="font-size: 15px">
+            <p class="text-truncate" style="font-size: 15px" v-on:click="goCourse(item.id)" >
               {{ item.title }} / {{ item.date.substring(2, 4) }}.{{
                 item.date.substring(5, 7)
               }}.{{ item.date.substring(8, 10) }} / {{ item.meeting.title }}
@@ -224,6 +224,12 @@ export default {
     goDetail() {
       this.$router.push({
         name: "detail",
+      });
+    },
+    goCourse(id) {
+      this.$router.push({
+        name: "courseEdit",
+        params: { p_id: id },
       });
     }
   },
