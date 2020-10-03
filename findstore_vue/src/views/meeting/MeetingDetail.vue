@@ -29,30 +29,30 @@
       <v-row class="each-row mx-auto" align="center" justify="center">
         <slider ref="slider" :options="options">
           <slideritem
-            v-for="(item, i) in sortedArray"
+            v-for="(item, i) in dueday"
             :key="i"
             class="promise deep-purple lighten-5"
             style="font-size : 18px; border-radius: 25px;"
           >
-            <v-col cols="5" @click="goPromise(promise[sortedArray[i][0]].id)">
+            <v-col cols="5" @click="goPromise(promise[dueday[i].idx].id)">
               <v-responsive
                 class="font-weight-bold text-center grey lighten-2 rounded-circle d-inline-flex align-center justify-center ma-3"
                 height="80"
                 width="80"
               >
-                {{ promise[sortedArray[i][0]].dong }}
+                {{ promise[dueday[i].idx].dong }}
               </v-responsive>
             </v-col>
-            <v-col cols="7" @click="goPromise(promise[sortedArray[i][0]].id)">
-              <v-row> {{ promise[sortedArray[i][0]].title }} </v-row>
+            <v-col cols="7" @click="goPromise(promise[dueday[i].idx].id)">
+              <v-row> {{  promise[dueday[i].idx].title }} </v-row>
               <v-row>
-                {{ promise[sortedArray[i][0]].date.substring(2, 4) }}년
-                {{ promise[sortedArray[i][0]].date.substring(5, 7) }}월
-                {{ promise[sortedArray[i][0]].date.substring(8, 10) }}일
+                {{  promise[dueday[i].idx].date.substring(2, 4) }}년
+                {{  promise[dueday[i].idx].date.substring(5, 7) }}월
+                {{  promise[dueday[i].idx].date.substring(8, 10) }}일
               </v-row>
-              <v-row> {{ promise[sortedArray[i][0]].storelist }} </v-row>
+              <v-row> {{ promise[dueday[i].idx].storelist }} </v-row>
               <v-row class="font-weight-bold red--text"
-                >D-{{ sortedArray[i][1] }}</v-row
+                >D-{{ dueday[i].remain }}</v-row
               >
             </v-col>
           </slideritem>
@@ -146,7 +146,7 @@
                 <v-col cols="5" sm="4" md="5"> 대표 이미지 :</v-col>
                 <v-col cols="7" sm="4" md="7">
                   <v-file-input
-                    label="Background_img"
+                    label="이곳을 눌러주세요"
                     @change="onChangeImages"
                   ></v-file-input>
                 </v-col>
@@ -179,7 +179,6 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
-      countday: {},
       likes: [
         {
           id: 1,
@@ -240,8 +239,8 @@ export default {
         title: "",
         background_img: "",
       },
-      sortedArray: [],
-    };
+      dueday: [],
+      };
   },
   components: {
     slider,
@@ -251,6 +250,8 @@ export default {
   created() {
     this.detailData();
   },
+
+  
 
   methods: {
     makePromise(m_id) {
@@ -289,28 +290,36 @@ export default {
         .catch((err) => console.log(err.res));
     },
 
+
+
     promiseData() {
       axios
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
           for (let i = 0; i < this.promise.length; i++) {
+            var object={};
+
             var today = new Date();
             today.setHours(0, 0, 0, 0);
             var count = new Date(this.promise[i].date);
             count.setHours(0, 0, 0, 0);
             var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
             if (dday <= 0) {
-              this.countday[i] = "Day";
+              object.store_id= this.promise[i].id;
+              object.remain = "Day";
+              object.idx = i;
+              this.dueday.push(object);
             } else {
-              this.countday[i] = dday;
+              object.store_id= this.promise[i].id;
+              object.remain = dday;
+              object.idx = i;
+              this.dueday.push(object);
             }
           }
-          for (var i in this.countday) {
-            this.sortedArray.push([i, this.countday[i]]);
-          }
-          this.sortedArray.sort();
-          this.sortedArray.reverse();
+          this.dueday.sort(function (a,b){
+            return a.remain-b.remain;
+          });
         })
         .catch((err) => console.log(err.res));
     },
