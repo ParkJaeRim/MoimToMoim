@@ -129,6 +129,11 @@ export default {
       ],
     };
   },
+
+  created() {
+    this.move();
+  },
+
   methods: {
     signup() {
       axios
@@ -143,22 +148,33 @@ export default {
             .then((res) => {
               this.$cookies.set("auth-token", res.data.key);
               this.createIndv(res.data.key);
+              this.$router.go();
             })
             .catch(() => {
               alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
             });
         })
         .catch((err) => {
-          // if (err.response.data[0] == "A user with that username already exists.") {
-          //   alert('중복된 아이디가 존재합니다.')
-          // } else if (err.response.data[0] == 'username') {
-          //   alert('중복된 아이디가 존재합니다.')
-          // }
-          console.log(err.response.data);
+          if(err.response.data.username) {
+            if(err.response.data.username[0] == "해당 사용자 이름은 이미 존재합니다.") {
+              alert(err.response.data.username[0]);
+            } else {
+              alert("정보를 확인해주세요");
+            }
+          } else {
+            alert("정보를 확인해주세요");
+          }
         });
     },
 
+    move() {
+      if (this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      }
+    },
+
     createIndv(token) {
+
       const config = {
         headers: {
           Authorization: "Token " + token,
@@ -175,7 +191,6 @@ export default {
       axios
         .post(SERVER_URL + "/meeting/create/", initmeeting, config)
         .then(() => {
-          this.$router.push({ name: "meetinglist" });
         })
         .catch((error) => {
           console.log(error);
