@@ -31,7 +31,7 @@
       </v-col>
     </v-row>
     <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="grey lighten-2">
-      <div v-if="si < 5">
+      <div v-if="si">
         <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
         <v-list-item @click="marker(store.address)">
           <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
@@ -141,7 +141,6 @@ export default {
         }
       });
     },
-
     addScript() {
       const script = document.createElement("script");
       script.onload = () => kakao.maps.load(this.initMap);
@@ -170,9 +169,10 @@ export default {
     searchStore() {
       this.searchData.gu = this.promiseList.gu;
       this.searchData.dong = this.promiseList.dong;
+      const m_id = this.promiseList.meeting.id
       axios
         .post(
-          SERVER_URL + "/api/store/storerecommend/" + this.choice,
+          SERVER_URL + "/api/store/storerecommend/" + this.choice + "/" + m_id,
           this.searchData
         )
         .then((res) => {

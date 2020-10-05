@@ -64,11 +64,11 @@ def storerecommend(request,store_id): # 랭킹 상위 10위까지
 
 
 @api_view(['POST'])
-def searchrecommend(request, choice):
+def searchrecommend(request, choice, meeting_id):
     if choice == 'eating':
-        store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
     elif choice == 'playing':
-        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
     else:
         return Response()
     if request.data['selected'] == '카테고리':

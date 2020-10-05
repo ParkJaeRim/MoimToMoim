@@ -315,7 +315,6 @@ export default {
 
             var arr= this.promise[i].storelist.split("/")
             arr = arr.slice(0, arr.length-1);
-            console.log(arr)
             // 여기서 이제 코스 뽑아줘야합니다....But how...?
           }
           this.dueday.sort(function (a,b){
