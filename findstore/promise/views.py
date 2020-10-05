@@ -75,3 +75,11 @@ def updatepromise(request, promise_id):
     return Response()
 
 
+@api_view(['POST'])
+def deleteprimise(request, promise_id):
+    promise = get_object_or_404(Promise, id=promise_id)
+    promise.delete()
+    return Response()
+
+
+

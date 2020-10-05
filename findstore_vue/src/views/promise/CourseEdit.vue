@@ -2,9 +2,9 @@
   <div>
     <v-card>
       <v-card-text class="text--primary">
-        <span class="display-1">{{ promiseList.title }}</span>
+        <span class="h2">{{ promiseList.title }}</span>
         <v-chip class="ma-1" color="success" outlined small
-          >D-{{ finalCheck }}</v-chip
+          >D{{ finalCheck }}</v-chip
         >
         <div>{{ promiseList.date }}</div>
         <div>{{ promiseList.gu }} {{ promiseList.dong }}</div>
@@ -37,7 +37,7 @@
                     style="height: 80px; max-width: 80px"
                   ></v-img>
                   <v-list-item-content>
-                    <v-list-item-title class="headline mb-1">{{ n.name }}</v-list-item-title>
+                    <v-list-item-title class="h4 mb-1">{{ n.name }}</v-list-item-title>
                     <v-list-item-subtitle>{{ n.category }}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
@@ -58,7 +58,7 @@
             >추가</v-btn
           >
 
-          <v-dialog v-model="dialog" calss>
+          <v-dialog v-model="dialog" calss max-width="500px">
             <template v-slot:activator="{ on }">
               <v-btn
                 class="ma-2"
@@ -70,9 +70,9 @@
               >
             </template>
 
-            <v-card>
+            <v-card >
               <v-card-title>
-                <span class="headline">코스 순서 변경</span>
+                <span class="h3">코스 순서 변경</span>
               </v-card-title>
 
               <v-container>
@@ -130,6 +130,14 @@
             @click="finishCourse()"
             >완료</v-btn
           >
+          <v-btn
+            class="ma-2"
+            tile
+            color="yellow darken-1"
+            dark
+            @click="deleteCourse"
+            >삭제</v-btn
+          >
         </div>
       </template>
     </v-container>
@@ -141,6 +149,7 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -149,6 +158,7 @@ export default {
 
   data() {
     return {
+      today : new Date(),
       promiseList: [],
       storeInfos: [],
       course: "",
@@ -173,9 +183,16 @@ export default {
   computed: {
     finalCheck() {
       var stday = this.promiseList.date;
-      var today = new Date();
       var count = new Date(stday);
-      var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
+      var dday = Math.floor((this.today - count) / 1000 / 24 / 60 / 60);
+      if (dday == 0) {
+        dday = "-day" 
+      }
+      else if(dday < 0) {
+        dday = dday
+      } else {
+        dday = "+" + dday
+      }
       return dday;
     },
   },
@@ -270,6 +287,18 @@ export default {
           m_id: m_id,
         },
       });
+    },
+
+    deleteCourse() {
+      const p_id = this.$route.params.p_id;
+    
+      axios
+      .post(SERVER_URL + "/promise/delete/" + p_id)
+      .then(() => {
+         this.$router.push({
+        name: "detailmain"})
+      })
+      .catch((err) => console.log(err.response));
     },
 
     goDetail(s_id) {

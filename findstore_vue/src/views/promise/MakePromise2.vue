@@ -2,7 +2,7 @@
   <v-card>
     <FooterList />
     <v-card-text class="text--primary text-left">
-      <span class="display-1">{{promiseList.title}}</span>
+      <span class="h2">{{promiseList.title}}</span>
       <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
       <div>{{promiseList.date}}</div>
       <div>{{promiseList.gu}} {{promiseList.dong}}</div>
@@ -30,17 +30,19 @@
         <v-icon @click="searchStore">fas fa-search</v-icon>
       </v-col>
     </v-row>
-    <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="grey lighten-2" outlined>
-      <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
-      <v-list-item @click="marker(store.address)">
-        <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
-        <v-list-item-content>
-          <v-list-item-title class="headline mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
-          <div>{{store.category}}</div>
-          <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-      <v-icon @click="goStoreDetail(store.id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
+    <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="grey lighten-2">
+      <div v-if="si < 5">
+        <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
+        <v-list-item @click="marker(store.address)">
+          <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
+          <v-list-item-content>
+            <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
+            <div>{{store.category}}</div>
+            <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-icon @click="goStoreDetail(store.id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
+      </div>
     </v-card>
   </v-card>
 </template>
@@ -80,18 +82,41 @@ export default {
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
+      this.searchStore();
     }, 200);
   },
   computed: {
     finalCheck() {
       var stday = this.promiseList.date;
       var today = new Date();
+      today.setHours(0, 0, 0, 0);
       var count = new Date(stday);
+      count.setHours(0, 0, 0, 0);
       var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
       return dday;
     },
   },
   methods: {
+    isUser() {
+      const config = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get("auth-token")}`,
+        },
+      };
+      axios
+        .get(SERVER_URL + "/rest-auth/user/", config)
+        .then((res) => {
+          if (this.promiseList.user.username != res.data.username) {
+            this.$router.push({
+              name: "meetinglist"
+            })
+            alert("잘못된 접근입니다.")
+          }
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    },
     initMap() {
       var container = document.getElementById("map");
       var options = {
@@ -130,9 +155,17 @@ export default {
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           this.promiseList = res.data;
+          this.isUser();
           this.address = res.data.gu + " " + res.data.dong;
         })
-        .catch((err) => console.log(err.response));
+        .catch((err) => {
+          if (err.response.status != 200) {
+            this.$router.push({
+              name: "meetinglist"
+            })
+            alert("잘못된 접근입니다.")
+          }
+        });
     },
     searchStore() {
       this.searchData.gu = this.promiseList.gu;
@@ -157,7 +190,6 @@ export default {
         params: { p_id: this.$route.params.p_id, s_id: s_id }
       })
     },
-
     courseAdd(storeId) {
       this.promiseList.storelist += storeId + "/"
       const p_id = this.$route.params.p_id
