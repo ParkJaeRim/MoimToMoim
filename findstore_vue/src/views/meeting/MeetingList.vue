@@ -16,13 +16,7 @@
               <div class="transbox">
                 <v-card-text>
                   <div class="meeting_title">{{ meeting.title }}</div>
-                  <!-- <div>인원수 : {{meeting.ppl}}</div>
-                  <div>평균연령 : {{meeting.avg_age}}</div> -->
                 </v-card-text>
-                <!-- <template v-slot:item="{ item }">
-                <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
-                <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
-              </template>-->
               </div>
             </v-img>
           </v-card>
@@ -80,6 +74,9 @@
                   color="purple lighten-1"
                   group
                 >
+                  <v-btn value="10">
+                    10대
+                  </v-btn>
                   <v-btn value="20">
                     20대
                   </v-btn>
@@ -280,11 +277,6 @@ export default {
     },
 
     save() {
-      //   if (this.editedIndex == -1) {
-      //     var tmp_url = "/articles/create/"
-      //   } else {
-      //     var tmp_url = "/articles/" + this.editedItem.id + "/modify/"
-      //   }
       const config = {
         headers: {
           Authorization: `Token ${this.$cookies.get("auth-token")}`,
@@ -328,10 +320,7 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-* {
-  font-family: "Jua", sans-serif;
-}
+
 .transbox {
   text-align: center;
   height: 200px;
@@ -341,7 +330,6 @@ export default {
   height: 200px;
   margin-top: 70px;
   font-size: 40px;
-  font-family: "Nanum Brush Script";
 }
 .fixed {
   position: fixed;
