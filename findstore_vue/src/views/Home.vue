@@ -3,8 +3,7 @@
   <v-row justify="center">
     <v-col md="10" class="py-0">
       <v-img
-        src="../assets/img/main.jpg"
-        aspect-ratio="1"
+        src="@/assets/img/mainimg.png"
         max-width="400"
         max-height="250"
       />
@@ -89,7 +88,8 @@ export default {
         .post(SERVER_URL + "/rest-auth/login/", this.loginData)
         .then((res) => {
           this.$cookies.set("auth-token", res.data.key);
-          this.$router.push({ name: "meetinglist" });
+          this.$router.go();
+          this.isLogin();
         })
         .catch((err) => {
           console.log(err.response.data);
@@ -98,7 +98,6 @@ export default {
     },
     isLogin() {
       if (this.$cookies.isKey("auth-token")) {
-        alert("로그인이 되어 있습니다.")
         this.$router.push({ name: "meetinglist" });
       }
     },

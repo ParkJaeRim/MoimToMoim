@@ -73,11 +73,18 @@
 
           <v-col cols="12" md="4">
             <v-container fluid>
-              <v-checkbox v-model="signupData.sex" label="Male" value="1"></v-checkbox>
-              <v-checkbox v-model="signupData.sex" label="Female" value="0"></v-checkbox>
+              <v-checkbox
+                v-model="signupData.sex"
+                label="Male"
+                value="1"
+              ></v-checkbox>
+              <v-checkbox
+                v-model="signupData.sex"
+                label="Female"
+                value="0"
+              ></v-checkbox>
             </v-container>
           </v-col>
-
         </v-row>
         <v-btn rounded color="primary" dark @click="signup">Submit</v-btn>
       </v-container>
@@ -86,7 +93,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import constants from "../../lib/constants";
 
 const SERVER_URL = constants.ServerUrl;
@@ -100,13 +107,14 @@ export default {
       valid: false,
       signupData: {
         username: "",
-        email:"",
+        email: "",
         password: "",
         password2: "",
-        nickname:"",
-        sex:"",
-        age:""
+        nickname: "",
+        sex: "",
+        age: "",
       },
+
       nameRules: [
         (v) => !!v || "Name is required",
         (v) => v.length <= 10 || "Name must be less than 10 characters",
@@ -116,17 +124,29 @@ export default {
         (v) => v.length >= 8 || "Min 8 characters",
       ],
       emailRules: [
-        v => !!v || "E-mail is required",
-        v => /.+@.+/.test(v) || "E-mail must be valid",
-      ]
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
     };
   },
   methods: {
     signup() {
-      axios.post(SERVER_URL + '/accounts/register/', this.signupData)
-        .then((res) => {
-          console.log(res.data);
-          this.$router.push({ name: 'home' })
+      axios
+        .post(SERVER_URL + "/accounts/register/", this.signupData)
+        .then(() => {
+          var loginData = {
+            username: this.signupData.username,
+            password: this.signupData.password,
+          };
+          axios
+            .post(SERVER_URL + "/rest-auth/login/", loginData)
+            .then((res) => {
+              this.$cookies.set("auth-token", res.data.key);
+              this.createIndv(res.data.key);
+            })
+            .catch(() => {
+              alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
+            });
         })
         .catch((err) => {
           // if (err.response.data[0] == "A user with that username already exists.") {
@@ -135,13 +155,34 @@ export default {
           //   alert('중복된 아이디가 존재합니다.')
           // }
           console.log(err.response.data);
-        })
+        });
     },
 
-    
-  }
+    createIndv(token) {
+      const config = {
+        headers: {
+          Authorization: "Token " + token,
+        },
+      };
+
+      const initmeeting = {
+        title: "혼자놀기",
+        avg_age: "30",
+        ppl: "1",
+        background_img: "http://asq.kr/nsfFB40GtBBr",
+      };
+
+      axios
+        .post(SERVER_URL + "/meeting/create/", initmeeting, config)
+        .then(() => {
+          this.$router.push({ name: "meetinglist" });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

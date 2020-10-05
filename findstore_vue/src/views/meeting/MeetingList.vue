@@ -3,23 +3,27 @@
     <v-container>
       <v-row dense class="mx-auto">
         <v-col v-for="(meeting, i) in meetings" :key="i" cols="12">
-          <v-card class="mx-auto" max-width="400" @click="meetingDetail(meeting.id)"> 
+          <v-card
+            class="mx-auto"
+            max-width="400"
+            @click="meetingDetail(meeting.id)"
+          >
             <v-img
               :src="meeting.background_img"
               class="white--text align-center text-center"
               height="200px"
             >
-            <div class="transbox">
-              <v-card-text>
-                  <div class="meeting_title">{{meeting.title}}</div>
+              <div class="transbox">
+                <v-card-text>
+                  <div class="meeting_title">{{ meeting.title }}</div>
                   <!-- <div>인원수 : {{meeting.ppl}}</div>
                   <div>평균연령 : {{meeting.avg_age}}</div> -->
-              </v-card-text>
-              <!-- <template v-slot:item="{ item }">
+                </v-card-text>
+                <!-- <template v-slot:item="{ item }">
                 <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
                 <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
               </template>-->
-            </div>
+              </div>
             </v-img>
           </v-card>
         </v-col>
@@ -42,66 +46,81 @@
           <v-icon v-else>mdi-menu</v-icon>
         </v-btn>
       </template>
-      <v-btn fab dark small color="red" >
-        <v-icon>mdi-delete</v-icon>
+      <v-btn fab dark color="purple" @click.stop="dialog = true">
+        <v-icon>mdi-plus</v-icon>
       </v-btn>
-      <v-btn fab dark small color="purple" @click.stop="dialog = true">
-        <v-icon>mdi-pencil</v-icon>
+      <v-btn fab dark color="red" @click.stop="deleteMeeting = true">
+        <v-icon>mdi-delete</v-icon>
       </v-btn>
     </v-speed-dial>
 
+    <!-- DIALOG1 -->
 
-    <!-- DIALOG -->
-
-    <v-dialog v-model="dialog" calss >
+    <v-dialog v-model="dialog" calss max-width="500px">
       <v-card>
         <v-card-title>
-          <span class="headline" >{{ formTitle }}</span>
+          <span class="h3">{{ formTitle }}</span>
         </v-card-title>
 
         <v-card-text>
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="12">
-                <v-text-field v-model="editedItem.title" label="모임 이름"></v-text-field>
-              </v-col>
-            </v-row>
-            <v-row>
-            <v-col cols="12" sm="6" md="12">
-              <v-btn-toggle v-model="editedItem.avg_age"  tile color="purple lighten-1" group>
-              <v-btn value="20">
-                20대
-              </v-btn>
-              <v-btn value="30">
-                30대
-              </v-btn>
-              <v-btn value="40">
-                40대
-              </v-btn>
-              </v-btn-toggle>
-            </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="12" sm="6" md="12">
-              <v-btn-toggle v-model="editedItem.ppl"  tile color="purple lighten-1" group>
-              <v-btn value="2">
-                연인
-              </v-btn>
-              <v-btn value="3">
-                친구
-              </v-btn>
-              <v-btn value="4">
-                가족
-              </v-btn>
-              <v-btn value="5">
-                단체
-              </v-btn>
-              </v-btn-toggle>
+                <v-text-field
+                  v-model="editedItem.title"
+                  label="모임 이름"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12" sm="6" md="12">
-                <v-file-input label="Background_img" @change="onChangeImages"></v-file-input>
+                <v-btn-toggle
+                  v-model="editedItem.avg_age"
+                  tile
+                  color="purple lighten-1"
+                  group
+                >
+                  <v-btn value="20">
+                    20대
+                  </v-btn>
+                  <v-btn value="30">
+                    30대
+                  </v-btn>
+                  <v-btn value="40">
+                    40대
+                  </v-btn>
+                </v-btn-toggle>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="12">
+                <v-btn-toggle
+                  v-model="editedItem.ppl"
+                  tile
+                  color="purple lighten-1"
+                  group
+                >
+                  <v-btn value="2">
+                    연인
+                  </v-btn>
+                  <v-btn value="3">
+                    친구
+                  </v-btn>
+                  <v-btn value="4">
+                    가족
+                  </v-btn>
+                  <v-btn value="5">
+                    단체
+                  </v-btn>
+                </v-btn-toggle>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="12">
+                <v-file-input
+                  label="Background_img"
+                  @change="onChangeImages"
+                ></v-file-input>
               </v-col>
             </v-row>
           </v-container>
@@ -114,7 +133,39 @@
       </v-card>
     </v-dialog>
 
+    <!-- deleteItem DIALOG -->
 
+    <v-dialog v-model="deleteMeeting" calss max-width="500px">
+      <v-card>
+        <v-card-title>
+          <span class="h3">모임 삭제</span>
+        </v-card-title>
+
+        <v-card-text>
+          <v-container>
+            <v-row class="mx-auto" v-for="(meeting, i) in meetings" :key="i">
+              <input
+                class="mr-3"
+                type="checkbox"
+                v-model="selected"
+                :value="`${meeting.id}`"
+                color="purple"
+                name="rb"
+              />
+              <label class="radiolabel h5" :for="`${meeting.title}`">{{
+                meeting.title
+              }}</label>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="purple lighten-1" text @click="deleteItem">삭제</v-btn>
+          <v-btn color="purple lighten-1" text @click="deleteMeeting = false">취소</v-btn
+          >
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -132,6 +183,7 @@ export default {
       user:[],
       meetings: [],
       dialog: false,
+      deleteMeeting: false,
       headers: [
         { text: "Title", value: "title" },
         { text: "연령대", value: "avg_age" },
@@ -151,7 +203,7 @@ export default {
         ppl: "",
         background_img: "",
       },
-      direction: 'top',
+      direction: "top",
       fab: false,
       fling: false,
       hover: false,
@@ -160,14 +212,15 @@ export default {
       right: true,
       bottom: true,
       left: false,
-      transition: 'slide-y-reverse-transition',
-
+      transition: "slide-y-reverse-transition",
+      chckbox: [],
+      selected: [],
     };
   },
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "모임 생성" : "모임 수정";
+      return this.editedIndex === -1 ? "모임 생성" : "모임 삭제";
     },
   },
 
@@ -200,11 +253,6 @@ export default {
       this.dialog = true;
     },
 
-    deleteItem(item) {
-      const index = this.desserts.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
-        this.desserts.splice(index, 1);
-    },
 
     close() {
       this.dialog = false;
@@ -255,47 +303,62 @@ export default {
         });
     },
 
+    deleteItem() {
+      axios
+        .post(SERVER_URL + "/meeting/delete/" + this.selected[0], this.selected)
+        .then(() => {
+          this.deleteMeeting = false;
+          this.GetMeeting();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
     meetingDetail(m_id) {
       this.$router.push({
-        name : "meetingDetail",
+        name: "meetingDetail",
         params: {
           m_id: m_id,
         },
-      });    
+      });
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-*{
-  font-family: 'Jua', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+* {
+  font-family: "Jua", sans-serif;
 }
-.transbox{
-    text-align:center;  
-    height: 200px;
-    background-color: rgba(118, 126, 154, 0.5);
+.transbox {
+  text-align: center;
+  height: 200px;
+  background-color: rgba(118, 126, 154, 0.5);
 }
-.meeting_title{
-  height:200px;
-  margin-top:70px;
-  font-size:40px; 
-  font-family:'Nanum Brush Script'
+.meeting_title {
+  height: 200px;
+  margin-top: 70px;
+  font-size: 40px;
+  font-family: "Nanum Brush Script";
 }
-.fixed{
+.fixed {
   position: fixed;
   right: 20px;
-  bottom : 30px;
+  bottom: 30px;
 }
 
 .v-speed-dial {
   position: absolute;
   right: 20px;
-  bottom : 30px;
+  bottom: 30px;
 }
 
 #create .v-btn--floating {
   position: relative;
 }
+
+
+
 </style>

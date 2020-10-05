@@ -64,52 +64,65 @@ def storerecommend(request,store_id): # 랭킹 상위 10위까지
 
 
 @api_view(['POST'])
-def searchrecommend(request, choice):
+def searchrecommend(request, choice, meeting_id):
     if choice == 'eating':
-        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
     elif choice == 'playing':
-        store = models.Store.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
+        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
-    if request.data['selected'] == '카테고리':
+    if request.data['keyword'] == '':
+        pass
+    elif request.data['selected'] == '카테고리':
         store = store.filter(category__icontains = request.data['keyword'])
     else:
         store = store.filter(name__icontains = request.data['keyword'])
     store = store.order_by('-rating')[:10]
-    serializer = serializers.StoreSerializer(store, many=True)
+    if choice == 'eating':
+        serializer = serializers.RecommandSerializer(store, many=True)
+    elif choice == 'playing':
+        serializer = serializers.EnterStoreSerializer(store, many=True)
     return Response(serializer.data)
 
 
-def get_top_n(predictions, n=10):
+@api_view(['GET'])
+def reviewcreate(request):
+    serializer = serializers.TestReviewsSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        testreview(request)
+        return Response(serializer.data)
 
+def meetingCreate(meeting_id):
+    store_qs = models.Store.objects.all()
+    for store in store_qs:
+        models.Recommand(user_id=meeting_id,rating=store.rating,res_id=store.id,
+        address=store.address,name=store.name,category=store.category).save()
+
+
+def get_top_n(predictions, meeting_id):
     # First map the predictions to each user.
     top_n = defaultdict(list)
+    dic = {}
     for uid, iid, true_r, est, _ in predictions:
         top_n[uid].append((iid, est))
-    return top_n
+    for uid, user_ratings in top_n.items():
+        if uid==meeting_id:
+            for user_rating in user_ratings:
+                dic[user_rating[0]] =user_rating[1]
+    return dic
 
-@api_view(['POST'])
-def reviewcreate(request):
-    for da in request.data:
-        serializer = serializers.TestReviewsSerializer(data=da)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-    testreview(request)
-    return Response(serializer.data)
-    # # print(qs) 도 잘 안된다. for 문 넣을 때 문제가 있는듯, 여기부터 다시 시작하면됨. q1뽑아보기
-    
-@api_view(['GET'])
-def testreview(request,store_id):
-    serializer = serializers.TestReviewsSerializer(data=request.data)
+def testreview(request):
+    meeting_id = str(request.data.get('user_name'))
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
     q1 = qs.values('res_id', 'user_name','rating')
     q2 = qs2.values('res_id', 'user_name','rating')
-    store_q = store_qs.values_list('id','address')
+    store_q = store_qs.values_list('id','address','name','category')
     store_addr = {}
     for s in store_q:
-        store_addr[s[0]] = s[1]
+        store_addr[s[0]] = s[1:]
 
     df1 = pd.DataFrame.from_records(q1)
     df2 = pd.DataFrame.from_records(q2)
@@ -121,21 +134,19 @@ def testreview(request,store_id):
     trainset = data.build_full_trainset()
     algo = SVD()
     algo.fit(trainset)
-
     # Than predict ratings for all pairs (u, i) that are NOT in the training set.
     # testset = trainset.build_full_trainset()
     testset = trainset.build_anti_testset()
     predictions = algo.test(testset)
 
-    top_n = get_top_n(predictions, n=10)
-
+    top_n = get_top_n(predictions,meeting_id)
     # Print the recommended items for each user
-    for uid, user_ratings in top_n.items():
-        if uid == store_id:
-            for user_rating in user_ratings:
-                models.Recommand(user_id=uid,rating=user_rating[1],res_id=user_rating[0],address=store_addr.get(user_rating[0])).save()
-            break
-    return Response(serializer.data)
+    recom_qs = models.Recommand.objects.all().filter(user_id=meeting_id)
+
+    for recom in recom_qs:
+        recom.rating = top_n.get(int(recom.res_id))
+        recom.save()
+    
 
 def resChange(resList):
     res = []

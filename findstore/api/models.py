@@ -25,6 +25,30 @@ class Store(models.Model):
     def menu_list(self):
         return self.menu.split("//") if self.menu else []
 
+
+class EnterStore(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    address = models.CharField(max_length=200, null=True)
+    tel = models.CharField(max_length=200, null=True)
+    category = models.CharField(max_length=200, null=True)
+    main_mn = models.CharField(max_length=200, null=True)
+    price = models.CharField(max_length=200, null=True)
+    menu = models.CharField(max_length=200, null=True)
+    opng_tm = models.CharField(max_length=200, null=True)
+    rating = models.CharField(max_length=200, null=True)
+    rvw_cnt = models.CharField(max_length=200, null=True)
+    tags = models.CharField(max_length=200, null=True)
+    img = models.CharField(max_length=200, null=True)
+    
+    @property
+    def category_list(self):
+        return self.category.split("/") if self.category else []
+
+    @property
+    def menu_list(self):
+        return self.menu.split("//") if self.menu else []
+
+
 class Reviews(models.Model):
     res_id = models.IntegerField()
     res_name = models.CharField(max_length=200, null=True)
@@ -47,7 +71,10 @@ class TestReviews(models.Model):
 
 
 class Recommand(models.Model):
+    id = models.IntegerField(primary_key=True)
     user_id = models.CharField(max_length=200)
     res_id = models.CharField(max_length=200, null=True)
     rating = models.FloatField(null=True)
     address = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    category = models.CharField(max_length=200, null=True)

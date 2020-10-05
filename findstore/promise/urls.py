@@ -9,4 +9,5 @@ urlpatterns = [
     path('detail/<int:promise_id>', views.detail, name='detail'),
     path('<str:user_name>/list/', views.userpromiselist, name='userpromiselist'),
     path('update/<int:promise_id>', views.updatepromise, name='updatepromise'),
+    path('delete/<int:promise_id>', views.deleteprimise, name='deleteprimise'),
 ]

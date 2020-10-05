@@ -1,0 +1,754 @@
+id,name,address,tel,category,main_mn,price,menu,opng_tm,rating,rvw_cnt,tags,img
+None,스트라이크존 서울 논현구장,서울 강남구 논현동 165,0504-3142-0882,스크린야구장,None,"60분 53,800원",None,None,3.88,None,"['치킨', '데이트', '게임장', '재미있는', '볼링']",http://ldb.phinf.naver.net/20160411_201/1460364961066l3EyL_JPEG/176361578578529_0.jpeg
+None,제이앤드제이골프아카데미,서울 강남구 논현동 152-5,02-515-0953,스크린골프장,None,,None,None,4.58,None,None,http://ldb.phinf.naver.net/20200630_97/1593509205297nz24G_JPEG/kq8GYnOZh_qSiLQXAJ-6i27N.jpg
+None,삼성피트니스,서울 강남구 삼성동 117,1670-9699,헬스장,None,,None,None,None,None,"['휴식', '혼자']",http://ldb.phinf.naver.net/20151230_33/145145014872742H7j_PNG/167180536568585_1.png
+None,유디알 멤버스골프 역삼점,서울 강남구 역삼동 722,070-8676-1111,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190719_185/1563512880553PKv3K_JPEG/wXdbzJAXrQoy-VvA79ccvf6D.jpg
+None,강남세브란스병원 비자검진센터,서울 강남구 역삼동 786-19,02-2019-1207,병원부속시설,None,,None,None,3.67,None,None,None
+None,행복골프학교,서울 강남구 삼성동 151-7 싹아트센터 5층,02-565-0329,골프연습장,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20191007_191/15704245802633wM8U_JPEG/1299WzTt4aj6FX5Q95Ojbm8I.jpg
+None,럭셔리스크린골프 청담점,서울 강남구 청담동 49-5 신한오피스텔 지하 1층,02-540-5353,스크린골프장,None,,None,None,4.88,None,None,http://ldb.phinf.naver.net/20200613_215/1592033656324qTqIf_JPEG/4HP8YaoegZFbmktIOSpFma4D.jpg
+None,오렌지9스크린센터,서울 강남구 역삼동 652-10,02-508-1251,스크린골프장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20200904_246/1599197501589Jl65z_PNG/lzk7vd93uoBQPZLaNWatIkzT.png
+None,훈골프아카데미,서울 강남구 도곡동 895-8,02-571-9486,실내골프연습장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170707_258/1499397604020LFRNo_JPEG/186657525023_0.JPG
+None,비다펠리즈 스크린골프,서울 강남구 삼성동 161-17,02-555-1020,스크린골프장,None,,None,None,None,None,None,None
+None,명인스크린골프,서울 강남구 역삼동 751-1 명인갤러리 지하 1층,02-566-6078,스크린골프장,None,,None,None,4.16,None,None,http://ldb.phinf.naver.net/20180610_300/1528617032105FtIb5_JPEG/hv2IqvmuoVrFV0DcbmCAjx1y.jpg
+None,더프라자 골프 학동점,서울 강남구 논현동 86-1 아이캐슬빌딩 지하1층,02-511-6732,실내골프연습장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200218_185/1582001936915Sr4FV_JPEG/PXMiarmOQm_Ywqgt6sKES0A9.JPG.jpg
+None,공브라더스골프아카데미 본점,서울 강남구 논현동 231-4,02-545-2012,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190213_48/1550036494097k26aY_JPEG/%BD%E6%B3%D7%C0%CF%28%C1%A4%BB%E8%B0%A2%C7%FC%29.jpg
+None,레몬스크린골프,서울 강남구 대치4동 890-54 풍림아이원 지하 1층,02-522-0753,스크린골프장,None,,None,None,4.57,None,None,http://ldb.phinf.naver.net/20160226_177/1456494905672qOaUI_JPEG/176176628524435_0.jpeg
+None,톡스크린골프,서울 강남구 역삼동 726-2,02-558-5051,스크린골프장,None,,None,None,4.86,None,"['럭셔리한', '컨트리클럽', '케이크']",http://ldb.phinf.naver.net/20180503_113/1525324914532yFlcN_JPEG/WEaGm3nHdceriHnQQ88IeTXX.jpg
+None,골프존파크 대치점,서울 강남구 대치동 984 로얄빌딩 지하 1층,02-566-1872,스크린골프장,None,,None,None,4.7,None,None,http://ldb.phinf.naver.net/20150831_176/1440991808386kekR0_GIF/106668408331178_0.gif
+None,라운지 스크린골프,서울 강남구 역삼동 668-5,02-565-0753,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20150901_101/14411178128133XOHj_JPEG/31037291_0.jpg
+None,모비딕스크린골프,서울 강남구 역삼동 707-2 비젼타워 지하1층,02-557-5050,스크린골프장,None,,None,None,4.26,None,None,http://ldb.phinf.naver.net/20200623_142/1592903091391MDv5s_JPEG/tEAbtiVKo7gTb-ceS9GG6hrp.jpg
+None,이지골프스튜디오,서울 강남구 대치동 1022 지하1층,010-2645-4666,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200521_293/1589990835660BKYIl_JPEG/5eyQhXcqEbHY1YAgYg51_--O.jpg
+None,GDR골프아카데미 역삼점,서울 강남구 역삼동 840-8,02-6284-0021,골프연습장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20150902_41/1441121084964VeuRi_JPEG/SUBMIT_1401507108424_35051267.jpg
+None,골프존파크 청담CC,서울 강남구 청담동 68-19,02-543-1888,스크린골프장,None,,None,None,4.44,None,None,http://ldb.phinf.naver.net/20200724_266/1595600726349arPPr_JPEG/8tVl-yBGY2MURQGWQe-Fdvw2.jpg
+None,랜드스크린골프,서울 강남구 논현동 239-4 신우빌딩 B1층,02-512-1482,스크린골프장,None,,None,None,3.78,None,None,http://ldb.phinf.naver.net/20200319_27/15845939910913WU1l_PNG/EXfrW5YHFHPY3xVw2DCbIOwN.png
+None,스위트캐슬스파,서울 강남구 역삼동 603-5,010-9798-4620,"목욕탕,사우나",None,,None,None,4.4,None,None,http://ldb.phinf.naver.net/20191201_269/15751829554242GcJ1_JPEG/06Rb0m0PW-utRK8YpHagqDzh.jpeg.jpg
+None,공브라더스골프아카데미 역삼점,서울 강남구 역삼동 831-18,02-562-2012,스크린골프장,None,,None,None,4.83,None,None,http://ldb.phinf.naver.net/20190213_103/1550039549079GDsJ0_JPEG/%BD%E6%B3%D7%C0%CF%28%C1%A4%BB%E8%B0%A2%C7%FC%29.jpg
+None,힐링스크린골프존,서울 강남구 도곡동 546 성환빌딩지하1층,02-529-1300,스크린골프장,None,,None,None,4.43,None,None,http://ldb.phinf.naver.net/20150831_217/1441029529639kKlKN_JPEG/SUBMIT_1392457700483_12850686.jpg
+None,버디버디스크린골프,서울 강남구 논현동 85-14,02-6949-0886,스크린골프장,None,,None,None,4.9,None,None,http://ldb.phinf.naver.net/20200808_245/1596814895568imtoV_JPEG/y1NpRSvzShIlKNJYPbMeUboY.jpeg.jpg
+None,BNJ스크린골프,서울 강남구 삼성동 9-22,02-516-9968,스크린골프장,None,,None,None,4.07,None,None,http://ldb.phinf.naver.net/20190104_12/1546582727214MwLFo_JPEG/ZKUOaBg0lBXtiokrzUz8qKiy.jpeg.jpg
+None,골프존파크 신사압구정역점,서울 강남구 신사동 585-13,02-3445-3985,스크린골프장,None,,None,None,4.35,None,None,http://ldb.phinf.naver.net/20190127_52/1548578419439banCv_JPEG/WdgRXd5ocwJ1Vpb1a6WKngv4.jpg
+None,골프존파크 논현토너먼트점,서울 강남구 논현동 203,02-3446-0753,스크린골프장,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,모모스크린골프,서울 강남구 신사동 572-2,02-515-1714,스크린골프장,None,,None,None,4.08,None,None,http://ldb.phinf.naver.net/20170110_85/1484016838796hpdH8_JPEG/186060518378680_0.jpeg
+None,토마토스크린골프존,서울 강남구 역삼동 721-9,010-2962-2844,스크린골프장,None,,None,None,4.94,None,None,http://ldb.phinf.naver.net/20200701_141/1593599965911bv5OY_JPEG/4cGJl0foR0RSh816oIj0SjTj.JPG.jpg
+None,스매싱볼 강남점,서울 강남구 역삼동 808-5 충림빌딩,02-556-2231,볼링장,None,,None,None,4.06,None,"['볼링장', '락볼링', '펍', '화려한', '데이트']",http://ldb.phinf.naver.net/20191026_34/157205794001273x6C_JPEG/DxQxNxUMwSGZcPQbJ-acx50o.jpg
+None,가인볼링장,서울 강남구 삼성동 164,02-566-9389,볼링장,None,,None,None,4.4,None,"['볼링장', '락볼링', '데이트', '게임장', '치킨']",http://ldb.phinf.naver.net/20160503_99/1462239940398ugGwW_PNG/176372557075932_0.png
+None,역삼볼링시티,서울 강남구 역삼동 722,02-553-5670,볼링장,None,,None,None,4.09,None,None,http://ldb.phinf.naver.net/20190318_63/1552878432301YqCCq_JPEG/OysBB_UN7ee2jGCOCCCIkcae.jpg
+None,글로우 스트라이크,서울 강남구 논현동 62-3,070-7685-7685,볼링장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20181028_262/1540706587214vBqq1_JPEG/5N3CvYrG63maAVNxnA8SBkOQ.JPG.jpg
+None,스매싱볼 청담점,서울 강남구 청담동 85-4,02-546-2231,볼링장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20191021_261/1571649301490G5Chr_JPEG/qAL9OjCikNxJwiG_wOc_QHeY.jpg
+None,라인볼링장,서울 강남구 역삼동 837-36,02-555-4199,볼링장,None,,None,None,4.39,None,None,http://blogfiles.naver.net/MjAxODAyMDNfMjYz/MDAxNTE3NjU5MTE0MTE3.WGXqKeDqcvYkWtwzWrQM66fgW5IuMm5eKj1LbZtI-7gg.Q_Q-389NAkgxWZ34RpPHoQtoqzq_NSRRIQn78-wgfGAg.JPEG.sherlocked_221b/IMG_8746.jpg#900x675
+None,스타24시볼링장,서울 강남구 논현동 152-5,02-512-1797,볼링장,None,,None,None,4.68,None,None,None
+None,삼성볼링장,서울 강남구 대치동 1006-2,None,볼링장,None,,None,None,None,None,None,None
+None,오즈쓰리팝 PC방,서울 강남구 논현동 200,070-7762-2338,PC방,None,,None,None,4.26,None,None,http://ldb.phinf.naver.net/20180806_43/1533541394078Xx2iH_JPEG/wSOmC5kTsNyfzux_6Z_L5Vaf.jpg
+None,오즈PC방 강남역점,서울 강남구 역삼동 819,070-4772-5242,PC방,None,,None,None,3.82,None,None,http://ldb.phinf.naver.net/20190527_68/1558943163217YV7PL_JPEG/sC0EAaHWfKAaEayIi7KqfhJV.jpg
+None,WDG PC방,서울 강남구 논현동 201-14,070-8848-4070,PC방,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20181018_148/1539843616723K2Ah7_PNG/BMDDaegLEJxF3SNKcLgdwKN_.png
+None,게임이너스 강남역점,서울 강남구 역삼동 816-4 지하 1층,070-4349-3273,PC방,None,,None,None,4.15,None,None,http://ldb.phinf.naver.net/20181018_71/15398743360554Nnyk_JPEG/-N9xObT85CqJxdiU109SXszs.jpg
+None,게임이너스 강남이스포츠점,서울 강남구 역삼동 826-21,02-567-3273,PC방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20180212_142/1518427565967kfqc8_JPEG/sQBo4wmoryLlzTEcQ5LHEN2h.jpg
+None,INTERPARKPC,서울 강남구 논현동 176-21,None,PC방,None,,None,None,4.48,None,None,http://ldb.phinf.naver.net/20191222_98/1576969980939KF0OY_JPEG/kdhsdd0EoIvylJlaXtmzCSWj.jpg
+None,긱스타PC & 올툰만화카페 선릉점,서울 강남구 역삼동 697-11,070-4618-0707,PC방,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20180628_164/1530182657490TxRyg_JPEG/RPYMbMDLu1FojeZuOejMGKAs.jpg
+None,3POP 강남점,서울 강남구 역삼동 822-2 지하 1층,None,PC방,None,,None,None,4.34,None,None,http://ldb.phinf.naver.net/20200127_71/1580129271543qKQ9I_JPEG/1UgDc42jqR60F6j-ZWqj5Ra-.jpg
+None,셰프PC방 강남점,서울 강남구 역삼동 825-20,010-4084-4494,PC방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200615_215/1592205904673fX6Mt_JPEG/POHLbfp21FQIFbXaFIJ_H5XF.jpg
+None,아이리스PC방 강남점,서울 강남구 역삼동 823-14,010-2015-2434,PC방,None,,None,None,4.61,None,None,http://ldb.phinf.naver.net/20191020_116/1571542551112VggWX_JPEG/kOI8AXAn3CAZFe3Hwf2_5PCi.jpg
+None,게임이너스 양재점,서울 강남구 도곡동 957-14 하늘빌딩 지하1층,02-573-3273,PC방,None,,None,None,4.21,None,None,http://ldb.phinf.naver.net/20181022_223/1540204624587DieIV_JPEG/0w7PvvUsEQiQybO1QFMhvjQu.jpg
+None,아이센스리그PC 압구정점,서울 강남구 신사동 660-2,None,PC방,None,,None,None,4.35,None,None,http://ldb.phinf.naver.net/20191025_61/1571998258403bGPVy_JPEG/LEtW82xa_49Q4Br4v3ZEumuX.jpg
+None,피씨앤쿡,서울 강남구 역삼동 672-37,02-557-7674,PC방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20160202_279/1454350779116jlFzd_JPEG/176152434958113_0.jpeg
+None,쇼타임PC방,서울 강남구 신사동 664,02-5454-5454,PC방,None,,None,None,4.12,None,None,http://ldb.phinf.naver.net/20191010_234/1570709671816DRwj5_JPEG/LZQsXuvJbNZCPPPi8sJPlHcw.jpg
+None,반트  PC,서울 강남구 대치동 1021-2,None,PC방,None,,None,None,4.86,None,None,http://ldb.phinf.naver.net/20170213_127/1486971296997BVED7_JPEG/186163566476032_0.jpeg
+None,탑플레이스PC방 강남언주역점,서울 강남구 논현동 234 M빌딩 지하1층,070-8778-8912,PC방,None,,None,None,4.43,None,None,http://ldb.phinf.naver.net/20190315_211/1552639956382J5CJ5_JPEG/0U3TLilL3SDBhSdfBtPmPieb.JPG.jpg
+None,PICK PC방,서울 강남구 논현동 242-29,010-9970-8265,PC방,None,,None,None,4.29,None,None,http://ldb.phinf.naver.net/20200427_249/1587986806376yGXrB_JPEG/0ZGbVurSd7uBgzUwf8ToXpbB.jpg
+None,앤비 PC CAFE,서울 강남구 세곡동 581 강남리더스프라자 3층 304호,070-8876-0547,PC방,None,,None,None,4.65,None,None,http://ldb.phinf.naver.net/20150831_222/14409920322664JwE9_JPEG/156660433340631_0.jpeg
+None,네오PC방,서울 강남구 역삼동 681-51 예전빌딩 지하1층,010-7605-4803,PC방,None,,None,None,4.69,None,None,http://ldb.phinf.naver.net/20190930_137/1569837346586Fwa6H_JPEG/xIQFvOwXU7a7_amxj1GpmW7h.jpg
+None,이로운친구,서울 강남구 대치동 987-16 지하 1층,010-6666-6666,PC방,None,,None,None,None,None,None,None
+None,PeaK PC방 역삼,서울 강남구 역삼동 723-7 지하1층,02-554-4445,PC방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20190107_220/1546872660851BP6EQ_JPEG/SNvDy5YzB7_wPurdXF0hDCPx.jpg
+None,오즈아레나PC카페,서울 강남구 자곡동 635 1층,070-4047-8824,PC방,None,,None,None,4.46,None,None,http://ldb.phinf.naver.net/20190524_39/15586892119461Uzdn_JPEG/UeIIExHSJb4HqocHDcao4wGp.jpg
+None,맥스피드PC방논현점,서울 강남구 논현동 95,None,PC방,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20190517_163/1558081392800siPzM_JPEG/Gu1RyHLwqDTPXLURDgYkvoTT.jpeg.jpg
+None,필드PC방,서울 강남구 청담동 132-15 인재빌딩 지하1층 필드PC방,070-8787-8900,PC방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20190314_220/1552489973338BYGot_JPEG/MRtOdzMHRM8QXyfvA7EYaxhX.jpg
+None,3POP PC CAFE 역삼점,서울 강남구 역삼동 735-37 삼정빌딩 지하2층,02-9766-4716,PC방,None,,None,None,4.65,None,None,http://ldb.phinf.naver.net/20191105_227/15728872774289GDg3_JPEG/2bxNkHoiTySNmxirygNasRVA.jpg
+None,3pop pc 방,서울 강남구 역삼동 822-2,None,PC방,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20191012_269/15708727515178K5dj_JPEG/k3C0huanpS9UsZC37tzmjF-f.jpg
+None,시그니처아레나PC방 도곡점,서울 강남구 도곡동 411-14,None,PC방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20190414_283/1555231829748Biszw_PNG/XDWeYtVLDG6NyikE9j-zfAOF.png
+None,갤럭시pc방,서울 강남구 자곡동 636,070-4118-0547,PC방,None,,None,None,4.72,None,None,http://ldb.phinf.naver.net/20171025_7/1508929941107PBYaW_JPEG/RW2nhjUWDmxLNpztzGUz0btC.jpg
+None,3POP PC CAFE,서울 강남구 논현동 127-14,010-0987-0987,PC방,None,,None,None,4.67,None,None,None
+None,피에스타PC방 강남 압구정본점,서울 강남구 신사동 581-15,None,PC방,None,,None,None,3.88,None,None,http://ldb.phinf.naver.net/20200501_93/1588312560827LDXK1_JPEG/2LBhG2fN9_PB69qNkyRVeHZ2.jpg
+None,쉐빌로뜨당구클럽,서울 강남구 논현동 203,02-414-0100,당구장,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20191030_81/15724370786969fKpU_JPEG/mMJ8dYV7jpzXoiORdmgKmF2W.jpg
+None,벤투스캐롬클럽,서울 강남구 논현동 117-7,02-518-1194,당구장,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20170823_37/15034666277193UF7I_JPEG/xDOO6Qtu1TO72G0c3zaJnOHC.jpg
+None,올리브당구장,서울 강남구 역삼동 824-11,070-8877-3949,당구장,None,,None,None,4.88,None,None,http://ldb.phinf.naver.net/20171127_153/1511760017575zCoPE_JPEG/XUs0tqrFRsH3uffWTXzybyAp.jpg
+None,조이빌리아드클럽,서울 강남구 역삼1동 819-1,02-555-2464,당구장,None,,None,None,4.23,None,"['쾌적한', '데이트']",http://ldb.phinf.naver.net/20150831_47/1440999628263XlYLz_JPEG/127080575425458_0.jpg
+None,가보빌리어드클럽,서울 강남구 역삼동 823-24 지하1층,02-555-5601,당구장,None,,None,None,4.18,None,None,http://ldb.phinf.naver.net/20170123_36/1485150918806iHOEV_JPEG/186067557328729_0.jpeg
+None,언주당구클럽,서울 강남구 역삼동 651-2,02-561-3949,당구장,None,,None,None,None,None,"['쾌적한', '깨끗한', '혼자', '신랑이랑']",http://ldb.phinf.naver.net/20150901_283/1441104060498DvB5A_JPEG/166580404242720_1.jpeg
+None,취중다마,서울 강남구 논현동 163-17,02-3444-2211,당구장,None,,None,None,3.94,None,None,None
+None,JS당구클럽,서울 강남구 삼성동 144-19 20번지 JS타워 지하 1층,02-6005-0304,당구장,None,,None,None,4.35,None,None,None
+None,빌리어드 라운지 당구장,서울 강남구 신사동 536,02-6489-3949,당구장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200528_214/1590668476480MJb2f_PNG/B6u_Hook7QWCVaumN7hkVYU2.png
+None,선릉당구클럽,서울 강남구 대치4동 889-68 현대선릉 빌딩 지하 2층,070-8157-3949,당구장,None,,None,None,4.43,None,None,http://ldb.phinf.naver.net/20181029_13/1540814900101dpJHr_JPEG/eL8kL_dks1pfiRMIAwtuytC7.jpg
+None,캐롬당구클럽,서울 강남구 대치동 996-15 태화빌딩 B1 삼성캐롬당구클럽,02-555-4939,당구장,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20190117_87/1547702920295nck6a_JPEG/NBvnk-Ldi4t6EAWEsYqJ7PmM.jpeg.jpg
+None,프로25,서울 강남구 역삼동 696-17,None,당구장,None,,None,None,4.54,None,None,None
+None,J클럽,서울 강남구 대치동 891-43,02-2051-0755,당구장,None,,None,None,3.95,None,None,None
+None,큐쓰리당구장,서울 강남구 역삼동 702-16 3층 큐쓰리당구장,02-553-9275,당구장,None,,None,None,4.45,None,None,http://ldb.phinf.naver.net/20190326_60/1553576019159yvkKB_JPEG/tilTw4PlbTGp5mzuxTjNTzb6.jpg
+None,제우스당구클럽,서울 강남구 신사동 514-8,02-548-0906,당구장,None,,None,None,3.44,None,None,http://ldb.phinf.naver.net/20150831_53/1440994485652hWeEM_JPEG/106470458553797_0.jpg
+None,강남당구장,서울 강남구 역삼동 823-38,070-8225-2371,당구장,None,,None,None,4.22,None,None,None
+None,데이트당구장,서울 강남구 역삼동 826-29,02-501-1164,당구장,None,,None,None,3.93,None,None,None
+None,삼성당구장,서울 강남구 대치동 946-15,02-508-4382,당구장,None,,None,None,4.71,None,None,http://ldb.phinf.naver.net/20181220_1/1545304002602W9Lwm_JPEG/khh2-hfJ5mIYOCNVjzqumqcL.jpg
+None,맘모스당구클럽 24시간,서울 강남구 신사동 660-6 지하 1층,010-8108-8485,당구장,None,,None,None,3.7,None,None,http://ldb.phinf.naver.net/20160831_95/1472639357800zP7iB_JPEG/176781595936849_0.jpeg
+None,논현당구클럽,서울 강남구 논현동 122-1,010-9174-0077,당구장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20170828_250/1503906952945U3sgQ_JPEG/XZL_O2vQ4jHmqgFex8IbWOtP.jpg
+None,키키당구장,서울 강남구 역삼동 822 명선빌딩 303호,02-553-3949,당구장,None,,None,None,None,None,None,None
+None,두당스,서울 강남구 역삼동 659-5 문화빌딩 지하 1층,070-4203-4850,당구장,None,,None,None,3.7,None,None,http://ldb.phinf.naver.net/20160509_96/1462759855863n1tTb_JPEG/176453637354674_0.jpeg
+None,SP당구장,서울 강남구 수서동 726,02-3412-4384,당구장,None,,None,None,3.92,None,None,http://ldb.phinf.naver.net/20200301_23/1583051025994QPz6C_JPEG/iCrrTlj-BR8LLO3Nza5iHdQc.jpg
+None,엠블당구클럽,서울 강남구 역삼동 721,02-552-3949,당구장,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20190524_187/15587079546396BEw2_JPEG/EhkvAB06HcsVZyX0hZsKu4zG.jpg
+None,스카이당구장,서울 강남구 청담동 132-4,02-547-1780,당구장,None,,None,None,4.5,None,None,None
+None,강남당구클럽,서울 강남구 논현동 118-3,02-517-5007,당구장,None,,None,None,3.92,None,None,None
+None,GS당구장,서울 강남구 역삼동 669-15,02-555-4142,당구장,None,,None,None,5,None,None,http://ldb.phinf.naver.net/20171011_286/1507710958084ED2SE_JPEG/tIR_S_nKqnpcnc4KqsOxpKGm.jpg
+None,동우당구클럽,서울 강남구 역삼동 645-19 지하,070-8951-5652,당구장,None,,None,None,4,None,None,None
+None,플러스당구장,서울 강남구 논현동 127-1,None,당구장,None,,None,None,4.75,None,None,http://ldb.phinf.naver.net/20190625_232/15614635437117Lyf2_JPEG/5xP2lABR13-cPro5xjqDJymo.jpeg.jpg
+None,다빈치당구장,서울 강남구 대치동 890-44,070-8197-3300,당구장,None,,None,None,4,None,None,None
+None,이스케이프탑 강남점,서울 강남구 역삼동 619-23,010-8758-5611,방탈출카페,None,"이벤트 1인 18,000원",None,None,4.41,None,None,http://ldb.phinf.naver.net/20180722_32/1532185224586ACjH5_JPEG/2.jpg
+None,비트포비아 신논현,서울 강남구 논현동 201-6,02-6408-6408,방탈출카페,None,"2인 44,000원",None,None,4.62,None,"['탈출카페', '화이트데이', '재즈바', '재미있는', '숨겨진']",http://ldb.phinf.naver.net/20160926_243/1474868672852TPsE5_JPEG/176876547451781_0.jpeg
+None,코드케이 방탈출카페,서울 강남구 역삼동 813-4 지하 1층 코드케이,02-501-8245,방탈출카페,None,"2인 44,000원",None,None,4.44,None,"['탈출카페', '보드게임방', '보드카페', '친절한', '데이트']",http://ldb.phinf.naver.net/20160512_206/14630294789996Jwkc_GIF/176462543455049_17.gif
+None,서울이스케이프룸 강남2호점,서울 강남구 역삼동 619-2,02-501-6502,방탈출카페,None,인원에 따라 변동 변동가격(업주문의),None,None,4.69,None,None,http://ldb.phinf.naver.net/20190805_282/1565012778527aQN1n_JPEG/NUVEbCSYWkt55yN1-QzEAdIG.jpg
+None,세븐클루스 강남 2호점,서울 강남구 역삼동 815,010-2617-6561,방탈출카페,None,"2인 44,000원",None,None,4.45,None,"['탈출카페', '데이트', '친절하고', '양꼬치', '신선한']",http://ldb.phinf.naver.net/20200120_39/1579498081142PklC1_JPEG/hsOdvTZ-B64ZjJp8_ngmAWOJ.jpg
+None,마스터키 강남점,서울 강남구 역삼동  811-6 지하1층,02-558-6685,방탈출카페,None,"2인(인당) 22,000원",None,None,4.55,None,None,http://ldb.phinf.naver.net/20180914_23/1536914762753qfgPI_PNG/IhtlZpUXPOlUSGpLuoQEBoM4.PNG.png
+None,홀릭이스케이프 압구정본점,서울 강남구 신사동 663-7,02-546-5552,방탈출카페,None,1인당 변동가격(업주문의),None,None,4.48,None,"['탈출카페', '데이트', '재방문', '재미있는', '딸과']",http://ldb.phinf.naver.net/20200427_8/1587990548238zlEeK_JPEG/s8Y1w6jFkBaihD_zXTJnCehJ.jpg
+None,더메이즈,서울 강남구 역삼동 619-14,02-562-8850,방탈출카페,None,"2인 (인당) 22,000원",None,None,4.85,None,"['탈출카페', '데이트', '미로', '재미있는', '친구들이랑']",http://ldb.phinf.naver.net/20160314_205/1457959750118vOzxU_JPEG/176264617927538_0.jpeg
+None,코드이스케이프 강남점,서울 강남구 역삼동 813-10,02-501-1303,방탈출카페,None,"1~2인 44,000원",None,None,4.45,None,"['탈출카페', '동물원', '게임방', '재미있는', '데이트']",http://ldb.phinf.naver.net/20160112_148/1452577639813bOEAV_JPEG/176062547739624_0.jpeg
+None,코드이스케이프 가로수길,서울 강남구 신사동 541-15,02-541-7544,방탈출카페,None,"1~2인 이용요금 44,000원",None,None,4.61,None,"['탈출카페', '데이트', '재즈바', '친절한', '커플']",http://ldb.phinf.naver.net/20170109_204/14839522327483KUBA_JPEG/186054624127383_0.jpeg
+None,480번가,서울 강남구 논현동 199-5,070-8833-0480,방탈출카페,None,"2인(인당) 25,000원",None,None,4.4,None,"['탈출카페', '재즈바', '게임장', '재미있는', '숨겨진']",http://ldb.phinf.naver.net/20190715_161/1563169232867kERcb_JPEG/AvndRdyO45LdUJIwJG4M9v2T.jpg
+None,넥스트에디션 강남2호점,서울 강남구 역삼동 817-18,050-7457-6251,방탈출카페,None,"퀴즈 인 더 노블 22,000원",None,None,4.55,None,None,http://ldb.phinf.naver.net/20190828_283/15669871978752Jqhi_PNG/i_76cUIyW46Y_W5KTAV_LCW1.png
+None,비트포비아 강남던전,서울 강남구 역삼동 824-25,02-555-4360,방탈출카페,None,"1인당 25,000원",None,None,4.5,None,None,http://ldb.phinf.naver.net/20190625_5/1561428193356lT194_JPEG/1YTqmMLdjUXO4hDlMH75_lGM.jpeg.jpg
+None,넥스트에디션 강남5호점,서울 강남구 역삼동 818-13 지하1층,050-7457-6277,방탈출카페,None,"SOS(1인기준) 26,000원",None,None,4.67,None,None,http://ldb.phinf.naver.net/20200413_93/1586781379292NpJTN_JPEG/oj1mtg8YZSED0_w0lNwoWfT2.jpg
+None,키이스케이프 강남더오름,서울 강남구 역삼동  827-37,010-5450-6082,방탈출카페,None,"NERD (네드) 인당 28,000원",None,None,4.79,None,None,http://ldb.phinf.naver.net/20190920_59/1568940239850SOmmH_JPEG/MUKbdeOQUX43xinZttX9hy32.jpeg.jpg
+None,세븐클루스 강남1호점,서울 강남구 역삼동 825-1 동일빌딩 지하1층,010-6551-6561,방탈출카페,None,"2인 44,000원",None,None,4.4,None,None,http://ldb.phinf.naver.net/20200120_264/1579498278491Axpvz_JPEG/jm11vrQDLptMo2rHsGNPmKAV.jpg
+None,라스트 이스케이프,서울 강남구 역삼동 817-36,02-567-3399,방탈출카페,None,"2인 기준 인당 22,000원",None,None,4.74,None,None,http://ldb.phinf.naver.net/20190901_181/1567318790033ufANl_JPEG/YZN9hqfdFhXU_6HErDzPaM7s.jpg
+None,이스케이프 샾,서울 강남구 신사동 531,02-6203-3667,방탈출카페,None,"2인 44,000원",None,None,4.33,None,None,http://ldb.phinf.naver.net/20200616_143/1592299583902dU9xq_PNG/jWY-LfRy-w2z6m8pUHgeek24.png
+None,더클루 강남점,서울 강남구 역삼동 814-1,02-566-4602,방탈출카페,None,"1~2인 44,000원",None,None,4.55,None,"['탈출카페', '유물', '데이트', '게임방', '숨겨진']",http://ldb.phinf.naver.net/20160131_2/1454213987816vnSnX_JPEG/176081534967656_0.jpeg
+None,엑스케이프 강남점,서울 강남구 역삼동 809-6 현도빌딩 지하1층,02-555-9366,방탈출카페,None,"엑스파일러-70분.2인(인당요금) 25,000원",None,None,4.55,None,None,http://ldb.phinf.naver.net/20191203_209/1575373429153K54aY_PNG/UJHTGo3hZH3Npqa9GhPbad8p.png
+None,크라임씬카페 퍼즐팩토리 강남점,서울 강남구 역삼동 813-13,010-7569-3531,방탈출카페,None,"EP.15 하와이 살인사건 25,000원",None,None,4.29,None,None,http://ldb.phinf.naver.net/20190309_277/1552066253217daHvN_JPEG/0TNmJnwMHfCkN5uMWB876ddA.jpg
+None,CSIVR방탈출카페 대치선릉점,서울 강남구 대치동 897-28,02-3463-1112,방탈출카페,None,"2인(인당) 22,000원",None,None,4.31,None,None,http://ldb.phinf.naver.net/20190903_61/1567488767607aafio_JPEG/WgecBqsZxY4_cA0iUSC8jS_r.JPG.jpg
+None,포인트나인,서울 강남구 역삼동 618-3,070-7733-7879,방탈출카페,None,매일 11:00~23:40,None,None,None,None,None,http://ldb.phinf.naver.net/20200602_126/1591075865005ekQ12_JPEG/NpK1bWrXXc9PfHd-SEEbbG7q.jpeg.jpg
+None,키이스케이프 강남점,서울 강남구 역삼동 817-21,010-7456-6082,방탈출카페,None,"2인 46,000원",None,None,4.4,None,None,http://ldb.phinf.naver.net/20180318_83/15212996364971uE82_JPEG/Ff3HOqbtk0jlP0RoaPkyaFrg.jpg
+None,시그널헌터 가로수길점,서울 강남구 신사동 537 석천빌딩 4층,02-517-6027,방탈출카페,None,"1인 22,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20200313_87/1584081117623RxqHy_JPEG/ififT_Qhs3V0m16tZBvMpJBk.jpg
+None,비밀의화원 리버타운,서울 강남구 역삼동 818-5,02-508-7063,방탈출카페,None,"평일 12:00~00:00, 주말 10:00~00:00",None,None,4.53,None,None,http://ldb.phinf.naver.net/20200826_252/1598416747662FCgVK_JPEG/ZvMQ1aE7-aFM2osIcFjgRD_a.jpg
+None,마스터키프라임 강남점,서울 강남구 역삼동 619-28 메트로빌딩 B2층,070-4193-0021,방탈출카페,None,서울특별시 강남구 강남대로98길 11 메트로빌딩 B2층,None,None,None,None,None,http://ldb.phinf.naver.net/20200918_20/1600439456311merTj_JPEG/PHeZaRBjMxcPZqiE0G3SBXM7.jpg
+None,키이스케이프 강남 더오름,서울 강남구 역삼동 827-37,None,방탈출카페,None,서울특별시 강남구 테헤란로6길 30 (역삼동) 지하1층 키이스케이프,None,None,None,None,None,None
+None,언리얼컴퍼니,서울 강남구 역삼동 723-29,02-874-0050,방탈출카페,None,"방탈출 22,000원",None,None,None,None,None,None
+None,Theclue,서울 강남구 역삼동 814-1,None,방탈출카페,None,서울특별시 강남구 강남대로 446 5층 501호 강남웰빌딩,None,None,None,None,None,None
+None,다빈치 보드게임카페,서울 강남구 역삼동 619-4,02-567-3757,보드카페,None,"청소년 1시간(평일) 2,000원",None,None,4.57,None,None,http://ldb.phinf.naver.net/20200910_265/1599731379660YufNi_JPEG/bLYeGtQDAilrU1ea3u7jREqv.JPG.jpg
+None,다이스타운 보드게임카페,서울 강남구 역삼동 812-18,02-555-6588,보드카페,None,"1인당 1시간 3,000원",None,None,4.45,None,"['보드카페', '보드게임방', '데이트', '쾌적한', '펭귄']",http://ldb.phinf.naver.net/20161007_263/1475814681227EQKIR_JPEG/176957536138781_0.jpeg
+None,데블다이스 강남점,서울 강남구 역삼동 816-6,070-8882-3912,보드카페,None,"게임요금제 (1시간) 3,000원",None,None,4.46,None,"['보드카페', '데이트']",http://ldb.phinf.naver.net/20200821_259/159799040927339ACp_JPEG/o92pSTjgYz5s4bbDnaqpOlQp.jpg
+None,펀타임,서울 강남구 역삼동 820-2,02-557-0327,보드카페,None,"1시간 3,000원",None,None,4.22,None,"['보드카페', '보드게임방', '데이트', '안락한', '친구들이랑']",http://ldb.phinf.naver.net/20160813_145/1471020741084WLUGF_JPEG/176763418240963_0.jpeg
+None,보드게임카페 레드버튼 강남점,서울 강남구 역삼동 814-5,02-566-3799,보드카페,None,"1인 1시간(평일) 3,000원",None,None,4.59,None,None,http://ldb.phinf.naver.net/20200714_191/1594692117518m98Pf_PNG/SD4j7Ov_QKqYplhzyVAMOQUl.png
+None,JACK 보드카페,서울 강남구 신사동 662-11 B1층,02-548-0779,보드카페,None,"아메리카노 4,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20180324_82/15218788356335qc26_JPEG/mRjYzX4ouRPSG39BZqtTm5hp.jpg
+None,보드스쿨 강남점,서울 강남구 역삼동 818-15 삼원빌딩 4층,02-3288-8658,보드카페,None,"1시간 3,000원",None,None,4,None,"['보드카페', '보드게임방', '데이트', '재미있는', '복숭아']",http://ldb.phinf.naver.net/20200713_207/1594630281994cuPw8_JPEG/VUYQP4IkaXYX1vJXfCnCJVDV.jpg
+None,고 보드카페,서울 강남구 신사동 663-11,070-4121-7753,보드카페,None,"아메리카노 4,000원",None,None,3.4,None,None,http://ldb.phinf.naver.net/20181019_119/1539909743535NYUgu_PNG/3Cun0TBTpVD-nM6g6X_EGbss.PNG.png
+None,데블다이스 강남대로점,서울 강남구 역삼동 815-4 만이빌딩 3층,070-4179-3912,보드카페,None,"1시간 (1인) 3,000원",None,None,4.21,None,None,http://ldb.phinf.naver.net/20180731_135/1533029554897R08xD_JPEG/zpQ75yFOLa0PlzsVf06hHE7S.jpeg.jpg
+None,카페오즈,서울 강남구 역삼동 810-1 화성빌딩 3층,02-538-4202,보드카페,None,"1인 1시간 3,000원",None,None,4.45,None,"['보드카페', '보드게임방', '데이트', '친구들과']",http://ldb.phinf.naver.net/20150831_149/1441024685764yvQJE_JPEG/13346296_0.jpg
+None,큐브보드카페,서울 강남구 역삼동 619-3,02-563-5880,보드카페,None,"1인 1시간 3,000원",None,None,4.65,None,None,http://ldb.phinf.naver.net/20200312_112/1584016340426sM7SA_JPEG/nF5bRPg5wkHzny6rcpU6PBZY.jpg
+None,펀보드게임카페,서울 강남구 대치동 896-25,02-568-0870,보드카페,None,"1시간(홀) 2,400원",None,None,3.95,None,None,http://ldb.phinf.naver.net/20181205_240/1543935696525nzX6w_JPEG/J9chgWUGAYZ1ngt4iw-MQP7F.jpg
+None,조이 보드카페,서울 강남구 신사동 663-17,02-6013-2950,보드카페,None,"아메리카노 4,000원",None,None,4.4,None,None,http://ldb.phinf.naver.net/20190212_113/1549947612195xdKxR_JPEG/%BD%E6%B3%D7%C0%CF%28%C1%A4%BB%E8%B0%A2%C7%FC%29.jpg
+None,에이 보드게임 카페,서울 강남구 신사동 569-18,010-6499-9594,보드카페,None,"[게임요금] 1인 1시간 3,000원",None,None,4.75,None,None,http://ldb.phinf.naver.net/20200731_183/1596201094005oM607_JPEG/4C9-VwH8dB_QOsLCQAYTjJCO.jpg
+None,데블다이스 강남3호점,서울 강남구 역삼동 619-18,070-8838-3912,보드카페,None,"1인 1시간 3,000원",None,None,4.14,None,None,http://ldb.phinf.naver.net/20200118_172/1579313053348lttsR_JPEG/4O9sdt-_9xoMVZbiKAqB6_6N.jpeg.jpg
+None,위펀,서울 강남구 신사동 547-5,070-7770-7705,보드카페,None,매일 01:00~11:00,None,None,4.31,None,None,None
+None,W보드카페,서울 강남구 신사동 656,070-8129-6779,보드카페,None,"아메리카노 4,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20160309_10/1457489241386B42MO_JPEG/176259513741247_0.jpeg
+None,올리브보드카페,서울 강남구 대치동 896-1,02-6053-3805,보드카페,None,"게임비 3,000원",None,None,5,None,None,http://ldb.phinf.naver.net/20200708_295/1594179401070kUFBP_JPEG/Gt0il0wnCpAxn3nQgZ_UwFuK.jpg
+None,칸보드카페,서울 강남구 신사동 662-6 4층,070-4001-9352,보드카페,None,"1인당 1시간 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20180130_121/1517245299204gxhsy_JPEG/S0sQ22qjRYFCxRHxxZ24xKbu.JPG.jpg
+None,브이보드카페,"서울 강남구 신사동 662 , 남송빌딩 지하1층",070-8887-0707,보드카페,None,"큰방(시간당) 33,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20200711_243/1594398930057rh808_PNG/7f8jF5hjnZ_lBK3yui1JW735.png
+None,더블유보드카페,서울 강남구 논현동 114-11,02-543-5543,보드카페,None,서울특별시 강남구 언주로134길 9 엘림빌딩 지하1층,None,None,4.13,None,None,http://ldb.phinf.naver.net/20190315_161/1552646627276eYYST_JPEG/Rlkqw2NfjXHz4jm0MgobOJWU.jpg
+None,크림보드카페,서울 강남구 신사동 648-12 지하 1층,02-548-8155,보드카페,None,"평일 00:00~24:00, 주말 00:00~24:00",None,None,4.4,None,None,http://ldb.phinf.naver.net/20181116_152/1542364575542WIK4G_PNG/Y_WC5u_ZAlkbSmj0R9gdRlds.png
+None,보드카페 아수라발발타,서울 강남구 역삼동 678-16 서안빌딩 3층,02-553-6443,보드카페,None,"아메리카노 4,000원",None,None,4.25,None,None,http://ldb.phinf.naver.net/20150901_162/1441100051455NPLE9_JPEG/136561546923509_0.jpeg
+None,놀이터 보드카페,서울 강남구 신사동 662-14 지하 1층,010-5927-8001,보드카페,None,"1인 1시간 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20171106_156/1509967211994Q1KVe_JPEG/0J7mfsCE6NevnIIMKyRO1aj2.JPG.jpg
+None,썬보드카페,서울 강남구 역삼동 736-42 예동빌딩 B1,02-557-7673,보드카페,None,"1시간 4,000원",None,None,3.83,None,None,http://ldb.phinf.naver.net/20170302_164/1488459391763nqccm_JPEG/186252618651623_0.jpeg
+None,리오,서울 강남구 신사동 647-13,070-8950-3530,보드카페,None,"시간당 10,000원",None,None,None,None,None,None
+None,듀스 보드게임 까페,서울 강남구 신사동 636-20 지하1층,070-4212-4103,보드카페,None,"게임비 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20160614_22/1465902073077WwJbp_JPEG/176564603132728_2.jpeg
+None,라스 보드카페,서울 강남구 신사동 642-1,02-3442-0320,보드카페,None,"아메리카노 4,500원",None,None,None,None,None,http://ldb.phinf.naver.net/20200406_197/1586168865655w4wMa_JPEG/zUvdn5NxKkvX6XpDu8YYuwHO.jpg
+None,트리플엠,서울 강남구 역삼동 798-20 정금빌딩(예은동물병원) 지하1층,02-6213-0333,보드카페,None,"아메리카노 3,500원",None,None,None,None,None,http://ldb.phinf.naver.net/20180724_160/1532391032185yTtmb_JPEG/m3IH6p9ZtlprQsYf3yNloMAU.jpeg.jpg
+None,AA홀덤바,서울 강남구 압구정동 394,010-2068-8950,보드카페,None,서울특별시 강남구 압구정로 151-2,None,None,None,None,None,None
+None,슈퍼스타코인노래연습장 강남역점,서울 강남구 역삼동 817-9 4층,02-538-2153,노래방,None,,None,None,4.33,None,"['코인노래방', '데이트', '동생이랑', '혼자']",http://ldb.phinf.naver.net/20160126_113/1453803451263lfy03_JPEG/176076594751141_0.jpeg
+None,준코역삼점,서울 강남구 역삼동 831-24 예미프레스티지 지하1층,02-554-6665,요리주점,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20190814_186/1565771383382wQVNx_JPEG/wWxLZVIaJoC6CXZ-cKkPOA29.jpg
+None,준코노래타운 신사점,서울 강남구 신사동 514-15 삼화빌딩 지하1층,02-545-2985,요리주점,None,,None,None,4.24,None,None,None
+None,팝스타코인노래연습장,서울 강남구 역삼동 813-18 지하1층,02-558-7436,노래방,None,,None,None,4.19,None,"['코인노래방', '혼자']",http://ldb.phinf.naver.net/20161114_240/1479114914945WXtg4_JPEG/177061537725025_0.jpeg
+None,링코노래타운 강남점,서울 강남구 역삼동 826-41,02-538-1259,요리주점,None,,None,None,4.07,None,None,http://ldb.phinf.naver.net/20190422_175/1555898876978lN5fl_JPEG/evp6lTVCQqws66wEE6Th_VV7.jpg
+None,세븐스타코인노래연습장 대치점,서울 강남구 대치동 907-8,None,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200108_281/1578444057812p26gC_JPEG/4ua2MUqZSo-XpVEGAmsN9deS.jpg
+None,악쓰는하마코인노래연습장,서울 강남구 역삼동 619-26 4층 악쓰는하마코인노래연습장,02-552-2234,노래방,None,,None,None,4,None,"['코인노래방', '친구랑']",None
+None,뮤지컬노래방,서울 강남구 역삼동 705-14,02-566-0855,노래방,None,,None,None,4.19,None,None,None
+None,히든 코인 싱어 노래 연습장,서울 강남구 역삼동 812-18,02-501-6777,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170511_104/14944924166740lPyo_JPEG/186453627926999_0.jpeg
+None,SOS노래방,서울 강남구 역삼동 813-16,02-3453-4589,노래방,None,,None,None,3.72,None,None,None
+None,라라코인노래연습장,서울 강남구 역삼동 817-6,010-7106-2979,노래방,None,,None,None,4.44,None,None,None
+None,락휴 코인노래연습장 신사역점,서울 강남구 신사동 537-13,02-511-4515,노래방,None,,None,None,4.45,None,None,http://ldb.phinf.naver.net/20191111_222/1573426763771VTncP_JPEG/Tv2mxNWSDeeTIpIpRZs5WcHE.JPG.jpg
+None,와드코인노래연습장,서울 강남구 신사동 512-10 지하,010-9084-2993,노래방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20180203_287/1517586368623Ta8a3_JPEG/7waPfk5DD7DU-JIzhoBFVcvu.jpg
+None,칸노래방,서울 강남구 신사동 512-16 지하 1층,02-542-7775,노래방,None,,None,None,3.67,None,None,None
+None,베카코인노래연습장,서울 강남구 대치동 1019-1 신사빌딩 B101,02-558-1924,노래방,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20171114_173/15106647838923ymfb_JPEG/CtbTvNxPXQlLbJ-SfqrDnT-l.jpg
+None,MOL노래연습장,서울 강남구 역삼동 817,02-558-5896,노래방,None,,None,None,4.1,None,None,None
+None,수노래연습장 압구정점,서울 강남구 신사동 659-12,02-518-9334,노래방,None,,None,None,4.67,None,['혼자'],http://ldb.phinf.naver.net/20170110_223/1484030736760sYRk1_JPEG/186060557556101_0.jpeg
+None,두드락 인터넷노래연습장,서울 강남구 신사동 582-2 삼기빌딩 지하 1층,02-548-2558,노래방,None,,None,None,4.56,None,None,http://ldb.phinf.naver.net/20190129_126/1548738354807UNRMu_JPEG/o3nTDH0DHY-CpHOz46gdLmIR.jpg
+None,락휴 노래연습장 강남 대치점,서울 강남구 대치동 507 지하1층 2호,02-553-1377,노래방,None,,None,None,3.83,None,None,http://ldb.phinf.naver.net/20150901_151/1441058434006wsJk4_JPEG/106755495975368_0.jpg
+None,더불러노래방,서울 강남구 삼성동 158-14 2층,02-568-5586,노래방,None,,None,None,4.15,None,None,http://ldb.phinf.naver.net/20150901_26/14410347464071To6X_JPEG/SUBMIT_1416903506772_35993109.jpg
+None,코다,서울 강남구 청담동 80-10,02-512-1004,노래방,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20150831_168/1440998285816VYelJ_JPEG/106574505322670_0.jpg
+None,럭셔리수노래방,서울 강남구 대치동 897-26,02-561-9190,노래방,None,,None,None,4.45,None,None,http://ldb.phinf.naver.net/20200701_182/1593592409235UTqtv_JPEG/HJyyI2U3uC4zSRVAYveHwLcp.jpg
+None,스타코인노래연습장 강남직영점,서울 강남구 역삼동 810-8,070-8811-0000,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170616_53/1497589003783WJCBn_JPEG/186566538657_0.jpg
+None,더놀자노래연습장,서울 강남구 역삼동 601-7,02-555-4578,노래방,None,,None,None,4.08,None,None,None
+None,가로수 노래방,서울 강남구 신사동 537,010-4257-2072,노래방,None,,None,None,3.93,None,None,http://ldb.phinf.naver.net/20150831_127/1441018412755MYcCU_JPEG/SUBMIT_1413196412554_35719690.jpg
+None,훼미리노래연습실노래방,서울 강남구 역삼동 서울 강남구 역삼동 788 1,02-501-5060,노래방,None,,None,None,4.11,None,None,None
+None,강남퍼니멀티방노래방,서울 강남구 역삼동 619-3 5층,02-558-8110,노래방,None,,None,None,3.93,None,None,None
+None,명품노래연습장,서울 강남구 역삼동 669-17,02-557-1887,노래방,None,,None,None,4.57,None,None,http://ldb.phinf.naver.net/20191011_266/1570732954237zXkRW_JPEG/_i8aKVUYkPEKmpQOHVVDyZZZ.jpg
+None,천당노래연습장 강남일원점,서울 강남구 일원동 645-6 B1,02-2226-5368,노래방,None,,None,None,4.43,None,None,http://ldb.phinf.naver.net/20150901_246/14410727711061u91O_JPEG/SUBMIT_1388241491991_33890561.jpg
+None,오디션노래연습장,서울 강남구 수서동 725,None,노래방,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20190828_122/1566977548166Hh4f0_JPEG/X0z54dBiR-fC8r6PpeM7gCz2.jpg
+None,놀다가게 플레이스,서울 강남구 역삼동 819 케이스퀘어 지하 1층,02-566-9936,복합문화공간,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20200402_79/1585795537545juOvU_JPEG/hnwkqGqAVLZLDB3SmvGa37wM.jpg
+None,슈퍼스타코인노래연습장 강남역점,서울 강남구 역삼동 817-9 4층,02-538-2153,노래방,None,,None,None,4.33,None,"['코인노래방', '데이트', '동생이랑', '혼자']",http://ldb.phinf.naver.net/20160126_113/1453803451263lfy03_JPEG/176076594751141_0.jpeg
+None,퍼니랜드 강남1호점,서울 강남구 역삼동 813-8,None,오락실,None,,None,None,None,None,"['사격장', '데이트', '커플', '혼자']",http://ldb.phinf.naver.net/20161220_289/1482222667851kTG5D_JPEG/177170576127.jpg
+None,팝스타코인노래연습장,서울 강남구 역삼동 813-18 지하1층,02-558-7436,노래방,None,,None,None,4.19,None,"['코인노래방', '혼자']",http://ldb.phinf.naver.net/20161114_240/1479114914945WXtg4_JPEG/177061537725025_0.jpeg
+None,악쓰는하마코인노래연습장,서울 강남구 역삼동 619-26 4층 악쓰는하마코인노래연습장,02-552-2234,노래방,None,,None,None,4,None,"['코인노래방', '친구랑']",None
+None,히든 코인 싱어 노래 연습장,서울 강남구 역삼동 812-18,02-501-6777,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170511_104/14944924166740lPyo_JPEG/186453627926999_0.jpeg
+None,라라코인노래연습장,서울 강남구 역삼동 817-6,010-7106-2979,노래방,None,,None,None,4.44,None,None,None
+None,와드코인노래연습장,서울 강남구 신사동 512-10 지하,010-9084-2993,노래방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20180203_287/1517586368623Ta8a3_JPEG/7waPfk5DD7DU-JIzhoBFVcvu.jpg
+None,스타코인노래연습장 강남직영점,서울 강남구 역삼동 810-8,070-8811-0000,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170616_53/1497589003783WJCBn_JPEG/186566538657_0.jpg
+None,와드코인노래연습장,서울 강남구 논현동 182-25 지하,None,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20160424_248/1461428791594YKxx5_JPEG/176374415650729_0.jpeg
+None,NB코인노래연습장,서울 강남구 자곡동 600,1522-2825,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191030_200/15723685204128Yx3E_JPEG/in4SIaYH0AMu0VNFC0WYadjr.jpg
+None,노래야노래야코인노래연습장,서울 강남구 역삼동 827-70 3층,010-5169-6640,노래방,None,,None,None,4.7,None,None,http://ldb.phinf.naver.net/20191025_121/1571995661971qabkG_JPEG/7y4ndUaGBTj3m90pAABwMKMu.jpeg.jpg
+None,펀시티 스타필드 코엑스점,서울 강남구 삼성동 159,02-562-5671,오락시설,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190201_159/1549000615283nn1Q1_JPEG/4vMgJ54igU-N9FhRfH5FqIJQ.jpg
+None,락스타코인노래연습장,서울 강남구 대치동 1019-13 금마빌딩 지하1층,070-8860-7463,노래방,None,,None,None,None,None,"['코인노래방', '깨끗한', '스테이크']",http://ldb.phinf.naver.net/20200503_82/1588468351495zjKVX_JPEG/GllUD-aG-cdGooVI2sAZ2TVh.jpeg.jpg
+None,삼삼코인노래연습장,서울 강남구 역삼동 815-4 만이빌딩 지하2층,010-5616-4008,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191212_88/15761300890455UtuR_JPEG/4h25vecPMbij6GoScZjcIDY4.jpg
+None,플레이코인노래연습장,서울 강남구 일원동 687-5,None,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200130_185/15803459850386B6zn_JPEG/mn69Uy4L6eMjWhc0ocs_ZdBw.jpg
+None,k팝스타코인노래연습장,서울 강남구 대치동 1021-10,02-557-1841,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170123_110/1485145996015M4dOz_JPEG/186073536327_0.jpg
+None,NB코인노래연습장,서울 강남구 세곡동 581,010-3711-7982,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200401_247/1585750050989Uz3On_JPEG/trXScPaMbAqCeMocyvS9ckYO.jpg
+None,보이스코드,서울 강남구 신사동 610-2 지하1층 보이스코드,010-2057-3809,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191217_171/1576510508702zUETG_JPEG/CxosW4hv9tZA5vnHS1sXuX88.jpg
+None,인형뽑기 본점,서울 강남구 역삼동  700-35,None,오락실,None,,None,None,None,None,None,None
+None,빈티지 코인노래연습장,서울 강남구 신사동 517-29,02-1234-5555,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190709_164/15626432467937p5bV_JPEG/3R85y5t3rDUagGmSyH1T6cEF.jpg
+None,뮤직이너스,서울 강남구 도곡동 952-10,02-579-3273,노래방,None,,None,None,None,None,None,None
+None,xgamezone,서울 강남구 신사동 517-29,None,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190403_159/1554262995125bJpOz_JPEG/qc8gixsnlfIe6DfXaUjM7NKY.jpg
+None,킹콩코인노래연습장,서울 강남구 대치동 941-27,None,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191025_151/1571978138809GdMMM_JPEG/uomFYHN1QBMU6z7umGUfBwv-.jpg
+None,뮤직이너스 코인노래방,서울 강남구 역삼동 826-21,02-566-3273,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191118_85/1574067809875BRhkp_JPEG/TcKUVExDeMuQsiLkOTasV6rc.jpg
+None,지투존,서울 강남구 청담동 38-26,02-6205-5599,프랜차이즈본사,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20161202_241/1480637535551eRAzN_JPEG/177077553140994_0.jpeg
+None,뽑고뽑고,서울 강남구 논현동 149-8,None,오락실,None,,None,None,None,None,None,None
+None,슈퍼스타코인노래방 개포점,서울 강남구 개포동 186-10,010-9359-4159,노래방,None,,None,None,None,None,None,None
+None,메가박스코엑스,서울 강남구 삼성동 159,1544-0070,영화관,None,,None,None,4.46,None,"['영화관', '극장', '초밥', '화려한', '데이트']",http://ldb.phinf.naver.net/20200517_223/1589685595050V2Kek_JPEG/AFidpgyAKDXIyWHfVaFbEGjS.jpeg.jpg
+None,CGV 강남,서울 강남구 역삼동 814-6 스타플렉스,1544-1122,영화관,None,,None,None,4.33,None,"['영화관', '극장', '납작만두', '신비한', '데이트']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,CGV 압구정,서울 강남구 신사동 603-2,1544-1122,영화관,None,,None,None,4.4,None,"['영화관', '극장', '장어', '화려한', '나들이']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,CGV 청담씨네시티,서울 강남구 신사동 651-21,1544-1122,영화관,None,,None,None,4.34,None,"['영화관', '극장', '치즈케이크', '프라이빗', '데이트']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,메가박스 씨티,서울 강남구 역삼동 816,1544-0070,영화관,None,,None,None,4.39,None,"['영화관', '극장', '야시장', '친구랑', '오빠랑']",None
+None,롯데시네마 브로드웨이,서울 강남구 논현동 3-1,1544-8855,영화관,None,,None,None,4.16,None,"['영화관', '소극장', '뮤지컬', '평화로운', '데이트']",http://ldb.phinf.naver.net/20180601_285/15278189727220i12u_JPEG/IRtWK0eh0St0LbyTILYswKRT.jpg
+None,메가박스중앙,서울 강남구 논현동 6-13,02-1544-0070,영화관,None,,None,None,4.47,None,None,None
+None,롯데시네마 도곡,서울 강남구 도곡동 174-3,1544-8855,영화관,None,,None,None,4.23,None,None,http://ldb.phinf.naver.net/20180601_285/15278189727220i12u_JPEG/IRtWK0eh0St0LbyTILYswKRT.jpg
+None,이봄씨어터,서울 강남구 신사동 532-1,None,영화관,None,,None,None,3.5,None,"['영화관', '극장']",None
+None,조이앤시네마,서울 강남구 신사동 532-1 대원빌딩 B2,070-8233-4321,영화관,None,,None,None,4,None,"['영화관', '소극장', '숨겨진', '조그마한', '연인과']",http://ldb.phinf.naver.net/20150831_281/1441019264560mNs0x_JPEG/156959494321901_0.jpeg
+None,밤부컬렉션,서울 강남구 삼성동  44-17,02-6918-8222,복합문화공간,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181222_133/1545467538542FVL2h_JPEG/Fk5w4MIpjthrn1YHb0UGf0Nc.jpeg.jpg
+None,블랙죤DVD방,서울 강남구 역삼동 817,02-563-8021,DVD방,None,,None,None,4.6,None,None,http://ldb.phinf.naver.net/20150831_230/1441004111130x3agI_JPEG/SUBMIT_1435663418785_19504074.jpg
+None,넥스트비쥬얼스튜디오 시사실,서울 강남구 신사동 532-1 지하2층,02-6925-2578,영화관,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20150901_256/1441066214215S8lLs_JPEG/127159635447431_0.jpg
+None,누리로씨네마,서울 강남구 역삼동 719-2,02-1877-5355,영화관,None,,None,None,None,None,None,None
+None,VODSUITE,서울 강남구 논현동 221-1,010-4037-0791,장소대여,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200806_176/1596681420098r0QTG_JPEG/ijcqZ4O2X_otmHL1qTfHYDUU.jpg
+None,제이원이즈,서울 강남구 논현동 126-13,070-4801-3995,인테리어디자인,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191115_135/1573786617819cj5Gf_PNG/spGUn_A4AwtmdSbk0UhtYdFb.png
+None,활엔터테인먼트,서울 강남구 대치동 956-7,02-2279-8411,배급업,None,,None,None,None,None,None,None
+None,프리즘 시네살롱,서울 강남구 신사동 518-15,02-3443-4653,영화,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191124_167/1574605027054PahVi_PNG/mtYP_10WXgLUulv0drcsE91c.png
+None,돔스크린골프,서울 성동구 행당동 168-151,02-2200-1615,스크린골프장,None,,None,None,4.23,None,None,None
+None,에딘버그골프클럽,서울 성동구 성수동2가 281-12,02-497-0085,실외골프연습장,None,,None,None,4.2,None,None,http://ldb.phinf.naver.net/20190410_106/1554906747223Mm2HI_JPEG/kxQ8uhbN_Tl8a_JU9lJ9HOF1.jpg
+None,레몬골프 스크린골프존,서울 성동구 행당1동 140 레몬프라자 8층,02-2299-2223,스크린골프장,None,,None,None,4.41,None,None,http://ldb.phinf.naver.net/20151012_141/1444643848184e3H3S_JPEG/SUBMIT_1444643804154_13524720.jpg
+None,SL스크린골프,서울 성동구 성수2가3동 277-156,02-463-1616,스크린골프장,None,,None,None,3.93,None,None,http://ldb.phinf.naver.net/20150901_203/1441035764977cUJzt_GIF/96660585638902_0.gif
+None,동방스크린,서울 성동구 마장동 517 동방빌딩 지하1층,02-2292-2636,스크린골프장,None,,None,None,4.62,None,None,http://ldb.phinf.naver.net/20200417_177/1587123224914j60D4_JPEG/Q_tFWYxNnLh0qSrsD8iyagVS.jpg
+None,골프스타디움 성수본점,서울 성동구 성수동2가  289-20,02-6949-0609,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200629_115/1593397933933ugFuX_JPEG/gLku28T-mvvSFlFZXKRTXWjL.jpg
+None,골프존파크 드림힐점,서울 성동구 성수동2가 320-7,02-466-0753,스크린골프장,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,더스크린골프,서울 성동구 성수동2가 289-8,02-464-8282,스크린골프장,None,,None,None,4.19,None,None,None
+None,삼성스크린골프,서울 성동구 옥수동 250-7 B01호,02-2282-0753,스크린골프장,None,,None,None,4.86,None,None,http://ldb.phinf.naver.net/20150901_230/1441044441247FRHlB_JPEG/96964546825927_0.jpg
+None,은성스크린골프,서울 성동구 성수동2가 231-1,02-463-0011,실내골프연습장,None,,None,None,5,None,None,http://ldb.phinf.naver.net/20200319_224/15845815570238g2L3_JPEG/FIBJK5QyTx6efaVNlbGzC3Yx.jpg
+None,센트라스골프존,서울 성동구 하왕십리동 700 센트라스상가 i동 104~6호,02-2281-1258,스크린골프장,None,,None,None,4.38,None,None,None
+None,무학골프존,서울 성동구 행당동 319-39,02-2299-0972,스크린골프장,None,,None,None,3.94,None,None,http://ldb.phinf.naver.net/20150901_211/1441058588913vGLFT_JPEG/SUBMIT_1291880693279_13581692.jpg
+None,에스골프존,서울 성동구 홍익동 297,02-2282-2200,스크린골프장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20190127_251/1548586136144PYcmx_JPEG/VAtHG6ROg6v7InVVa29YULQr.jpg
+None,서울숲스크린골프연습장,서울 성동구 성수동2가 281-8 서울용달복지회관 3층,02-469-0021,스크린골프장,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20150901_179/14410352203681tRq5_JPEG/96658634459809_0.jpg
+None,골프존파크 옥수PGA골프점,서울 성동구 옥수동 436 극동그린상가아파트상가 지하1층,02-2281-2288,스크린골프장,None,,None,None,4.2,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,태종스크린골프,서울 성동구 마장동 776-3,02-2292-0799,스크린골프장,None,,None,None,4,None,None,None
+None,핀스크린골프,서울 성동구 금호동1가 172 2층,02-2291-6030,스크린골프장,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20150831_275/1441007833981SU1PG_JPEG/31744285_0.jpg
+None,골프존파크 하왕십리골프매니아,서울 성동구 하왕십리동 258,02-2299-5600,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,골프존성수센터,서울 성동구 성수1가2동 14-30,02-457-0753,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,GDR골프아카데미 성수점,서울 성동구 성수동1가 33-5,02-463-5355,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180807_295/15336206594013OMJC_JPEG/PpRjxjH1VsKQPbpiDDYExMoZ.jpg
+None,드림스크린골프장,서울 성동구 금호동1가 632 벽산복지상가 지층,02-2296-4111,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20171103_147/1509685630926Atbne_JPEG/CwLPXNSHdqqM1ndipozjT-fw.JPG.jpg
+None,비제이골프아카데미,서울 성동구 성수동2가 573-7,02-466-2514,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190824_183/1566646358993EhNgJ_JPEG/DGfk7QGuAmFJsA_s4MelWDRZ.jpg
+None,골프존오투골프,서울 성동구 성수동2가 289-20,None,스크린골프장,None,,None,None,None,None,None,None
+None,진성스포츠,서울 성동구 성수동2가 269-25 에이스하이엔드성수타워 409호,02-2212-8714,스크린골프장,None,,None,None,None,None,None,None
+None,혜성스크린골프,서울 성동구 금호동4가 548-1,02-2298-6288,스크린골프장,None,,None,None,None,None,None,None
+None,성수골프존스크린,서울 성동구 성수동2가 289-21,None,스크린골프장,None,,None,None,None,None,None,None
+None,센트리얼 골프 실내 연습장,서울 성동구 옥수동 560 어울림더리버 상가 지하1층,02-2293-3999,실내골프연습장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200416_111/1587020946087m2COn_JPEG/JTDny136r8dFnrKqZJHh5mak.JPG.jpg
+None,성원스크린골프,서울 성동구 옥수동 475,None,스크린골프장,None,,None,None,None,None,None,None
+None,라성스크린골프아카데미,서울 성동구 성수동2가 277-17,None,스크린골프장,None,,None,None,None,None,None,None
+None,월드골프연습장,서울 성동구 금호동4가 800,010-8747-7418,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191004_256/1570183470365SnJi7_JPEG/cZ6zmkkeqWztW0f2OtYdG3Y4.jpg
+None,유니온스타볼링클럽,서울 성동구 성수동2가 315-70,02-461-0707,볼링장,None,,None,None,4.27,None,"['볼링장', '락볼링', '펍', '데이트', '친구들이랑']",http://ldb.phinf.naver.net/20200519_270/1589874922211PkdmF_JPEG/%C0%AF%B4%CF%BF%C2_%C0%CE%BD%BA%C5%B8%C7%C1%BB%E7.jpg
+None,라인볼링센터,서울 성동구 행당동 140,02-2299-4199,볼링장,None,,None,None,4.25,None,"['볼링장', '데이트', '아이스크림', '친구들과']",http://blogfiles.naver.net/MjAxNjEyMTdfMjU2/MDAxNDgxOTA2NjUwNzc0.3Asvv-ndFxOYLjRhYRS0-C7dTZPokyEIApOE1gcmQOMg.tDl6MuIyChnZlzeBuPKBe9CEEKA6wGe8m22dNvBzqDcg.JPEG.silver5807/28052.jpg#900x510
+None,희소볼링장,서울 성동구 성수동2가 231-1,02-465-0068,볼링장,None,,None,None,4.38,None,"['볼링장', '락볼링']",http://ldb.phinf.naver.net/20200629_201/1593394541482Xsj9u_JPEG/iFRk38SwJSVYCTGEDUcgNp2s.jpg
+None,샹떼PC방 금호점,서울 성동구 금호동4가 1092-1,None,PC방,None,,None,None,4.72,None,None,http://ldb.phinf.naver.net/20150916_286/1442383487107UOh9l_JPEG/166866553462_0.jpg
+None,아이파크수PC,서울 성동구 성수동1가 13-133 B1,02-6925-0080,PC방,None,,None,None,3.64,None,None,http://ldb.phinf.naver.net/20190209_121/1549681210758ODKKi_JPEG/XcsQu2alCLG4T7-IkQSylSa0.jpg
+None,본스프리미엄pc방,서울 성동구 성수동1가 13-103,None,PC방,None,,None,None,3.44,None,None,None
+None,도깨비피시방 행당점,서울 성동구 행당동 4-15,02-2282-5225,PC방,None,,None,None,4.18,None,None,http://ldb.phinf.naver.net/20190130_146/1548837372600146CX_JPEG/L9wMAY_9ohXlnBZtm4GfXPbc.jpeg.jpg
+None,도깨비2 PC,서울 성동구 행당동 19-7,070-7812-8469,PC방,None,,None,None,4.86,None,None,None
+None,비원 한양대점,서울 성동구 행당동 19-54,None,PC방,None,,None,None,4.25,None,None,None
+None,zero 100 pc방,서울 성동구 하왕십리동 966-11,010-4164-0051,PC방,None,,None,None,4.45,None,None,http://ldb.phinf.naver.net/20181029_298/1540806161176da3SO_JPEG/oOondNeJVJsMZaGSI-Wm3UDL.jpg
+None,3POP PC방,서울 성동구 행당동 19-98,070-8244-4006,PC방,None,,None,None,4.64,None,None,http://ldb.phinf.naver.net/20190130_73/1548787275501cRV2D_JPEG/4wtodENStc9gS1cEs65AHzpp.jpeg.jpg
+None,고래고래코인노래방,서울 성동구 행당동 19-48,02-2293-2248,노래방,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20191102_270/1572620720130NPoqM_JPEG/7YPbXVIxaTwCwrKcWBNB6trQ.jpeg.jpg
+None,세븐PC,서울 성동구 금호동4가 1091,None,PC방,None,,None,None,4.2,None,None,None
+None,3POP PC카페,서울 성동구 금호동4가 1192,070-4333-4049,PC방,None,,None,None,4.94,None,None,http://ldb.phinf.naver.net/20190414_116/1555249424170c60OS_JPEG/nVbdXndRyFPg4WbROt-ZCZa5.jpg
+None,피디에스PC방 금호사거리점,서울 성동구 금호동4가 97-1 리버마이다스빌 2층,010-9229-2464,PC방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20181113_139/1542107652251RjoxW_JPEG/R1zDjLRCp5EBrkRUBDScBgm9.jpg
+None,아이센스PC 용답점,서울 성동구 용답동 55-1 삼도빌딩 지하1층,070-4866-4954,PC방,None,,None,None,5,None,None,None
+None,엔터나인 pc방,서울 성동구 행당동 286-5,010-6283-7515,PC방,None,,None,None,4.25,None,None,None
+None,제노PC,서울 성동구 옥수동 561,None,PC방,None,,None,None,4.25,None,None,None
+None,힘쎈수달 PC방,서울 성동구 하왕십리동 1016-2,02-741-0852,PC방,None,,None,None,4.5,None,None,None
+None,제노PC방한양대점,서울 성동구 행당동 19-101,070-8277-6030,PC방,None,,None,None,4.25,None,None,None
+None,탑클래스PC,서울 성동구 용답동 49-20,02-1511-1151,PC방,None,,None,None,4.75,None,None,None
+None,블랙홀 마장점,서울 성동구 마장동 773-2 동호빌딩 2층,02-2299-6372,PC방,None,,None,None,4.75,None,None,None
+None,인디고PC방 성수점,서울 성동구 성수동1가 241,02-465-8759,PC방,None,,None,None,4.83,None,None,http://ldb.phinf.naver.net/20180608_261/1528438558255Umqcr_JPEG/H8k-TgJE51GToDA0k-7_lysI.JPG.jpg
+None,솔라PC방,서울 성동구 성수동2가 561-1,02-1234-4325,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200102_208/15779056430753Pd3o_JPEG/5kM8f-5Dww2pJB4XzFW0r5Yd.jpeg.jpg
+None,3pop 피시방,서울 성동구 금호동4가 1193,070-5088-5511,PC방,None,,None,None,None,None,None,None
+None,보그PC,서울 성동구 금호동3가 1304,None,PC방,None,,None,None,4.25,None,None,None
+None,앤탑 성수점,서울 성동구 성수동2가 289-15,02-469-7554,PC방,None,,None,None,4.75,None,None,None
+None,형네PC방,서울 성동구 도선동 167,070-8836-9739,PC방,None,,None,None,4.33,None,None,None
+None,행복한피시방,서울 성동구 하왕십리동 992 무학현대아파트 상가 1층 101호,02-2281-5622,PC방,None,,None,None,None,None,None,None
+None,비원피시방,서울 성동구 하왕십리동 966-20,02-0002-0002,PC방,None,,None,None,5,None,None,None
+None,TEN PC방,서울 성동구 행당동 19-46,070-8611-8200,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200130_254/1580367841224r4ITT_JPEG/UjMmN6swqOQG9dCFXREbnIX6.jpg
+None,락PC방,서울 성동구 응봉동 98,None,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200128_59/1580197893900Pb4wk_JPEG/j_WKaQC5kl-_yjyNRJOXAjJi.jpeg.jpg
+None,아이닉스PC방,서울 성동구 행당동 25-2,None,PC방,None,,None,None,None,None,None,None
+None,010당구클럽,서울 성동구 행당동 19-67,None,당구장,None,,None,None,4.24,None,None,None
+None,블랙존,서울 성동구 행당동 19-89,010-4662-0900,당구장,None,,None,None,4.6,None,None,http://ldb.phinf.naver.net/20180818_41/1534523324766jJ7Bo_JPEG/zh6vR4dUZBmV9-SwCBAsEg0L.jpeg.jpg
+None,삼구사구당구클럽,서울 성동구 행당동 19-85,02-2297-3269,당구장,None,,None,None,3,None,None,None
+None,큐당구장,서울 성동구 행당동 286-12,None,당구장,None,,None,None,3.91,None,None,None
+None,SKY당구장,서울 성동구 마장동 773-2,None,당구장,None,,None,None,4,None,None,None
+None,성동캐롬클럽,서울 성동구 도선동 22-1,02-2282-3949,당구장,None,,None,None,4.08,None,None,http://ldb.phinf.naver.net/20160907_119/1473238413989I49ph_JPEG/176855638469582_0.jpeg
+None,구슬모아당구장,서울 성동구 하왕십리동 966-11,070-4530-6280,당구장,None,,None,None,4.29,None,None,http://ldb.phinf.naver.net/20180525_146/1527229330178CcSYP_JPEG/d0DlOjwdHDQhozuPVC1eHoMw.jpg
+None,공간당구장,서울 성동구 성수동1가 656-994,None,당구장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200423_299/1587650162774MP8B5_JPEG/tYe9DB98yG9DKulHn2i-PhJL.jpeg.jpg
+None,엘리트당구장,서울 성동구 행당동 14-1,02-2299-8204,당구장,None,,None,None,4.11,None,None,http://ldb.phinf.naver.net/20200719_282/15951624963175ysIV_JPEG/qkFRuylyFMb36ckz0IeYpyU6.jpeg.jpg
+None,캐롬당구클럽,서울 성동구 행당동 292-34 B1층,02-6014-8211,당구장,None,,None,None,4.14,None,None,http://ldb.phinf.naver.net/20150831_143/1440999951647J3GAC_JPEG/SUBMIT_1294056021105_19392122.jpg
+None,그린당구장,서울 성동구 용답동 90-8,02-2296-0355,당구장,None,,None,None,4,None,None,None
+None,보성당구장,서울 성동구 성수동2가 277-81,None,당구장,None,,None,None,4.5,None,None,None
+None,FM당구장,서울 성동구 성수동1가 40-1,None,당구장,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20181019_292/1539912136310zu1P6_JPEG/Yx1fBswffZgo9NYadOB5F5Ew.jpg
+None,영동당구클럽,서울 성동구 성수동2가 279-42,02-499-1419,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20190425_183/1556169777019qInB1_JPEG/SVBQosbPH7SGEppQPFWRRV0O.jpg
+None,케이투당구장,서울 성동구 사근동 176-1,None,당구장,None,,None,None,4.83,None,None,None
+None,삼성당구장,서울 성동구 마장동 774-2,02-2294-3703,당구장,None,,None,None,4.33,None,None,None
+None,승일당구장,서울 성동구 도선동 149,010-9950-0652,당구장,None,,None,None,3.83,None,None,None
+None,크라운당구클럽,서울 성동구 용답동 57-5,None,당구장,None,,None,None,4,None,None,None
+None,SBS당구클럽,서울 성동구 성수동2가 339-136,02-499-3949,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191229_150/15775917598682BgAM_JPEG/BJW6HSZTjenGNcytwP-oUcNi.jpg
+None,뚝섬당구장,서울 성동구 성수동1가 14-29,02-468-1288,당구장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20180712_244/1531373678667b64Nz_JPEG/SU4yOrctY3AUWlWPUUyQiHIi.jpg
+None,프로당구장,서울 성동구 마장동 466-38,None,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200530_82/1590770330704F3YCW_JPEG/Zprplu49m4VqzFNR-oxDZKaR.jpg
+None,수당구장,서울 성동구 도선동 40,02-2281-8784,당구장,None,,None,None,None,None,None,None
+None,한양대당구클럽,서울 성동구 행당동 32-6,010-2906-5549,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190406_221/1554478052284tgiIJ_JPEG/8Y--JTL4a03OX407yHnpllfI.jpg
+None,승리당구클럽,서울 성동구 성수동1가 242-2,None,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181025_75/1540469892488YMDLB_JPEG/67QIq7Dmz_ZhlEsmg8hjZEgG.jpg
+None,매니아당구클럽,서울 성동구 행당동 19-96,02-2299-3949,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20150901_116/1441114174004GI1YR_JPEG/136778626759942_3.jpeg
+None,준당구장,서울 성동구 도선동 43,None,당구장,None,,None,None,None,None,None,None
+None,SBS당구장,서울 성동구 성수동2가 278-49,02-461-0234,당구장,None,,None,None,None,None,None,None
+None,허리우드당구장,서울 성동구 마장동 566-28,02-2295-7309,당구장,None,,None,None,None,None,None,None
+None,프로당구장,서울 성동구 행당1동 286-30,02-2292-4079,당구장,None,,None,None,None,None,None,None
+None,드림당구장,서울 성동구 금호동4가 1109,None,당구장,None,,None,None,None,None,None,None
+None,더코드 왕십리점,서울 성동구 행당동 19-7,02-2291-7981,방탈출카페,None,"2인 44,000원",None,None,4.5,None,None,http://ldb.phinf.naver.net/20190603_166/1559496190395QIybI_JPEG/5LpYB2Nqg_6UKh_FsRhD4q9n.jpg
+None,솔버 성수점,서울 성동구 성수동2가 321-74 지하 1층,010-4142-4911,방탈출카페,None,매일 00:00~24:00,None,None,None,None,None,http://ldb.phinf.naver.net/20200703_289/1593742058004gwNYf_PNG/jXdwin1nUxw-NG5uKH5lNnw9.png
+None,스몰월드 왕십리점,서울 성동구 행당동 3-16,02-2298-2213,보드카페,None,"1시간이용료(1인당) 2,000원",None,None,4.63,None,None,http://ldb.phinf.naver.net/20200503_184/1588477780936eT4hN_JPEG/_4Vfe5hF2aXE4IQZo-S50a5h.jpg
+None,꼬꼬지보드게임,서울 성동구 하왕십리동 1070,010-7245-2547,보드카페,None,"금요일 13:00~20:00, 월요일 13:00~20:00, 화요일 13:00~20:00, 수요일 13:00~20:00, 목요일 13:00~20:00, 토요일 12:00~21:00",None,None,None,None,None,http://ldb.phinf.naver.net/20200331_51/15856230846834D6li_JPEG/EVCro-ixvMChQIuIKqeCI6ng.jpg
+None,윙보드게임카페,서울 성동구 행당동 19-101,02-2299-2277,보드카페,None,"1시간 2,000원",None,None,4.64,None,None,http://ldb.phinf.naver.net/20200623_32/1592923164269vUsha_JPEG/mjYtld0TNkYv6BwzUdaGwS_k.jpeg.jpg
+None,텍사스보드게임,서울 성동구 행당동 4-6 지하층,010-7564-4446,보드카페,None,"평일 13:00~23:00, 주말 14:00~23:00",None,None,4.33,None,None,None
+None,킨들샵,서울 성동구 성수동2가 289-305,02-497-7548,보드카페,None,"평일 13:00~21:00, 주말 12:00~20:00, 공휴일 12:00~20:00",None,None,None,None,None,http://ldb.phinf.naver.net/20191213_65/15762314994298UxYG_JPEG/if8cXve-dCFEKKN2Yf5Pwdxi.jpg
+None,딘농노래연습장,서울 성동구 행당동 286-31,02-2282-2747,노래방,None,,None,None,4.03,None,None,None
+None,락휴 코인노래연습장 서울 왕십리점,서울 성동구 행당동 292-34,02-2281-5656,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20171114_82/1510658792704cgUyV_JPEG/Qb6Li-vop-QVTa8DG2tSQc8S.jpg
+None,킹노래연습장,서울 성동구 행당동 19-7 3층,None,노래방,None,,None,None,4.25,None,None,None
+None,헤븐,서울 성동구 행당동 4-20,02-2281-4024,요리주점,None,,None,None,4.92,None,None,http://ldb.phinf.naver.net/20190422_125/1555901909132qJpb3_JPEG/T61LYbCJXpGXxqjkU66Ia_pQ.JPG.jpg
+None,악쓰는하마노래연습장,서울 성동구 용답동 61-7 지하1층 악쓰는하마노래방,02-2247-8256,노래방,None,,None,None,4.31,None,None,http://ldb.phinf.naver.net/20181107_97/1541570867633bOh0s_JPEG/uqhFvSkFNdcNiVUZtrQ49K-2.jpg
+None,악쓰는하마코인노래연습장 한양대점,서울 성동구 행당동 19-50,010-9049-7167,노래방,None,,None,None,4.06,None,None,http://ldb.phinf.naver.net/20180831_276/1535669031329qYzNx_JPEG/61Xm_Vh7Pne9fNFb1jUrpC49.jpg
+None,파티파티노래연습장,서울 성동구 행당동 19-51,None,노래방,None,,None,None,4.41,None,None,None
+None,고래고래코인노래방,서울 성동구 행당동 19-48,02-2293-2248,노래방,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20191102_270/1572620720130NPoqM_JPEG/7YPbXVIxaTwCwrKcWBNB6trQ.jpeg.jpg
+None,코코노래연습장,서울 성동구 성수1가2동 13-106,02-463-2967,노래방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20150901_171/1441039247624GC4RI_JPEG/SUBMIT_1350383657188_20243450.jpg
+None,DDR노래연습장,서울 성동구 성수동2가  310-7,None,노래방,None,,None,None,4.17,None,None,None
+None,리코스타코인노래연습장한양대2호점,서울 성동구 행당동 19-49,02-2291-6166,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190130_9/1548788973678ajUug_JPEG/H88zm9Kl1GCDqQSDZHRXZGhy.jpeg.jpg
+None,왕코뮤직타운,서울 성동구 도선동 161,None,노래방,None,,None,None,3.86,None,None,http://ldb.phinf.naver.net/20160817_202/1471415261679cypoj_JPEG/176767555759_0.jpg
+None,필하모니노래연습장,서울 성동구 행당동 19-101,02-2293-5418,노래방,None,,None,None,4.21,None,None,http://ldb.phinf.naver.net/20190130_213/1548787646793cEPb5_JPEG/fQLuVoMz5YCpG5ikfCibQcXS.jpeg.jpg
+None,슈퍼스타코인노래연습장 한양대점,서울 성동구 행당동 19-84,02-2282-6289,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170308_113/1488899410219u48eC_JPEG/186258404030039_0.jpeg
+None,딴따라코인노래연습장,서울 성동구 용답동 4-6,010-2113-6817,노래방,None,,None,None,4.75,None,None,None
+None,악쓰는하마노래연습장,서울 성동구 행당동 286-21,02-2296-5033,노래방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20150831_1/1440988885202DQrTh_JPEG/17900744_0.jpg
+None,VJ노래방,서울 성동구 행당동 19-107,02-2292-0064,노래방,None,,None,None,4.29,None,None,http://ldb.phinf.naver.net/20190130_50/1548787980090PVsRV_PNG/Qu8Ub-Ra5LygfZFXDHwnPIw5.png
+None,팡팡노래방,서울 성동구 마장동 771-7,02-2295-8487,노래방,None,,None,None,4.29,None,None,None
+None,신금호노래방,서울 성동구 금호동2가 452,02-2252-8599,노래방,None,,None,None,4.29,None,None,None
+None,SBS노래연습장,서울 성동구 마장동 773-2,None,노래방,None,,None,None,3.93,None,None,None
+None,스타노래연습장,서울 성동구 성수동2가 315-1,02-462-6999,노래방,None,,None,None,4.21,None,None,http://ldb.phinf.naver.net/20200201_224/1580497186695PtPxM_JPEG/Fa1Ge7wFDlDytZLKgCsyWJlt.jpg
+None,대박노래연습장,서울 성동구 성수동2가 300-64,None,노래방,None,,None,None,4.92,None,None,None
+None,앵콜노래방,서울 성동구 행당동 19-99,02-2291-1007,노래방,None,,None,None,None,None,['친구들이랑'],http://ldb.phinf.naver.net/20190130_212/1548787421560K1tfh_JPEG/aPou2_aeuRjBUPP47FJXhT2r.jpeg.jpg
+None,락스타한양대점노래방,서울 성동구 행당동 19-100,02-2282-0885,노래방,None,,None,None,4.4,None,None,http://ldb.phinf.naver.net/20190130_264/1548787547539OXS4i_JPEG/sec8IKqQteuQtHZH_V6g0o1w.jpeg.jpg
+None,세븐노래방,서울 성동구 옥수동 359 지층,02-2295-7333,노래방,None,,None,None,4.58,None,None,None
+None,방가방가노래방,서울 성동구 행당동 4-31 새마을금고빌딩 지하1층,02-2292-9293,노래방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20200705_123/1593920296143i7isQ_JPEG/XhyntPEAmUXpEkBNh7P0h9u_.jpg
+None,자두노래방,서울 성동구 성수동1가 248-1,None,노래방,None,,None,None,3.92,None,None,None
+None,행운노래방,서울 성동구 성수동1가 72-157,None,노래방,None,,None,None,4.5,None,None,None
+None,소리꾼노래방,서울 성동구 행당동 292-7,02-2281-0437,노래방,None,,None,None,4.7,None,None,http://ldb.phinf.naver.net/20200506_214/1588748655233WRGsf_JPEG/42R7UHkgp6AnDTVdWuvmXcUN.jpg
+None,환희노래방,서울 성동구 성수2가3동 315-70,02-498-7744,노래방,None,,None,None,4.6,None,None,http://ldb.phinf.naver.net/20190103_256/1546496816243QG5uS_JPEG/t-_RBxyGdeqgeSxPcJRq7ZSb.jpg
+None,악쓰는하마코인노래연습장 한양대점,서울 성동구 행당동 19-50,010-9049-7167,노래방,None,,None,None,4.06,None,None,http://ldb.phinf.naver.net/20180831_276/1535669031329qYzNx_JPEG/61Xm_Vh7Pne9fNFb1jUrpC49.jpg
+None,한양게임센터,서울 성동구 행당동 19-100,02-2292-7175,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190130_236/1548787471008XIGow_JPEG/IwX1eVDQPeVyuxglpXVt9qAF.jpeg.jpg
+None,고래고래코인노래방,서울 성동구 행당동 19-48,02-2293-2248,노래방,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20191102_270/1572620720130NPoqM_JPEG/7YPbXVIxaTwCwrKcWBNB6trQ.jpeg.jpg
+None,리코스타코인노래연습장한양대2호점,서울 성동구 행당동 19-49,02-2291-6166,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190130_9/1548788973678ajUug_JPEG/H88zm9Kl1GCDqQSDZHRXZGhy.jpeg.jpg
+None,슈퍼스타코인노래연습장 한양대점,서울 성동구 행당동 19-84,02-2282-6289,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170308_113/1488899410219u48eC_JPEG/186258404030039_0.jpeg
+None,딴따라코인노래연습장,서울 성동구 용답동 4-6,010-2113-6817,노래방,None,,None,None,4.75,None,None,None
+None,빈티지코인노래연습장 성수점,서울 성동구 성수동2가 300-65 현진빌딩 3층,070-2345-1234,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180107_12/1515313795560F9QzB_JPEG/JiMHqFNkjqipgX-C1KSgnymJ.jpg
+None,큐코인노래,서울 성동구 금호동3가 896,010-4809-8982,노래방,None,,None,None,None,None,None,None
+None,도깨비코인노래연습장,서울 성동구 행당동 227-1,011-5441-4616,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190129_120/15487619179744gM29_JPEG/HjC-RtQzC4XUjaHJMui61aow.jpg
+None,보이스코드 코인노래방,서울 성동구 행당동 347,010-7923-5381,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200114_41/1579004263898gNBdq_JPEG/GLFKQ6uKNavzwQANbnm6DHEe.jpg
+None,뽑기섬,서울 성동구 성수동2가 335-141,None,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200615_213/1592226859281NqqWU_JPEG/F4XFcz7Y_lKR5jqHhSXRhq2a.jpeg.jpg
+None,뽑꼬뽑꼬,서울 성동구 금호동4가  1119-3,None,오락실,None,,None,None,None,None,None,None
+None,게임파크노래방,서울 성동구 행당동 19-96,None,노래방,None,,None,None,None,None,None,None
+None,CGV 왕십리,서울 성동구 행당동 168-151,1544-1122,영화관,None,,None,None,4.37,None,"['영화관', '아이스크림', '극장', '재미있는', '데이트']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,메가박스 성수점,서울 성동구 성수동1가 656-335,None,영화관,None,,None,None,4.46,None,None,http://ldb.phinf.naver.net/20200205_174/15809090743783zunm_JPEG/u-uYZGd20-6GZt-VmfOX4iIH.jpeg.jpg
+None,수아레 서울,서울 성동구 마장동 767-45,070-4322-3356,"카페,디저트",None,,None,None,4.5,None,None,None
+None,살곶이자동차극장,서울 성동구 사근동 서울 성동구 사근동 58,None,영화관,None,,None,None,4.43,None,None,None
+None,다락 시네마,서울 성동구 성수동2가 309-144,070-4402-6660,영화관,None,,None,None,None,None,None,None
+None,동부극장(폐관),서울 성동구 성수동2가 281-30,None,영화관,None,,None,None,None,None,None,None
+None,모노플렉스,서울 성동구 성수동2가 272-42,1577-0723,영화관,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200728_60/1595910825073YW4wv_PNG/4inBXY3wRYqL0O27vLfvq44O.PNG.png
+None,스트라이크존 서울마포역구장,서울 마포구 도화동 548,02-701-5280,스크린야구장,None,"60분 48,000원",None,None,4.44,None,None,http://ldb.phinf.naver.net/20180927_43/1538007412378PjBTT_JPEG/tZBDGRNEWfPo9PRC-360YVJL.jpg
+None,스트라이크존 홍대역구장,서울 마포구 서교동 344-9,02-323-6669,스크린야구장,None,"9회 49,000원",None,None,4.33,None,"['데이트', '게임장', '남자친구랑']",http://ldb.phinf.naver.net/20171214_260/1513231759185mLDI7_JPEG/Sx2x2bLa9Czl90vaFc7rHPC0.jpg
+None,리얼야구존 홍대점,서울 마포구 서교동 369-4 4층,02-332-1979,스크린야구장,None,"메이저룸 55,000원",None,None,3.93,None,"['데이트', '곱창']",http://ldb.phinf.naver.net/20170901_236/15042435558078nGzw_JPEG/1gvbSIT_Db_8l4fVqUqP00BV.jpg
+None,웰니스 휘트니스,서울 마포구 상암동  1597 사보이시티 DMC 지하 1층,02-374-5530,헬스장,None,,None,None,4.14,None,None,http://ldb.phinf.naver.net/20190906_88/1567757302944UQ3gs_JPEG/4Gg2XprIiHKKMyuulLVcI6j6.jpg
+None,테리온휘트니스 상암DMC점,서울 마포구 상암동 1652,1670-1753,스포츠시설,None,,None,None,4.29,None,None,http://ldb.phinf.naver.net/20190620_94/1561018240038G1BJl_PNG/IYxN-DKVjmNWSOLl2hr5MpPT.png
+None,썬시티 골프존,서울 마포구 용강동 112-2 민영빌딩 B1,02-713-0755,실내골프연습장,None,,None,None,4.14,None,None,http://ldb.phinf.naver.net/20180914_219/1536888010897uQtn5_JPEG/7DJxGVptaK0FMBT2IHwaNG_m.jpg
+None,예인골프존,서울 마포구 상암동 34-51 예인하우스,02-307-0753,스크린골프장,None,,None,None,4.18,None,None,None
+None,골프존파크 상암엠점,서울 마포구 상암동 1615,02-304-0725,스크린골프장,None,,None,None,4.23,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,상암스크린골프존,서울 마포구 상암동 1590,02-6922-1800,스크린골프장,None,,None,None,4.54,None,None,http://ldb.phinf.naver.net/20191024_57/1571905177954cQW9Y_JPEG/3oI1WaD-lcyD0V3rgKjsdifP.jpg
+None,골프존파크 DMC골프점,서울 마포구 상암동 37-31,02-375-0709,스크린골프장,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,골프존파크 상수 로하스크린점,서울 마포구 상수동 93-45,02-335-6500,스크린골프장,None,,None,None,4.52,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,P&G 스크린골프,서울 마포구 신공덕동 5-27 서원빌딩 2층,02-711-8953,스크린골프장,None,,None,None,4.35,None,None,http://ldb.phinf.naver.net/20190604_93/15596162515278obF7_JPEG/8gZICGcK97OaX1N2VKiWcBbA.jpeg.jpg
+None,신촌G스크린골프존,서울 마포구 노고산동 107-17,02-717-0759,스크린골프장,None,,None,None,3.94,None,None,http://ldb.phinf.naver.net/20200401_265/1585704277299O2SW5_JPEG/6oejkKyP-Y6v50yaJz189vSE.jpg
+None,동신스크린골프,서울 마포구 공덕동 371,02-703-0727,스크린골프장,None,,None,None,4.19,None,None,None
+None,골드스크린골프존,서울 마포구 도화동 556,02-711-7259,스크린골프장,None,,None,None,3.94,None,None,http://ldb.phinf.naver.net/20170221_274/1487651717463iBYeD_PNG/186171536536235_0.png
+None,디바상암스크린골프,서울 마포구 성산동 592-3,02-3151-0707,스크린골프장,None,,None,None,4.19,None,None,http://ldb.phinf.naver.net/20171016_112/15081252587803xyvz_JPEG/iRuxy_jmy8G4lMqX2VzbedFN.JPG.jpg
+None,홍대스크린골프,서울 마포구 동교동 155-27 홍익인간오피스텔빌딩 지하 1층,02-333-1614,스크린골프장,None,,None,None,4.06,None,None,http://ldb.phinf.naver.net/20150831_250/14409936892501a4l1_JPEG/SUBMIT_1419397129921_13144981.jpg
+None,아트스크린골프존,서울 마포구 성산동 266-1 3층,02-332-8207,스크린골프장,None,,None,None,4.14,None,None,None
+None,아현스크린골프존,서울 마포구 아현동 327-25,02-792-2837,스크린골프장,None,,None,None,4.13,None,None,http://ldb.phinf.naver.net/20150831_146/1441007634396QE584_JPEG/156769534847415_0.jpeg
+None,선스크린골프,서울 마포구 서교동 449-6,02-325-0753,스크린골프장,None,,None,None,3.7,None,None,None
+None,에스디골프클럽,서울 마포구 서교동 449-5,02-3141-0793,스크린골프장,None,,None,None,4.08,None,None,http://ldb.phinf.naver.net/20170226_125/1488076229556gtk0B_JPEG/186176516048856_2.jpeg
+None,렉스스크린골프,서울 마포구 상암동 1599,02-6388-6900,스크린골프장,None,,None,None,4.63,None,None,None
+None,골프존파크 애오개아이파크점,서울 마포구 아현동 780,02-365-1600,스크린골프장,None,,None,None,2.79,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,공덕스크린골프,서울 마포구 도화동 553,02-797-9079,스크린골프장,None,,None,None,4.14,None,None,None
+None,미지휘트니스골프클럽,서울 마포구 신수동 63-14 구프라자 4층,02-714-0626,헬스장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20150812_167/1439390763603c27W3_JPEG/SUBMIT_1439388695505_13159334.jpg
+None,서경석골프존,서울 마포구 용강동 117-2,02-3675-0707,스크린골프장,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20190827_60/15668787968823HMLy_JPEG/zOSlVkFogBdI5sCxamMi71zs.jpg
+None,홀인원스크린골프,서울 마포구 도화동 541 일신빌딩 지하1층,02-704-0004,스크린골프장,None,,None,None,3.8,None,None,http://ldb.phinf.naver.net/20200106_193/15783123245542grAJ_JPEG/7UpC06en6GHCEEcBTykdLCSt.jpg
+None,골프존파크 서교점,서울 마포구 서교동 449-1,02-325-0069,스크린골프장,None,,None,None,4.6,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,서강스크린골프존,서울 마포구 구수동 68-32 밤섬빌딩 지하1층,02-716-0753,스크린골프장,None,,None,None,3.38,None,None,http://ldb.phinf.naver.net/20150901_70/1441043562116QcdG3_JPEG/12961510_0.jpg
+None,삼창스크린골프,서울 마포구 도화동 173 삼창프라자 지하2층 삼창스크린골프,02-706-0787,스크린골프장,None,,None,None,4.4,None,None,None
+None,웰니스휘트니스 스크린골프,서울 마포구 상암동 1597,010-3418-5027,스크린골프장,None,,None,None,None,None,None,None
+None,골프존파크 성산오케이골프존점,서울 마포구 성산동 108-1,02-335-3500,스크린골프장,None,,None,None,3.4,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,성산스크린골프존,서울 마포구 성산동 604,02-303-1554,스크린골프장,None,,None,None,4.75,None,None,http://ldb.phinf.naver.net/20180516_195/15263988832431h12d_JPEG/PFuKen4qOLDO2Rbkd8tsKQVM.jpg
+None,태화볼링장,서울 마포구 서교동 343-2,02-3142-3347,볼링장,None,,None,None,4.23,None,"['볼링장', '락볼링', '펍', '화려한', '데이트']",http://ldb.phinf.naver.net/20200306_206/1583482574700MwY3Q_PNG/leb365JJOq_kjSwI6SEHBDR1.png
+None,스매싱볼 홍대점,서울 마포구 서교동 404-5,02-322-2231,볼링장,None,,None,None,3.6,None,"['락볼링', '볼링장', '칵테일', '데이트', '친구들과']",http://ldb.phinf.naver.net/20191026_142/1572058227878gEpxd_JPEG/u1_ywLZFGX-_hvQQAcw6Rr4D.jpg
+None,마포구민체육센터,서울 마포구 망원동 450-3,02-324-7800,구민체육센터,None,,None,None,4.54,None,"['볼링장', '배드민턴', '한지', '데이트', '치킨']",http://ldb.phinf.naver.net/20171115_228/1510727167400XU8uV_JPEG/default-_75958f9a610c8510b055478f9c8176fbac26.jpg
+None,홍대볼링장,서울 마포구 동교동 165-8,02-3144-0939,볼링장,None,,None,None,4.13,None,None,http://ldb.phinf.naver.net/20190402_227/1554186849077SkkwF_JPEG/4YKAi0Ovg9LqA9Xxxf_6dY1o.jpg
+None,W락볼링장,서울 마포구 서교동 371-14,02-336-0928,볼링장,None,,None,None,4.1,None,None,http://ldb.phinf.naver.net/20180801_17/1533126137843uGVg7_JPEG/7nMALf9aiHQa8updMu0IZe0f.jpg
+None,클럽스트라이크 볼링장,서울 마포구 도화동 36,02-719-6114,볼링장,None,,None,None,4.4,None,None,http://ldb.phinf.naver.net/20200116_117/15791575336622fjNK_PNG/SR-DIKRanaZ-gZOjAgXa1Nbq.PNG.png
+None,스트라이크펍,서울 마포구 도화동 36 4층 403호,010-6283-5645,양식,None,,None,None,4,None,None,None
+None,망원한강공원론볼링장,서울 마포구 합정동 서울 마포구 합정동,None,부속시설,None,,None,None,None,None,None,None
+None,중앙샌딩,서울 마포구 신수동 62-42,02-335-7007,건물건설,None,,None,None,None,None,None,None
+None,SPOTV MBC GAME HERO CENTER,서울 마포구 상암동 1598,080-070-0000,PC방,None,,None,None,4.26,None,None,None
+None,더메이즈VR,서울 마포구 서교동 407-6 지하1층 더메이즈VR,02-6359-0015,PC방,None,,None,None,None,None,"['게임방', '공포체험', '데이트', '친절한', '스키장']",http://ldb.phinf.naver.net/20170303_122/1488518471744P75ax_JPEG/186253545130564_0.jpeg
+None,아이비스PC방 홍대점,서울 마포구 동교동 165-8 지하 2층,None,PC방,None,,None,None,4.27,None,"['쾌적한', '한지']",http://ldb.phinf.naver.net/20170702_196/1499005383857TDQXQ_JPEG/186652635323699_0.jpeg
+None,SNS PC방,서울 마포구 동교동 165-8,02-6925-6290,PC방,None,,None,None,4.1,None,None,http://ldb.phinf.naver.net/20200602_126/1591096664372GUwvC_JPEG/HtB4YM6KSoP-HH9sj4t-j0bZ.jpg
+None,샹떼pc방,서울 마포구 아현동 437-3,None,PC방,None,,None,None,4.54,None,None,None
+None,긱스타 PC CAFE,서울 마포구 합정동 472,010-7764-1330,PC방,None,,None,None,4.06,None,None,http://ldb.phinf.naver.net/20181212_205/1544583242949W55lQ_JPEG/fg1KPDvPjpmJude3mKe2_k9v.jpg
+None,옥스PC방,서울 마포구 상암동 31-6,070-7575-2002,PC방,None,,None,None,4.43,None,None,http://ldb.phinf.naver.net/20180922_215/1537545874264YbUCM_JPEG/K9xwm9Gq4zf02EwGpLezBCrF.jpg
+None,3POPPC방,서울 마포구 합정동 383-20,None,PC방,None,,None,None,4.65,None,None,None
+None,아프리카TV 오픈스튜디오 PC방,서울 마포구 서교동 362-5 4층,070-4472-9991,PC방,None,,None,None,4.32,None,None,None
+None,라이또PC방 라이또 PC 마포성산점,서울 마포구 성산동 593-10,None,PC방,None,,None,None,4.21,None,None,http://ldb.phinf.naver.net/20200315_36/1584264020332mhgdu_JPEG/pSRjfCNzrZ_WO92vmuZ3ccnB.jpg
+None,포포PC방 공덕점,서울 마포구 도화동 571,070-7826-9988,PC방,None,,None,None,3.65,None,None,http://ldb.phinf.naver.net/20170228_69/1488261968737nYu1E_JPEG/186172505966685_0.jpeg
+None,쓰리팝PC방,서울 마포구 공덕동 105-228,None,PC방,None,,None,None,3.97,None,None,http://ldb.phinf.naver.net/20190917_247/1568691883454HvKT3_JPEG/KRh_ShisTkxE8_v27IWH_LPP.jpeg.jpg
+None,VRIZ 홍대2호점,서울 마포구 동교동 162-6,070-4009-2374,PC방,None,,None,None,2.92,None,None,http://ldb.phinf.naver.net/20190123_98/1548245594922itEwz_JPEG/J7gF0PZY_f6XfrgkgVL4HESw.jpg
+None,아이쩡PC방,서울 마포구 서교동 355-15 2층 201호,010-7720-2813,PC방,None,,None,None,4.21,None,None,http://ldb.phinf.naver.net/20191216_72/1576483363250qqqfy_JPEG/zuDHgAVf9cZj3628XWaZMnO0.jpg
+None,몬스터파크,서울 마포구 서교동 355-2,070-8680-2766,PC방,None,,None,None,4.41,None,None,http://ldb.phinf.naver.net/20200530_222/1590808289723JWCiA_JPEG/m4jfTZ-3tf_og7Pr2ntav-5z.jpg
+None,VRIZ 홍대점,서울 마포구 서교동 354-1 지하 2층,070-4771-6881,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170302_143/14884138128870XgCp_JPEG/186252494672076_0.jpeg
+None,나인티PC카페,서울 마포구 동교동 165-8,None,PC방,None,,None,None,4,None,None,None
+None,브리즈 PC 카페,서울 마포구 서교동 354-22,None,PC방,None,,None,None,4.33,None,None,None
+None,쓰리팝코어피씨방,서울 마포구 망원동 377-2,017-299-1732,PC방,None,,None,None,3.93,None,None,http://ldb.phinf.naver.net/20191118_300/1574006804447G2jgf_JPEG/xzVRSygW0YUtWEUQV70DiogH.jpg
+None,제노피시방 동교점,서울 마포구 동교동 198-8 지하1층,070-4324-1425,PC방,None,,None,None,None,None,None,None
+None,이로운 셀프PC방,서울 마포구 노고산동 54-31 지하1층,010-2531-5552,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180810_287/1533872420137QcwA4_JPEG/1Xg_Te13dfNvfWx5yRq2ZfO5.JPG.jpg
+None,3POP PC방,서울 마포구 노고산동 56-7 지하 1층,None,PC방,None,,None,None,4.2,None,None,http://ldb.phinf.naver.net/20161229_61/1482973356259v33Gg_PNG/177172608236007_0.png
+None,3POP PC방,서울 마포구 용강동 179,010-3212-7782,PC방,None,,None,None,4.25,None,None,None
+None,홍PC,서울 마포구 아현동 617-2,None,PC방,None,,None,None,3.6,None,None,http://ldb.phinf.naver.net/20190717_146/1563337585686rU9NJ_JPEG/U3dgizCznv9N9ORS_rAwfCoc.jpeg.jpg
+None,나인티PC앤카페 망원점,서울 마포구 망원동 473-5,None,PC방,None,,None,None,4.13,None,None,http://ldb.phinf.naver.net/20200406_73/15861729416680giB5_JPEG/kyp4oiu7kUgK1epPmfd9unzw.jpg
+None,피씨앤쿡,서울 마포구 망원동 473-5,010-8494-2617,PC방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20200731_158/1596175034666HV5Rm_JPEG/85dA1GyV7EDZSeUIjZbbGb4g.jpg
+None,탑플레이스 PC방,서울 마포구 성산동  20-12,None,PC방,None,,None,None,4.63,None,None,http://ldb.phinf.naver.net/20180726_69/1532597645000Mjmg4_JPEG/--LOVRo5Hr1yHMK0WVoe8JA9.jpeg.jpg
+None,이룸PC방,서울 마포구 도화동 541 일신빌딩 지하1층,070-4009-7854,PC방,None,,None,None,3.67,None,None,http://ldb.phinf.naver.net/20200106_206/1578312244191RyzqW_JPEG/GKH3pqHQcLaaWpnzPa5UXqv-.jpg
+None,공간PC방,서울 마포구 신수동 27-2,070-4009-9786,PC방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20190916_171/1568624693580j0hwB_JPEG/Rz38bNV42_rrs1F_tIx4Mjn_.JPG.jpg
+None,독수리 PC Cafe,"서울 마포구 서교동 362-2 지하 1층, 2층",070-4009-6258,PC방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20190216_287/1550308782883ggI4o_JPEG/jPuHfwzBfOQE1KbkdZRl6Xg7.jpg
+None,코코 당구장,서울 마포구 망원동 482-3,010-9770-8380,당구장,None,,None,None,4.26,None,None,http://ldb.phinf.naver.net/20191107_148/15731053829044rsDx_JPEG/1deWrJkn_HpePQjODyzGUK9F.jpg
+None,맨체스터당구장,서울 마포구 서교동 369-10 재륜빌딩 301호,070-8162-3951,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20151030_217/1446198694343rl7v0_JPEG/SUBMIT_1446198678064_36905513.jpg
+None,헤이당구장,서울 마포구 동교동 163-9,02-335-3949,당구장,None,,None,None,4.31,None,None,http://ldb.phinf.naver.net/20150831_36/1440996023403YgjSs_JPEG/106553453944773_0.jpg
+None,펍그린당구클럽,서울 마포구 서교동 363-11,02-336-0119,당구장,None,,None,None,4.54,None,None,http://ldb.phinf.naver.net/20200201_47/1580484867507ejLsn_JPEG/u7TcfpVw56oonwfkPniJM1aw.jpg
+None,그린당구장,서울 마포구 서교동 363-12,02-6369-8280,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20160829_226/1472460798424JThKP_JPEG/176779578338300_0.jpeg
+None,별당구장,서울 마포구 상암동 15-29,None,당구장,None,,None,None,4.54,None,None,http://ldb.phinf.naver.net/20191020_93/1571497412335KnwyY_JPEG/yD9Hr89mfo92odSXmS0FVTIa.jpg
+None,삼성당구장,서울 마포구 도화동 550,02-707-3956,당구장,None,,None,None,4.17,None,None,None
+None,영당구클럽,서울 마포구 망원동 485-37,None,당구장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200419_190/1587298270221f2btn_JPEG/-rV-8I4y5oQypSLZWAPocYI0.jpg
+None,공덕당구장,서울 마포구 공덕동 256-10 2층,02-707-3245,당구장,None,,None,None,4.21,None,None,None
+None,진당구장,서울 마포구 망원동 378-3,None,당구장,None,,None,None,4.23,None,None,http://ldb.phinf.naver.net/20190805_111/1564995787095Eb4xv_JPEG/aZ6ogFP_x3_Zd-F5L6rJ5YP0.jpg
+None,연남당구클럽,서울 마포구 연남동 226-29,02-322-5855,당구장,None,,None,None,4.6,None,None,http://ldb.phinf.naver.net/20171201_250/1512113803144WHJJl_JPEG/4oJQSGdizHubQ3XoU2xs6LpN.jpg
+None,준당구클럽,서울 마포구 공덕동 105-238,02-701-5746,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20190521_90/15584331314732lJ5Y_JPEG/iqPh4REnqo0hYhpjG3BQAe4O.jpg
+None,청인당구클럽,서울 마포구 상암동 4-2,02-303-3295,당구장,None,,None,None,3.89,None,None,http://ldb.phinf.naver.net/20180502_29/15252659021369S91C_JPEG/i4fOnij4pGj3FwKYjQVafell.jpg
+None,한큐당구장,서울 마포구 성산동 593-5,02-6010-3949,당구장,None,,None,None,4.05,None,None,http://ldb.phinf.naver.net/20180919_12/1537282934734WkpGD_JPEG/Q5drhv7ZCnyg4Sn5dqONl_qj.jpg
+None,마루당구클럽,서울 마포구 신수동 47-17,None,당구장,None,,None,None,4.78,None,None,None
+None,큐앤구 당구장,서울 마포구 상수동 93-45 로하스타워 지하 2층,02-323-5754,당구장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20150901_276/1441040365489FJbYT_JPEG/SUBMIT_1363837104667_13459539.jpg
+None,큐클럽당구장,서울 마포구 도화동 250-4,02-707-0014,당구장,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20200221_122/1582288636550u8EYB_JPEG/rn6MW3ctKo9kDe3IWHuKnddu.jpeg.jpg
+None,수당구클럽,서울 마포구 동교동 198-31,070-4212-5613,당구장,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20190917_232/1568693126991KM874_JPEG/6X_pLH_8B0AGBgAhwCEiQP11.jpg
+None,합정당구클럽,서울 마포구 합정동 374-1,02-335-3469,당구장,None,,None,None,4.22,None,None,None
+None,플레이당구클럽,서울 마포구 합정동 413-5 일호빌딩 B동 3층,02-3144-1222,당구장,None,,None,None,3.4,None,None,None
+None,마포당구클럽,서울 마포구 도화동 173 삼창빌딩 지하2층,02-701-4939,당구장,None,,None,None,4.14,None,None,http://ldb.phinf.naver.net/20200411_167/1586576283074ORcwe_JPEG/dkUwt45TQwIwc9TMv930UL2M.jpg
+None,홍대당구장,서울 마포구 서교동 352-13,010-2600-6750,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20200611_274/1591805749872k1dra_JPEG/DbwJS7x_OJNm5lKDSaeklhl3.jpg
+None,사사당구장,서울 마포구 성산동 591-4 대명비첸시티 지하 1층,02-375-3949,당구장,None,,None,None,3.69,None,None,None
+None,당구매니아,서울 마포구 동교동 164-22,02-335-2080,당구장,None,,None,None,4.57,None,None,http://ldb.phinf.naver.net/20160502_85/1462165140082eq1pV_JPEG/176452538879956_0.jpeg
+None,드림당구장,서울 마포구 공덕동 105-159,02-312-9736,당구장,None,,None,None,3.71,None,None,None
+None,리버당구장,서울 마포구 합정동 387-20,02-336-1567,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20200307_9/15835522441122IdcY_JPEG/aHneUdGpAksGImy37z1cCPvV.jpg
+None,올레당구장,서울 마포구 공덕동 119-5,02-707-2242,당구장,None,,None,None,4.2,None,None,http://ldb.phinf.naver.net/20191017_43/1571307902535g4yA3_JPEG/gz9g9M5InzlfdnZ2PzFT08l8.jpeg.jpg
+None,예진당구장,서울 마포구 서교동 358-123,02-332-7713,당구장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20150831_142/1440996080543n47SJ_JPEG/106553453954331_0.jpg
+None,선일당구클럽,서울 마포구 용강동 40-4,None,당구장,None,,None,None,3.9,None,None,http://ldb.phinf.naver.net/20191112_117/1573525907361MYtos_JPEG/LVhn8COc2MRbbls1etmvqo6h.jpeg.jpg
+None,준당구장,서울 마포구 도화동 179-14,None,당구장,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20191108_5/1573220143427haFgP_JPEG/zXpAQPo6AM7intN5gMebgQOH.jpeg.jpg
+None,브레이크아웃이스케이프,서울 마포구 서교동 338-48,02-336-3527,방탈출카페,None,"표준가격 24,000원",None,None,4.81,None,None,http://ldb.phinf.naver.net/20181004_195/1538660971004FmMbo_JPEG/%BC%F6%BB%F3%C7%D1_%C7%D1%C0%C7%BF%F8_%BD%BA%B3%C0.JPG
+None,엑스이스케이프 홍대점,서울 마포구 서교동 355-3,02-6082-0155,방탈출카페,None,"평일 10:30~24:00, 주말 09:30~24:00",None,None,3.76,None,"['탈출카페', '데이트', '엔틱한', '신비스러운', '재방문']",http://ldb.phinf.naver.net/20180416_289/1523873122407yoLjW_JPEG/%282.jpg
+None,큐브이스케이프 홍대점,서울 마포구 서교동 355-15,02-323-5567,방탈출카페,None,"3명미만/인당 22,500원",None,None,4.65,None,"['탈출카페', '데이트', '신비스러운', '아귀찜', '재방문']",http://ldb.phinf.naver.net/20160416_104/1460795783248zkBIs_JPEG/176366576643114_0.jpeg
+None,룸즈에이 홍대점,서울 마포구 서교동 343-11 지하1층,02-333-0058,방탈출카페,None,"프리미엄테마 1인 25,000원",None,None,4.83,None,None,http://ldb.phinf.naver.net/20190403_109/1554270028916bEix0_PNG/GLqGr3QMSnRdHQRj3DiGIMRV.png
+None,엑스이스케이프 홍대놀이터점,서울 마포구 서교동 358-122,02-336-2425,방탈출카페,None,"반값행사중 10,000원",None,None,None,None,"['탈출카페', '데이트', '인테리어소품', '고급스러운', '친구들하고']",http://ldb.phinf.naver.net/20180416_88/1523873703142fLTvQ_JPEG/%282.jpg
+None,리얼이스케이프첼린지,서울 마포구 서교동 339-5,02-333-3882,방탈출카페,None,"1~2인 입장료 46,000원",None,None,4.63,None,"['탈출카페', '친절한', '데이트', '애견카페', '게임방']",http://ldb.phinf.naver.net/20160401_95/1459488478951Mbij4_JPEG/176280545720565_0.jpeg
+None,엑스이스케이프 홍대상상마당점,서울 마포구 서교동 364-15,02-325-2425,방탈출카페,None,"평일 09:30~24:00, 주말 10:30~01:00",None,None,None,None,"['탈출카페', '데이트', '재미있는']",http://ldb.phinf.naver.net/20180416_40/1523874130297FudpD_JPEG/%282.jpg
+None,블랙룸,서울 마포구 서교동 366-8 서교뉴빌라 A동 지하 블랙룸,02-333-0611,방탈출카페,None,"주말,공휴일 1인 22,000원",None,None,4.17,None,"['탈출카페', '데이트', '룸카페', '신비한', '놀이동산']",http://ldb.phinf.naver.net/20160608_20/1465375488727IrceL_JPEG/176551588230073_1.jpeg
+None,미스터리룸 이스케이프 홍대본점,서울 마포구 서교동 407-27,02-323-1314,방탈출카페,None,"인당평균가격 18,000원",None,None,4.1,None,"['탈출카페', '룸카페', '보드게임방', '재미있는', '데이트']",http://ldb.phinf.naver.net/20160616_88/1466063280998cHBrS_PNG/176566567820825_0.png
+None,서울이스케이프룸 홍대2호점,서울 마포구 서교동 410-9,02-333-6502,방탈출카페,None,"베니스 상인의 저주받은 저택 24,000원",None,None,4.43,None,"['탈출카페', '재즈바', '데이트', '유럽풍', '영화관']",http://ldb.phinf.naver.net/20170117_278/14846257827784kF4g_PNG/186066556179619_0.png
+None,더코드 홍대점,서울 마포구 서교동 407-12,02-336-6941,방탈출카페,None,"2인 - 1인당 22,000원 44,000원",None,None,5,None,"['탈출카페', '재즈바', '데이트', '친절한', '한지']",http://ldb.phinf.naver.net/20171201_267/1512064585604sqtE5_JPEG/_3.jpg
+None,비트포비아 홍대던전,서울 마포구 서교동 396-46,02-322-4997,방탈출카페,None,"이용료 25,000원",None,None,4.63,None,None,http://ldb.phinf.naver.net/20180706_256/1530817567313XxUtl_JPEG/03hI3GntfT6-xkxx3tvNmxPC.jpg
+None,이스케이퍼스,서울 마포구 동교동 147-31,010-5594-5216,방탈출카페,None,"1인 44,000원",None,None,4.67,None,"['탈출카페', '재즈바', '서커스', '아담한', '데이트']",http://ldb.phinf.naver.net/20170213_43/1486947967675lyf3h_JPEG/1.jpg
+None,키이스케이프 홍대점,서울 마포구 서교동 408-27 보리수빌딩 지하1층,010-7497-5517,방탈출카페,None,"2인 56,000원",None,None,4.83,None,None,http://ldb.phinf.naver.net/20181228_131/1545971385894EQcCx_JPEG/55cwRspLaX_YJnM6kcwzcTEp.jpeg.jpg
+None,크라임씬카페 퍼즐팩토리 홍대본점,서울 마포구 서교동 358-46,010-7409-3531,방탈출카페,None,"크라임씬 EP.20 중전마마 살인사건 27,000원",None,None,4.36,None,"['탈출카페', '카지노', '보드게임방', '재미있는', '데이트']",http://ldb.phinf.naver.net/20170809_75/1502209052793DmXgY_JPEG/186759414752578_0.jpeg
+None,마스터키 홍대상수점,서울 마포구 상수동 317-4,02-334-7757,방탈출카페,None,"선물 22,000원",None,None,4.64,None,None,http://ldb.phinf.naver.net/20181229_42/1546060577768EtLMo_JPEG/8dYNoXZikO2BDxlD_DmJ9sdu.jpeg.jpg
+None,비밀의화원 홍대점,서울 마포구 서교동 358-1,02-332-8899,방탈출카페,None,"30분테마(2인) 28,000원",None,None,4.39,None,None,http://ldb.phinf.naver.net/20200826_146/1598417996816eRkxH_JPEG/GVT3vM1QemeX1cz62_ucNDJT.jpg
+None,비밀의화원 미드나잇,서울 마포구 서교동 400-3,02-3144-6977,방탈출카페,None,"(15분 테마)종갓집 민씨 1인 10,000원",None,None,4.41,None,"['탈출카페', '데이트', '재미있는', '재방문', '친절하고']",http://ldb.phinf.naver.net/20200529_253/1590719543010MWKRg_JPEG/HLMNW8NtZf0MSZ5D1wNy288g.jpg
+None,코마이스케이프 홍대점,서울 마포구 서교동 403-1,02-336-3533,방탈출카페,None,"2인 44,000원",None,None,None,None,"['탈출카페', '데이트', '한지', '친절하신', '숨겨진']",http://ldb.phinf.naver.net/20181214_207/1544773080705bB8k6_JPEG/%C4%ED%C6%CE%B8%DE%C0%CE%BF%EB.jpg
+None,미스터리룸 이스케이프 홍대2호점,서울 마포구 서교동 398-1,02-336-9010,방탈출카페,None,"1인 평균 18,000원",None,None,4.61,None,None,http://ldb.phinf.naver.net/20180518_243/15266446373983MxJl_JPEG/59rHZLaLDFbKSJSpb_GXNV22.jpg
+None,엑스케이프 홍대점,서울 마포구 서교동 369-4 7F 엑스케이프 홍대점,02-336-0502,방탈출카페,None,"2명 PLAY 44,000원",None,None,4.63,None,"['탈출카페', '연극', '한지', '신비한', '데이트']",http://ldb.phinf.naver.net/20170808_204/1502175197375DUhUm_PNG/186757616939403_0.png
+None,호텔드코드,서울 마포구 서교동 395-85,02-326-0610,방탈출카페,None,"1인 44,000원",None,None,4.79,None,"['탈출카페', '재즈바', '숨겨진', '고급진', '한지']",http://ldb.phinf.naver.net/20160805_77/1470385177873v4BMw_PNG/176755574957748_0.png
+None,Decoder,서울 마포구 서교동 360-3,070-8614-1793,방탈출카페,None,"2인 입장료 44,000원",None,None,4.69,None,"['탈출카페', '데이트', '태국음식', '아늑한', '한지']",http://ldb.phinf.naver.net/20160711_221/1468226557522MbkUO_JPEG/176661577257316_0.jpeg
+None,덤앤더머 방탈출카페 홍대점,서울 마포구 서교동 404-5,02-336-0959,방탈출카페,None,"65분테마 2인 44,000원",None,None,4.77,None,None,http://ldb.phinf.naver.net/20181209_37/15443667513540jmXT_JPEG/KSMUJrKG4lXQTcONk6BVUE1H.jpg
+None,더큐이스케이프,서울 마포구 동교동 162-3,02-322-7063,방탈출카페,None,매일 12:00~22:00,None,None,4.4,None,None,http://ldb.phinf.naver.net/20200712_222/1594554149021GGrHl_JPEG/ZD9BifGwD0fXw-w0FJNAulYH.jpg
+None,시크릿코드,서울 마포구 서교동 331-18 3층,02-332-6561,방탈출카페,None,"2인 44,000원",None,None,4.83,None,"['탈출카페', '데이트', '한지', '재미있는', '산행']",http://ldb.phinf.naver.net/20200318_154/1584502461914Phdt0_JPEG/qSZwJiHPm73ZMvDeY1uiTtNU.jpg
+None,엑소더스 홍대점,서울 마포구 서교동 399-4 지하1층 엑소더스 방탈출 홍대점,02-332-3228,방탈출카페,None,매일 12:00~24:00 연중무휴,None,None,3.17,None,"['탈출카페', '데이트', '숨은', '재미있는', '한지']",http://ldb.phinf.naver.net/20170206_131/1486307492388qjH6S_JPEG/186156404150839_0.jpeg
+None,마스터키 홍대점,서울 마포구 서교동 340-4 3층 마스터키 홍대점,02-337-5575,방탈출카페,None,"2인 44,000원",None,None,4.73,None,None,http://ldb.phinf.naver.net/20171218_179/1513592559585gD9YP_PNG/SMUzSmHeeg6d8ZrfCR18fYCE.PNG.png
+None,셜록홈즈 홍대점,서울 마포구 서교동 340-5,02-335-3360,방탈출카페,None,"2인 입장료 44,000원",None,None,5,None,"['탈출카페', '데이트', '숨겨진', '재미있는', '한지']",http://ldb.phinf.naver.net/20170310_8/1489134137886WJpfQ_JPEG/186260575236669_0.jpeg
+None,더클루 홍대점,서울 마포구 서교동 358-119,02-323-2225,방탈출카페,None,"1~2인 입장료 44,000원",None,None,4.1,None,"['탈출카페', '게임방', '데이트', '숨겨진', '한지']",http://ldb.phinf.naver.net/20150921_268/1442766263513pas9C_PNG/SUBMIT_1442766035893_36998101.png
+None,더조커 홍대점,서울 마포구 서교동 366-24 2층,02-324-5088,보드카페,None,"기본 1인 2,400원",None,None,4.71,None,None,http://ldb.phinf.naver.net/20191112_123/1573555520835Kanxm_JPEG/5b87fRnDxPiqNQlv2zX932Ke.jpg
+None,플레이보드,서울 마포구 서교동 366-7 3F,070-4106-0111,보드카페,None,"청소년 1,500원",None,None,4.5,None,"['보드카페', '보드게임방', '데이트', '재미있는', '친구들이랑']",http://ldb.phinf.naver.net/20180912_245/15367357120631Mrru_JPEG/Gwqqj2-qaAXSLYiMC4IiR1Ga.jpg
+None,히어로보드게임카페 홍대2호점,서울 마포구 동교동 162-3,02-3142-7767,보드카페,None,"1시간 2,400원",None,None,4.52,None,None,http://ldb.phinf.naver.net/20200708_3/15941956001773a56n_JPEG/cJPetLIsdqIJN71c8qcB2r9K.jpg
+None,더조커 홍대2호점,서울 마포구 서교동 358-122 홍대프라자 2층,02-332-6088,보드카페,None,"기본 1인 1시간 2,400원",None,None,4.58,None,None,http://ldb.phinf.naver.net/20200327_137/1585278491551Vc95z_JPEG/PuztONAqOY28-SJ4ryR4qYoH.jpg
+None,히어로보드게임카페 홍대1호점,서울 마포구 서교동 364-22,02-6368-6001,보드카페,None,"탄산음료 2,500원",None,None,4.6,None,None,http://ldb.phinf.naver.net/20180319_298/1521449681344hi6og_JPEG/Y4UK7uZUoV0k95rz2JTS8i0F.jpg
+None,보드팩토리,서울 마포구 서교동 364-15,02-324-6600,보드카페,None,음료 2500원~ / 10분 500원 변동가격(업주문의),None,None,4.37,None,"['보드카페', '보드게임방', '탈출카페', '친절하신', '데이트']",http://ldb.phinf.naver.net/20160405_213/1459852208594fVyf3_JPEG/176355596027318_0.jpeg
+None,에이스보드카페,서울 마포구 서교동 400-3,010-3293-1122,보드카페,None,"1인 1시간 3,000원",None,None,4.07,None,None,http://ldb.phinf.naver.net/20171204_251/1512318299206JfAqO_JPEG/PCCroB8d66ySlg8Oj3jn6eG9.jpg
+None,레끄레오,서울 마포구 동교동 162-10,02-755-4987,보드카페,None,"1시간 2,400원",None,None,4.49,None,None,http://ldb.phinf.naver.net/20181229_237/1546060794267g6yqk_JPEG/RTMjiAj1kL1QO2f7qdhEbnoy.jpg
+None,옐로우미플,서울 마포구 연남동 383-38,070-8624-1777,보드카페,None,"1시간 이용료 3,000원",None,None,4.49,None,None,http://ldb.phinf.naver.net/20180921_227/15375066996538e3u2_JPEG/Dzjt0uclwbpB78zMOKgcAlE1.jpeg.jpg
+None,보드스쿨 홍대입구점,서울 마포구 서교동 345-2 천마빌딩 지하,02-6205-8658,보드카페,None,"1시간 2,500원",None,None,4.46,None,"['보드카페', '보드게임방', '데이트', '재미있는', '친구와']",http://ldb.phinf.naver.net/20150831_70/14410221855081jvXW_JPEG/156965497068858_0.jpeg
+None,친구네놀이터,서울 마포구 서교동 405-3,02-3144-6857,보드카페,None,"기본 90분 7,000원",None,None,4.54,None,"['데이트', '카페', '사격장', '아늑한', '커플']",http://ldb.phinf.naver.net/20170616_208/1497591540161YmRIe_JPEG/1.jpg
+None,보드놀이터 홍대본점,서울 마포구 서교동 358-151,02-6339-4538,보드카페,None,"1시간 이용요금 1,500원",None,None,4.47,None,['보드카페'],http://ldb.phinf.naver.net/20200608_230/15915926805011nto0_JPEG/bY3lxD8fy5D83zihZNj6HMSa.jpg
+None,보드게임 보드놀이터 홍대입구점,서울 마포구 서교동 358-8 4층,02-6405-4537,보드카페,None,"1시간 이용료 1,500원",None,None,None,None,"['보드카페', '만화카페', '보드게임방', '데이트', '친구들이랑']",http://ldb.phinf.naver.net/20200608_94/1591593153647mYAYt_JPEG/E3eGlKShQaiwThvEa15pfuep.jpg
+None,보드게임카페 슈퍼보드,서울 마포구 서교동 358-67,02-3142-0077,보드카페,None,"1시간 이용료 2,400원",None,None,4.21,None,"['보드카페', '보드게임방', '데이트', '재미있는', '펭귄']",http://ldb.phinf.naver.net/20160315_285/1458017640662Wc1n0_PNG/176260568679019_0.png
+None,플레이보드 홍대점,서울 마포구 서교동 358-34,070-8285-0111,보드카페,None,서울특별시 마포구 와우산로21길 10 4층,None,None,4.48,None,None,None
+None,슈퍼보드 홍대점,서울 마포구 서교동 355-1 3층 슈퍼보드,02-3141-0010,보드카페,None,"1시간 1인당:추가 10분당 400원 2,400원",None,None,4.33,None,None,http://ldb.phinf.naver.net/20170119_278/1484805962644zqhP8_JPEG/186068637535482_0.jpeg
+None,롤링다이스,서울 마포구 동교동 200-29 동진빌딩 3층,02-323-7455,보드카페,None,"평일 15:00~22:30 명절 당일 휴무, 주말 14:00~22:30 명절 당일 휴무",None,None,4.38,None,"['보드카페', '데이트', '커플', '친구들과']",http://ldb.phinf.naver.net/20151126_83/1448517404293xdcuJ_PNG/167070543275546_0.png
+None,에이스플러스보드게임카페,서울 마포구 용강동 50-16,010-8021-3833,보드카페,None,"1인1시간 3,000원",None,None,4.42,None,None,http://ldb.phinf.naver.net/20200521_118/1590044056197N9MCf_JPEG/yVpuZFRU0F7RpscWZF7mJn5t.jpg
+None,메이드보드게임카페,서울 마포구 서교동 395-91,070-4135-1122,보드카페,None,"1인 1시간 3,000원",None,None,4.73,None,None,http://ldb.phinf.naver.net/20200714_219/1594719244169h5rFY_JPEG/XpZkqd5sdT_5WFtOsDiWaOP2.jpeg.jpg
+None,카페깔깔고블린,서울 마포구 서교동 461-2,070-4150-4612,보드카페,None,"평일 6시 이전 게임 이용료 / 시간 1,000원",None,None,4,None,None,http://ldb.phinf.naver.net/20180717_65/1531812438154vc0ng_JPEG/KakaoTalk_Photo_2018-07-17-12-36-03-1.jpg
+None,아수라발발타,서울 마포구 도화동 290-10,02-702-6443,보드카페,None,"1인 시간당 3,000원",None,None,4.13,None,None,http://ldb.phinf.naver.net/20150901_84/1441048000332N36xb_JPEG/166370455665140_0.jpeg
+None,위너보드카페,서울 마포구 도화동 55,010-8832-8844,보드카페,None,"아메리카노 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20200428_139/1588069026044eEjIh_JPEG/RYnW3L0ulj9vFl1r85cVTURh.jpg
+None,라운더스 보드카페,서울 마포구 서교동 354-14 3층 보드카페,010-2692-0815,보드카페,None,"이용료 3,000원",None,None,None,None,None,None
+None,302호보드게임,서울 마포구 동교동 159-6,010-6291-0599,보드카페,None,"평일 1인 무제한 12,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20200915_11/1600167887502TkqqE_PNG/302_boardgame.png
+None,러너러너보드카페,서울 마포구 상수동 90-2,010-7791-6722,보드카페,None,"타임비 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20181022_37/1540190713886XSvak_JPEG/DN32FlGRA8YOR0wDblMvSuLR.jpeg.jpg
+None,밸류보드카페,서울 마포구 도화동 1-12,010-2247-2351,보드카페,None,"이용료 3,000원",None,None,None,None,None,None
+None,수노래연습장 럭셔리 홍대점,서울 마포구 서교동 367-39,02-322-3111,노래방,None,,None,None,4.74,None,"['데이트', '아담한', '튀김', '친구들과', '커플']",http://ldb.phinf.naver.net/20160122_72/1453456234741c62VT_JPEG/176072588052562_0.jpeg
+None,수노래연습장 홍대 본점,서울 마포구 서교동 364-24,070-4405-9971,노래방,None,,None,None,4.69,None,"['코인노래방', '데이트', '아이스크림', '길거리음식', '돈가스']",http://ldb.phinf.naver.net/20170109_236/14839503336111G3lI_JPEG/186059575551447_6.jpeg
+None,코인쏭 본사,서울 마포구 서교동 326-23,02-2038-7760,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190107_3/1546859158732Bgwgs_JPEG/_yT8gCU1F774JT7eybeUvjkk.jpg
+None,악쓰는하마코인노래연습장 홍대점,서울 마포구 서교동 363-17 지하1층,02-779-9061,노래방,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20200530_136/1590848299659hdNCe_JPEG/bF1z5MqBfTmj5GfrfqUcNufH.jpg
+None,어썸코인노래연습장,서울 마포구 서교동 358-30,02-336-2548,노래방,None,,None,None,4.58,None,"['코인노래방', '깨끗한', '데이트', '공원', '혼자']",http://ldb.phinf.naver.net/20200314_213/1584112414319mTcYJ_JPEG/3emmraiOBa3cqFxw8emF6Ms5.JPG.jpg
+None,수노래연습장 1인전용 홍대점,서울 마포구 서교동 367-9,070-4145-3115,노래방,None,,None,None,4.61,None,"['코인노래방', '데이트', '혼자']",http://ldb.phinf.naver.net/20170124_294/1485235574158bu7vl_JPEG/186074545633587_0.jpeg
+None,악쓰는하마홍대2호점노래방,서울 마포구 서교동 356-3,02-3144-7849,노래방,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20200606_170/1591405766671vEGzO_JPEG/iWDOdZBmhVYcKqsD62KDSqAG.jpg
+None,홍대파티룸 탑플,서울 마포구 상수동 144-1,010-4848-7559,"이벤트,파티",None,,None,None,4.4,None,None,http://ldb.phinf.naver.net/20190708_126/156259442972689kaQ_JPEG/b7iTE7NZYCvOy5yviHbMA7oR.JPG.jpg
+None,락휴 코인노래연습장 홍대 연남점,서울 마포구 동교동 154-8,02-332-6670,노래방,None,,None,None,4.34,None,None,None
+None,히든코인싱어 홍대점,서울 마포구 서교동 331-15 지하 1층,010-4656-7822,노래방,None,,None,None,4.6,None,"['코인노래방', '혼자']",http://ldb.phinf.naver.net/20161220_218/14822168634421M3Lh_JPEG/177166616766898_0.jpeg
+None,락페스타 노래뮤비방,서울 마포구 동교동 169-11 서강빌딩 4층,02-3144-3257,노래방,None,,None,None,4.63,None,None,http://ldb.phinf.naver.net/20160722_155/1469175236747JLIkY_JPEG/176669635834372_0.jpeg
+None,키스노래연습장,서울 마포구 용강동 43-5,02-715-3744,노래방,None,,None,None,4.3,None,None,http://ldb.phinf.naver.net/20190625_209/1561465032883G1pE2_JPEG/JW0tn3Ps247AbtUpClhvGvn-.jpg
+None,락휴 코인노래연습장 서울 홍대점,서울 마포구 동교동 163-9,02-336-0138,노래방,None,,None,None,4.28,None,None,http://ldb.phinf.naver.net/20170425_4/1493098882075rV0Vt_JPEG/186375547141032_0.jpeg
+None,슈퍼스타코인노래연습장 홍대점,서울 마포구 서교동 345-6,02-332-9009,노래방,None,,None,None,4.89,None,None,http://ldb.phinf.naver.net/20190115_162/15475138575343xMXG_JPEG/t2X2lG4ct8g194tia-QmyekB.jpg
+None,빅코인노래연습장,서울 마포구 서교동 366-24 3층,070-8285-8208,노래방,None,,None,None,None,None,"['코인노래방', '핫플레이스']",http://ldb.phinf.naver.net/20161116_9/1479254666168ykvLz_JPEG/177060603962120_0.jpeg
+None,N3노래연습장,서울 마포구 서교동 364-15,02-336-2710,노래방,None,,None,None,4.44,None,None,None
+None,토마토노래연습장,서울 마포구 망원동 418-1,02-3144-2623,노래방,None,,None,None,4.31,None,None,http://ldb.phinf.naver.net/20200529_17/1590730399315USURA_JPEG/saquYrmOOSGGS6RTAM8cnYxA.jpg
+None,멜론노래연습장,서울 마포구 합정동 410-2 지하 1층,02-6013-1118,노래방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20190427_230/1556293997323xPMWp_JPEG/ddmLh16pxPtIOVP9u0tNtFax.jpeg.jpg
+None,악쓰는하마홍대1호점노래방,서울 마포구 서교동 407-7,02-322-4846,노래방,None,,None,None,4.33,None,None,None
+None,슈가코인노래연습장 공덕점,서울 마포구 공덕동 105-159 지하1층,070-8873-2019,노래방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200302_244/1583132338738zWaRL_JPEG/gKXITrI-ieVJ75b0Eo3gQjO7.jpg
+None,카카노래방,서울 마포구 망원동 57-151 지하1층,02-6337-6335,노래방,None,,None,None,4.42,None,None,None
+None,sky가라오케,서울 마포구 서교동 402-19,02-326-3400,요리주점,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190125_293/15483862818733JXEt_PNG/MHoPOYVtaT3ls6TX1Uqwfbcd.png
+None,프라임노래연습장,서울 마포구 서교동 402-24,02-332-5842,노래방,None,,None,None,4.38,None,None,None
+None,수노래연습장 럭셔리 홍대점 별관,서울 마포구 서교동 367-6,070-8885-3111,노래방,None,,None,None,None,None,"['코인노래방', '혼자']",http://ldb.phinf.naver.net/20160122_288/1453456334797GBlB2_JPEG/176072588234400_0.jpeg
+None,Q코인노래연습장,서울 마포구 동교동 164-33,010-2700-0869,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20160810_277/1470810642611DajLG_JPEG/176760556062471_0.jpeg
+None,애플노래연습장,서울 마포구 동교동 148-10,02-3667-7316,노래방,None,,None,None,4.08,None,None,http://ldb.phinf.naver.net/20190828_196/1566986625262mdn5I_JPEG/JnUsd1AYoxfSb6xv7Pwdupss.jpg
+None,고음불가 노래연습장,서울 마포구 서교동 369-5,None,노래방,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20190115_30/1547553469179aHAR6_JPEG/bxTJ5KbGtKZ4BnfNVvJRc_CI.jpg
+None,보물섬노래연습장,서울 마포구 용강동 122-1,None,노래방,None,,None,None,3.55,None,None,None
+None,슈퍼스타노래방,서울 마포구 상암동  16-5 지하 1층,02-374-3101,노래방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20150831_21/1441013149300OfCth_JPEG/SUBMIT_1366886749357_31896050.jpg
+None,홍대코인노래방,서울 마포구 동교동 162-3 지하 1층,010-4439-2352,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170222_214/1487754734238Pc0Rb_JPEG/186172584234083_0.jpeg
+None,연남오락실,서울 마포구 연남동 227-37 지하,010-2728-1212,"맥주,호프",None,,None,None,4.4,None,"['칵테일', '피자', '피맥', '데이트', '펍']",http://ldb.phinf.naver.net/20181230_91/15461343521356VP1M_JPEG/RBwf0N8eOmKMAxiOXsDLKz0n.jpeg.jpg
+None,코인쏭 본사,서울 마포구 서교동 326-23,02-2038-7760,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190107_3/1546859158732Bgwgs_JPEG/_yT8gCU1F774JT7eybeUvjkk.jpg
+None,악쓰는하마코인노래연습장 홍대점,서울 마포구 서교동 363-17 지하1층,02-779-9061,노래방,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20200530_136/1590848299659hdNCe_JPEG/bF1z5MqBfTmj5GfrfqUcNufH.jpg
+None,짱오락실 홍대점,서울 마포구 서교동 367-38,None,오락실,None,,None,None,None,None,"['사격', '카트라이더', '데이트', '재미있는', '스쿠터']",http://ldb.phinf.naver.net/20170109_36/1483941145133RKOos_JPEG/186059548245.jpg
+None,어썸코인노래연습장,서울 마포구 서교동 358-30,02-336-2548,노래방,None,,None,None,4.58,None,"['코인노래방', '깨끗한', '데이트', '공원', '혼자']",http://ldb.phinf.naver.net/20200314_213/1584112414319mTcYJ_JPEG/3emmraiOBa3cqFxw8emF6Ms5.JPG.jpg
+None,퍼니랜드,서울 마포구 서교동 408-22,02-322-9074,오락실,None,,None,None,None,None,"['코인노래방', '사격장', '데이트', '숨은', '커플']",http://ldb.phinf.naver.net/20191027_290/1572161517202IRVWl_JPEG/uoVnRjmpntYjym6Gcu23zh2h.jpg
+None,히든코인싱어 홍대점,서울 마포구 서교동 331-15 지하 1층,010-4656-7822,노래방,None,,None,None,4.6,None,"['코인노래방', '혼자']",http://ldb.phinf.naver.net/20161220_218/14822168634421M3Lh_JPEG/177166616766898_0.jpeg
+None,슈퍼스타코인노래연습장 홍대점,서울 마포구 서교동 345-6,02-332-9009,노래방,None,,None,None,4.89,None,None,http://ldb.phinf.naver.net/20190115_162/15475138575343xMXG_JPEG/t2X2lG4ct8g194tia-QmyekB.jpg
+None,빅코인노래연습장,서울 마포구 서교동 366-24 3층,070-8285-8208,노래방,None,,None,None,None,None,"['코인노래방', '핫플레이스']",http://ldb.phinf.naver.net/20161116_9/1479254666168ykvLz_JPEG/177060603962120_0.jpeg
+None,짱오락실 상암동 메가박스점,서울 마포구 성산동 서울 마포구 성산동  515-3,None,오락실,None,,None,None,4.04,None,None,http://ldb.phinf.naver.net/20180917_175/1537150572268aGNKj_JPEG/2G1RaAr2YDsE0OMeyV0fUEQ0.jpg
+None,슈가코인노래연습장 공덕점,서울 마포구 공덕동 105-159 지하1층,070-8873-2019,노래방,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20200302_244/1583132338738zWaRL_JPEG/gKXITrI-ieVJ75b0Eo3gQjO7.jpg
+None,Q코인노래연습장,서울 마포구 동교동 164-33,010-2700-0869,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20160810_277/1470810642611DajLG_JPEG/176760556062471_0.jpeg
+None,홍대코인노래방,서울 마포구 동교동 162-3 지하 1층,010-4439-2352,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170222_214/1487754734238Pc0Rb_JPEG/186172584234083_0.jpeg
+None,인트로에스 코인노래방,서울 마포구 서교동 358-48 2층 3층,010-2334-8546,노래방,None,,None,None,5,None,None,None
+None,마피아,서울 마포구 공덕동  21-5,None,오락실,None,,None,None,4.36,None,None,http://ldb.phinf.naver.net/20190916_13/1568617469530QkzgJ_JPEG/-ZokdyGooYYRj_ovM3v7CGMu.jpeg.jpg
+None,지코인 노래방,서울 마포구 신수동 81-59,None,노래방,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20191230_184/15776317251116SRt7_JPEG/aQzf6oc36T149vZH_InF_NFK.jpg
+None,맥코인노래연습장,서울 마포구 망원동 377-19,010-8678-9439,노래방,None,,None,None,4.83,None,None,http://ldb.phinf.naver.net/20200427_212/1587972473343uBrNG_JPEG/O_ia1xfzRzTBqaStZ3iQWOK-.jpg
+None,kpop코인노래연습장,서울 마포구 서교동 358-34,070-8721-9257,노래방,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20171126_14/1511633914195a91PW_JPEG/F3FToz_NRNx5uLeXwEHGNDzT.jpg
+None,카드OK코인노래연습장,서울 마포구 신공덕동 20-18 지층,010-7625-4080,노래방,None,,None,None,3.2,None,None,http://ldb.phinf.naver.net/20190927_63/1569565497588aA4yH_JPEG/kvOaRHV_l4R-eWakvNTm3vaE.jpg
+None,i코인노래연습장,서울 마포구 동교동 166-11,010-9649-8270,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170302_81/1488424354776aElel_JPEG/186252524254612_0.jpeg
+None,서강코인노래연습장,서울 마포구 신수동 22-22,02-706-2677,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20161219_293/1482135092529DQ29f_JPEG/6.jpg
+None,럭키코인동전노래연습장,서울 마포구 상암동 35-1,None,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190704_133/1562219335611WKsiW_JPEG/MyfrlIpAfldT1iiSfIbSdb3Y.jpeg.jpg
+None,렉스코인노래연습장,서울 마포구 동교동 152-1,070-8151-1351,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200729_53/1595948795394VPgLG_JPEG/Q_3CX703WAq2VcnSZth3tyXi.jpg
+None,콤콤오락실 연남점,서울 마포구 연남동 224-57,070-8098-4255,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200717_181/1594978093098huBqt_JPEG/6dkOJ8_l6XbhRTrdvPUjszbL.jpg
+None,세븐틴코인노래연습장마포점,서울 마포구 도화동 250-1,010-6248-4455,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191128_48/15748908083849HEiz_JPEG/msZMHMJ_KagUsaWt8e_FcAC4.jpg
+None,탑코인노래방,서울 마포구 서교동 369-27,010-6207-5821,노래방,None,,None,None,None,None,None,None
+None,로또인형뽑기방,서울 마포구 상암동  14-1,None,오락실,None,,None,None,None,None,None,None
+None,사격의명수,서울 마포구 서교동 408-15,None,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191027_57/15721616813044mzkG_JPEG/3Xd9k8Asya8pqo1ebIdLZNSJ.jpg
+None,카드OK코인노래연습장,서울 마포구 도화동 203-2 지하1층,010-3392-1072,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190430_237/1556627823436t9zer_JPEG/KGBwOgXcROKRt7x1QFFP6htP.jpg
+None,인형뽑기 놀이터,서울 마포구 상수동 서울 마포구 상수동 310-1,None,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181031_240/1540955335550J5PA3_JPEG/O8E4dgZbvy46AsOJt88tthTy.JPG.jpg
+None,CGV 홍대,서울 마포구 동교동 159-12,1544-1122,영화관,None,,None,None,4.32,None,"['영화관', '극장', '샤브샤브', '신비한', '데이트']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,메가박스상암,서울 마포구 성산동 서울 마포구 성산동 515,1544-0070,영화관,None,,None,None,4.38,None,None,None
+None,롯데시네마 홍대입구,서울 마포구 동교동 166-6 스타피카소 8층,1544-8855,영화관,None,,None,None,4.33,None,"['영화관', '극장', '스테이크', '화려한', '데이트']",http://ldb.phinf.naver.net/20180601_285/15278189727220i12u_JPEG/IRtWK0eh0St0LbyTILYswKRT.jpg
+None,롯데시네마 합정,서울 마포구 서교동 490 메세나 폴리스 2층,1544-8855,영화관,None,,None,None,4.31,None,"['영화관', '극장', '데이트', '햄버거', '힐링']",http://ldb.phinf.naver.net/20180601_285/15278189727220i12u_JPEG/IRtWK0eh0St0LbyTILYswKRT.jpg
+None,메가박스 홍대,서울 마포구 동교동 160-4,None,영화관,None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20200528_196/1590671667285d12wV_JPEG/rLuSkMMVXUnZWXVEnDj8LLSu.jpg
+None,시네마테크KOFA,서울 마포구 상암동 1602 DMC 단지,02-3153-2075,영화관,None,,None,None,4.64,None,"['영화관', '극장', '데이트', '혼자']",None
+None,상상마당 시네마,서울 마포구 서교동 367-5,02-330-6263,영화관,None,,None,None,4.33,None,"['영화관', '극장', '공연']",None
+None,성미산마을극장,서울 마포구 성산동 249-10,02-322-0345,영화관,None,,None,None,None,None,"['극장', '연극', '공연']",None
+None,스트리밍스튜디오온,서울 마포구 연남동 493-29,010-2316-1526,장소대여,None,,None,None,4.97,None,None,http://ldb.phinf.naver.net/20200414_234/1586795706726A2Vpt_JPEG/KakaoTalk_20200414_012928218.jpg
+None,KT&G 상상마당 시네마,서울 마포구 서교동 367-5,02-330-6243,영화관,None,,None,None,4.57,None,None,None
+None,CGV 홍대복합몰(2021년3월예정),서울 마포구 동교동 서울 마포구 동교동 167-25,None,영화관,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,테이크파이브DVD 홍대점,서울 마포구 서교동 405-5 6층,02-336-3245,DVD방,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20150831_233/1441003887866Xwttq_JPEG/106856634859496_0.jpg
+None,영화관 개방화장실,서울 마포구 성산동 서울 마포구 성산동 421-26,None,화장실,None,,None,None,None,None,None,None
+None,더무비코리아,서울 마포구 노고산동 31-24,02-704-0801,영화관,None,,None,None,None,None,None,None
+None,프로포즈,서울 마포구 서교동 339-4,010-8859-1063,"연애,결혼",None,,None,None,None,None,None,None
+None,이태원스크린야구,서울 용산구 이태원동 서울 용산구 이태원동,02-794-2977,스크린야구장,None,서울특별시 용산구 이태원동,None,None,None,None,None,None
+None,골프존 한강대로점,서울 용산구 한강로3가 65-228,None,스크린골프장,None,,None,None,4.15,None,None,None
+None,골프존파크 용산스크린점,서울 용산구 한강로3가 16-58 용산전자오피스텔 지하 1층,02-792-5009,스크린골프장,None,,None,None,4.77,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,리첸시아 스크린 골프장,서울 용산구 원효로1가 133-3 리첸시아 103동 B동 지하 1층,02-3275-0753,스크린골프장,None,,None,None,4.18,None,None,http://ldb.phinf.naver.net/20190716_208/1563274752879kj9WU_JPEG/TcXl1togLwdfmXUXyGd9Copd.jpg
+None,신용산스크린방,서울 용산구 남영동 120-2 수빌딩 지하1층,02-790-0751,골프연습장,None,,None,None,4.18,None,None,http://ldb.phinf.naver.net/20200325_227/1585146550028ERYa7_JPEG/LpM7X2NPyaARjPSKZx3FREjk.jpeg.jpg
+None,프렌즈 스크린 한남,서울 용산구 한남동 726-82,02-796-3377,스크린골프장,None,,None,None,4.83,None,None,http://ldb.phinf.naver.net/20200728_288/1595919396022Kxcnn_JPEG/UXl98yBBcpkWtCTT2bgiETuo.jpg
+None,TPC한남골프존,서울 용산구 한남동 110-1,02-792-0753,스크린골프장,None,,None,None,None,None,None,None
+None,이촌스크린골프,서울 용산구 이촌동 302-88 크레앙스빌딩 지하1층,02-792-2271,스크린골프장,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20150831_116/1440991078229IUkVd_JPEG/156458514521471_0.jpeg
+None,사이버스크린,서울 용산구 신계동 24-8 사이버빌딩 2층,02-712-6700,스크린골프장,None,,None,None,4.65,None,None,None
+None,골프존파크 한남 TPC한남골프점,서울 용산구 한남동 110-1 전국관광빌딩5층,02-792-0753,스크린골프장,None,,None,None,4.13,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,골프존파크 한강로써밋스크린,서울 용산구 한강로2가 391 용산푸르지오써밋 지하1층,02-797-2020,스크린골프장,None,,None,None,3.75,None,None,http://ldb.phinf.naver.net/20180122_287/1516599819201oBUeI_PNG/ACaa7TShO-SAlYlfzO-c2Tz4.PNG.png
+None,세븐골프존,서울 용산구 한남동 737-28,02-794-3521,스크린골프장,None,,None,None,4.5,None,None,http://ldb.phinf.naver.net/20190415_222/1555321742244dLHtG_JPEG/%C5%A9%B1%E2%BA%AF%C8%AF_7%B0%F1%C7%C1%C1%B8_%C0%D4%B0%A3%C6%C7.JPG
+None,랜드골프존스크린,서울 용산구 원효로3가 51-31,02-712-0754,스크린골프장,None,,None,None,4.1,None,None,None
+None,이촌골프클럽,서울 용산구 이촌동 300-58,02-792-7500,실내골프연습장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181220_199/1545276430707PeBHg_JPEG/DPERG7GOQW0XUej2-KSkP6NL.jpg
+None,한남스포렉스스크린골프,서울 용산구 한남동 96-3,02-749-8882,스크린골프장,None,,None,None,3.67,None,None,None
+None,원효스크린골프존,서울 용산구 산천동 202 지하1층,02-701-9970,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190629_201/1561778165406aWnyB_JPEG/RkFHLOnAWr1XLwkCi9bkiHZB.jpg
+None,효창스크린골프,서울 용산구 청파동3가 132-54,02-711-0753,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191101_126/1572541162148Sf926_JPEG/JjKPUJYE82QiB3JWaLYzz4_d.jpeg.jpg
+None,골프존파크한남스포렉스스크린,서울 용산구 한남동 96-3,None,스크린골프장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20170201_33/1485930581591pEDXf_JPEG/186151555961011_0.jpeg
+None,이안스크린골프,서울 용산구 문배동 3-3,None,스크린골프장,None,,None,None,None,None,None,None
+None,리버티짐골프연습장,서울 용산구 한남동 258,None,스크린골프장,None,,None,None,None,None,None,None
+None,아이씨골프,서울 용산구 이촌동 302-88 크레앙스빌딩 B1,070-7711-7022,스크린골프장,None,,None,None,None,None,None,None
+None,한남스크린골프,서울 용산구 한남동 76-42,None,스크린골프장,None,,None,None,None,None,None,None
+None,스매싱볼 이태원점,서울 용산구 이태원동 183-1 지하 1층,02-797-2231,볼링장,None,,None,None,3.93,None,"['볼링장', '락볼링', '펍', '화려한', '데이트']",http://ldb.phinf.naver.net/20191026_183/15720584517553TIsy_JPEG/6_RxF9Uhg5wLrZJJ2Gp3AZ7T.jpg
+None,남영볼링센터,서울 용산구 갈월동 92,02-711-0925,볼링장,None,,None,None,4.01,None,"['볼링장', '락볼링', '포장마차', '깨끗한', '데이트']",http://ldb.phinf.naver.net/20180125_300/1516861439464D7B31_JPEG/oYLdL-_f7QBh8oxIQbAbV0Cl.JPG.jpg
+None,볼하우스,서울 용산구 한남동 828,02-790-8883,볼링장,None,,None,None,4.46,None,None,http://ldb.phinf.naver.net/20200907_192/1599480841043wWaHF_PNG/eM96nYUyr3ZUR9dPIG2jduvZ.png
+None,어썸라운지볼24,서울 용산구 한남동 737-28 현대안성타워 1층,02-794-4543,볼링장,None,,None,None,4.39,None,None,http://ldb.phinf.naver.net/20200214_13/1581668665292z0Pdn_JPEG/QClzHLBmRm9zpc6bRYgHYhPv.jpg
+None,뉴청룡볼링장,서울 용산구 갈월동 98-38,02-797-6320,볼링장,None,,None,None,4.47,None,"['볼링장', '데이트']",http://ldb.phinf.naver.net/20190812_206/1565616827142KpssO_JPEG/75IOAS6B0K2kC8ib3iohfUc3.jpg
+None,쓰리팝PC방,서울 용산구 후암동 244-79,None,PC방,None,,None,None,4.58,None,None,None
+None,아이센스PC 숙대점,서울 용산구 청파동2가 60-1 지하1층,None,PC방,None,,None,None,4.26,None,None,http://ldb.phinf.naver.net/20190721_275/1563691639515YzmRv_JPEG/XEf5yMiSe13dujMljkl6fU8w.jpg
+None,제노pc방,서울 용산구 갈월동 98-1,070-8260-0029,PC방,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20190425_210/1556192191547nxgw4_JPEG/LaRNCchzilZIi0vZAfMWOPux.jpg
+None,덤프pc방,서울 용산구 한남동 633-3 덤프피씨방,None,PC방,None,,None,None,4.45,None,None,None
+None,아이리스피시방,서울 용산구 원효로2가 92-2,02-713-8465,PC방,None,,None,None,4.59,None,None,http://ldb.phinf.naver.net/20200320_250/1584688175789BStEH_JPEG/vqgA7aD_m9nZ8gdOSdTw-2zT.jpeg.jpg
+None,제노PC존,서울 용산구 갈월동 69-3,None,PC방,None,,None,None,3.96,None,None,http://ldb.phinf.naver.net/20191224_96/1577142802541VBHVT_JPEG/tl_SBipp5Cu87qip1hByi_EO.jpg
+None,숙대 3pop pc방,서울 용산구 청파동2가 94,070-8668-3963,PC방,None,,None,None,4.29,None,None,None
+None,인디고PC,서울 용산구 한남동 657-159,None,PC방,None,,None,None,4.45,None,None,http://ldb.phinf.naver.net/20200419_137/1587290772000iopbi_JPEG/33w7OtnxreFk35s4NdvJy5Aw.jpg
+None,어메이징파크피시방,서울 용산구 갈월동 69-3,070-7623-4882,PC방,None,,None,None,4.83,None,None,None
+None,쓰리팝PC방,서울 용산구 용문동 38-214 2층,070-8610-0323,PC방,None,,None,None,3.5,None,None,http://ldb.phinf.naver.net/20190415_241/1555316266402E1OAN_JPEG/M-N96TrXM0fwftfTjqtmC4u7.jpeg.jpg
+None,인터피아 남영점,서울 용산구 남영동 13-1,02-795-0287,PC방,None,,None,None,4.93,None,None,None
+None,e hannpc,서울 용산구 갈월동 85-3 지하1층,02-704-3235,PC방,None,,None,None,4.44,None,None,http://ldb.phinf.naver.net/20190426_31/15562785531764vg0D_JPEG/PA4je7ItSnl1cyH_DmvX_Ffq.jpg
+None,동자피시방,서울 용산구 동자동 43-23,02-757-9477,PC방,None,,None,None,4.93,None,None,None
+None,쓰리팝PC방,서울 용산구 보광동 259-1,070-4464-8300,PC방,None,,None,None,5,None,None,None
+None,아이뎁스pc,서울 용산구 이태원동 127-12,None,PC방,None,,None,None,4.6,None,None,None
+None,쓰리팝PC방 남영점,서울 용산구 갈월동 93-30 2층,None,PC방,None,,None,None,4.8,None,None,None
+None,컴링크피씨방,서울 용산구 원효로2가 81-10,02-3273-7696,PC방,None,,None,None,4.5,None,None,None
+None,아이닉스PC방 숙대점,서울 용산구 청파동2가 60-8,None,PC방,None,,None,None,4.33,None,None,None
+None,피씨클럽블랙,서울 용산구 청파동2가 63-5,None,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190925_113/1569414639544Y8H3d_JPEG/T21TmGNXyCkdFevARfN74Erf.jpg
+None,엔탑PC방,서울 용산구 보광동 260-6 2층,None,PC방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180910_49/1536578848094ebSDe_JPEG/sW4xlWh6pI8bbFF5A9I53nLs.jpg
+None,피비이노베이션,서울 용산구 신계동 8-3,02-1544-5227,"컴퓨터,모니터",None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181022_229/1540205159463vpsTC_JPEG/W1AiQcu0w3CnblonmsId-_yo.jpg
+None,에스피시방TNT이촌점,서울 용산구 이촌동 301-160,None,PC방,None,,None,None,None,None,None,None
+None,마이PC방,서울 용산구 원효로1가 28-9,070-4726-4874,"컴퓨터,모니터",None,,None,None,None,None,None,None
+None,비엠비파트너스,서울 용산구 원효로2가 96-1,02-1661-2803,컴퓨터시설관리업,None,,None,None,None,None,None,None
+None,현주아이엔씨,서울 용산구 한강로2가 15-2,1644-7470,"컴퓨터,모니터",None,,None,None,None,None,None,None
+None,우노치안또,서울 용산구 한강로1가 50-1,02-797-5682,PC방,None,,None,None,None,None,None,None
+None,중고게임기캠코더TV태블릿PC방폐업매입,서울 용산구 보광동 서울 용산구 보광동,070-4528-3627,중고가전,None,,None,None,None,None,None,None
+None,컴플리트,서울 용산구 한강로2가 16-1 선인상가 22동 5층 16호,010-9091-0499,"임대,대여",None,,None,None,None,None,None,None
+None,큰나무,서울 용산구 원효로3가 51-31 원효전자상가 4동 501호,02-717-8844,업소용가구,None,,None,None,None,None,None,None
+None,원컴퓨터,서울 용산구 한강로3가 16-85,02-3463-7174,컴퓨터시설관리업,None,,None,None,None,None,None,None
+None,GOON CAROM CLUB,서울 용산구 효창동 5-116,02-711-0266,당구장,None,,None,None,4.91,None,None,http://ldb.phinf.naver.net/20200120_231/1579524842013ymK4l_JPEG/26g9mSVj4gV8LoR5F6braaX0.jpeg.jpg
+None,허리우드당구클럽,서울 용산구 갈월동 89-9,02-701-4914,당구장,None,,None,None,4.71,None,None,http://ldb.phinf.naver.net/20190701_85/1561969533042Qr1rd_JPEG/8JdMJmuwO77G7gHIr7XxnV2m.jpg
+None,삼거리 당구클럽,서울 용산구 이태원동 225-1,02-792-0577,당구장,None,,None,None,4.55,None,None,http://ldb.phinf.naver.net/20200512_223/1589257544910DRFgh_JPEG/B9xTfSWNZhSQKTuKh0-G2mkB.jpg
+None,원당구장,서울 용산구 후암동 105-3,None,당구장,None,,None,None,3.5,None,None,None
+None,새문화당구장,서울 용산구 갈월동 87-14,010-9698-3553,당구장,None,,None,None,4.44,None,None,http://ldb.phinf.naver.net/20180105_140/15151398754633dsa4_JPEG/ogNxKrIjmcWEezaJm_vHqVWC.jpg
+None,팬더당구장,서울 용산구 남영동 18-2,070-4001-1657,당구장,None,,None,None,4.13,None,None,http://ldb.phinf.naver.net/20190728_275/15643003148365edGA_JPEG/nWHFaEJfKcSb84l8sSMUf4l7.jpg
+None,특실당구장,서울 용산구 서계동 220-3,02-711-1490,당구장,None,,None,None,3.86,None,None,http://ldb.phinf.naver.net/20150831_148/1440995798112GJ7Qz_JPEG/106553453926632_0.jpg
+None,버드당구장,서울 용산구 용산동2가 1-530,02-3789-0356,당구장,None,,None,None,3.5,None,None,None
+None,25시당구클럽,서울 용산구 원효로2가 96-8,02-702-3949,당구장,None,,None,None,4,None,None,http://ldb.phinf.naver.net/20200319_114/1584619163420vJMbG_JPEG/LyvLfpfIklUXZ9KJvxtHJXSt.jpeg.jpg
+None,25시당구장,서울 용산구 한남동 631-5,02-790-2268,당구장,None,,None,None,3.92,None,None,None
+None,삼구당구장,서울 용산구 효창동 5-364,010-3300-0775,당구장,None,,None,None,4.83,None,None,http://ldb.phinf.naver.net/20200526_132/15904864099167xJ9p_JPEG/UEXKIS8oj_XhIaQtdIzcQYvM.jpeg.jpg
+None,웰빙당구장,서울 용산구 이태원동 126-16,02-749-4111,당구장,None,,None,None,4.67,None,None,http://ldb.phinf.naver.net/20150901_149/1441064299153K47iI_JPEG/SUBMIT_1359423620250_20757959.jpg
+None,매니아당구클럽,서울 용산구 동자동 19-33,02-775-9177,당구장,None,,None,None,4.83,None,None,None
+None,월드당구클럽,서울 용산구 한강로1가 148,02-798-7595,당구장,None,,None,None,4.2,None,None,http://ldb.phinf.naver.net/20191031_40/1572528481597PILUJ_JPEG/7_mMIrF-a_qoS46ulsg3DzqO.jpg
+None,M당구클럽,서울 용산구 신계동 35-11,02-701-8141,당구장,None,,None,None,4.9,None,None,None
+None,빡당구장,서울 용산구 원효로4가 118-1,02-701-6949,당구장,None,,None,None,3.7,None,None,None
+None,BBM당구장,서울 용산구 갈월동 93-36,02-718-1010,당구장,None,,None,None,3.75,None,None,http://ldb.phinf.naver.net/20190424_278/1556106023851TQqF6_JPEG/K9AapcwK6JctKoGEABRQfSfg.jpg
+None,킹당구장,서울 용산구 동자동 12,02-727-6666,당구장,None,,None,None,4.75,None,None,None
+None,포커스당구장,서울 용산구 한강로2가 2-195,02-749-4903,당구장,None,,None,None,3.63,None,None,None
+None,비비엠25,서울 용산구 갈월동 93-36,None,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190425_93/1556194323699IlgjG_JPEG/i-1jrqZDNm_UBuiRBpH27STi.jpg
+None,SBS당구클럽,서울 용산구 한강로2가 2-196,02-797-0093,당구장,None,,None,None,4.17,None,None,http://ldb.phinf.naver.net/20200520_96/1589978635609qPGx5_JPEG/cR3_lKxdA0ZidZWGcq_2sfrq.jpeg.jpg
+None,손님은왕당구장,서울 용산구 원효로3가 37-2,None,당구장,None,,None,None,3.33,None,None,None
+None,킹콩당구장,서울 용산구 신계동 26-3,None,당구장,None,,None,None,None,None,None,None
+None,GREEN당구장,서울 용산구 한강로3가 40-152,02-749-4491,당구장,None,,None,None,None,None,None,None
+None,테라스당구클럽,서울 용산구 한남동 633-3,02-797-7706,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200330_167/15854979531039LbBu_JPEG/kwRNu08kxpqujMfN8SnlWTUZ.jpg
+None,드래곤당구장,서울 용산구 한강로3가 40-141,None,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20191031_229/1572490811792hBNdQ_JPEG/MdMYZRSx0yFccZ7CJPB80RTe.jpg
+None,포커스당구장,서울 용산구 갈월동 92-14,None,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190728_85/1564307521526r3tn4_JPEG/JFwA6rxRidBhtpwV0hsriLIx.jpg
+None,준당구장,서울 용산구 보광동 260-3 2층,02-3785-2863,당구장,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180830_228/1535612017130tV5i2_JPEG/7mAVVDG2CMpyU_G12MxkBfUN.jpg
+None,후암당구장,서울 용산구 후암동 244-49,None,당구장,None,,None,None,None,None,None,None
+None,하나당구클럽,서울 용산구 한강로2가 93-1,02-793-8154,당구장,None,,None,None,None,None,None,None
+None,미션브레이크,서울 용산구 한강로3가 40-999,02-2012-3783,방탈출카페,None,"입장료(인당) 22,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20180914_126/1536921347902aYdeV_JPEG/9z895P4gx2ipReQDK9stwF-v.jpg
+None,비트포비아 효창공원점,서울 용산구 원효로2가 8-27,None,방탈출카페,None,서울특별시 용산구 원효로71길 7-16,None,None,None,None,None,None
+None,라온에스,서울 용산구 한남동 636-7 지하1층,070-7534-4445,보드카페,None,"게임비 시간당 3,000원",None,None,None,None,None,http://ldb.phinf.naver.net/20151106_178/1446796919229OUrJM_JPEG/167052617743710_0.jpeg
+None,별노래연습장,서울 용산구 갈월동 87,None,노래방,None,,None,None,4.47,None,None,http://ldb.phinf.naver.net/20191003_191/1570079928701OntSj_JPEG/_7ozl3a-SjTm8VcixFISIJr9.jpg
+None,공공이(002),서울 용산구 한강로2가 115-1,02-794-5512,노래방,None,,None,None,3.82,None,None,http://ldb.phinf.naver.net/20200112_32/1578834056329sjqCT_JPEG/zAL8MhIP2vpXd3I4N-f_Ke9F.jpg
+None,JOYKING동전노래연습장 숙명여대점,서울 용산구 청파동3가  111-9 캠퍼스프라자 3층,010-4064-6921,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181109_88/1541737456577YoRWg_JPEG/Irl4_9AuL67ybscjDWKvDo02.jpg
+None,적셔노래연습장,서울 용산구 이태원동 128-1,02-792-8106,노래방,None,,None,None,3.4,None,None,None
+None,수 노래연습장,서울 용산구 원효로2가 1-36,None,노래방,None,,None,None,4.29,None,None,http://ldb.phinf.naver.net/20200103_170/1578040538328lLbNs_JPEG/aK1m2-3KxhY9sDWjxtrkQPtI.jpg
+None,궁노래연습장,서울 용산구 동자동 43-52,02-707-2585,노래방,None,,None,None,4.41,None,None,http://ldb.phinf.naver.net/20200810_51/1597008144898Myz95_JPEG/jnbm5uEx-kcL-As7bGmFRNER.jpg
+None,남평전자,서울 용산구 한강로동 15-13 나진상가 20-107,02-716-0770,"영상,음향가전",None,,None,None,4.14,None,None,None
+None,보스노래연습장,서울 용산구 이태원동 128-10,02-3785-0045,노래방,None,,None,None,3.61,None,None,None
+None,노래야노래야코인노래연습장,서울 용산구 이태원동 118-72,010-7503-0138,노래방,None,,None,None,4.56,None,None,http://ldb.phinf.naver.net/20191113_209/15736403714850MkX8_JPEG/LZHzeWeEWRKTZzosSvoZuwyp.jpeg.jpg
+None,락휴 코인노래연습장 숙대입구점,서울 용산구 청파동2가 63-5,02-712-0771,노래방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20190925_9/1569413978680mavC3_JPEG/JiQq4MNCM_NKbYQFBIP5iihF.jpg
+None,위아더월드,서울 용산구 남영동 24-6,02-792-9690,노래방,None,,None,None,4.36,None,None,None
+None,서울노래방,서울 용산구 동자동 11-12,02-752-3250,노래방,None,,None,None,4.17,None,None,None
+None,지코인노래연습장,서울 용산구 한남동 634-14,010-9545-6233,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190610_154/1560164122414MVCde_JPEG/gvqbQYM6TIBPxfqKsIbi7xZv.jpg
+None,미소노래방,서울 용산구 남영동 61-4,None,노래방,None,,None,None,4.3,None,None,http://ldb.phinf.naver.net/20180823_261/1535013107899FEpSI_JPEG/3zg8gKB42dTCtUu-i9Kfefm7.jpg
+None,노래천국 노래 연습장,서울 용산구 이태원동 656,02-749-3862,노래방,None,,None,None,3.75,None,None,None
+None,필하모니,서울 용산구 남영동 62-9,02-795-5418,노래방,None,,None,None,4.25,None,None,None
+None,SM브라보노래연습장,서울 용산구 후암동 244-11,02-774-0995,노래방,None,,None,None,3.5,None,None,None
+None,싸이노래연습장,서울 용산구 이태원동 225-94,None,노래방,None,,None,None,3.6,None,None,None
+None,신용산노래방,서울 용산구 한강로3가 40-152,None,노래방,None,,None,None,4.1,None,None,http://ldb.phinf.naver.net/20191031_248/1572487216904NQq4x_JPEG/EnAzN_wwi6vO7Tox8E6ArzpS.jpg
+None,행운노래방,서울 용산구 원효로3가  37-2,None,노래방,None,,None,None,4.1,None,None,None
+None,로데오노래방,서울 용산구 한남동 634-1,02-796-6544,노래방,None,,None,None,3.5,None,None,None
+None,스타노래방,서울 용산구 한강로1가  242,None,노래방,None,,None,None,5,None,None,None
+None,하모니노래방,서울 용산구 이촌1동 301-139,02-793-0393,노래방,None,,None,None,3.75,None,None,None
+None,테마노래연습장,서울 용산구 한강로2가 143-1,02-794-5860,노래방,None,,None,None,4.75,None,None,http://ldb.phinf.naver.net/20190131_259/1548945395750VYjb5_JPEG/jUeL7fVfO_Dvr00fLwUfI-Lq.jpg
+None,스타노래연습장,서울 용산구 한남동 657-98,None,노래방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20200101_31/1577849129019mVRvG_JPEG/Erox4n1HImcYu65ZVM6uri8k.jpg
+None,그냥갈수없잖아,서울 용산구 갈월동 90-10,None,노래방,None,,None,None,4.25,None,None,http://ldb.phinf.naver.net/20191123_283/1574481632442ccEsr_JPEG/IHzmEsxhKEKxyJ68rMRe_vHi.jpg
+None,정인전자,서울 용산구 한강로2가 15-13 나진상가 20동 137호,02-703-3181,"영상,음향가전",None,,None,None,4.33,None,None,http://ldb.phinf.naver.net/20150831_144/1440987667068gss6L_PNG/10980862_0.png
+None,명성가요노래방,서울 용산구 남영동 88-3,None,노래방,None,,None,None,3.83,None,None,http://ldb.phinf.naver.net/20190804_34/15648875616483d9JW_JPEG/nm1mLem_6wUxB91hetrniOCH.jpg
+None,대박노래연습장,서울 용산구 원효로2가 43-4,None,노래방,None,,None,None,4.83,None,None,None
+None,아테네 노래방,서울 용산구 한남동 627 3층 영풍빌딩,02-796-3203,노래방,None,,None,None,None,None,None,None
+None,V BUSTERS,서울 용산구 한강로3가 40-999 아이파크몰 8층,1544-1122,오락시설,None,,None,None,4.42,None,None,http://ldb.phinf.naver.net/20190112_26/15473040648154McHT_JPEG/QiBl_lNacJ_rEAoYjyCZlbqX.jpg
+None,콤콤오락실 열정도점,서울 용산구 원효로1가 44-9,010-7112-5788,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20180519_56/1526730126351gVb5P_JPEG/XYXjaLo_uCQmN46JtN42Bcoo.JPG.jpg
+None,JOYKING동전노래연습장 숙명여대점,서울 용산구 청파동3가  111-9 캠퍼스프라자 3층,010-4064-6921,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20181109_88/1541737456577YoRWg_JPEG/Irl4_9AuL67ybscjDWKvDo02.jpg
+None,레빗홀,서울 용산구 용산동2가 39-17,010-8259-2280,바(BAR),None,,None,None,None,None,None,http://ldb.phinf.naver.net/20190331_128/1554022460171O1SU0_JPEG/yI6sbYfWnvgFAmR_e7fTvZ8-.jpeg.jpg
+None,노래야노래야코인노래연습장,서울 용산구 이태원동 118-72,010-7503-0138,노래방,None,,None,None,4.56,None,None,http://ldb.phinf.naver.net/20191113_209/15736403714850MkX8_JPEG/LZHzeWeEWRKTZzosSvoZuwyp.jpeg.jpg
+None,못된강아지,서울 용산구 갈월동 92,010-7256-5111,오락실,None,,None,None,4.13,None,None,None
+None,코니코인노래연습장,서울 용산구 이태원동 124-9,010-2876-5251,노래방,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200227_134/1582771145925Bafar_JPEG/0zBxGaIyBWLbFKeKqmvKWjgI.jpg
+None,용산뽑아용,서울 용산구 신계동 36-14,None,오락실,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200402_51/1585759263059gfN5M_JPEG/9qy4Ok_IJD-3yBg1pZJeWKxx.JPG.jpg
+None,JOY KING동전노래연습장,서울 용산구 청파동3가 111-9,None,노래방,None,,None,None,None,None,None,None
+None,CGV 용산아이파크몰,서울 용산구 한강로3가 40-999,1544-1122,영화관,None,,None,None,4.45,None,"['영화관', '극장', '타로', '재미있는', '데이트']",http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,롯데시네마 용산,서울 용산구 한강로3가 16-9,1544-8855,영화관,None,,None,None,4.25,None,"['영화관', '극장', '수제버거', '쾌적한', '데이트']",http://ldb.phinf.naver.net/20180601_285/15278189727220i12u_JPEG/IRtWK0eh0St0LbyTILYswKRT.jpg
+None,CJ CGV 본사,서울 용산구 한강로3가 40-999,1544-1122,영화제작업,None,,None,None,4.38,None,None,http://ldb.phinf.naver.net/20190705_242/1562293065847xJE4I_JPEG/oFUisFwImIVl9_UOkK-_tkOR.JPG.jpg
+None,CJ CGV,서울 용산구 동자동 56,None,영화관,None,,None,None,4.42,None,None,http://ldb.phinf.naver.net/20190909_31/1568029121469QDD5m_JPEG/NTQ2FVPVimOAvhpsv4omETX-.jpg
+None,후암거실,서울 용산구 후암동 134-1,070-8839-6552,"임대,대여",None,,None,None,4.77,None,None,http://ldb.phinf.naver.net/20190707_74/1562475538430VNb3E_JPEG/qMl646nL4moQ-LoeC38Mj1xt.jpg
+None,후암 시네마,서울 용산구 후암동 164-32,010-9455-8168,장소대여,None,,None,None,None,None,None,http://ldb.phinf.naver.net/20200519_126/1589877418202qXM86_JPEG/2Z46O-Ze8Lz3eSU3r4Ash269.jpeg.jpg

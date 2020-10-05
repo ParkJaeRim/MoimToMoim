@@ -12,7 +12,7 @@
       <v-icon>fas fa-route</v-icon>
     </v-btn>
     <v-bottom-sheet v-model="sheet">
-      <v-sheet height="100px">
+      <v-sheet class="size">
         <v-row>
           <v-col cols="10">
             <slider ref="slider" :options="options">
@@ -107,9 +107,12 @@ export default {
 
 <style scope>
 .point {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   right: 10px;
-  top: 10px;
+  top: -50px;
+}
+.size {
+  height: 100px;
 }
 </style>

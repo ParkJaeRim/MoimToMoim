@@ -15,7 +15,7 @@
         :src="image"
       ></v-carousel-item>
     </v-carousel>
-    <v-card-text class="text--primary">
+    <v-card-text class="text--primary text-left">
       <v-btn
         @click="courseAdd(storeInfo.id)"
         small
