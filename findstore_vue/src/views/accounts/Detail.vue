@@ -43,7 +43,6 @@
         <div class="right">
           <v-btn @click="userDelete">회원탈퇴</v-btn>
           <v-btn @click="userUpdate">수정완료</v-btn>
-          <v-btn @click="goBack">취소</v-btn>
         </div>
   </v-container>
 </template>
@@ -84,12 +83,7 @@ export default {
   },
 
   methods: {
-    goBack() {
-      this.$router.push({
-        name: "detailmain",
-      });
-    },
-
+    
     userUpdate() {
       console.log(this.form);
       axios
