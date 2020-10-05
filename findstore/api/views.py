@@ -74,8 +74,9 @@ def searchrecommend(request, choice, meeting_id):
         store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
-
-    if request.data['selected'] == '카테고리':
+    if request.data['keyword'] == '':
+        pass
+    elif request.data['selected'] == '카테고리':
         store = store.filter(category__icontains = request.data['keyword'])
     else:
         store = store.filter(name__icontains = request.data['keyword'])
@@ -88,13 +89,14 @@ def searchrecommend(request, choice, meeting_id):
     return Response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def reviewcreate(request):
-    serializer = serializers.TestReviewsSerializer(data=request.data)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-        testreview(request)
-        return Response(serializer.data)
+    for da in request.data:
+        serializer = serializers.TestReviewsSerializer(data=da)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+    testreview(request.data[0]['user_name'])
+    return Response(serializer.data)
 
 def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
@@ -115,8 +117,8 @@ def get_top_n(predictions, meeting_id):
                 dic[user_rating[0]] =user_rating[1]
     return dic
 
-def testreview(request):
-    meeting_id = str(request.data.get('user_name'))
+def testreview(mid):
+    meeting_id = str(mid)
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
@@ -134,7 +136,7 @@ def testreview(request):
     df = pd.concat([df1,df2]).reset_index()
 
     # Load the dataset (download it if needed)
-    reader = Reader(rating_scale=(0.5, 5.0))
+    reader = Reader(rating_scale=(0.0, 5.0))
     data = Dataset.load_from_df(df[["user_name","res_id","rating"]],reader)
     trainset = data.build_full_trainset()
     algo = SVD()
@@ -157,6 +159,7 @@ def resChange(resList):
     res = []
     resNum = resList.split('/')
     for n in resNum:
+        print(n)
         try:
             store = get_object_or_404(models.Store, pk=n)
             serializer = serializers.StoreSerializer(store)

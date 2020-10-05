@@ -3,7 +3,7 @@
     <FooterList />
     <v-card-text class="text--primary text-left">
       <span class="h2">{{promiseList.title}}</span>
-      <v-chip class="ma-2" color="success" outlined small>D-{{finalCheck}}</v-chip>
+      <v-chip class="ma-2" color="orange" outlined small>D-{{finalCheck}}</v-chip>
       <div>{{promiseList.date}}</div>
       <div>{{promiseList.gu}} {{promiseList.dong}}</div>
     </v-card-text>
