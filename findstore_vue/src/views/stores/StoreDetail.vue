@@ -113,6 +113,7 @@ export default {
       cnt_menu: 3,
       menu_full: true,
       cnt_review: 2,
+      currentUser: " ",
     };
   },
   computed: {
@@ -125,6 +126,7 @@ export default {
     },
   },
   created() {
+    this.isUser();
     this.GetStoreInfo();
   },
   mounted() {
@@ -133,6 +135,43 @@ export default {
     }, 500);
   },
   methods: {
+    isUser() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      } else {
+        const config = {
+          headers: {
+            Authorization: `Token ${this.$cookies.get("auth-token")}`,
+          },
+        };
+        axios
+          .get(SERVER_URL + "/rest-auth/user/", config)
+          .then((res) => {
+            this.currentUser = res.data.username;
+          })
+          .catch((error) => {
+            console.log(error.response.data);
+          });
+        const p_id = this.$route.params.p_id;
+        axios
+          .get(SERVER_URL + "/promise/detail/" + p_id)
+          .then((res) => {
+            const promiseList = res.data;
+            if (promiseList.user.username != this.currentUser) {
+              this.$router.push({
+                name: "meetinglist",
+              });
+            }
+            promiseList.storelist += storeId + "/";
+            const p_id = this.$route.params.p_id;
+            axios
+              .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
+              .then(() => {})
+              .catch((err) => console.log(err.response));
+          })
+          .catch((err) => console.log(err.response));
+      }
+    },
     initMap() {
       var container = document.getElementById("map");
       var options = {
@@ -184,6 +223,11 @@ export default {
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           const promiseList = res.data;
+          if (promiseList.user.username != this.currentUser) {
+            this.$router.push({
+              name: "meetinglist",
+            });
+          }
           promiseList.storelist += storeId + "/";
           const p_id = this.$route.params.p_id;
           axios
