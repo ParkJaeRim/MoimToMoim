@@ -11,11 +11,6 @@ export default [
     name: "signup"
   },
   {
-    path: "/update",
-    view: "accounts/Update",
-    name: "update"
-  },
-  {
     path: "/detail",
     view: "accounts/Detail",
     name: "detail"

@@ -227,9 +227,15 @@ export default {
     },
   },
   created() {
+    this.move();
     this.GetMeeting();
   },
   methods: {
+    move() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      }
+    },
     GetMeeting() {
       const config = {
         headers: {
@@ -240,6 +246,7 @@ export default {
         .get(SERVER_URL + "/meeting/",config)
         .then((res) => {
           this.meetings = res.data;
+          console.log(res.data)
         })
         .catch((err) => console.error(err.response));
     },
