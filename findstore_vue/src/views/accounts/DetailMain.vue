@@ -58,8 +58,8 @@
           </v-col>
         </v-row>
       </div>
-    
-      <div v-for="(item,k) in promiseList" :key="item.id">
+
+      <div v-for="(item, k) in promiseList" :key="item.id">
         <div v-if="item.isfinish == cnt">
           <br /><br />
           <v-row>
@@ -79,7 +79,12 @@
             <v-col cols="3" class="pt-1 pl-0 yb-0">
               <!-- p는 패딩 m은 마진 t b l r (top, bottom, left, right) x축 y축 auto 자동 /  -->
 
-              <v-dialog v-model="dialog" max-width="290px" align="center" justify="center">
+              <v-dialog
+                v-model="dialog"
+                max-width="290px"
+                align="center"
+                justify="center"
+              >
                 <template v-slot:activator="{ on }">
                   <v-btn
                     v-if="item.isfinish == 0"
@@ -101,8 +106,6 @@
                       <v-row>
                         <v-col>
                           <v-card-text>
-                            {{ y }}
-                            {{ item.reslist.length }}
                             {{ item.reslist[y].name }}
                             <v-img
                               v-if="item.reslist[y].img !== null"
@@ -111,11 +114,15 @@
                               width="270px"
                               height="150px"
                             ></v-img>
-                            <v-text-field
+
+                            <br /><br />
+                            <v-rating
                               v-model="reviewdata.rating"
-                              label="여긴 별점을 넣을꺼에요."
-                            >
-                            </v-text-field>
+                              background-color="orange lighten-3"
+                              color="orange"
+                              large
+                            ></v-rating>
+                            <br />
                             <v-text-field
                               v-model="reviewdata.review"
                               label="리뷰를 작성해주세요."
@@ -166,7 +173,7 @@
               </v-dialog>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row class = "mx-4">
             <slider ref="slider" :options="options">
               <slideritem
                 v-for="(item2, i) in item.reslist"
@@ -217,14 +224,14 @@ export default {
         res_id: "",
         res_name: "",
         user_name: "",
-        rating: "",
+        rating: 0,
         review: "",
       },
       reviewdata: {
         res_id: "",
         res_name: "",
         user_name: "",
-        rating: "",
+        rating: 0,
         review: "",
       },
       options: {

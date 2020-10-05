@@ -136,7 +136,7 @@ def testreview(mid):
     df = pd.concat([df1,df2]).reset_index()
 
     # Load the dataset (download it if needed)
-    reader = Reader(rating_scale=(0.5, 5.0))
+    reader = Reader(rating_scale=(0.0, 5.0))
     data = Dataset.load_from_df(df[["user_name","res_id","rating"]],reader)
     trainset = data.build_full_trainset()
     algo = SVD()
@@ -159,6 +159,7 @@ def resChange(resList):
     res = []
     resNum = resList.split('/')
     for n in resNum:
+        print(n)
         try:
             store = get_object_or_404(models.Store, pk=n)
             serializer = serializers.StoreSerializer(store)
