@@ -171,7 +171,6 @@ export default {
 
   created() {
     this.isUser();
-    this.getCourseOrder();
   },
 
   mounted() {
@@ -221,6 +220,8 @@ export default {
           .then((res) => {
             console.log(res.data)
             this.currentUser = res.data.username
+            this.getCourseOrder();
+
           })
           .catch((error) => {+
             console.log(error.response.data);
