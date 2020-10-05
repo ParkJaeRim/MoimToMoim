@@ -3,7 +3,7 @@
     <v-card>
       <v-card-text class="text--primary">
         <span class="h2">{{ promiseList.title }}</span>
-        <v-chip class="ma-1" color="success" outlined small
+        <v-chip class="ma-1" color="orange" outlined small
           >D{{ finalCheck }}</v-chip
         >
         <div>{{ promiseList.date }}</div>
@@ -25,7 +25,7 @@
               color="deep-purple lighten-4"
               medium
             >
-              <template v-slot:icon width="200"> 
+              <template v-slot:icon width="200">
                 <span height="200">{{ i + 1 }}</span>
               </template>
 
@@ -37,8 +37,12 @@
                     style="height: 80px; max-width: 80px"
                   ></v-img>
                   <v-list-item-content>
-                    <v-list-item-title class="h4 mb-1">{{ n.name }}</v-list-item-title>
-                    <v-list-item-subtitle>{{ n.category }}</v-list-item-subtitle>
+                    <v-list-item-title class="h4 mb-1">{{
+                      n.name
+                    }}</v-list-item-title>
+                    <v-list-item-subtitle>{{
+                      n.category
+                    }}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
               </v-card>
@@ -50,27 +54,20 @@
       <template>
         <div class="text-right">
           <v-btn
-            class="ma-2"
-            tile
-            color="brown darken-1"
-            dark
+            text
+            style="font-size: 16px; color: orange"
             @click="courseAdd()"
             >추가</v-btn
           >
 
           <v-dialog v-model="dialog" calss max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn
-                class="ma-2"
-                tile
-                color="deep-orange lighten-1"
-                dark
-                v-on="on"
+              <v-btn text style="font-size: 16px; color: orange" v-on="on"
                 >수정</v-btn
               >
             </template>
 
-            <v-card >
+            <v-card>
               <v-card-title>
                 <span class="h3">코스 순서 변경</span>
               </v-card-title>
@@ -112,10 +109,16 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="purple lighten-1" text @click="save()"
+                <v-btn
+                  text
+                  style="font-size: 16px; color: orange"
+                  @click="save()"
                   >수정완료</v-btn
                 >
-                <v-btn color="purple lighten-1" text @click="close()"
+                <v-btn
+                  text
+                  style="font-size: 16px; color: orange"
+                  @click="close()"
                   >취소</v-btn
                 >
               </v-card-actions>
@@ -123,18 +126,14 @@
           </v-dialog>
 
           <v-btn
-            class="ma-2"
-            tile
-            color="yellow darken-1"
-            dark
+          text
+          style="font-size: 16px; color:orange"
             @click="finishCourse()"
             >완료</v-btn
           >
           <v-btn
-            class="ma-2"
-            tile
-            color="yellow darken-1"
-            dark
+          text
+          style="font-size: 16px; color:orange"
             @click="deleteCourse"
             >삭제</v-btn
           >
@@ -158,7 +157,7 @@ export default {
 
   data() {
     return {
-      today : new Date(),
+      today: new Date(),
       promiseList: [],
       storeInfos: [],
       course: "",
@@ -186,12 +185,11 @@ export default {
       var count = new Date(stday);
       var dday = Math.floor((this.today - count) / 1000 / 24 / 60 / 60);
       if (dday == 0) {
-        dday = "-day" 
-      }
-      else if(dday < 0) {
-        dday = dday
+        dday = "-day";
+      } else if (dday < 0) {
+        dday = dday;
       } else {
-        dday = "+" + dday
+        dday = "+" + dday;
       }
       return dday;
     },
@@ -291,14 +289,15 @@ export default {
 
     deleteCourse() {
       const p_id = this.$route.params.p_id;
-    
+
       axios
-      .post(SERVER_URL + "/promise/delete/" + p_id)
-      .then(() => {
-         this.$router.push({
-        name: "detailmain"})
-      })
-      .catch((err) => console.log(err.response));
+        .post(SERVER_URL + "/promise/delete/" + p_id)
+        .then(() => {
+          this.$router.push({
+            name: "detailmain",
+          });
+        })
+        .catch((err) => console.log(err.response));
     },
 
     goDetail(s_id) {
@@ -369,5 +368,4 @@ export default {
 .list-move {
   transition: transform 0.5s ease-out;
 }
-
 </style>
