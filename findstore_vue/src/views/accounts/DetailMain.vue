@@ -59,7 +59,7 @@
         </v-row>
       </div>
     
-      <div v-for="item in promiseList" :key="item.id">
+      <div v-for="(item,k) in promiseList" :key="item.id">
         <div v-if="item.isfinish == cnt">
           <br /><br />
           <v-row>
@@ -79,7 +79,7 @@
             <v-col cols="3" class="pt-1 pl-0 yb-0">
               <!-- p는 패딩 m은 마진 t b l r (top, bottom, left, right) x축 y축 auto 자동 /  -->
 
-              <v-dialog v-model="dialog" max-width="500px">
+              <v-dialog v-model="dialog" max-width="290px" align="center" justify="center">
                 <template v-slot:activator="{ on }">
                   <v-btn
                     v-if="item.isfinish == 0"
@@ -152,7 +152,7 @@
                       color="purple lighten-1"
                       text
                       @click="
-                        isfinish(y);
+                        isfinish(k);
                         reviewfinish(item.reslist[y], item.meeting.id);
                         save();
                       "
@@ -318,9 +318,6 @@ export default {
     },
     reviewfinish(storeInfos, id) {
       this.pushReviewData(storeInfos, id);
-      console.log(this.reviews);
-      console.log(storeInfos);
-      console.log(id);
       axios
         .post(SERVER_URL + "/api/store/review2/create/", this.reviews)
         .then(() => {})
@@ -328,9 +325,7 @@ export default {
     },
     isfinish(k) {
       const promiseData = this.promiseList[k];
-      // this.pushReviewData(storeInfos,id)
-      // promiseData.isfinish = 1;
-      // console.log(promiseData);
+      promiseData.isfinish = 1;
       axios
         .post(SERVER_URL + "/promise/update/" + promiseData.id, promiseData)
         .then(() => {
@@ -342,20 +337,13 @@ export default {
       this.reviewdata.res_id = storeInfos.id;
       this.reviewdata.res_name = storeInfos.name;
       this.reviewdata.user_name = id;
-      // console.log(storeInfos.name);
-      // console.log(id);
-      // console.log(this.reviewdata);
-      // console.log(this.reviews);
-      // console.log(this.reviewdata);
       this.reviews.push(this.reviewdata);
       this.reviewdata = Object.assign({}, this.defaultreview);
-
-      // console.log(this.reviewdata);;
-      // console.log(this.reviews);
     }, // 리뷰 데이터를 reviews에 넣는 작업 과정 과 초기화 과정을 여기서 해주는거다.
     // res_id 와 res_name , user_id 이거 더 채워주는 작업을 해줘야할듯?? 위에 쓴거중 3-1번과 3-2번 과정임  Success
     save() {
       this.dialog = false;
+      this.y = 0;
     },
     close() {
       this.dialog = false;
