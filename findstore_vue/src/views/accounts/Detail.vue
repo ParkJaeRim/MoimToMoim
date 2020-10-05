@@ -6,6 +6,7 @@
           :counter="10"
           :type="show2 ? 'text' : 'nickname'"
           label="nickname"
+          color="deep-purple lighten-3"
           @click:append="show2 = !show2"
           required
         ></v-text-field>
@@ -14,6 +15,7 @@
           v-model="form.email"
           :rules="emailRules"
           label="email"
+          color="deep-purple lighten-3"
           required
         ></v-text-field>
 
@@ -21,6 +23,7 @@
           v-model="form.age"
           :type="show2 ? 'text' : 'age'"
           label="age"
+          color="deep-purple lighten-3"
           @click:append="show2 = !show2"
           required
         ></v-text-field>
@@ -30,19 +33,25 @@
             class="left"
             label="남자"
             value="0"
-            color="success"
+            color="deep-purple lighten-3"
           ></v-radio>
           <v-radio
             class="right"
             label="여자"
             value="1"
-            color="success"
+            color="deep-purple lighten-3"
           ></v-radio>
         </v-radio-group>
 
         <div class="right">
-          <v-btn @click="userDelete">회원탈퇴</v-btn>
-          <v-btn @click="userUpdate">수정완료</v-btn>
+          <v-btn  
+          text
+          style="font-size: 16px; color:orange"
+          @click="userDelete">회원탈퇴</v-btn>
+          <v-btn  
+          text
+          style="font-size: 16px; color:orange"
+          @click="userUpdate">수정완료</v-btn>
         </div>
   </v-container>
 </template>
@@ -79,11 +88,14 @@ export default {
   },
 
   created() {
-    this.userData();
+    this.move();
+    if(this.$cookies.isKey("auth-token")) {
+      this.userData();
+    }
   },
 
   methods: {
-    
+
     userUpdate() {
       console.log(this.form);
       axios
@@ -102,6 +114,9 @@ export default {
           swal
             .fire({
               text: "수정되었습니다",
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1000
             })
             .then(() => {
               this.$router.push({ name: "detailmain" });
@@ -119,8 +134,8 @@ export default {
           text: "탈퇴하시겠습니까 ?",
           icon: "warning",
           showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
+          confirmButtonColor: "orange",
+          cancelButtonColor: "orange",
           confirmButtonText: "OK",
         })
         .then((res) => {
@@ -137,6 +152,12 @@ export default {
               });
           }
         });
+    },
+
+    move() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      }
     },
 
     userData() {
