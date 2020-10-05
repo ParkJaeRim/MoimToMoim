@@ -68,10 +68,12 @@ def searchrecommend(request, choice, meeting_id):
     if choice == 'eating':
         store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
     elif choice == 'playing':
-        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
+        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
-    if request.data['selected'] == '카테고리':
+    if request.data['keyword'] == '':
+        pass
+    elif request.data['selected'] == '카테고리':
         store = store.filter(category__icontains = request.data['keyword'])
     else:
         store = store.filter(name__icontains = request.data['keyword'])

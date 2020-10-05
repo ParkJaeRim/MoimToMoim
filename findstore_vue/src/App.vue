@@ -1,10 +1,17 @@
 <template>
   <v-row>
     <v-col class="d-none d-sm-block p-0" sm="6">
-      <v-img src="@/assets/img/mainimg.png" height="750"></v-img>
+      <v-img src="@/assets/img/mainimg.png" height="700"></v-img>
     </v-col>
     <v-col class="p-0" align="center" cols="12" sm="6">
-      <v-app class="phone">
+      <v-app class="phone d-none d-sm-block" style="height: 700px; overflow: auto;">
+        <v-btn color="deep-purple lighten-3" dark class="backBnt" fab small onclick="history.back()">
+          <v-icon dark>mdi-arrow-left</v-icon>
+        </v-btn>
+        <navbar />
+        <router-view />
+      </v-app>
+      <v-app class="phone d-sm-none d-block">
         <v-btn color="deep-purple lighten-3" dark class="backBnt" fab small onclick="history.back()">
           <v-icon dark>mdi-arrow-left</v-icon>
         </v-btn>
