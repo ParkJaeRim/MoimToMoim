@@ -27,15 +27,13 @@
                 text
                 color="primary"
                 style="font-size: 25px"
-                @click="promiseList.isfinish = 0"
-                >{{ promiseListIsfinish0.length }}</v-btn
+                @click="cnt = 0"
               >
+                {{ infoZero[0] }}
+              </v-btn>
             </div>
             <div>
-              <v-btn
-                text
-                style="font-size: 19px"
-                @click="promiseList.isfinish = 0"
+              <v-btn text style="font-size: 19px" @click="cnt = 0"
                 >내 약속</v-btn
               >
             </div>
@@ -49,17 +47,13 @@
                 text
                 color="primary"
                 style="font-size: 25px"
-                @click="promiseList.isfinish = 1"
-                >{{ promiseListIsfinish1.length }}
+                @click="cnt = 1"
+              >
+                {{ infoZero[1] }}
               </v-btn>
             </div>
             <div>
-              <v-btn
-                text
-                style="font-size: 19px"
-                @click="promiseList.isfinish = 1"
-                >완료</v-btn
-              >
+              <v-btn text style="font-size: 19px" @click="cnt = 1">완료</v-btn>
             </div>
           </v-col>
         </v-row>
@@ -114,13 +108,34 @@
                 height="170px"
                 @click="goStoreDetail(item2.id)"
               >
-                <div class="transbox white--text">
-                  <div class="store_name">{{ item2.name }}</div>
-                </div>
-              </v-img>
-            </slideritem>
-          </slider>
-        </v-row>
+                <v-img
+                  v-if="item2.img !== null"
+                  class="white--text"
+                  :src="item2.img"
+                  width="120px"
+                  height="150px"
+                  @click="goStoreDetail(item2.id)"
+                >
+                  <div class="transbox white--text">
+                    <div class="store_name">{{ item2.name }}</div>
+                  </div>
+                </v-img>
+                <v-img
+                  v-if="item2.img == null"
+                  class="white--text one"
+                  src="http://asq.kr/JNlr0nxp6EQN"
+                  width="170px"
+                  height="170px"
+                  @click="goStoreDetail(item2.id)"
+                >
+                  <div class="transbox white--text">
+                    <div class="store_name">{{ item2.name }}</div>
+                  </div>
+                </v-img>
+              </slideritem>
+            </slider>
+          </v-row>
+        </div>
       </div>
     </v-container>
   </div>
@@ -143,6 +158,22 @@ export default {
       promiseList: {},
       storeInfos: [],
       headers: [],
+      dialog: false,
+      reviews: [],
+      defaultreview: {
+        res_id: "",
+        res_name: "",
+        user_name: "",
+        rating: "",
+        review: "",
+      },
+      reviewdata: {
+        res_id: "",
+        res_name: "",
+        user_name: "",
+        rating: "",
+        review: "",
+      },
       options: {
         pagination: false,
         currentPage: 0,
@@ -155,9 +186,8 @@ export default {
         "margin-right": "2%",
         "font-size": "15px",
       },
-      promiseListIsfinish1: {},
-      promiseListIsfinish0: {},
-
+      cnt: 0,
+      y: 0,
       styleRecom: {
         width: "31.5%",
         "margin-right": "2%",
@@ -170,7 +200,20 @@ export default {
     slideritem,
   },
 
-  
+  computed: {
+    infoZero: function () {
+      var tmp0 = 0;
+      var tmp1 = 0;
+      for (let index = 0; index < this.promiseList.length; index++) {
+        if (this.promiseList[index].isfinish == 0) {
+          tmp0++;
+        } else {
+          tmp1++;
+        }
+      }
+      return [tmp0, tmp1];
+    },
+  },
 
   created() {
     this.userData();
@@ -197,19 +240,6 @@ export default {
         .get(SERVER_URL + "/promise/" + this.headers.username + "/list/")
         .then((res) => {
           this.promiseList = res.data;
-
-          console.log(this.promiseList);
-          // this.storeInfos = this.promiseList[1].reslist;
-          // console.log(this.storeInfos);
-          this.promiseListIsfinish1 = res.data.filter(
-            (item) => item.isfinish == 1
-          );
-
-          this.promiseListIsfinish0 = res.data.filter(
-            (item) => item.isfinish == 0
-          );
-          console.log("dddddd");
-          console.log(this.promiseListIsfinish0);
         })
         .catch((err) => console.log(err.res));
     },
