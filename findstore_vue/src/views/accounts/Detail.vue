@@ -113,7 +113,7 @@ export default {
 
           swal
             .fire({
-              text: "수정되었습니다",
+              title: "수정되었습니다",
               icon: 'success',
               showConfirmButton: false,
               timer: 1000
@@ -130,8 +130,7 @@ export default {
     userDelete() {
       swal
         .fire({
-          title: "회원 탈퇴",
-          text: "탈퇴하시겠습니까 ?",
+          title: "탈퇴하시겠습니까?",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "orange",
