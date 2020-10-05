@@ -16,7 +16,7 @@ urlpatterns = [
     path('store/reviews/<store_id>', views.storereview, name='storereview'),
 
     path('store/reviews/test/<store_id>', views.testreview, name='testreview'),
-    path('store/review2/create', views.reviewcreate, name='reviewcreate'),
+    path('store/review2/create/', views.reviewcreate, name='reviewcreate'),
     path('store/firstrecommend/<store_id>', views.storerecommend, name='storerecommend'),
     
     path('store/storerecommend/<str:choice>', views.searchrecommend, name='searchrecommend'),

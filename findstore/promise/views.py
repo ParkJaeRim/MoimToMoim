@@ -71,7 +71,7 @@ def updatepromise(request, promise_id):
     serializer = PromiseSerializer(data=request.data)
     temp = serializer.initial_data
     promise.storelist = temp['storelist']
+    promise.isfinish = temp['isfinish']
     promise.save()
     return Response()
-
 
