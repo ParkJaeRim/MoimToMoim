@@ -64,15 +64,15 @@
           <br /><br />
           <v-row>
             <v-col cols="9" class="pr-0 pb-0">
-              <p class="text-truncate" style="font-size: 15px">
+              <p v-on:click="goCourse(item.id)" class="text-truncate" style="font-size: 15px">
                 {{ item.title }} / {{ item.date.substring(2, 4) }}.{{
                   item.date.substring(5, 7)
                 }}.{{ item.date.substring(8, 10) }} / {{ item.meeting.title }}
                 <v-badge
-                  inline
-                  color="deep-purple lighten-4"
-                  icon="mdi-lead-pencil"
-                ></v-badge>
+                inline
+                color="deep-purple lighten-4"
+                icon="mdi-lead-pencil"
+              ></v-badge>
               </p>
             </v-col>
 
