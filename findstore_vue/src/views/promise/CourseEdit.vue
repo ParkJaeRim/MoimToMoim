@@ -165,10 +165,12 @@ export default {
       level: 7,
       dialog: false,
       counter: 10,
+      currentUser: "",
     };
   },
 
   created() {
+    this.isUser();
     this.getCourseOrder();
   },
 
@@ -205,6 +207,27 @@ export default {
   },
 
   methods: {
+    isUser() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      } else {
+        const config = {
+          headers: {
+            Authorization: `Token ${this.$cookies.get("auth-token")}`,
+          },
+        };
+        axios
+          .get(SERVER_URL + "/rest-auth/user/", config)
+          .then((res) => {
+            console.log(res.data)
+            this.currentUser = res.data.username
+          })
+          .catch((error) => {+
+            console.log(error.response.data);
+          });
+      }
+    },
+
     initMap() {
       var container = document.getElementById("map");
       var options = {
@@ -261,11 +284,25 @@ export default {
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           this.promiseList = res.data;
+          console.log(this.promiseList.user.username);
+          console.log(this.currentUser)
+          if(this.promiseList.user.username != this.currentUser) {
+              this.$router.push({
+              name: "meetinglist"
+            })
+          }
           this.storeInfos = res.data.reslist;
           this.temp = this.storeInfos.slice();
           this.area = res.data.gu + " " + res.data.dong;
         })
-        .catch((err) => console.log(err.response));
+        .catch((err) => {
+          if (err.response.status != 200) {
+            this.$router.push({
+              name: "meetinglist",
+            });
+            alert("잘못된 접근입니다.");
+          }
+        });
     },
 
     courseAdd() {
@@ -300,13 +337,13 @@ export default {
         .then((res) => {
           if (res.isConfirmed) {
             axios
-            .post(SERVER_URL + "/promise/delete/" + p_id)
-            .then(() => {
-              this.$router.push({name: "detailmain"})
-            })
-            .catch((err) => console.log(err.response));
+              .post(SERVER_URL + "/promise/delete/" + p_id)
+              .then(() => {
+                this.$router.push({ name: "detailmain" });
+              })
+              .catch((err) => console.log(err.response));
           }
-        })
+        });
     },
 
     goDetail(s_id) {
