@@ -89,13 +89,15 @@ def searchrecommend(request, choice, meeting_id):
     return Response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def reviewcreate(request):
-    serializer = serializers.TestReviewsSerializer(data=request.data)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-        testreview(request)
-        return Response(serializer.data)
+    for da in request.data:
+        serializer = serializers.TestReviewsSerializer(data=da)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+    testreview(request)
+    return Response(serializer.data)
+    # # print(qs) 도 잘 안된다. for 문 넣을 때 문제가 있는듯, 여기부터 다시 시작하면됨. q1뽑아보기
 
 def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
