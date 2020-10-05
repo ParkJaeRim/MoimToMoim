@@ -219,7 +219,6 @@ export default {
         axios
           .get(SERVER_URL + "/rest-auth/user/", config)
           .then((res) => {
-            console.log(res.data)
             this.currentUser = res.data.username
           })
           .catch((error) => {+
@@ -284,8 +283,6 @@ export default {
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           this.promiseList = res.data;
-          console.log(this.promiseList.user.username);
-          console.log(this.currentUser)
           if(this.promiseList.user.username != this.currentUser) {
               this.$router.push({
               name: "meetinglist"
@@ -300,7 +297,6 @@ export default {
             this.$router.push({
               name: "meetinglist",
             });
-            alert("잘못된 접근입니다.");
           }
         });
     },
@@ -314,7 +310,6 @@ export default {
 
     finishCourse() {
       const m_id = this.promiseList.meeting.id;
-      console.log(m_id);
       this.$router.push({
         name: "meetingDetail",
         params: {
