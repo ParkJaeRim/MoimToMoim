@@ -31,7 +31,7 @@
       </v-col>
     </v-row>
     <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="grey lighten-2">
-      <div v-if="si">
+      <div v-if="si > -1">
         <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
         <v-list-item @click="marker(store.address)">
           <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
