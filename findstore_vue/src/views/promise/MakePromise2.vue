@@ -31,8 +31,8 @@
       </v-col>
     </v-row>
     <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="grey lighten-2">
-      <div v-if="si > -1">
-        <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
+      <div v-if="si">
+        <v-btn @click="courseAdd(store.res_id)" small class="add" color="warning" dark>add</v-btn>
         <v-list-item @click="marker(store.address)">
           <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
           <v-list-item-content>
@@ -41,7 +41,7 @@
             <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-        <v-icon @click="goStoreDetail(store.id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
+        <v-icon @click="goStoreDetail(store.res_id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
       </div>
     </v-card>
   </v-card>
