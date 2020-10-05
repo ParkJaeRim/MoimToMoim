@@ -95,9 +95,8 @@ def reviewcreate(request):
         serializer = serializers.TestReviewsSerializer(data=da)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-    testreview(request)
+    testreview(request.data[0]['user_name'])
     return Response(serializer.data)
-    # # print(qs) 도 잘 안된다. for 문 넣을 때 문제가 있는듯, 여기부터 다시 시작하면됨. q1뽑아보기
 
 def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
@@ -118,8 +117,8 @@ def get_top_n(predictions, meeting_id):
                 dic[user_rating[0]] =user_rating[1]
     return dic
 
-def testreview(request):
-    meeting_id = str(request.data.get('user_name'))
+def testreview(mid):
+    meeting_id = str(mid)
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
