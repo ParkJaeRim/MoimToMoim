@@ -57,13 +57,13 @@
             text
             style="font-size: 16px; color: orange"
             @click="courseAdd()"
-            >추가</v-btn
+            >가게추가</v-btn
           >
 
           <v-dialog v-model="dialog" calss max-width="500px">
             <template v-slot:activator="{ on }">
               <v-btn text style="font-size: 16px; color: orange" v-on="on"
-                >수정</v-btn
+                >코스수정</v-btn
               >
             </template>
 
@@ -124,18 +124,17 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
-
           <v-btn
-          text
-          style="font-size: 16px; color:orange"
-            @click="finishCourse()"
-            >완료</v-btn
+            text
+            style="font-size: 16px; color: orange"
+            @click="deleteCourse"
+            >약속삭제</v-btn
           >
           <v-btn
-          text
-          style="font-size: 16px; color:orange"
-            @click="deleteCourse"
-            >삭제</v-btn
+            text
+            style="font-size: 16px; color: orange"
+            @click="finishCourse()"
+            >확인</v-btn
           >
         </div>
       </template>
@@ -289,15 +288,25 @@ export default {
 
     deleteCourse() {
       const p_id = this.$route.params.p_id;
-
-      axios
-        .post(SERVER_URL + "/promise/delete/" + p_id)
-        .then(() => {
-          this.$router.push({
-            name: "detailmain",
-          });
+      swal
+        .fire({
+          title: "약속을 삭제하시겠습니까?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "orange",
+          cancelButtonColor: "orange",
+          confirmButtonText: "OK",
         })
-        .catch((err) => console.log(err.response));
+        .then((res) => {
+          if (res.isConfirmed) {
+            axios
+            .post(SERVER_URL + "/promise/delete/" + p_id)
+            .then(() => {
+              this.$router.push({name: "detailmain"})
+            })
+            .catch((err) => console.log(err.response));
+          }
+        })
     },
 
     goDetail(s_id) {
