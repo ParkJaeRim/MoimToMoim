@@ -1,6 +1,6 @@
 <template>
   <v-bottom-navigation>
-    <v-btn height="100%" :to="{name: 'meetinglist'}">
+    <v-btn height="100%" v-if="isLoggedIn" :to="{name: 'meetinglist'}">
       <span>Moim</span>
       <v-icon>far fa-calendar-alt</v-icon>
     </v-btn>

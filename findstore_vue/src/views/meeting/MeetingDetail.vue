@@ -4,12 +4,12 @@
       <div align="center" justify="center">
         <v-row dense class="each-row mx-auto">
           <v-col cols="8" md="8" sm="4" style="font-size: 20px">
-            
-            <v-badge inline color="deep-purple lighten-4" lighten-5 icon="mdi-lead-pencil" >
-               <a href="#" @click.stop="ModifyDialog = true" class="h3">{{
-                meetingDetail.title
-              }} </a></v-badge
-            >의 <br />
+            <v-badge inline color="deep-purple lighten-4" lighten-5
+              icon="mdi-lead-pencil"
+            >
+              <a href="#" @click.stop="ModifyDialog = true" class="h3"
+                >{{ meetingDetail.title }}
+              </a></v-badge>의 <br />
             약속을 준비하세요 !
           </v-col>
           <v-col col="4" md="4" sm="2">
@@ -31,56 +31,59 @@
           <slideritem
             v-for="(item, i) in dueday"
             :key="i"
-            class="promise deep-purple lighten-5"
-            style="font-size : 18px; border-radius: 25px;"
+            height="200px"
+            class="promise deep-purple lighten-5" 
+            style="font-size : 18px; border-radius: 25px; text-align:left;"
           >
-            <v-col cols="5" @click="goPromise(promise[dueday[i].idx].id)">
-              <v-responsive
-                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 orange--text"
-                height="80"
-                width="80"
-              >D-{{ dueday[i].remain }}
-               
-              </v-responsive>
-            </v-col>
-            <v-col cols="7" @click="goPromise(promise[dueday[i].idx].id)">
-              <v-row> {{  promise[dueday[i].idx].title }} </v-row>
-              <v-row> {{ promise[dueday[i].idx].storelist }} </v-row>
+            <v-col class="ml-1 mr-2" cols="4" @click="goPromise(promise[item.idx].id)">
               <v-row>
-                <v-icon >mdi-calendar </v-icon>
-                 {{  promise[dueday[i].idx].date.substring(5, 7) }}월
-                {{  promise[dueday[i].idx].date.substring(8, 10) }}일
+              <v-responsive
+                v-if='item.remain!="Day"'
+                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 deep-purple--text"
+                width="80"
+                >D-{{item.remain }}
+              </v-responsive>
+                <v-responsive
+                v-if='item.remain=="Day"'
+                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 dday"
+                width="80"
+                >D-{{item.remain }}
+              </v-responsive>
               </v-row>
-                <v-row><v-icon >mdi-pin </v-icon>  {{ promise[dueday[i].idx].gu }} {{ promise[dueday[i].idx].dong }}</v-row
-              >
+              <v-row align="center" justify="center">
+                {{ promise[item.idx].gu }}
+                {{ promise[item.idx].dong }}</v-row>
+            </v-col>
+
+            <v-col cols="7" @click="goPromise(promise[item.idx].id)">
+              <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
+              <v-row class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
+                 </v-row>
+              <v-row class="mt-1">
+                <v-icon color="deep-purple" >mdi-calendar </v-icon>
+                {{ promise[item.idx].date.substring(5, 7) }}월
+                {{ promise[item.idx].date.substring(8, 10) }}일
+              </v-row>
             </v-col>
           </slideritem>
         </slider>
       </v-row>
       <hr />
-      <v-row class="h5 each-row mx-auto">취향 추천</v-row>
+      <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
-          <slideritem v-for="(item, i) in likes" :key="i" :style="styleRecom">
+          <slideritem
+            v-for="(item, i) in searchStoreList"
+            :key="i"
+            :style="styleRecom"
+          >
             <v-img
               v-if="item.img !== null"
               class="white--text"
               :src="item.img"
               width="120px"
               height="150px"
-              @click="goStoreDetail(item.id)"
-            >
-              <div class="transbox white--text">
-                <div class="store_name">{{ item.name }}</div>
-              </div>
-            </v-img>
-            <v-img
-              v-if="item.img == null"
-              class="white--text one"
-              src="http://asq.kr/JNlr0nxp6EQN"
-              width="170px"
-              height="170px"
-              @click="goStoreDetail(item.id)"
+              @click="goStoreDetail(item.res_id)"
             >
               <div class="transbox white--text">
                 <div class="store_name">{{ item.name }}</div>
@@ -91,7 +94,8 @@
       </v-row>
       <hr />
       <!--                 핫플레이스 추천                           -->
-      <v-row class="h5 each-row mx-auto">핫플레이스 추천</v-row>
+      <v-row class="h5 each-row mx-auto">
+       핫플레이스 추천 </v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem
@@ -178,44 +182,7 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
-      likes: [
-        {
-          id: 1,
-          name: "롸카두들내쉬빌핫치킨",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/400192/1272653_1570588239901_12322",
-        },
-        {
-          id: 2,
-          name: "마띠아바자르",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/399290/439642_1597548133594_6110",
-        },
-        {
-          id: 3,
-          name: "비전스트롤",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/1105479_1596164462459216.jpg",
-        },
-        {
-          id: 4,
-          name: "오늘의 위로",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/21015_1496393429425221.jpg",
-        },
-        {
-          id: 5,
-          name: "아메노히커피점",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/104601_1490349745059944.jpg",
-        },
-        {
-          id: 6,
-          name: "비로소커피",
-          img:
-            "https://mp-seoul-image-production-s3.mangoplate.com/added_restaurants/565213_1466144085926374.jpg",
-        },
-      ],
+      likes: {},
       options: {
         pagination: false,
         currentPage: 0,
@@ -239,7 +206,14 @@ export default {
         background_img: "",
       },
       dueday: [],
-      };
+      searchData: {
+        gu: "",
+        dong: "",
+        selected: "가게명",
+        keyword: "",
+      },
+      searchStoreList: {},
+    };
   },
   components: {
     slider,
@@ -251,6 +225,7 @@ export default {
   },
 
   methods: {
+
     makePromise(m_id) {
       this.$router.push({
         name: "makepromise1",
@@ -283,10 +258,10 @@ export default {
           this.meetingDetail = res.data;
           this.promiseData();
           this.gethotplace();
+          this.searchStore();
         })
         .catch((err) => console.log(err.res));
     },
-
 
     promiseData() {
       axios
@@ -295,37 +270,46 @@ export default {
           this.promise = res.data;
 
           for (let i = 0; i < this.promise.length; i++) {
-            var object={};
+            var object = {};
             var today = new Date();
             today.setHours(0, 0, 0, 0);
             var count = new Date(this.promise[i].date);
             count.setHours(0, 0, 0, 0);
             var dday = Math.floor((count - today) / 1000 / 24 / 60 / 60);
             if (dday == 0) {
-              object.store_id= this.promise[i].id;
+              object.store_id = this.promise[i].id;
               object.remain = "Day";
               object.idx = i;
               this.dueday.push(object);
             } else if (dday > 0) {
-              object.store_id= this.promise[i].id;
+              object.store_id = this.promise[i].id;
               object.remain = dday;
               object.idx = i;
               this.dueday.push(object);
             }
-
-            var arr= this.promise[i].storelist.split("/")
-            arr = arr.slice(0, arr.length-1);
-            console.log(arr)
-            // 여기서 이제 코스 뽑아줘야합니다....But how...?
           }
-          this.dueday.sort(function (a,b){
-            return a.remain-b.remain;
+          this.dueday.sort(function(a, b) {
+            if (a.remain == "Day") return -1;
+            else if (b.remain == "Day") return 1;
+            return a.remain - b.remain;
           });
-
         })
         .catch((err) => console.log(err.res));
     },
 
+    searchStore() {
+      axios
+        .post(
+          SERVER_URL +
+            "/api/store/storerecommend/eating/" +
+            this.$route.params.m_id,
+          this.searchData
+        )
+        .then((res) => {
+          this.searchStoreList = res.data;
+        })
+        .catch((err) => console.log(err.response));
+    },
 
     gethotplace() {
       axios
@@ -399,7 +383,7 @@ export default {
 <style scoped>
 .each-row {
   vertical-align: middle;
-  margin-top: 30px;
+  margin-top: 23px;
 }
 
 .promise {
@@ -417,7 +401,14 @@ export default {
   padding-top: 50%;
 }
 a {
-  color: #BA68C8;
+  color: #ba68c8;
   text-decoration: underline;
+}
+.slider-container{
+  height:130px;
+}
+
+.dday{
+  color :#D63C0D
 }
 </style>
