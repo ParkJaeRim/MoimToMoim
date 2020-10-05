@@ -58,6 +58,7 @@ class Reviews(models.Model):
     sex = models.IntegerField(null=True)
     age = models.IntegerField(null=True)
     ppl = models.IntegerField(null=True)
+    
 
 class TestReviews(models.Model):
     res_id = models.IntegerField()
@@ -78,3 +79,4 @@ class Recommand(models.Model):
     address = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200, null=True)
     category = models.CharField(max_length=200, null=True)
+    img = models.CharField(max_length=200, null=True)

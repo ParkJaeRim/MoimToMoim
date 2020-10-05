@@ -66,11 +66,15 @@ def storerecommend(request,store_id): # 랭킹 상위 10위까지
 @api_view(['POST'])
 def searchrecommend(request, choice, meeting_id):
     if choice == 'eating':
+        # if(request.data['gu']==""):
+        #     store = models.Recommand.objects.all().filter(Q(user_id = meeting_id))
+        # else:
         store = models.Recommand.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
     elif choice == 'playing':
-        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']) & Q(user_id = meeting_id))
+        store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
+
     if request.data['selected'] == '카테고리':
         store = store.filter(category__icontains = request.data['keyword'])
     else:
@@ -80,6 +84,7 @@ def searchrecommend(request, choice, meeting_id):
         serializer = serializers.RecommandSerializer(store, many=True)
     elif choice == 'playing':
         serializer = serializers.EnterStoreSerializer(store, many=True)
+
     return Response(serializer.data)
 
 
@@ -95,7 +100,7 @@ def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
     for store in store_qs:
         models.Recommand(user_id=meeting_id,rating=store.rating,res_id=store.id,
-        address=store.address,name=store.name,category=store.category).save()
+        address=store.address,name=store.name,category=store.category, img=store.img).save()
 
 
 def get_top_n(predictions, meeting_id):
@@ -115,9 +120,11 @@ def testreview(request):
     qs = models.TestReviews.objects.all()
     qs2 = models.Reviews.objects.all()
     store_qs = models.Store.objects.all()
+    print(store_qs)
     q1 = qs.values('res_id', 'user_name','rating')
     q2 = qs2.values('res_id', 'user_name','rating')
-    store_q = store_qs.values_list('id','address','name','category')
+    store_q = store_qs.values_list('id','address','name','category','img')
+
     store_addr = {}
     for s in store_q:
         store_addr[s[0]] = s[1:]
