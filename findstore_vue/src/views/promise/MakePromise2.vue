@@ -81,7 +81,6 @@ export default {
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
-      this.searchStore();
     }, 200);
   },
   computed: {
@@ -154,6 +153,7 @@ export default {
         .then((res) => {
           this.promiseList = res.data;
           this.isUser();
+          this.searchStore();
           this.address = res.data.gu + " " + res.data.dong;
         })
         .catch((err) => {
