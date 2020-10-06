@@ -276,9 +276,15 @@ export default {
   },
 
   created() {
+    this.move();
     this.userData();
   },
   methods: {
+    move() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      }
+    },
     userData() {
       const config = {
         headers: {

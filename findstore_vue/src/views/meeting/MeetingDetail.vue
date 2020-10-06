@@ -183,6 +183,7 @@ export default {
       promise: {},
       hotplace: {},
       likes: {},
+      meetingUser:"",
       options: {
         pagination: false,
         currentPage: 0,
@@ -221,11 +222,41 @@ export default {
   },
 
   created() {
+    this.isUser();
     this.detailData();
+    this.move();
   },
 
   methods: {
+    move() {
+      if (!this.$cookies.isKey("auth-token")) {
+        this.$router.push({ name: "home" });
+      }
+    },
+    isUser() {
+      const config = {
+        headers: {
+          Authorization: `Token ${this.$cookies.get("auth-token")}`,
+        },
+      };
+      axios
+        .get(SERVER_URL + "/rest-auth/user/", config)
+        .then((res) => {
+          const userInfo = res.data.username
 
+           axios
+            .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
+            .then((result) => {
+
+              if(result.data[0].user.username != userInfo){
+                this.$router.push({ name: "home" });
+              }
+            })
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    },
     makePromise(m_id) {
       this.$router.push({
         name: "makepromise1",
@@ -268,7 +299,7 @@ export default {
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
-
+          this.meetingUser = res.data[0].user.username
           for (let i = 0; i < this.promise.length; i++) {
             var object = {};
             var today = new Date();
@@ -287,6 +318,10 @@ export default {
               object.idx = i;
               this.dueday.push(object);
             }
+
+            var arr= this.promise[i].storelist.split("/")
+            arr = arr.slice(0, arr.length-1);
+            // 여기서 이제 코스 뽑아줘야합니다....But how...?
           }
           this.dueday.sort(function(a, b) {
             if (a.remain == "Day") return -1;

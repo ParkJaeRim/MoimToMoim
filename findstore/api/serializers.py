@@ -1,4 +1,4 @@
-from .models import Store, EnterStore, Reviews, TestReviews, Recommand
+from .models import Store, EnterStore, Reviews, TestReviews, Recommand, CardData
 from rest_framework import serializers
 
 
@@ -24,8 +24,13 @@ class TestReviewsSerializer(serializers.ModelSerializer):
         model = TestReviews
         fields = '__all__'
 
-
 class RecommandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recommand
+        fields = '__all__'
+
+
+class CardDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CardData
         fields = '__all__'
