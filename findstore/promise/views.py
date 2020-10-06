@@ -31,11 +31,8 @@ def promiselist(request, meeting_id):
 
 @api_view(['GET'])
 def userpromiselist(request, user_name):
-    target_user = get_object_or_404(User, username=user_name)  # 유저는 외래키로 일단 담아놔 
-    print(target_user)
-    # promises = Promise.objects.all() # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
-    promises = Promise.objects.filter(user_id = target_user) # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
-    print(promises)
+    target_user = get_object_or_404(User, username=user_name)  
+    promises = Promise.objects.filter(user_id = target_user) 
     serializer = PromiseSerializer(promises, many=True)
     asd = []
     for i in range(len(serializer.data)):
