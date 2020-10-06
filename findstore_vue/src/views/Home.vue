@@ -13,39 +13,41 @@
           </v-row>
         </template>
       <br />
-
+      <v-form ref="form">
       <v-container>
         <v-row justify="center">
-          <v-col cols="8" md="4">
+          
+          <v-col cols="10" md="6">
             <v-text-field
               v-model="loginData.username"
               :rules="nameRules"
               :counter="10"
-              label="ID"
+              label="아이디"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="8" md="4">
+          <v-col cols="10" md="6">
             <v-text-field
               v-model="loginData.password"
               :rules="passwordRules"
               :counter="12"
               :type="show1 ? 'text' : 'password'"
-              label="Password"
-              hint="At least 8 characters"
+              label="비밀번호"
               @click:append="show1 = !show1"
               required
             ></v-text-field>
           </v-col>
+          
         </v-row>
         <br />
         <br/>
         <div class="d-flex justify-space-between">
-          <v-btn text color="primary" :to="{name: 'signup'}">Join</v-btn>
-          <v-btn text color="primary" @click="login">login</v-btn>
+          <v-btn text color="orange" :to="{name: 'signup'}">회원가입</v-btn>
+          <v-btn text color="orange" @click="login">로그인</v-btn>
         </div>
       </v-container>
+      </v-form>
     </v-col>
   </v-row>
 </v-container>
@@ -70,12 +72,12 @@ export default {
         password: "",
       },
       nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => v.length <= 10 || "Name must be less than 10 characters",
+        (v) => !!v || "입력해주세요",
+        (v) => v.length <= 10 || "10글자 초과",
       ],
       passwordRules: [
-        (value) => !!value || "Required.",
-        (v) => v.length >= 8 || "Min 8 characters",
+        (value) => !!value || "입력해주세요",
+        (v) => v.length >= 8 || "8글자 미만",
       ],
     };
   },
@@ -84,6 +86,7 @@ export default {
   },
   methods: {
     login() {
+      if (!this.$refs.form.validate()) return;
       axios
         .post(SERVER_URL + "/rest-auth/login/", this.loginData)
         .then((res) => {

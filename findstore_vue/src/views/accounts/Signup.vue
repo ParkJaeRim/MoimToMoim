@@ -1,95 +1,100 @@
 <template>
+  <v-container>
   <div>
+    <br>
     <h1>회원가입</h1>
 
-    <v-form v-model="valid">
+    <v-form v-model="valid" ref="form">
       <v-container>
         <v-row>
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.username"
               :rules="nameRules"
               :counter="10"
-              label="ID"
+              label="아이디"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.email"
               :rules="emailRules"
-              label="email"
+              label="이메일"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.password"
               :rules="passwordRules"
               :counter="10"
               :type="show1 ? 'text' : 'password'"
-              label="Password"
-              hint="At least 8 characters"
+              label="비밀번호"
               @click:append="show1 = !show1"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.password2"
-              :rules="passwordRules"
+              :rules="passwordRules2"
               :counter="10"
               :type="show2 ? 'text' : 'password'"
-              label="Password2"
-              hint="At least 8 characters"
+              label="비밀번호 확인"
               @click:append="show2 = !show2"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.nickname"
               :counter="10"
+              :rules="nicknameRules"
               :type="show2 ? 'text' : 'nickname'"
-              label="nickname"
+              label="닉네임"
               @click:append="show2 = !show2"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="signupData.age"
               :type="show2 ? 'text' : 'age'"
-              label="age"
+              :rules="ageRules"
+              label="나이"
               @click:append="show2 = !show2"
               required
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="8">
             <v-container fluid>
               <v-checkbox
                 v-model="signupData.sex"
-                label="Male"
+                :rules="sexRules"
+                label="남자"
                 value="1"
               ></v-checkbox>
               <v-checkbox
                 v-model="signupData.sex"
-                label="Female"
+                :rules="sexRules"
+                label="여자"
                 value="0"
               ></v-checkbox>
             </v-container>
           </v-col>
         </v-row>
-        <v-btn rounded color="primary" dark @click="signup">Submit</v-btn>
+        <v-btn text color = "orange" @click="signup">가입하기</v-btn>
       </v-container>
     </v-form>
   </div>
+  </v-container>
 </template>
 
 <script>
@@ -104,7 +109,7 @@ export default {
     return {
       show1: false,
       show2: false,
-      valid: false,
+      valid: true,
       signupData: {
         username: "",
         email: "",
@@ -116,16 +121,30 @@ export default {
       },
 
       nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => v.length <= 10 || "Name must be less than 10 characters",
+        (v) => !!v || "입력해주세요",
+        (v) => v.length <= 10 || "10글자 초과입니다",
       ],
       passwordRules: [
-        (value) => !!value || "Required.",
-        (v) => v.length >= 8 || "Min 8 characters",
+        (value) => !!value || "입력해주세요",
+        (v) => v.length >= 8 || "8글자 미만입니다",
+      ],
+      passwordRules2: [
+        (value) => !!value || "입력해주세요",
+        (v) => v === this.signupData.password || "비밀번호가 다릅니다",
       ],
       emailRules: [
-        (v) => !!v || "E-mail is required",
-        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+        (v) => !!v || "입력해주세요",
+        (v) => /.+@.+/.test(v) || "이메일 형식이 다릅니다",
+      ],
+      nicknameRules: [
+        (v) => !!v || "입력해주세요",
+        (v) => v.length <= 10 || "10글자 초과입니다",
+      ],
+      ageRules: [
+        (v) => !!v || "입력해주세요",
+      ],
+      sexRules: [
+        (v) => !!v || "체크해주세요",
       ],
     };
   },
@@ -136,6 +155,7 @@ export default {
 
   methods: {
     signup() {
+      if (!this.$refs.form.validate()) return;
       axios
         .post(SERVER_URL + "/accounts/register/", this.signupData)
         .then(() => {
