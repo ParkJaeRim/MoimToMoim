@@ -42,6 +42,12 @@
         </thead>
         <thead>
           <tr>
+            <th width="25%">태그</th>
+            <th>{{ storeInfo.tags }}</th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
             <th width="25%">메뉴</th>
             <th>
               <br />
