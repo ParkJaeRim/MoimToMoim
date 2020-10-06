@@ -145,6 +145,8 @@
                         </v-col>
                       </v-row>
                     </v-card>
+                    </v-container>
+
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <!-- <v-btn
