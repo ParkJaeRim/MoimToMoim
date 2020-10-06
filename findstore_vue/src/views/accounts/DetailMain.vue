@@ -75,10 +75,19 @@
               ></v-badge>
               </p>
             </v-col>
-
-            <v-col cols="3" class="pt-1 pl-0 yb-0">
-              <!-- p는 패딩 m은 마진 t b l r (top, bottom, left, right) x축 y축 auto 자동 /  -->
-
+            <v-col v-if="item.reslist.length==0" cols="3" class="pt-1 pl-0 yb-0">
+                <template>
+                  <v-btn
+                    v-if="item.isfinish == 0"
+                    text
+                    color="primary"
+                    style="font-size: 15px"
+                    @click="deletePromise(item.id)"
+                    >삭제</v-btn
+                  >
+                </template>
+            </v-col>
+            <v-col v-if="item.reslist.length!=0" cols="3" class="pt-1 pl-0 yb-0">
               <v-dialog
                 v-model="dialog"
                 max-width="290px"
@@ -96,7 +105,7 @@
                   >
                 </template>
 
-                <v-card>
+                <v-card >
                   <v-card-title>
                     <span class="headline">리뷰를 남겨주세요.</span>
                   </v-card-title>
@@ -185,7 +194,7 @@
                   class="white--text"
                   :src="item2.img"
                   width="120px"
-                  height="150px"
+                  height="120px"
                   @click="goStoreDetail(item2.id)"
                 >
                   <div class="transbox white--text">
@@ -336,6 +345,13 @@ export default {
         .then(() => {})
         .catch((err) => console.log(err));
     },
+
+    deletePromise(id){
+      axios.post(SERVER_URL+"/promise/delete/"+id).then(()=>{
+        this.$router.go();
+      }).catch((err)=>console.log(err));
+    },
+
     isfinish(k) {
       const promiseData = this.promiseList[k];
       promiseData.isfinish = 1;
@@ -352,8 +368,8 @@ export default {
       this.reviewdata.user_name = id;
       this.reviews.push(this.reviewdata);
       this.reviewdata = Object.assign({}, this.defaultreview);
-    }, // 리뷰 데이터를 reviews에 넣는 작업 과정 과 초기화 과정을 여기서 해주는거다.
-    // res_id 와 res_name , user_id 이거 더 채워주는 작업을 해줘야할듯?? 위에 쓴거중 3-1번과 3-2번 과정임  Success
+    }, 
+    
     save() {
       this.dialog = false;
       this.y = 0;
@@ -365,13 +381,10 @@ export default {
 };
 </script>
 
-
-
-
 <style scoped>
 .each-row {
   vertical-align: middle;
-  margin-top: 30px;
+  margin-top: 23px;
 }
 
 .promise {
