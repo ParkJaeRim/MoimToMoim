@@ -246,7 +246,6 @@ export default {
         .get(SERVER_URL + "/meeting/",config)
         .then((res) => {
           this.meetings = res.data;
-          console.log(res.data)
         })
         .catch((err) => console.error(err.response));
     },
@@ -298,7 +297,7 @@ export default {
           // this.$router.push({ name: 'articlelist' })
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
 
@@ -310,7 +309,7 @@ export default {
           this.GetMeeting();
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.response);
         });
     },
 
@@ -353,7 +352,6 @@ export default {
 #create .v-btn--floating {
   position: relative;
 }
-
 
 
 </style>

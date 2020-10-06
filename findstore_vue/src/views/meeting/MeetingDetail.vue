@@ -26,7 +26,7 @@
         </v-row>
       </div>
 
-      <v-row class="each-row mx-auto" align="center" justify="center">
+      <v-row v-if="dueday.length !=0" class="each-row mx-auto" align="center" justify="center">
         <slider ref="slider" :options="options">
           <slideritem
             v-for="(item, i) in dueday"
@@ -57,7 +57,7 @@
 
             <v-col cols="7" @click="goPromise(promise[item.idx].id)">
               <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].storelist!=''" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
+              <v-row v-if="promise[item.idx].reslist.length !=0" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
                  </v-row>
               <v-row class="mt-1">
                 <v-icon color="deep-purple" >mdi-calendar </v-icon>
@@ -68,7 +68,8 @@
           </slideritem>
         </slider>
       </v-row>
-      <hr />
+      <hr/>
+      
       <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
@@ -95,7 +96,11 @@
       <hr />
       <!--                 핫플레이스 추천                           -->
       <v-row class="h5 each-row mx-auto">
-       핫플레이스 추천 </v-row>
+        핫플레이스 추천
+        <span class="h6" v-for="(dong, di) in hotplacesite" :key="di">
+          /{{dong}}
+        </span>
+      </v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem
@@ -158,8 +163,8 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="purple lighten-1" text @click="save">수정</v-btn>
-            <v-btn color="purple lighten-1" text @click="close">취소</v-btn>
+            <v-btn color="orange" text @click="save">수정</v-btn>
+            <v-btn color="orange" text @click="close">취소</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -182,6 +187,7 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
+      hotplacesite: {},
       likes: {},
       meetingUser:"",
       options: {
@@ -254,7 +260,7 @@ export default {
             })
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     makePromise(m_id) {
@@ -287,11 +293,11 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+          this.searchStore();
           this.promiseData();
           this.gethotplace();
-          this.searchStore();
         })
-        .catch((err) => console.log(err.res));
+        .catch((err) => console.log(err.response));
     },
 
     promiseData() {
@@ -347,14 +353,24 @@ export default {
     },
 
     gethotplace() {
-      axios
-        .get(
-          SERVER_URL + "/api/store/firstrecommend/" + this.$route.params.s_id
-        )
-        .then((res) => {
-          this.hotplace = res.data;
-        })
-        .catch((err) => console.log(err.res));
+      // const m_id = this.$route.params.m_id
+      var today = new Date().getHours();
+      const placeData = {
+        sex: this.meetingDetail.user.sex,
+        avg_age: this.meetingDetail.avg_age,
+        time: today,
+        ppl: this.meetingDetail.ppl
+      }
+      axios.post(SERVER_URL + "/api/hotplace/", placeData)
+      .then(res => {
+        const tmp = res.data.length
+        this.hotplace = res.data.slice(0, tmp-1)
+        this.hotplacesite = res.data.slice(tmp-1)[0]
+        console.log(this.hotplacesite);
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
     },
 
     goPromise(p_id) {
@@ -383,7 +399,7 @@ export default {
           this.close();
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
 

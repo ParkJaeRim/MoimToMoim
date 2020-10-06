@@ -1,58 +1,58 @@
 <template>
   <v-container>
-    <h1 class="my-5">{{ form.username }} 님</h1>
-        <v-text-field
-          v-model="form.nickname"
-          :counter="10"
-          :type="show2 ? 'text' : 'nickname'"
-          label="nickname"
-          color="deep-purple lighten-3"
-          @click:append="show2 = !show2"
-          required
-        ></v-text-field>
+    <v-form ref="check">
+      <h1 class="my-5">{{ form.username }} 님</h1>
 
-        <v-text-field
-          v-model="form.email"
-          :rules="emailRules"
-          label="email"
-          color="deep-purple lighten-3"
-          required
-        ></v-text-field>
+      <v-text-field
+        v-model="form.nickname"
+        :counter="10"
+        :rules="nicknameRules"
+        :type="show2 ? 'text' : 'nickname'"
+        label="nickname"
+        @click:append="show2 = !show2"
+        required
+      ></v-text-field>
 
-        <v-text-field
-          v-model="form.age"
-          :type="show2 ? 'text' : 'age'"
-          label="age"
-          color="deep-purple lighten-3"
-          @click:append="show2 = !show2"
-          required
-        ></v-text-field>
+      <v-text-field
+        v-model="form.email"
+        :rules="emailRules"
+        label="email"
+        required
+      ></v-text-field>
 
-        <v-radio-group v-model="form.sex">
-          <v-radio 
-            class="left"
-            label="남자"
-            value="0"
-            color="deep-purple lighten-3"
-          ></v-radio>
-          <v-radio
-            class="right"
-            label="여자"
-            value="1"
-            color="deep-purple lighten-3"
-          ></v-radio>
-        </v-radio-group>
+      <v-text-field
+        v-model="form.age"
+        :type="show2 ? 'text' : 'age'"
+        label="age"
+        :rules="ageRules"
+        @click:append="show2 = !show2"
+        required
+      ></v-text-field>
 
-        <div class="right">
-          <v-btn  
-          text
-          style="font-size: 16px; color:orange"
-          @click="userDelete">회원탈퇴</v-btn>
-          <v-btn  
-          text
-          style="font-size: 16px; color:orange"
-          @click="userUpdate">수정완료</v-btn>
-        </div>
+      <v-checkbox
+        v-model="form.sex"
+        :rules="sexRules"
+        label="남자"
+        value="1"
+        color="orange"
+      ></v-checkbox>
+      <v-checkbox
+        v-model="form.sex"
+        :rules="sexRules"
+        label="여자"
+        color="orange"
+        value="0"
+      ></v-checkbox>
+
+      <div class="right">
+        <v-btn text style="font-size: 16px; color: orange" @click="userDelete"
+          >회원탈퇴</v-btn
+        >
+        <v-btn text style="font-size: 16px; color: orange" @click="userUpdate"
+          >수정완료</v-btn
+        >
+      </div>
+    </v-form>
   </v-container>
 </template>
 <script>
@@ -69,14 +69,6 @@ export default {
     return {
       show1: false,
       show2: false,
-      nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => v.length <= 10 || "Name must be less than 10 characters",
-      ],
-      emailRules: [
-        (v) => !!v || "E-mail is required",
-        (v) => /.+@.+/.test(v) || "E-mail must be valid",
-      ],
       form: {
         age: "",
         email: "",
@@ -84,20 +76,29 @@ export default {
         sex: "",
         username: "",
       },
+      emailRules: [
+        (v) => !!v || "입력해주세요",
+        (v) => /.+@.+/.test(v) || "이메일 형식이 다릅니다",
+      ],
+      nicknameRules: [
+        (v) => !!v || "입력해주세요",
+        (v) => v.length <= 10 || "10글자 초과입니다",
+      ],
+      ageRules: [(v) => !!v || "입력해주세요"],
+      sexRules: [(v) => !!v || "체크해주세요"],
     };
   },
 
   created() {
     this.move();
-    if(this.$cookies.isKey("auth-token")) {
+    if (this.$cookies.isKey("auth-token")) {
       this.userData();
     }
   },
 
   methods: {
-
     userUpdate() {
-      console.log(this.form);
+      if (!this.$refs.check.validate()) return;
       axios
         .put(SERVER_URL + "/accounts/update/", this.form, {
           headers: {
@@ -114,16 +115,16 @@ export default {
           swal
             .fire({
               title: "수정되었습니다",
-              icon: 'success',
+              icon: "success",
               showConfirmButton: false,
-              timer: 1000
+              timer: 1000,
             })
             .then(() => {
               this.$router.push({ name: "detailmain" });
             });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.resposne);
         });
     },
 
@@ -147,7 +148,7 @@ export default {
               })
               .catch((err) => {
                 alert("입력 정보를 확인해주세요.");
-                console.log(err);
+                console.log(err.resposne);
               });
           }
         });
@@ -175,7 +176,7 @@ export default {
           this.form.sex = res.data.sex;
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
   },

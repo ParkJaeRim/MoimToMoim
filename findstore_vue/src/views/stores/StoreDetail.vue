@@ -27,7 +27,7 @@
       >
       <span class="display">{{ storeInfo.name }}</span>
       <v-chip class="ma-2" color="success" outlined small>{{
-        storeInfo.rating
+        Math.round( storeInfo.rating * 1e2 )/100
       }}</v-chip>
       <div>tel: {{ storeInfo.tel }}</div>
     </v-card-text>
@@ -62,7 +62,7 @@
                   text
                   small
                   v-if="menu_full"
-                  color="primary"
+                  color="orange"
                   @click="
                     cnt_menu = 100;
                     menu_full = false;
@@ -73,7 +73,7 @@
                   text
                   small
                   v-if="!menu_full"
-                  color="primary"
+                  color="orange"
                   @click="
                     cnt_menu = 3;
                     menu_full = true;
@@ -219,6 +219,7 @@ export default {
     },
     courseAdd(storeId) {
       const p_id = this.$route.params.p_id;
+      alert('코스가 추가되었습니다')
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
@@ -234,6 +235,7 @@ export default {
             .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
             .then(() => {})
             .catch((err) => console.log(err.response));
+            
         })
         .catch((err) => console.log(err.response));
     },

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-date-picker v-model="picker" :min="today"></v-date-picker>
+      <v-date-picker color = "deep-purple lighten-4" event-color="deep-purple lighten-4" v-model="picker" :min="today"></v-date-picker>
     </v-row>
     <v-text-field
       class="mx-10"
@@ -14,7 +14,7 @@
       <v-btn
         v-for="(gu, i) in guList"
         :key="i"
-        :color="promiseData.gu == gu ? 'purple lighten-4' : ''"
+        :color="promiseData.gu == gu ? 'deep-purple lighten-4' : ''"
         class="m-1"
         rounded
         @click="promiseData.gu = gu; gu_cnt = i; promiseData.dong=''"
@@ -25,7 +25,7 @@
       <v-btn
         v-for="(dong, di) in dongList[gu_cnt]"
         :key="di"
-        :color="promiseData.dong == dong ? 'purple lighten-4' : ''"
+        :color="promiseData.dong == dong ? 'deep-purple lighten-4' : ''"
         class="m-1"
         rounded
         @click="promiseData.dong = dong"
@@ -33,7 +33,7 @@
     </div>
     <hr />
     <div v-if="promiseData.dong && promiseData.title" class="d-flex justify-end">
-      <v-btn color="blue-grey" class="white--text" small @click="makePromise">다음</v-btn>
+      <v-btn text color="orange" style="font-size: 15px" class="white--text" small @click="makePromise">다음</v-btn>
     </div>
   </v-container>
 </template>
@@ -154,7 +154,7 @@ export default {
             .catch((err) => console.error(err.response));
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     makePromise() {
