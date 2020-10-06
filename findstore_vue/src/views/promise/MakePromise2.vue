@@ -36,7 +36,7 @@
         <v-list-item @click="marker(store.address)">
           <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
           <v-list-item-content>
-            <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{store.rating}}</small></v-list-item-title>
+            <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{store.rating.toFixed(2)}}</small></v-list-item-title>
             <div>{{store.category}}</div>
             <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
           </v-list-item-content>
@@ -191,6 +191,7 @@ export default {
       })
     },
     courseAdd(storeId) {
+      alert('코스가 추가되었습니다')
       this.promiseList.storelist += storeId + "/"
       const p_id = this.$route.params.p_id
       axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
