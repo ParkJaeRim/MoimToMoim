@@ -25,7 +25,7 @@
             <div>
               <v-btn
                 text
-                color="primary"
+                color="deep-purple lighten-2"
                 style="font-size: 25px"
                 @click="cnt = 0"
               >
@@ -45,7 +45,7 @@
             <div>
               <v-btn
                 text
-                color="primary"
+                color="deep-purple lighten-2"
                 style="font-size: 25px"
                 @click="cnt = 1"
               >

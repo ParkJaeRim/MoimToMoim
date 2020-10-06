@@ -158,8 +158,8 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="purple lighten-1" text @click="save">수정</v-btn>
-            <v-btn color="purple lighten-1" text @click="close">취소</v-btn>
+            <v-btn color="orange" text @click="save">수정</v-btn>
+            <v-btn color="orange" text @click="close">취소</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
