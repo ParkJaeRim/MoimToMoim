@@ -19,7 +19,7 @@ User=get_user_model()
 @api_view(['GET'])
 def promiselist(request, meeting_id):
     target_meeting = get_object_or_404(Meeting, id=meeting_id)
-    promises = Promise.objects.filter(meeting = target_meeting)
+    promises = Promise.objects.filter(meeting = target_meeting).order_by('-pk')
     serializer = PromiseSerializer(promises, many=True)
     asd = []
     for i in range(len(serializer.data)):
@@ -31,8 +31,11 @@ def promiselist(request, meeting_id):
 
 @api_view(['GET'])
 def userpromiselist(request, user_name):
-    target_user = get_object_or_404(User, username=user_name)  
-    promises = Promise.objects.filter(user_id = target_user) 
+    target_user = get_object_or_404(User, username=user_name)  # 유저는 외래키로 일단 담아놔 
+    print(target_user)
+    # promises = Promise.objects.all() # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
+    promises = Promise.objects.filter(user_id = target_user) # 앞에는 칼럼명 뒤에는 내가 보내주는거 변수명
+    print(promises)
     serializer = PromiseSerializer(promises, many=True)
     asd = []
     for i in range(len(serializer.data)):

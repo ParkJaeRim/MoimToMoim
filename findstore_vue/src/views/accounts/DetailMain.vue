@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <div>
-        <v-row dense class="each-row mx-auto" align="center" justify="center">
+        <v-row dense class="each-row m-0 mx-auto" align="center" justify="center">
           <v-col align="center" justify="center">
             <v-responsive
               class="text-center deep-purple lighten-4 rounded-circle d-inline-flex ma-3"
@@ -18,13 +18,13 @@
           </v-col>
         </v-row>
       </div>
-      <div class="d-flex justify-space-between" max-width="400" max-height="120">
+      <div class="d-flex justify-space-between" max-width="400" height="100">
         <v-row align="center" justify="center">
-          <v-col class="text-center" col="6">
+          <v-col class="text-center py-0" col="6">
             <div>
               <v-btn
                 text
-                color="deep-purple lighten-2"
+                color="primary"
                 style="font-size: 25px"
                 @click="cnt = 0"
               >
@@ -40,11 +40,11 @@
         </v-row>
 
         <v-row align="center" justify="center">
-          <v-col class="text-center" col="6">
-            <div>
+          <v-col class="text-center py-0" col="6">
+            <div height="100">
               <v-btn
                 text
-                color="deep-purple lighten-2"
+                color="primary"
                 style="font-size: 25px"
                 @click="cnt = 1"
               >
@@ -59,20 +59,24 @@
       </div>
     <hr>
 
-      <div v-for="(item, k) in promiseList" :key="item.id">
+      <div v-for="(item, k) in promiseList" :key="item.title">
         <div v-if="item.isfinish == cnt">
-          <br />
           <v-row>
             <v-col cols="9" class="pr-0 pb-0">
               <p v-on:click="goCourse(item.id)" class="text-truncate" style="font-size: 15px">
                 {{ item.title }} / {{ item.date.substring(2, 4) }}.{{
                   item.date.substring(5, 7)
                 }}.{{ item.date.substring(8, 10) }} / {{ item.meeting.title }}
-                <v-badge
+                <v-badge v-if='item.isfinish==0'
                 inline
                 color="deep-purple lighten-4"
                 icon="mdi-lead-pencil"
               ></v-badge>
+                <v-badge v-if='item.isfinish!=0'
+                inline
+                color="deep-purple lighten-4"
+                icon="mdi-eye"
+              >보기</v-badge>
               </p>
             </v-col>
             <v-col v-if="item.reslist.length==0" cols="3" class="pt-1 pl-0 yb-0">
@@ -103,21 +107,24 @@
                     color="orange"
                     style="font-size: 15px"
                     v-on="on"
+                    v-on:click="setreview(k)"
                     >완료</v-btn
                   >
                 </template>
 
-                <v-card >
+                <v-card>
                   <v-container>
                     <v-card>
                       <v-row>
                         <v-col>
                           <v-card-text class="h4">
-                            {{ item.reslist[y].name }}
+                            
+                            {{ promiseList[reviewid].reslist[y].name }}
+                            
                             <v-img
-                              v-if="item.reslist[y].img !== null"
+                              v-if="promiseList[reviewid].reslist[y].img !== null"
                               class="white--text"
-                              :src="item.reslist[y].img"
+                              :src="promiseList[reviewid].reslist[y].img"
                               width="270px"
                               height="120px"
                             ></v-img>
@@ -130,7 +137,7 @@
                               large
                             ></v-rating>
                             <br />
-                            <v-text-field
+                            <v-text-field 
                               v-model="reviewdata.review"
                               label="리뷰를 작성해주세요."
                               required
@@ -143,20 +150,20 @@
                   </v-container>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn
+                    <!-- <v-btn
                       v-if="y > 0"
                       color="orange"
                       text
                       @click="y--"
                     >
                       이전
-                    </v-btn>
+                    </v-btn> -->
                     <v-btn
                       v-if="y < item.reslist.length - 1"
                       color="orange"
                       text
                       @click="
-                        pushReviewData(item.reslist[y], item.meeting.id);
+                        pushReviewData(promiseList[reviewid].reslist[y], promiseList[reviewid].meeting.id);
                         y++;
                       "
                       >다음</v-btn
@@ -166,8 +173,8 @@
                       color="orange"
                       text
                       @click="
-                        isfinish(k);
-                        reviewfinish(item.reslist[y], item.meeting.id);
+                        isfinish(reviewid);
+                        reviewfinish(promiseList[reviewid].reslist[y], promiseList[reviewid].meeting.id);
                         save();
                       "
                       >완료</v-btn
@@ -193,7 +200,7 @@
                   :src="item2.img"
                   width="120px"
                   height="120px"
-                  @click="goStoreDetail(item2.id)"
+                  @click="goCourse(item.id)"
                 >
                   <div class="transbox white--text">
                     <div class="store_name">{{ item2.name }}</div>
@@ -222,6 +229,7 @@ export default {
   name: "promiseList",
   data: () => {
     return {
+      reviewid: 0,
       promiseList: {},
       storeInfos: [],
       headers: [],
@@ -233,6 +241,7 @@ export default {
         user_name: "",
         rating: 0,
         review: "",
+        store_id:"",
       },
       reviewdata: {
         res_id: "",
@@ -240,6 +249,7 @@ export default {
         user_name: "",
         rating: 0,
         review: "",
+        store_id:"",
       },
       options: {
         pagination: false,
@@ -283,10 +293,12 @@ export default {
   },
 
   created() {
-    this.move();
     this.userData();
   },
   methods: {
+    setreview(item){
+      this.reviewid = item
+    },
     move() {
       if (!this.$cookies.isKey("auth-token")) {
         this.$router.push({ name: "home" });
@@ -305,7 +317,7 @@ export default {
           this.promiseData();
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.resposne);
         });
     },
     promiseData() {
@@ -314,7 +326,7 @@ export default {
         .then((res) => {
           this.promiseList = res.data;
         })
-        .catch((err) => console.log(err.res));
+        .catch((err) => console.log(err.resposne));
     },
     goStoreDetail(s_id) {
       this.$router.push({
@@ -341,13 +353,13 @@ export default {
       axios
         .post(SERVER_URL + "/api/store/review2/create/", this.reviews)
         .then(() => {})
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err.resposne));
     },
 
     deletePromise(id){
       axios.post(SERVER_URL+"/promise/delete/"+id).then(()=>{
         this.$router.go();
-      }).catch((err)=>console.log(err));
+      }).catch((err)=>console.log(err.resposne));
     },
 
     isfinish(k) {
@@ -358,7 +370,7 @@ export default {
         .then(() => {
           this.promiseData();
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err.resposne));
     },
     pushReviewData(storeInfos, id) {
       this.reviewdata.res_id = storeInfos.id;
@@ -366,23 +378,30 @@ export default {
       this.reviewdata.user_name = id;
       this.reviews.push(this.reviewdata);
       this.reviewdata = Object.assign({}, this.defaultreview);
-    }, 
-    
+    }, // 리뷰 데이터를 reviews에 넣는 작업 과정 과 초기화 과정을 여기서 해주는거다.
+    // res_id 와 res_name , user_id 이거 더 채워주는 작업을 해줘야할듯?? 위에 쓴거중 3-1번과 3-2번 과정임  Success
     save() {
       this.dialog = false;
       this.y = 0;
     },
     close() {
+      this.y=0;
+      this.reviews =[];
+      this.reviewdata = Object.assign({}, this.defaultreview);
       this.dialog = false;
+      this.$router.go();
     },
   },
 };
 </script>
 
+
+
+
 <style scoped>
 .each-row {
   vertical-align: middle;
-  margin-top: 23px;
+  margin-top: 30px;
 }
 
 .promise {

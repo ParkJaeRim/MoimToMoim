@@ -21,7 +21,8 @@
 
     <v-row class="m-0">
       <v-col class="pb-0" cols="4">
-        <v-select v-model="searchData.selected" :items="items" label="분류" dense outlined></v-select>
+        <!-- <v-select v-model="searchData.selected" :items="items" label="분류" dense outlined></v-select> -->
+        <b-form-select v-model="searchData.selected" :options="items"></b-form-select>
       </v-col>
       <v-col class="p-0" cols="6">
         <v-text-field v-model="searchData.keyword" placeholder="Placeholder"></v-text-field>
@@ -30,19 +31,17 @@
         <v-icon @click="searchStore">fas fa-search</v-icon>
       </v-col>
     </v-row>
-    <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="deep-purple lighten-5">
-      <div v-if="si">
-        <v-btn @click="courseAdd(store.res_id)" small class="add" color="warning" dark>add</v-btn>
-        <v-list-item @click="marker(store.address)">
-          <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
-          <v-list-item-content>
-            <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{store.rating.toFixed(2)}}</small></v-list-item-title>
-            <div>{{store.category}}</div>
-            <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        <v-icon @click="goStoreDetail(store.res_id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
-      </div>
+    <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="deep-purple lighten-5">
+      <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
+      <v-list-item @click="marker(store.address)">
+        <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
+        <v-list-item-content>
+          <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{Number(store.rating).toFixed(2)}}</small></v-list-item-title>
+          <div>{{store.category}}</div>
+          <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-icon @click="goStoreDetail(store.res_id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
     </v-card>
   </v-card>
 </template>
@@ -83,7 +82,6 @@ export default {
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
-      this.searchStore();
     }, 200);
   },
   computed: {
@@ -115,7 +113,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     initMap() {
@@ -156,6 +154,7 @@ export default {
         .then((res) => {
           this.promiseList = res.data;
           this.isUser();
+          this.searchStore();
           this.address = res.data.gu + " " + res.data.dong;
         })
         .catch((err) => {
@@ -192,7 +191,7 @@ export default {
       })
     },
     courseAdd(storeId) {
-      swal
+        swal
         .fire({
           title: "코스가 추가되었습니다",
           text: "코스 버튼을 눌러 확인하세요",
@@ -200,7 +199,11 @@ export default {
           showConfirmButton: false,
           timer: 1000,
         })
-      this.promiseList.storelist += storeId + "/"
+      if (this.choice == "eating" & storeId > 700) {
+        storeId %= 700
+      }
+      const choi = this.choice.slice(0, 1)
+      this.promiseList.storelist += choi + storeId + "/"
       const p_id = this.$route.params.p_id
       axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
       .then(() => {})

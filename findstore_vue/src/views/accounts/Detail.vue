@@ -124,7 +124,7 @@ export default {
             });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.resposne);
         });
     },
 
@@ -148,7 +148,7 @@ export default {
               })
               .catch((err) => {
                 alert("입력 정보를 확인해주세요.");
-                console.log(err);
+                console.log(err.resposne);
               });
           }
         });
@@ -176,7 +176,7 @@ export default {
           this.form.sex = res.data.sex;
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
   },
