@@ -29,7 +29,6 @@ def create(request):
     serializer = MeetingSerializer(data=request.data)
     # print(serializer.)
     if serializer.is_valid(raise_exception=True):
-        print("hi")
         serializer.save(user=request.user)
         meeting = Meeting.objects.all().last()
         meetingCreate(meeting.id)
