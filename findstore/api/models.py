@@ -83,9 +83,9 @@ class Recommand(models.Model):
 
 
 class CardData(models.Model):
-    sex = models.CharField(max_length=200, null=True)
     avg_age = models.CharField(max_length=200, null=True)
-    time = models.CharField(max_length=200, null=True)
-    gu = models.CharField(max_length=200, null=True)
-    dong = models.CharField(max_length=200, null=True)
+    sex = models.CharField(max_length=200, null=True)
     ppl = models.CharField(max_length=200, null=True)
+    time = models.CharField(max_length=200, null=True)
+    dong = models.CharField(max_length=200, null=True)
+    cnt = models.IntegerField(null=True)
