@@ -1,3 +1,4 @@
+from os import name
 from django.conf.urls import url
 from django.urls import path
 from rest_framework.routers import DefaultRouter
@@ -20,4 +21,5 @@ urlpatterns = [
     path('store/firstrecommend/<store_id>', views.storerecommend, name='storerecommend'),
     
     path('store/storerecommend/<str:choice>/<int:meeting_id>', views.searchrecommend, name='searchrecommend'),
+    path('hotplace/<int:meeting_id>', views.hotplace, name='hotplace'),
 ]
