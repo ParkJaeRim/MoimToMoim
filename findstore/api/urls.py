@@ -13,7 +13,7 @@ urlpatterns = router.urls
 app_name = 'api'
 
 urlpatterns = [
-    path('store/<int:store_id>', views.storedetail, name='storedetail'),
+    path('store/<int:store_id>/<str:choice>', views.storedetail, name='storedetail'),
 
     path('store/reviews/test/<store_id>', views.testreview, name='testreview'),
     path('store/review2/create/', views.reviewcreate, name='reviewcreate'),

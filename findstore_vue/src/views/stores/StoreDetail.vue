@@ -16,15 +16,6 @@
       ></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary text-left">
-      <v-btn
-        @click="courseAdd(storeInfo.id)"
-        small
-        v-if="pidCheck"
-        class="add"
-        color="warning"
-        dark
-        >add</v-btn
-      >
       <span class="display">{{ storeInfo.name }}</span>
       <v-chip class="ma-2" color="success" outlined small>{{
         Math.round( storeInfo.rating * 1e2 )/100
@@ -201,55 +192,23 @@ export default {
 
     GetStoreInfo() {
       const store_id = this.$route.params.s_id;
+      const choice = this.$route.params.choice
       axios
-        .get(SERVER_URL + "/api/store/" + store_id)
+        .get(SERVER_URL + "/api/store/" + store_id + "/" + choice)
         .then((res) => {
           this.storeInfo = res.data;
           this.reviews = res.data.reviews;
-          // this.reviews.rating = res.data.reviews[1].rating;
-          // this.reviews.review = res.data.reviews[1].review;
           this.storeInfo.price = Number(res.data.price);
-          console.log(res.data);
           this.menus = res.data.menu.split("//");
           this.menuImg = res.data.img.split("|");
         })
         .catch((err) => console.error(err.response));
-    },
-    courseAdd(storeId) {
-      const p_id = this.$route.params.p_id;
-            swal
-        .fire({
-          title: "코스가 추가되었습니다",
-          text: "코스 버튼을 눌러 확인하세요",
-          icon: "success",
-          showConfirmButton: false,
-          timer: 1000,
-        })
-      axios
-        .get(SERVER_URL + "/promise/detail/" + p_id)
-        .then((res) => {
-          const promiseList = res.data;
-          promiseList.storelist += storeId + "/";
-          const p_id = this.$route.params.p_id;
-          axios
-            .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
-            .then(() => {})
-            .catch((err) => console.log(err.response));
-            
-        })
-        .catch((err) => console.log(err.response));
     },
   },
 };
 </script>
 
 <style scoped>
-.add {
-  position: absolute;
-  z-index: 1;
-  right: 5px;
-}
-
 .display {
   font-family: "Jua", sans-serif;
   font-size: 25px;

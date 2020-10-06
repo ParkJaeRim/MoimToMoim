@@ -359,7 +359,7 @@ export default {
 
     deletePromise(id){
       axios.post(SERVER_URL+"/promise/delete/"+id).then(()=>{
-        this.$router.go();
+        this.promiseData();
       }).catch((err)=>console.log(err.resposne));
     },
 

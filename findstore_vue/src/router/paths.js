@@ -33,7 +33,7 @@ export default [
   },
   // store
   {
-    path: "/:p_id/store/:s_id",
+    path: "/:p_id/store/:s_id/:choice",
     view: "stores/StoreDetail",
     name: "storedetail"
   },

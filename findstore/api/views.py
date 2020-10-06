@@ -46,9 +46,13 @@ class StoreViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['GET'])
-def storedetail(request, store_id):
-    store = get_object_or_404(models.Store, pk=store_id)
-    serializer = serializers.StoreSerializer(store)
+def storedetail(request, store_id, choice):
+    if choice == 'playing':
+        store = get_object_or_404(models.EnterStore, pk=store_id)
+        serializer = serializers.EnterStoreSerializer(store)
+    else:
+        store = get_object_or_404(models.Store, pk=store_id)
+        serializer = serializers.StoreSerializer(store)
     reviews = reviewlistcreate(store_id)
     newdict = {'reviews': reviews}
     newdict.update(serializer.data)
