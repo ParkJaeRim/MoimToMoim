@@ -59,7 +59,7 @@
       </div>
     <hr>
 
-      <div v-for="(item, k) in promiseList" :key="item.title">
+      <div v-for="(item, k) in promiseList" :key="item.id">
         <div v-if="item.isfinish == cnt">
           <v-row>
             <v-col cols="9" class="pr-0 pb-0">
