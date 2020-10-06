@@ -95,6 +95,7 @@
 import axios from "axios";
 import constants from "../../lib/constants";
 import FooterList from "../../components/FooterList";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -219,7 +220,14 @@ export default {
     },
     courseAdd(storeId) {
       const p_id = this.$route.params.p_id;
-      alert('코스가 추가되었습니다')
+            swal
+        .fire({
+          title: "코스가 추가되었습니다",
+          text: "코스 버튼을 눌러 확인하세요",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000,
+        })
       axios
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {

@@ -58,6 +58,7 @@
 <script>
 import axios from "axios";
 import constants from "../lib/constants";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -96,7 +97,14 @@ export default {
         })
         .catch((err) => {
           console.log(err.response.data);
-          alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
+          swal
+            .fire({
+            text: "아이디와 비밀번호를 확인해주세요",
+            
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 1000,
+          })
         });
     },
     isLogin() {
