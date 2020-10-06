@@ -26,7 +26,7 @@
         </v-row>
       </div>
 
-      <v-row class="each-row mx-auto" align="center" justify="center">
+      <v-row v-if="dueday.length !=0" class="each-row mx-auto" align="center" justify="center">
         <slider ref="slider" :options="options">
           <slideritem
             v-for="(item, i) in dueday"
@@ -68,7 +68,8 @@
           </slideritem>
         </slider>
       </v-row>
-      <hr />
+      <hr/>
+      
       <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
