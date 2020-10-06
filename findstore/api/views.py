@@ -159,10 +159,17 @@ def resChange(resList):
     res = []
     resNum = resList.split('/')
     for n in resNum:
+        choice = n[:1]
+        num = n[1:]
         try:
-            store = get_object_or_404(models.Store, pk=n)
-            serializer = serializers.StoreSerializer(store)
-            res.append(serializer.data)
+            if choice == 'e':
+                store = get_object_or_404(models.Store, pk=num)
+                serializer = serializers.StoreSerializer(store)
+                res.append(serializer.data)
+            else:
+                store = get_object_or_404(models.EnterStore, pk=num)
+                serializer = serializers.EnterStoreSerializer(store)
+                res.append(serializer.data)
         except:
             continue
     return res
