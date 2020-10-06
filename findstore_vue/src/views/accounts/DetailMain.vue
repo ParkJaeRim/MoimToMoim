@@ -13,13 +13,12 @@
           <v-col class="mx-auto">
             <h1>{{ headers.nickname }}</h1>
           </v-col>
-          <v-col class="each-row mx-auto" align="end">
+          <v-col align="center" justify="center">
             <v-icon @click="goDetail">fas fa-cog</v-icon>
           </v-col>
         </v-row>
       </div>
-
-      <div class="d-flex justify-space-between" max-width="400">
+      <div class="d-flex justify-space-between" max-width="400" max-height="120">
         <v-row align="center" justify="center">
           <v-col class="text-center" col="6">
             <div>
@@ -58,10 +57,11 @@
           </v-col>
         </v-row>
       </div>
+    <hr>
 
       <div v-for="(item, k) in promiseList" :key="item.id">
         <div v-if="item.isfinish == cnt">
-          <br /><br />
+          <br />
           <v-row>
             <v-col cols="9" class="pr-0 pb-0">
               <p v-on:click="goCourse(item.id)" class="text-truncate" style="font-size: 15px">
@@ -87,10 +87,12 @@
                   >
                 </template>
             </v-col>
+
+            
             <v-col v-if="item.reslist.length!=0" cols="3" class="pt-1 pl-0 yb-0">
               <v-dialog
                 v-model="dialog"
-                max-width="290px"
+                max-width="320px"
                 align="center"
                 justify="center"
               >
@@ -106,25 +108,21 @@
                 </template>
 
                 <v-card >
-                  <v-card-title>
-                    <span class="headline">리뷰를 남겨주세요.</span>
-                  </v-card-title>
-
                   <v-container>
                     <v-card>
                       <v-row>
                         <v-col>
-                          <v-card-text>
+                          <v-card-text class="h4">
                             {{ item.reslist[y].name }}
                             <v-img
                               v-if="item.reslist[y].img !== null"
                               class="white--text"
                               :src="item.reslist[y].img"
                               width="270px"
-                              height="150px"
+                              height="120px"
                             ></v-img>
 
-                            <br /><br />
+                            <br />
                             <v-rating
                               v-model="reviewdata.rating"
                               background-color="orange lighten-3"
