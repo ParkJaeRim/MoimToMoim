@@ -85,7 +85,7 @@
                   <v-btn
                     v-if="item.isfinish == 0"
                     text
-                    color="primary"
+                    color="orange"
                     style="font-size: 15px"
                     @click="deletePromise(item.id)"
                     >삭제</v-btn
@@ -105,7 +105,7 @@
                   <v-btn
                     v-if="item.isfinish == 0"
                     text
-                    color="primary"
+                    color="orange"
                     style="font-size: 15px"
                     v-on="on"
                     >완료</v-btn
@@ -149,7 +149,7 @@
                     <v-spacer></v-spacer>
                     <!-- <v-btn
                       v-if="y > 0"
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="y--"
                     >
@@ -157,7 +157,7 @@
                     </v-btn> -->
                     <v-btn
                       v-if="y < item.reslist.length - 1"
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="
                         pushReviewData(item.reslist[y], item.meeting.id);
@@ -167,7 +167,7 @@
                     >
                     <v-btn
                       v-else
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="
                         isfinish(k);
@@ -176,7 +176,7 @@
                       "
                       >완료</v-btn
                     >
-                    <v-btn color="purple lighten-1" text @click="close"
+                    <v-btn color="orange" text @click="close"
                       >취소</v-btn
                     >
                   </v-card-actions>
