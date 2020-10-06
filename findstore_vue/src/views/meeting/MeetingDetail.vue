@@ -287,9 +287,9 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+          this.searchStore();
           this.promiseData();
           this.gethotplace();
-          this.searchStore();
         })
         .catch((err) => console.log(err.res));
     },
@@ -347,14 +347,21 @@ export default {
     },
 
     gethotplace() {
-      axios
-        .get(
-          SERVER_URL + "/api/store/firstrecommend/" + this.$route.params.s_id
-        )
-        .then((res) => {
-          this.hotplace = res.data;
-        })
-        .catch((err) => console.log(err.res));
+      // const m_id = this.$route.params.m_id
+      var today = new Date().getHours();
+      const placeData = {
+        sex: this.meetingDetail.user.sex,
+        avg_age: this.meetingDetail.avg_age,
+        time: today,
+        ppl: this.meetingDetail.ppl
+      }
+      axios.post(SERVER_URL + "/api/hotplace/", placeData)
+      .then(res => {
+        this.hotplace = res.data
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
     },
 
     goPromise(p_id) {
