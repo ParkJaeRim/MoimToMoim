@@ -62,7 +62,7 @@
                   text
                   small
                   v-if="menu_full"
-                  color="primary"
+                  color="orange"
                   @click="
                     cnt_menu = 100;
                     menu_full = false;
@@ -73,7 +73,7 @@
                   text
                   small
                   v-if="!menu_full"
-                  color="primary"
+                  color="orange"
                   @click="
                     cnt_menu = 3;
                     menu_full = true;
