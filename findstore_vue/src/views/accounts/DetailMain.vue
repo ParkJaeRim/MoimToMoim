@@ -24,7 +24,7 @@
             <div>
               <v-btn
                 text
-                color="deep-purple lighten-2"
+                color="primary"
                 style="font-size: 25px"
                 @click="cnt = 0"
               >
@@ -44,7 +44,7 @@
             <div>
               <v-btn
                 text
-                color="deep-purple lighten-2"
+                color="primary"
                 style="font-size: 25px"
                 @click="cnt = 1"
               >
@@ -145,17 +145,16 @@
                         </v-col>
                       </v-row>
                     </v-card>
-                  </v-container>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn
+                    <!-- <v-btn
                       v-if="y > 0"
                       color="purple lighten-1"
                       text
                       @click="y--"
                     >
                       이전
-                    </v-btn>
+                    </v-btn> -->
                     <v-btn
                       v-if="y < item.reslist.length - 1"
                       color="purple lighten-1"
@@ -238,6 +237,7 @@ export default {
         user_name: "",
         rating: 0,
         review: "",
+        store_id:"",
       },
       reviewdata: {
         res_id: "",
@@ -245,6 +245,7 @@ export default {
         user_name: "",
         rating: 0,
         review: "",
+        store_id:"",
       },
       options: {
         pagination: false,
@@ -288,15 +289,9 @@ export default {
   },
 
   created() {
-    this.move();
     this.userData();
   },
   methods: {
-    move() {
-      if (!this.$cookies.isKey("auth-token")) {
-        this.$router.push({ name: "home" });
-      }
-    },
     userData() {
       const config = {
         headers: {
@@ -371,8 +366,8 @@ export default {
       this.reviewdata.user_name = id;
       this.reviews.push(this.reviewdata);
       this.reviewdata = Object.assign({}, this.defaultreview);
-    }, 
-    
+    }, // 리뷰 데이터를 reviews에 넣는 작업 과정 과 초기화 과정을 여기서 해주는거다.
+    // res_id 와 res_name , user_id 이거 더 채워주는 작업을 해줘야할듯?? 위에 쓴거중 3-1번과 3-2번 과정임  Success
     save() {
       this.dialog = false;
       this.y = 0;
@@ -384,10 +379,13 @@ export default {
 };
 </script>
 
+
+
+
 <style scoped>
 .each-row {
   vertical-align: middle;
-  margin-top: 23px;
+  margin-top: 30px;
 }
 
 .promise {

@@ -49,13 +49,17 @@ class StoreViewSet(viewsets.ModelViewSet):
 def storedetail(request, store_id):
     store = get_object_or_404(models.Store, pk=store_id)
     serializer = serializers.StoreSerializer(store)
-    return Response(serializer.data)
+    reviews = reviewlistcreate(store_id)
+    newdict = {'reviews': reviews}
+    newdict.update(serializer.data)
+    return Response(newdict)
 
-@api_view(['GET'])
-def storereview(request, store_id):
-    reviews = models.Reviews.objects.filter(res_id=store_id)
-    serializer = serializers.ReviewsSerializer(reviews, many=True)
-    return Response(serializer.data)
+
+def reviewlistcreate(id):
+    target_store = models.TestReviews.objects.filter(res_id=id)
+    serializer = serializers.TestReviewsSerializer(target_store, many=True)
+    return serializer.data
+
 
 @api_view(['GET'])
 def storerecommend(request,store_id): # 랭킹 상위 10위까지
@@ -97,6 +101,7 @@ def reviewcreate(request):
             serializer.save()
     testreview(request.data[0]['user_name'])
     return Response(serializer.data)
+
 
 def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
