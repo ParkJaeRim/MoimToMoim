@@ -185,7 +185,6 @@ def resChange(resList):
                 res.append(newdict)
         except:
             continue
-    print(res)
     return res
 
 
