@@ -33,9 +33,9 @@ class Command(BaseCommand):
                 sex=carddata.sex,
                 avg_age=carddata.avg_age,
                 time=carddata.time,
-                gu=carddata.gu,
                 dong=carddata.dong,
-                ppl=carddata.ppl
+                ppl=carddata.ppl,
+                cnt=carddata.cnt
             )
             for carddata in dataframes.itertuples()
         ]

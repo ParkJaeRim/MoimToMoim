@@ -167,3 +167,11 @@ def resChange(resList):
         except:
             continue
     return res
+
+
+@api_view(['POST'])
+def hotplace(request, meeting_id):
+    serializer = serializers.TestReviewsSerializer(data=request)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+    return Response(serializer.data)
