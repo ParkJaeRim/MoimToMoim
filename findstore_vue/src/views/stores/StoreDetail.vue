@@ -84,6 +84,26 @@
             </th>
           </tr>
         </thead>
+        <thead>
+          <tr>
+            <th>
+              리뷰
+            </th>
+            <th>
+              <div v-for="(item,i) in reviews"
+              :key="i"
+              class = "d-flex justify-space-between"
+              >
+              <v-row>
+              {{item.review}}
+              </v-row>
+              <v-row>
+              평점 : {{item.rating}}
+              </v-row>
+              </div>
+            </th>
+          </tr>
+        </thead>
       </v-simple-table>
     </v-card-text>
   </v-card>
@@ -95,6 +115,8 @@
 import axios from "axios";
 import constants from "../../lib/constants";
 import FooterList from "../../components/FooterList";
+import { slider, slideritem } from "vue-concise-slider";
+
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -108,14 +130,24 @@ export default {
       storeInfo: {},
       menuImg: {},
       menus: {},
-      reviews: {},
+      reviews: {
+        review:"",
+        rating:"",
+      },
       level: 3,
       cnt_menu: 3,
       menu_full: true,
       cnt_review: 2,
-      currentUser: " ",
+      options: {
+        pagination: false,
+        currentPage: 0,
+        tracking: false,
+        slidesToScroll: 1,
+        loop: false,
+      },
     };
   },
+
   computed: {
     pidCheck() {
       if (this.$route.params.p_id == 0) {
@@ -126,7 +158,6 @@ export default {
     },
   },
   created() {
-    this.isUser();
     this.GetStoreInfo();
   },
   mounted() {
@@ -135,43 +166,6 @@ export default {
     }, 500);
   },
   methods: {
-    isUser() {
-      if (!this.$cookies.isKey("auth-token")) {
-        this.$router.push({ name: "home" });
-      } else {
-        const config = {
-          headers: {
-            Authorization: `Token ${this.$cookies.get("auth-token")}`,
-          },
-        };
-        axios
-          .get(SERVER_URL + "/rest-auth/user/", config)
-          .then((res) => {
-            this.currentUser = res.data.username;
-          })
-          .catch((error) => {
-            console.log(error.response.data);
-          });
-        const p_id = this.$route.params.p_id;
-        axios
-          .get(SERVER_URL + "/promise/detail/" + p_id)
-          .then((res) => {
-            const promiseList = res.data;
-            if (promiseList.user.username != this.currentUser) {
-              this.$router.push({
-                name: "meetinglist",
-              });
-            }
-            promiseList.storelist += storeId + "/";
-            const p_id = this.$route.params.p_id;
-            axios
-              .post(SERVER_URL + "/promise/update/" + p_id, promiseList)
-              .then(() => {})
-              .catch((err) => console.log(err.response));
-          })
-          .catch((err) => console.log(err.response));
-      }
-    },
     initMap() {
       var container = document.getElementById("map");
       var options = {
@@ -211,7 +205,11 @@ export default {
         .get(SERVER_URL + "/api/store/" + store_id)
         .then((res) => {
           this.storeInfo = res.data;
+          this.reviews = res.data.reviews;
+          // this.reviews.rating = res.data.reviews[1].rating;
+          // this.reviews.review = res.data.reviews[1].review;
           this.storeInfo.price = Number(res.data.price);
+          console.log(res.data);
           this.menus = res.data.menu.split("//");
           this.menuImg = res.data.img.split("|");
         })
@@ -224,11 +222,6 @@ export default {
         .get(SERVER_URL + "/promise/detail/" + p_id)
         .then((res) => {
           const promiseList = res.data;
-          if (promiseList.user.username != this.currentUser) {
-            this.$router.push({
-              name: "meetinglist",
-            });
-          }
           promiseList.storelist += storeId + "/";
           const p_id = this.$route.params.p_id;
           axios
