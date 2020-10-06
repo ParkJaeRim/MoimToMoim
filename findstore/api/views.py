@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from numpy.lib.function_base import append
 
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
@@ -85,7 +86,6 @@ def searchrecommend(request, choice, meeting_id):
         serializer = serializers.RecommandSerializer(store, many=True)
     elif choice == 'playing':
         serializer = serializers.EnterStoreSerializer(store, many=True)
-
     return Response(serializer.data)
 
 
@@ -159,7 +159,6 @@ def resChange(resList):
     res = []
     resNum = resList.split('/')
     for n in resNum:
-        print(n)
         try:
             store = get_object_or_404(models.Store, pk=n)
             serializer = serializers.StoreSerializer(store)
@@ -170,8 +169,18 @@ def resChange(resList):
 
 
 @api_view(['POST'])
-def hotplace(request, meeting_id):
-    serializer = serializers.TestReviewsSerializer(data=request)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-    return Response(serializer.data)
+def hotplace(request):
+    place = models.CardData.objects.all().filter(Q(sex = request.data['sex']) & Q(avg_age = request.data['avg_age']) & Q(time = request.data['time']) & Q(ppl = request.data['ppl']))
+    serializer = serializers.CardDataSerializer(place, many=True)
+    stores = []
+    tmp = []
+    tmp.append(request.data['time'])
+    for d in serializer.data:
+        tmp.append(d['dong'])
+        store = models.Store.objects.all().filter(Q(address__icontains = d['dong']))
+        store = store.order_by('-rating')[:2]
+        serializer = serializers.StoreSerializer(store, many=True)
+        for s in serializer.data:
+            stores.append(s)
+    stores.append(tmp)
+    return Response(stores)
