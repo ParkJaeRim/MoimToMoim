@@ -21,5 +21,5 @@ urlpatterns = [
     path('store/firstrecommend/<store_id>', views.storerecommend, name='storerecommend'),
     
     path('store/storerecommend/<str:choice>/<int:meeting_id>', views.searchrecommend, name='searchrecommend'),
-    path('hotplace/<int:meeting_id>', views.hotplace, name='hotplace'),
+    path('hotplace/', views.hotplace, name='hotplace'),
 ]

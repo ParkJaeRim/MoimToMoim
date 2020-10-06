@@ -96,7 +96,11 @@
       <hr />
       <!--                 핫플레이스 추천                           -->
       <v-row class="h5 each-row mx-auto">
-       핫플레이스 추천 </v-row>
+        핫플레이스 추천
+        <span class="h6" v-for="(dong, di) in hotplacesite" :key="di">
+          /{{dong}}
+        </span>
+      </v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem
@@ -183,6 +187,7 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
+      hotplacesite: {},
       likes: {},
       meetingUser:"",
       options: {
@@ -288,9 +293,9 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+          this.searchStore();
           this.promiseData();
           this.gethotplace();
-          this.searchStore();
         })
         .catch((err) => console.log(err.response));
     },
@@ -348,14 +353,24 @@ export default {
     },
 
     gethotplace() {
-      axios
-        .get(
-          SERVER_URL + "/api/store/firstrecommend/" + this.$route.params.s_id
-        )
-        .then((res) => {
-          this.hotplace = res.data;
-        })
-        .catch((err) => console.log(err.response));
+      // const m_id = this.$route.params.m_id
+      var today = new Date().getHours();
+      const placeData = {
+        sex: this.meetingDetail.user.sex,
+        avg_age: this.meetingDetail.avg_age,
+        time: today,
+        ppl: this.meetingDetail.ppl
+      }
+      axios.post(SERVER_URL + "/api/hotplace/", placeData)
+      .then(res => {
+        const tmp = res.data.length
+        this.hotplace = res.data.slice(0, tmp-1)
+        this.hotplacesite = res.data.slice(tmp-1)[0]
+        console.log(this.hotplacesite);
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
     },
 
     goPromise(p_id) {
