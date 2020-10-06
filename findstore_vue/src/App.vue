@@ -60,8 +60,8 @@ export default {
 }
 .backBnt {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 30px;
+  left: 20px;
   z-index: 10;
 }
 </style>
