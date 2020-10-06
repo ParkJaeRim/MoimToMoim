@@ -35,7 +35,7 @@ class Command(BaseCommand):
                 time=carddata.time,
                 dong=carddata.dong,
                 ppl=carddata.ppl,
-                cnt=carddata.cnt,
+                cnt=carddata.cnt
             )
             for carddata in dataframes.itertuples()
         ]
