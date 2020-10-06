@@ -231,7 +231,7 @@ export default {
 
           })
           .catch((error) => {+
-            console.log(error.response.data);
+            console.log(error.response);
           });
       }
     },
@@ -298,10 +298,8 @@ export default {
             })
           }
           this.storeInfos = res.data.reslist;
-          // console.log(this.storeInfos)
           this.temp = this.storeInfos.slice();
           this.area = res.data.gu + " " + res.data.dong;
-          console.log(this.promiseList)
         })
         .catch((err) => {
           if (err.response.status != 200) {

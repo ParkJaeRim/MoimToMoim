@@ -154,7 +154,7 @@ export default {
             .catch((err) => console.error(err.response));
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     makePromise() {
