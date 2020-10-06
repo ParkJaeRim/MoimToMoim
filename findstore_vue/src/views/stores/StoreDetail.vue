@@ -51,6 +51,12 @@
         </thead>
         <thead>
           <tr>
+            <th width="25%">태그</th>
+            <th>{{ storeInfo.tags }}</th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
             <th width="25%">메뉴</th>
             <th>
               <br />
@@ -209,7 +215,6 @@ export default {
           // this.reviews.rating = res.data.reviews[1].rating;
           // this.reviews.review = res.data.reviews[1].review;
           this.storeInfo.price = Number(res.data.price);
-          console.log(res.data);
           this.menus = res.data.menu.split("//");
           this.menuImg = res.data.img.split("|");
         })
