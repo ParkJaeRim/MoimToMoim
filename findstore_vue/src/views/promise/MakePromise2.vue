@@ -52,6 +52,7 @@
 import axios from "axios";
 import constants from "../../lib/constants";
 import FooterList from "../../components/FooterList"
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -190,7 +191,14 @@ export default {
       })
     },
     courseAdd(storeId) {
-      alert('코스가 추가되었습니다')
+        swal
+        .fire({
+          title: "코스가 추가되었습니다",
+          text: "코스 버튼을 눌러 확인하세요",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000,
+        })
       if (this.choice == "eating" & storeId > 700) {
         storeId %= 700
       }
