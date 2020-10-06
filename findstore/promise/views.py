@@ -19,7 +19,7 @@ User=get_user_model()
 @api_view(['GET'])
 def promiselist(request, meeting_id):
     target_meeting = get_object_or_404(Meeting, id=meeting_id)
-    promises = Promise.objects.filter(meeting = target_meeting)
+    promises = Promise.objects.filter(meeting = target_meeting).order_by('-pk')
     serializer = PromiseSerializer(promises, many=True)
     asd = []
     for i in range(len(serializer.data)):
