@@ -21,7 +21,6 @@
 
     <v-row class="m-0">
       <v-col class="pb-0" cols="4">
-        <!-- <v-select v-model="searchData.selected" :items="items" label="분류" dense outlined></v-select> -->
         <b-form-select v-model="searchData.selected" :options="items"></b-form-select>
       </v-col>
       <v-col class="p-0" cols="6">
@@ -41,7 +40,7 @@
           <v-list-item-subtitle>{{store.address}}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <v-icon @click="goStoreDetail(store.res_id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
+      <v-icon @click="goStoreDetail(store.id)" class="float-right m-2" style="bottom:40px">fas fa-arrow-right</v-icon>
     </v-card>
   </v-card>
 </template>
@@ -70,7 +69,7 @@ export default {
       searchData: {
         gu: "",
         dong: "",
-        selected: "가게명",
+        selected: "카테고리",
         keyword: "",
       },
       searchStoreList: {},
@@ -185,9 +184,12 @@ export default {
       this.initMap()
     },
     goStoreDetail(s_id) {
+      if (this.choice == "eating" & s_id > 700) {
+        s_id %= 700
+      }
       this.$router.push({
         name: "storedetail",
-        params: { p_id: this.$route.params.p_id, s_id: s_id }
+        params: { p_id: this.$route.params.p_id, s_id: s_id, choice: this.choice }
       })
     },
     courseAdd(storeId) {
