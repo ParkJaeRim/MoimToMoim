@@ -4,12 +4,16 @@
       <div align="center" justify="center">
         <v-row dense class="each-row mx-auto">
           <v-col cols="8" md="8" sm="4" style="font-size: 20px">
-            <v-badge inline color="deep-purple lighten-4" lighten-5
+            <v-badge
+              inline
+              color="deep-purple lighten-4"
+              lighten-5
               icon="mdi-lead-pencil"
             >
               <a href="#" @click.stop="ModifyDialog = true" class="h3"
                 >{{ meetingDetail.title }}
-              </a></v-badge>의 <br />
+              </a></v-badge
+            >의 <br />
             약속을 준비하세요 !
           </v-col>
           <v-col col="4" md="4" sm="2">
@@ -26,41 +30,53 @@
         </v-row>
       </div>
 
-      <v-row v-if="dueday.length !=0" class="each-row mx-auto" align="center" justify="center">
+      <v-row
+        v-if="dueday.length != 0"
+        class="each-row mx-auto"
+        align="center"
+        justify="center"
+      >
         <slider ref="slider" :options="options">
           <slideritem
             v-for="(item, i) in dueday"
             :key="i"
             height="200px"
-            class="promise deep-purple lighten-5" 
+            class="promise deep-purple lighten-5"
             style="font-size : 18px; border-radius: 25px; text-align:left;"
           >
-            <v-col class="ml-1 mr-2" cols="4" @click="goPromise(promise[item.idx].id)">
+            <v-col
+              class="ml-1 mr-2"
+              cols="4"
+              @click="goPromise(promise[item.idx].id)"
+            >
               <v-row>
-              <v-responsive
-                v-if='item.remain!="Day"'
-                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 deep-purple--text"
-                width="80"
-                >D-{{item.remain }}
-              </v-responsive>
                 <v-responsive
-                v-if='item.remain=="Day"'
-                class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 dday"
-                width="80"
-                >D-{{item.remain }}
-              </v-responsive>
+                  v-if="item.remain != 'Day'"
+                  class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 deep-purple--text"
+                  width="80"
+                  >D-{{ item.remain }}
+                </v-responsive>
+                <v-responsive
+                  v-if="item.remain == 'Day'"
+                  class="font-weight-bold h3 text-center d-inline-flex align-center justify-center ma-3 dday"
+                  width="80"
+                  >D-{{ item.remain }}
+                </v-responsive>
               </v-row>
               <v-row align="center" justify="center">
                 {{ promise[item.idx].gu }}
-                {{ promise[item.idx].dong }}</v-row>
+                {{ promise[item.idx].dong }}</v-row
+              >
             </v-col>
 
             <v-col cols="7" @click="goPromise(promise[item.idx].id)">
               <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].reslist.length !=0" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
-                 </v-row>
+              <v-row v-if="promise[item.idx].reslist.length != 0" class="mt-1"
+                ><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳 :
+                {{ promise[item.idx].reslist[0].name }}
+              </v-row>
               <v-row class="mt-1">
-                <v-icon color="deep-purple" >mdi-calendar </v-icon>
+                <v-icon color="deep-purple">mdi-calendar </v-icon>
                 {{ promise[item.idx].date.substring(5, 7) }}월
                 {{ promise[item.idx].date.substring(8, 10) }}일
               </v-row>
@@ -68,35 +84,39 @@
           </slideritem>
         </slider>
       </v-row>
-      <hr/>
-      
-      <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
-      <v-row class="each-row mx-auto">
-        <slider ref="slider" :options="options">
-          <slideritem
-            v-for="(item, i) in searchStoreList"
-            :key="i"
-            :style="styleRecom"
-          >
-            <v-img
-              v-if="item.img !== null"
-              class="white--text"
-              :src="item.img"
-              width="120px"
-              height="150px"
-              @click="goStoreDetail(item.res_id)"
-            >
-              <div class="transbox white--text">
-                <div class="store_name">{{ item.name }}</div>
-              </div>
-            </v-img>
-          </slideritem>
-        </slider>
-      </v-row>
       <hr />
       <!--                 핫플레이스 추천                           -->
-      <v-row class="h5 each-row mx-auto">
-       핫플레이스 추천 </v-row>
+      <v-row class="each-row mx-auto">
+        <v-row class="mx-auto">
+          <v-chip
+            small
+            class="white--text"
+            color="pink"
+            v-if="hotplacesite[0] >= 12"
+          >
+            오후 {{ hotplacesite[0] - 12 }}시
+          </v-chip>
+          <v-chip small class="white--text" color="pink" v-else>
+            오전 {{ hotplacesite[0] }}시
+          </v-chip>
+          <span class="mr-1"></span><span class=" h5">핫플레이스 추천 </span>
+        </v-row>
+        <span v-for="(dong, di) in hotplacesite" :key="di">
+          <div v-if="(di == 1) & (dong.length <= 3)">
+            {{ dong.substring(0, 2) }}
+          </div>
+          <div v-if="(di == 1) & (dong.length > 3)">
+            /{{ dong.substring(0, 3) }}
+          </div>
+          <div v-if="(di >= 2) & (dong.length <= 3)">
+            /{{ dong.substring(0, 2) }}
+          </div>
+          <div v-if="(di >= 2) & (dong.length > 3)">
+            /{{ dong.substring(0, 3) }}
+          </div>
+        </span>
+      </v-row>
+
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem
@@ -131,6 +151,33 @@
           </slideritem>
         </slider>
       </v-row>
+      <hr />
+
+      <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
+
+      <v-row class="each-row mx-auto">
+        <slider ref="slider" :options="options">
+          <slideritem
+            v-for="(item, i) in searchStoreList"
+            :key="i"
+            :style="styleRecom"
+          >
+            <v-img
+              v-if="item.img !== null"
+              class="white--text"
+              :src="item.img"
+              width="120px"
+              height="150px"
+              @click="goStoreDetail(item.res_id)"
+            >
+              <div class="transbox white--text">
+                <div class="store_name">{{ item.name }}</div>
+              </div>
+            </v-img>
+          </slideritem>
+        </slider>
+      </v-row>
+
       <!-- Modify Dialog -->
       <v-dialog v-model="ModifyDialog" calss max-width="500px">
         <v-card>
@@ -183,8 +230,9 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
+      hotplacesite: {},
       likes: {},
-      meetingUser:"",
+      meetingUser: "",
       options: {
         pagination: false,
         currentPage: 0,
@@ -223,7 +271,6 @@ export default {
   },
 
   created() {
-    this.isUser();
     this.detailData();
     this.move();
   },
@@ -243,16 +290,11 @@ export default {
       axios
         .get(SERVER_URL + "/rest-auth/user/", config)
         .then((res) => {
-          const userInfo = res.data.username
-
-           axios
-            .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
-            .then((result) => {
-
-              if(result.data[0].user.username != userInfo){
-                this.$router.push({ name: "home" });
-              }
-            })
+          if (res.data.username != this.meetingDetail.user.username) {
+            this.$router.push({
+              name: "meetinglist",
+            });
+          }
         })
         .catch((error) => {
           console.log(error.response);
@@ -288,9 +330,10 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+          this.isUser();
+          this.searchStore();
           this.promiseData();
           this.gethotplace();
-          this.searchStore();
         })
         .catch((err) => console.log(err.response));
     },
@@ -300,7 +343,7 @@ export default {
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
-          this.meetingUser = res.data[0].user.username
+          this.meetingUser = res.data[0].user.username;
           for (let i = 0; i < this.promise.length; i++) {
             var object = {};
             var today = new Date();
@@ -320,8 +363,8 @@ export default {
               this.dueday.push(object);
             }
 
-            var arr= this.promise[i].storelist.split("/")
-            arr = arr.slice(0, arr.length-1);
+            var arr = this.promise[i].storelist.split("/");
+            arr = arr.slice(0, arr.length - 1);
             // 여기서 이제 코스 뽑아줘야합니다....But how...?
           }
           this.dueday.sort(function(a, b) {
@@ -330,7 +373,7 @@ export default {
             return a.remain - b.remain;
           });
         })
-        .catch((err) => console.log(err.res));
+        .catch(() => {});
     },
 
     searchStore() {
@@ -348,14 +391,24 @@ export default {
     },
 
     gethotplace() {
+      // const m_id = this.$route.params.m_id
+      var today = new Date().getHours();
+      const placeData = {
+        sex: this.meetingDetail.user.sex,
+        avg_age: this.meetingDetail.avg_age,
+        time: today,
+        ppl: this.meetingDetail.ppl,
+      };
       axios
-        .get(
-          SERVER_URL + "/api/store/firstrecommend/" + this.$route.params.s_id
-        )
+        .post(SERVER_URL + "/api/hotplace/", placeData)
         .then((res) => {
-          this.hotplace = res.data;
+          const tmp = res.data.length;
+          this.hotplace = res.data.slice(0, tmp - 1);
+          this.hotplacesite = res.data.slice(tmp - 1)[0];
         })
-        .catch((err) => console.log(err.response));
+        .catch((err) => {
+          console.log(err.response);
+        });
     },
 
     goPromise(p_id) {
@@ -440,11 +493,11 @@ a {
   color: #ba68c8;
   text-decoration: underline;
 }
-.slider-container{
-  height:130px;
+.slider-container {
+  height: 130px;
 }
 
-.dday{
-  color :#D63C0D
+.dday {
+  color: #d63c0d;
 }
 </style>
