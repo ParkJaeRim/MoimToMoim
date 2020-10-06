@@ -173,10 +173,14 @@ def hotplace(request):
     place = models.CardData.objects.all().filter(Q(sex = request.data['sex']) & Q(avg_age = request.data['avg_age']) & Q(time = request.data['time']) & Q(ppl = request.data['ppl']))
     serializer = serializers.CardDataSerializer(place, many=True)
     stores = []
+    tmp = []
+    tmp.append(request.data['time'])
     for d in serializer.data:
+        tmp.append(d['dong'])
         store = models.Store.objects.all().filter(Q(address__icontains = d['dong']))
         store = store.order_by('-rating')[:2]
         serializer = serializers.StoreSerializer(store, many=True)
         for s in serializer.data:
             stores.append(s)
+    stores.append(tmp)
     return Response(stores)
