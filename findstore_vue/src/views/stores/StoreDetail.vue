@@ -209,7 +209,6 @@ export default {
           // this.reviews.rating = res.data.reviews[1].rating;
           // this.reviews.review = res.data.reviews[1].review;
           this.storeInfo.price = Number(res.data.price);
-          console.log(res.data);
           this.menus = res.data.menu.split("//");
           this.menuImg = res.data.img.split("|");
         })
