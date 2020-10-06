@@ -7,7 +7,7 @@
       "
       size="36"
       fab
-      color="deep-purple lighten-4"
+      color="deep-purple lighten-3"
     >
       <v-icon>fas fa-route</v-icon>
     </v-btn>
@@ -107,10 +107,10 @@ export default {
 
 <style scope>
 .point {
-  position: absolute;
-  z-index: 1;
-  right: 10px;
-  top: -50px;
+  position: fixed;
+  margin:10px;
+  margin-left: 320px;
+  z-index: 10;
 }
 .size {
   height: 100px;

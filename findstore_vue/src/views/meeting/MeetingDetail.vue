@@ -57,7 +57,7 @@
 
             <v-col cols="7" @click="goPromise(promise[item.idx].id)">
               <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].storelist!=''" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
+              <v-row v-if="promise[item.idx].reslist.length !=0" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
                  </v-row>
               <v-row class="mt-1">
                 <v-icon color="deep-purple" >mdi-calendar </v-icon>
@@ -96,7 +96,11 @@
       <hr />
       <!--                 핫플레이스 추천                           -->
       <v-row class="h5 each-row mx-auto">
-       핫플레이스 추천 </v-row>
+        핫플레이스 추천
+        <span class="h6" v-for="(dong, di) in hotplacesite" :key="di">
+          /{{dong}}
+        </span>
+      </v-row>
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
           <slideritem
@@ -183,6 +187,7 @@ export default {
       meetingDetail: {},
       promise: {},
       hotplace: {},
+      hotplacesite: {},
       likes: {},
       meetingUser:"",
       options: {
@@ -223,7 +228,6 @@ export default {
   },
 
   created() {
-    this.isUser();
     this.detailData();
     this.move();
   },
@@ -243,19 +247,14 @@ export default {
       axios
         .get(SERVER_URL + "/rest-auth/user/", config)
         .then((res) => {
-          const userInfo = res.data.username
-
-           axios
-            .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
-            .then((result) => {
-
-              if(result.data[0].user.username != userInfo){
-                this.$router.push({ name: "home" });
-              }
+          if (res.data.username != this.meetingDetail.user.username) {
+            this.$router.push({
+              name: "meetinglist"
             })
+          }
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     makePromise(m_id) {
@@ -288,11 +287,12 @@ export default {
         .get(SERVER_URL + "/meeting/detail/" + this.$route.params.m_id)
         .then((res) => {
           this.meetingDetail = res.data;
+          this.isUser();
           this.searchStore();
           this.promiseData();
           this.gethotplace();
         })
-        .catch((err) => console.log(err.res));
+        .catch((err) => console.log(err.response));
     },
 
     promiseData() {
@@ -330,7 +330,7 @@ export default {
             return a.remain - b.remain;
           });
         })
-        .catch((err) => console.log(err.res));
+        .catch(() => {});
     },
 
     searchStore() {
@@ -358,7 +358,9 @@ export default {
       }
       axios.post(SERVER_URL + "/api/hotplace/", placeData)
       .then(res => {
-        this.hotplace = res.data
+        const tmp = res.data.length
+        this.hotplace = res.data.slice(0, tmp-1)
+        this.hotplacesite = res.data.slice(tmp-1)[0]
       })
       .catch(err => {
         console.log(err.response);
@@ -391,7 +393,7 @@ export default {
           this.close();
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
 

@@ -59,9 +59,9 @@ export default {
   border: solid 1px rgba(0, 0, 0, 0.258);
 }
 .backBnt {
-  position: absolute;
-  bottom: 30px;
-  left: 20px;
-  z-index: 10;
+  position: fixed;
+  margin:20px;
+  bottom: 6vh;
+  z-index:10;
 }
 </style>

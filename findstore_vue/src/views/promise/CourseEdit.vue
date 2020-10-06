@@ -52,12 +52,19 @@
       </template>
 
       <template>
-        <div class="text-right">
+        <div v-if="promiseList.isfinish==1" class="text-right">
           <v-btn
             text
             style="font-size: 16px; color: orange"
+             :to="{name: 'detailmain'}">확인</v-btn
+          >
+        </div>
+        <div v-if="promiseList.isfinish==0" class="text-right">
+          <v-btn 
+            text
+            style="font-size: 16px; color: orange"
             @click="courseAdd()"
-            >가게추가</v-btn
+            >추가</v-btn
           >
 
           <v-dialog v-model="dialog" calss max-width="500px">
@@ -138,6 +145,7 @@
           >
         </div>
       </template>
+
     </v-container>
   </div>
 </template>  
@@ -223,7 +231,7 @@ export default {
 
           })
           .catch((error) => {+
-            console.log(error.response.data);
+            console.log(error.response);
           });
       }
     },

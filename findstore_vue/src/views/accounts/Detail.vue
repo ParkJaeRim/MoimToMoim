@@ -8,7 +8,7 @@
         :counter="10"
         :rules="nicknameRules"
         :type="show2 ? 'text' : 'nickname'"
-        label="nickname"
+        label="닉네임"
         @click:append="show2 = !show2"
         required
       ></v-text-field>
@@ -16,14 +16,14 @@
       <v-text-field
         v-model="form.email"
         :rules="emailRules"
-        label="email"
+        label="이메일"
         required
       ></v-text-field>
 
       <v-text-field
         v-model="form.age"
         :type="show2 ? 'text' : 'age'"
-        label="age"
+        label="나이"
         :rules="ageRules"
         @click:append="show2 = !show2"
         required
@@ -124,7 +124,7 @@ export default {
             });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.resposne);
         });
     },
 
@@ -148,7 +148,7 @@ export default {
               })
               .catch((err) => {
                 alert("입력 정보를 확인해주세요.");
-                console.log(err);
+                console.log(err.resposne);
               });
           }
         });
@@ -176,7 +176,7 @@ export default {
           this.form.sex = res.data.sex;
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
   },
