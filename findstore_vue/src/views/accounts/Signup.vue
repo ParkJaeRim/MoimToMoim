@@ -80,12 +80,14 @@
                 :rules="sexRules"
                 label="남자"
                 value="1"
+                color="orange"
               ></v-checkbox>
               <v-checkbox
                 v-model="signupData.sex"
                 :rules="sexRules"
                 label="여자"
                 value="0"
+                color="orange"
               ></v-checkbox>
             </v-container>
           </v-col>
