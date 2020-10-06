@@ -99,6 +99,7 @@
                 max-width="320px"
                 align="center"
                 justify="center"
+                :retain-focus="false"
               >
                 <template v-slot:activator="{ on }">
                   <v-btn
@@ -107,7 +108,7 @@
                     color="orange"
                     style="font-size: 15px"
                     v-on="on"
-                    v-on:click="setreview(k)"
+                    @click="setreview(k)"
                     >완료</v-btn
                   >
                 </template>
@@ -386,10 +387,11 @@ export default {
     },
     close() {
       this.y=0;
+      this.reviewid = 0;
       this.reviews =[];
       this.reviewdata = Object.assign({}, this.defaultreview);
       this.dialog = false;
-      this.$router.go();
+      // this.$router.go();
     },
   },
 };
