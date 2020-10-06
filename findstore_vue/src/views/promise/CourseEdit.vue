@@ -64,7 +64,7 @@
             text
             style="font-size: 16px; color: orange"
             @click="courseAdd()"
-            >가게추가</v-btn
+            >추가</v-btn
           >
 
           <v-dialog v-model="dialog" calss max-width="500px">

@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <div>
-        <v-row dense class="each-row mx-auto" align="center" justify="center">
+        <v-row dense class="each-row m-0 mx-auto" align="center" justify="center">
           <v-col align="center" justify="center">
             <v-responsive
               class="text-center deep-purple lighten-4 rounded-circle d-inline-flex ma-3"
@@ -18,9 +18,9 @@
           </v-col>
         </v-row>
       </div>
-      <div class="d-flex justify-space-between" max-width="400" max-height="120">
+      <div class="d-flex justify-space-between" max-width="400" height="100">
         <v-row align="center" justify="center">
-          <v-col class="text-center" col="6">
+          <v-col class="text-center py-0" col="6">
             <div>
               <v-btn
                 text
@@ -40,8 +40,8 @@
         </v-row>
 
         <v-row align="center" justify="center">
-          <v-col class="text-center" col="6">
-            <div>
+          <v-col class="text-center py-0" col="6">
+            <div height="100">
               <v-btn
                 text
                 color="primary"
@@ -61,7 +61,6 @@
 
       <div v-for="(item, k) in promiseList" :key="item.id">
         <div v-if="item.isfinish == cnt">
-          <br />
           <v-row>
             <v-col cols="9" class="pr-0 pb-0">
               <p v-on:click="goCourse(item.id)" class="text-truncate" style="font-size: 15px">
@@ -85,7 +84,7 @@
                   <v-btn
                     v-if="item.isfinish == 0"
                     text
-                    color="primary"
+                    color="orange"
                     style="font-size: 15px"
                     @click="deletePromise(item.id)"
                     >삭제</v-btn
@@ -105,14 +104,14 @@
                   <v-btn
                     v-if="item.isfinish == 0"
                     text
-                    color="primary"
+                    color="orange"
                     style="font-size: 15px"
                     v-on="on"
                     >완료</v-btn
                   >
                 </template>
 
-                <v-card >
+                <v-card>
                   <v-container>
                     <v-card>
                       <v-row>
@@ -145,13 +144,12 @@
                         </v-col>
                       </v-row>
                     </v-card>
-                    </v-container>
-
+                  </v-container>
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <!-- <v-btn
                       v-if="y > 0"
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="y--"
                     >
@@ -159,7 +157,7 @@
                     </v-btn> -->
                     <v-btn
                       v-if="y < item.reslist.length - 1"
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="
                         pushReviewData(item.reslist[y], item.meeting.id);
@@ -169,7 +167,7 @@
                     >
                     <v-btn
                       v-else
-                      color="purple lighten-1"
+                      color="orange"
                       text
                       @click="
                         isfinish(k);
@@ -178,7 +176,7 @@
                       "
                       >완료</v-btn
                     >
-                    <v-btn color="purple lighten-1" text @click="close"
+                    <v-btn color="orange" text @click="close"
                       >취소</v-btn
                     >
                   </v-card-actions>
@@ -348,7 +346,7 @@ export default {
 
     deletePromise(id){
       axios.post(SERVER_URL+"/promise/delete/"+id).then(()=>{
-        this.$router.go();
+        this.promiseData();
       }).catch((err)=>console.log(err.resposne));
     },
 

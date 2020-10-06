@@ -32,7 +32,7 @@
       </v-col>
     </v-row>
     <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="deep-purple lighten-5">
-      <v-btn @click="courseAdd(store.res_id)" small class="add" color="warning" dark>add</v-btn>
+      <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
       <v-list-item @click="marker(store.address)">
         <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
         <v-list-item-content>
@@ -81,7 +81,6 @@ export default {
   mounted() {
     setTimeout(() => {
       window.kakao && window.kakao.maps ? this.initMap() : this.addScript();
-      this.searchStore();
     }, 200);
   },
   computed: {
@@ -154,6 +153,7 @@ export default {
         .then((res) => {
           this.promiseList = res.data;
           this.isUser();
+          this.searchStore();
           this.address = res.data.gu + " " + res.data.dong;
         })
         .catch((err) => {
@@ -191,7 +191,11 @@ export default {
     },
     courseAdd(storeId) {
       alert('코스가 추가되었습니다')
-      this.promiseList.storelist += storeId + "/"
+      if (this.choice == "eating" & storeId > 700) {
+        storeId %= 700
+      }
+      const choi = this.choice.slice(0, 1)
+      this.promiseList.storelist += choi + storeId + "/"
       const p_id = this.$route.params.p_id
       axios.post(SERVER_URL + "/promise/update/" + p_id, this.promiseList)
       .then(() => {})
