@@ -59,7 +59,7 @@
       </div>
     <hr>
 
-      <div v-for="(item, k) in promiseList" :key="item.id">
+      <div v-for="(item, k) in promiseList" :key="item.title">
         <div v-if="item.isfinish == cnt">
           <br />
           <v-row>
@@ -99,10 +99,11 @@
                 <template v-slot:activator="{ on }">
                   <v-btn
                     v-if="item.isfinish == 0"
-                    text
+                    text 
                     color="primary"
                     style="font-size: 15px"
                     v-on="on"
+                    v-on:click="setreview(k)"
                     >완료</v-btn
                   >
                 </template>
@@ -113,11 +114,13 @@
                       <v-row>
                         <v-col>
                           <v-card-text class="h4">
-                            {{ item.reslist[y].name }}
+                            
+                            {{ promiseList[reviewid].reslist[y].name }}
+                            
                             <v-img
-                              v-if="item.reslist[y].img !== null"
+                              v-if="promiseList[reviewid].reslist[y].img !== null"
                               class="white--text"
-                              :src="item.reslist[y].img"
+                              :src="promiseList[reviewid].reslist[y].img"
                               width="270px"
                               height="120px"
                             ></v-img>
@@ -130,7 +133,7 @@
                               large
                             ></v-rating>
                             <br />
-                            <v-text-field
+                            <v-text-field 
                               v-model="reviewdata.review"
                               label="리뷰를 작성해주세요."
                               required
@@ -156,7 +159,7 @@
                       color="purple lighten-1"
                       text
                       @click="
-                        pushReviewData(item.reslist[y], item.meeting.id);
+                        pushReviewData(promiseList[reviewid].reslist[y], promiseList[reviewid].meeting.id);
                         y++;
                       "
                       >다음</v-btn
@@ -166,15 +169,17 @@
                       color="purple lighten-1"
                       text
                       @click="
-                        isfinish(k);
-                        reviewfinish(item.reslist[y], item.meeting.id);
+                        isfinish(reviewid);
+                        reviewfinish(promiseList[reviewid].reslist[y], promiseList[reviewid].meeting.id);
                         save();
                       "
                       >완료</v-btn
                     >
-                    <v-btn color="purple lighten-1" text @click="close"
-                      >취소</v-btn
-                    >
+                    <v-btn color="purple lighten-1" text @click="
+                    close();
+                    
+                    "
+                      >취소</v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -222,6 +227,7 @@ export default {
   name: "promiseList",
   data: () => {
     return {
+      reviewid: 0,
       promiseList: {},
       storeInfos: [],
       headers: [],
@@ -287,6 +293,9 @@ export default {
     this.userData();
   },
   methods: {
+    setreview(item){
+      this.reviewid = item
+    },
     move() {
       if (!this.$cookies.isKey("auth-token")) {
         this.$router.push({ name: "home" });
@@ -373,7 +382,11 @@ export default {
       this.y = 0;
     },
     close() {
+      this.y=0;
+      this.reviews =[];
+      this.reviewdata = Object.assign({}, this.defaultreview);
       this.dialog = false;
+      this.$router.go();
     },
   },
 };
