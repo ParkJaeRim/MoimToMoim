@@ -193,7 +193,7 @@
                   :src="item2.img"
                   width="120px"
                   height="120px"
-                  @click="goStoreDetail(item2.id)"
+                  @click="goCourse(itemcd.id)"
                 >
                   <div class="transbox white--text">
                     <div class="store_name">{{ item2.name }}</div>
