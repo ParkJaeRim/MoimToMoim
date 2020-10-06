@@ -68,11 +68,16 @@
                 {{ item.title }} / {{ item.date.substring(2, 4) }}.{{
                   item.date.substring(5, 7)
                 }}.{{ item.date.substring(8, 10) }} / {{ item.meeting.title }}
-                <v-badge
+                <v-badge v-if='item.isfinish==0'
                 inline
                 color="deep-purple lighten-4"
                 icon="mdi-lead-pencil"
               ></v-badge>
+                <v-badge v-if='item.isfinish!=0'
+                inline
+                color="deep-purple lighten-4"
+                icon="mdi-eye"
+              >보기</v-badge>
               </p>
             </v-col>
             <v-col v-if="item.reslist.length==0" cols="3" class="pt-1 pl-0 yb-0">
@@ -193,7 +198,7 @@
                   :src="item2.img"
                   width="120px"
                   height="120px"
-                  @click="goStoreDetail(item2.id)"
+                  @click="goCourse(item.id)"
                 >
                   <div class="transbox white--text">
                     <div class="store_name">{{ item2.name }}</div>
@@ -305,7 +310,7 @@ export default {
           this.promiseData();
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.resposne);
         });
     },
     promiseData() {
@@ -314,7 +319,7 @@ export default {
         .then((res) => {
           this.promiseList = res.data;
         })
-        .catch((err) => console.log(err.res));
+        .catch((err) => console.log(err.resposne));
     },
     goStoreDetail(s_id) {
       this.$router.push({
@@ -341,13 +346,13 @@ export default {
       axios
         .post(SERVER_URL + "/api/store/review2/create/", this.reviews)
         .then(() => {})
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err.resposne));
     },
 
     deletePromise(id){
       axios.post(SERVER_URL+"/promise/delete/"+id).then(()=>{
         this.$router.go();
-      }).catch((err)=>console.log(err));
+      }).catch((err)=>console.log(err.resposne));
     },
 
     isfinish(k) {
@@ -358,7 +363,7 @@ export default {
         .then(() => {
           this.promiseData();
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err.resposne));
     },
     pushReviewData(storeInfos, id) {
       this.reviewdata.res_id = storeInfos.id;

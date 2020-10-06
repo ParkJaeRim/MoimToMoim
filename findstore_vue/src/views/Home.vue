@@ -95,7 +95,7 @@ export default {
           this.isLogin();
         })
         .catch((err) => {
-          console.log(err.response.data);
+          console.log(err.response);
           alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
         });
     },

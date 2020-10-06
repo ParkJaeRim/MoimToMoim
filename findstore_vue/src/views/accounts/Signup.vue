@@ -215,7 +215,7 @@ export default {
         .then(() => {
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.resposne);
         });
     },
   },

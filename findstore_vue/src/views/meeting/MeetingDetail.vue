@@ -57,7 +57,7 @@
 
             <v-col cols="7" @click="goPromise(promise[item.idx].id)">
               <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].storelist!=''" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
+              <v-row v-if="promise[item.idx].reslist.length !=0" class="mt-1"><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳  : {{ promise[item.idx].reslist[0].name}}
                  </v-row>
               <v-row class="mt-1">
                 <v-icon color="deep-purple" >mdi-calendar </v-icon>
@@ -260,7 +260,7 @@ export default {
             })
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
     makePromise(m_id) {
@@ -297,7 +297,7 @@ export default {
           this.promiseData();
           this.gethotplace();
         })
-        .catch((err) => console.log(err.res));
+        .catch((err) => console.log(err.response));
     },
 
     promiseData() {
@@ -399,7 +399,7 @@ export default {
           this.close();
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error.response);
         });
     },
 
