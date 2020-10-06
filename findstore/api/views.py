@@ -174,13 +174,18 @@ def resChange(resList):
             if choice == 'e':
                 store = get_object_or_404(models.Store, pk=num)
                 serializer = serializers.StoreSerializer(store)
-                res.append(serializer.data)
+                newdict = {'choice': 'e'}
+                newdict.update(serializer.data)
+                res.append(newdict)
             else:
                 store = get_object_or_404(models.EnterStore, pk=num)
                 serializer = serializers.EnterStoreSerializer(store)
-                res.append(serializer.data)
+                newdict = {'choice': 'p'}
+                newdict.update(serializer.data)
+                res.append(newdict)
         except:
             continue
+    print(res)
     return res
 
 
