@@ -30,7 +30,7 @@
         <v-icon @click="searchStore">fas fa-search</v-icon>
       </v-col>
     </v-row>
-    <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="grey lighten-2">
+    <v-card class="mb-3" v-for="(store, si) in searchStoreList" :key="store.id" color="deep-purple lighten-5">
       <div v-if="si">
         <v-btn @click="courseAdd(store.res_id)" small class="add" color="warning" dark>add</v-btn>
         <v-list-item @click="marker(store.address)">
