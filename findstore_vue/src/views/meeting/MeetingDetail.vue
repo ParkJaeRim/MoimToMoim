@@ -116,7 +116,7 @@
             small
             class="white--text"
             color="pink"
-            v-if="(hotplacesite[0] = 12)"
+            v-else-if="(hotplacesite[0] == 12)"
           >
             낮 12시
           </v-chip>
@@ -428,6 +428,7 @@ export default {
         .post(SERVER_URL + "/api/hotplace/", placeData)
         .then((res) => {
           const tmp = res.data.length;
+          console.log(tmp);
           this.hotplace = res.data.slice(0, tmp - 1);
           this.hotplacesite = res.data.slice(tmp - 1)[0];
         })
