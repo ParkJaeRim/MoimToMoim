@@ -9,10 +9,11 @@
       delimiter-icon="mdi-minus"
       height="200"
     >
-      <v-carousel-item
-        v-for="(image, i) in menuImg"
-        :key="i"
-        :src="image"
+      <v-carousel-item v-if="storeInfo.img != ''"
+        :src="storeInfo.img"
+      ></v-carousel-item>
+      <v-carousel-item v-else
+        src="@/assets/img/defualt.png"
       ></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary text-left">
@@ -217,7 +218,6 @@ export default {
           this.reviews = res.data.reviews;
           this.storeInfo.price = Number(res.data.price);
           this.menus = res.data.menu.split("//");
-          this.menuImg = res.data.img.split("|");
         })
         .catch((err) => console.error(err.response));
     },

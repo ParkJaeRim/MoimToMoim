@@ -22,7 +22,7 @@
                 :style="styleRecom"
               >
                 <v-img
-                  v-if="item.img !== null"
+                  v-if="item.img != ''"
                   class="white--text"
                   :src="item.img"
                   style="height: 80px; max-width: 80px"
@@ -32,12 +32,12 @@
                   </div>
                 </v-img>
                 <v-img
-                  v-if="item.img == null"
-                  class="white--text one"
-                  src="http://asq.kr/JNlr0nxp6EQN"
+                  v-else
+                  class="one"
+                  src="@/assets/img/defualt.png"
                   style="height: 80px; max-width: 80px"
                 >
-                  <div class="transbox white--text">
+                  <div class="transbox">
                     <div class="store_name">{{ item.name }}</div>
                   </div>
                 </v-img>
