@@ -30,7 +30,7 @@
               </template>
 
               <v-card>
-                <v-list-item @click="goDetail(n.id)">
+                <v-list-item @click="goDetail(n)">
                   <v-img
                     :src="n.img"
                     class="mr-3"
@@ -67,7 +67,7 @@
             >추가</v-btn
           >
 
-          <v-dialog v-model="dialog" calss max-width="500px">
+          <v-dialog v-model="dialog" calss max-width="500px" persistent>
             <template v-slot:activator="{ on }">
               <v-btn text style="font-size: 16px; color: orange" v-on="on"
                 >코스수정</v-btn
@@ -208,7 +208,7 @@ export default {
       this.course = "";
       for (let index = 0; index < this.storeInfos.length; index++) {
         const element = this.storeInfos[index];
-        this.course += element.id + "/";
+        this.course += element.choice + element.id + "/";
       }
     },
   },
@@ -318,13 +318,7 @@ export default {
     },
 
     finishCourse() {
-      const m_id = this.promiseList.meeting.id;
-      this.$router.push({
-        name: "meetingDetail",
-        params: {
-          m_id: m_id,
-        },
-      });
+      this.$router.push({ name: "detailmain" });
     },
 
     deleteCourse() {
@@ -350,10 +344,20 @@ export default {
         });
     },
 
-    goDetail(s_id) {
+    goDetail(store) {
+      var id = store.id;
+      var ch = "";
+      if (store.choice == "e" & id > 700) {
+        id %= 700
+      }
+      if (store.choice == "e") {
+        ch = "eating"
+      } else {
+        ch = "playing"
+      }
       this.$router.push({
         name: "storedetail",
-        params: { p_id: this.$route.params.p_id, s_id: s_id },
+        params: { p_id: this.$route.params.p_id, s_id: id, choice: ch},
       });
     },
 
@@ -399,6 +403,7 @@ export default {
 
     close() {
       this.dialog = false;
+      this.temp = this.storeInfos.slice();
     },
   },
 };
