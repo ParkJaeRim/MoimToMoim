@@ -97,6 +97,7 @@
               <v-dialog
                 v-model="dialog"
                 max-width="320px"
+                width="auto"
                 align="center"
                 justify="center"
                 :retain-focus="false"
