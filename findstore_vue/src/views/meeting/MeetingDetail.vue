@@ -76,10 +76,10 @@
               @click="goPromise(promise[item.idx].id)"
             >
               <v-row class="h4 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].reslist.length != 0 & promise[item.idx].reslist[0].name.length > 5" class="mt-1">
+              <v-row v-if="promise[item.idx].reslist.length != 0 && promise[item.idx].reslist[0].name.length > 5" class="mt-1">
                 <v-icon  color="deep-purple">mdi-heart </v-icon> 모이는 곳 : {{ promise[item.idx].reslist[0].name.substring(0,5) }} ...
               </v-row>
-                  <v-row v-else-if="promise[item.idx].reslist.length != 0" class="mt-1">
+                  <v-row v-else-if="promise[item.idx].reslist.length != 0 " class="mt-1">
                 <v-icon  color="deep-purple">mdi-heart </v-icon> 모이는 곳 : {{ promise[item.idx].reslist[0].name}}
               </v-row>
               <v-row class="mt-1">
@@ -367,7 +367,6 @@ export default {
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
-          console.log(this.promise);
           this.meetingUser = res.data[0].user.username;
           for (let i = 0; i < this.promise.length; i++) {
             var object = {};
@@ -428,7 +427,6 @@ export default {
         .post(SERVER_URL + "/api/hotplace/", placeData)
         .then((res) => {
           const tmp = res.data.length;
-          console.log(tmp);
           this.hotplace = res.data.slice(0, tmp - 1);
           this.hotplacesite = res.data.slice(tmp - 1)[0];
         })
