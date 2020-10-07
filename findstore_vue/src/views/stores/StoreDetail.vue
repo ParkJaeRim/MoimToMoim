@@ -46,9 +46,7 @@
 
             <th>
               {{storeInfo.tags}}
-            <!-- <div v-for="(tag,i) in storeInfo.tags.split(',')" :key="i">
-              #{{ storeInfo.tags.split(',')[i].trim() }}
-            </div> -->
+         
             </th>
           </tr>
         </thead>
