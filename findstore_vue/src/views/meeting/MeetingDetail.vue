@@ -120,7 +120,7 @@
           >
             낮 12시
           </v-chip>
-          <v-chip small class="white--text" color="pink" v-else>
+          <v-chip small class="white--text" color="pink" v-else-if="(hotplacesite[0] < 12)">
             오전 {{ hotplacesite[0] }}시
           </v-chip>
           <span class="mr-1"></span><span class=" h5">핫플레이스 추천 </span>
@@ -177,7 +177,7 @@
       </v-row>
       <hr />
 
-      <v-row class="h5 each-row mx-auto ma-2">취향 추천 </v-row>
+      <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
 
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
