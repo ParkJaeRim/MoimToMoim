@@ -177,7 +177,24 @@
       </v-row>
       <hr />
 
-      <v-row class="h5 each-row mx-auto ma-2">취향 추천</v-row>
+      <v-row class="h5 each-row mx-auto ma-2">취향 추천
+
+        <span v-for="(dong, di) in hotplacesite" :key="di">
+          <div v-if="(di == 1) & (dong.length <= 3)">
+            {{ dong.substring(0, 2) }}
+          </div>
+          <div v-if="(di == 1) & (dong.length > 3)">
+            /{{ dong.substring(0, 3) }}
+          </div>
+          <div v-if="(di >= 2) & (dong.length <= 3)">
+            /{{ dong.substring(0, 2) }}
+          </div>
+          <div v-if="(di >= 2) & (dong.length > 3)">
+            /{{ dong.substring(0, 3) }}
+          </div>
+        </span>
+
+      </v-row>
 
       <v-row class="each-row mx-auto">
         <slider ref="slider" :options="options">
