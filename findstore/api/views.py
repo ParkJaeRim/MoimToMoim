@@ -49,11 +49,21 @@ class StoreViewSet(viewsets.ModelViewSet):
 def storedetail(request, store_id, choice):
     if choice == 'playing':
         store = get_object_or_404(models.EnterStore, pk=store_id)
+        
         serializer = serializers.EnterStoreSerializer(store)
+        
     else:
         store = get_object_or_404(models.Store, pk=store_id)
+        print(store)
         serializer = serializers.StoreSerializer(store)
     reviews = reviewlistcreate(store_id)
+    # tags = serializer.data.tags.split(',')
+    # ret_tag = ""
+    # for tag in tags:
+    #     t = "#"
+    #     t = t+tag
+    #     ret_tag = ret_tag+t
+    # print(ret_tag)
     newdict = {'reviews': reviews}
     newdict.update(serializer.data)
     return Response(newdict)
@@ -62,6 +72,7 @@ def storedetail(request, store_id, choice):
 def reviewlistcreate(id):
     target_store = models.TestReviews.objects.filter(res_id=id)
     serializer = serializers.TestReviewsSerializer(target_store, many=True)
+
     return serializer.data
 
 

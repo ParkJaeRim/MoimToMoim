@@ -43,7 +43,13 @@
         <thead>
           <tr>
             <th width="25%">태그</th>
-            <th>{{ storeInfo.tags }}</th>
+
+            <th>
+              {{storeInfo.tags}}
+            <!-- <div v-for="(tag,i) in storeInfo.tags.split(',')" :key="i">
+              #{{ storeInfo.tags.split(',')[i].trim() }}
+            </div> -->
+            </th>
           </tr>
         </thead>
         <thead>
@@ -203,6 +209,12 @@ export default {
         .get(SERVER_URL + "/api/store/" + store_id + "/" + choice)
         .then((res) => {
           this.storeInfo = res.data;
+          const tags = res.data.tags.split(',');
+          var tag = "";
+          for(var i = 0;i<tags.length;i++){
+            tag = tag+"#"+tags[i].trim()+" ";
+          }
+          this.storeInfo.tags = tag
           this.reviews = res.data.reviews;
           this.storeInfo.price = Number(res.data.price);
           this.menus = res.data.menu.split("//");
