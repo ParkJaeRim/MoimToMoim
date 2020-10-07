@@ -64,7 +64,7 @@ export default {
     return {
       promiseList: {},
       address: "",
-      items: ["가게명", "카테고리"],
+      items: ["카테고리", "가게명", "태그"],
       choice: "eating",
       searchData: {
         gu: "",

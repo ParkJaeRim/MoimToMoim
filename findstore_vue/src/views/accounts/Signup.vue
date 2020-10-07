@@ -171,7 +171,6 @@ export default {
             .then((res) => {
               this.$cookies.set("auth-token", res.data.key);
               this.createIndv(res.data.key);
-              this.$router.go();
             })
             .catch(() => {
               alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
@@ -215,7 +214,7 @@ export default {
     },
 
     createIndv(token) {
-
+      
       const config = {
         headers: {
           Authorization: "Token " + token,
@@ -232,6 +231,7 @@ export default {
       axios
         .post(SERVER_URL + "/meeting/create/", initmeeting, config)
         .then(() => {
+          this.$router.go();
         })
         .catch((error) => {
           console.log(error.resposne);
