@@ -102,6 +102,7 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -179,12 +180,30 @@ export default {
         .catch((err) => {
           if(err.response.data.username) {
             if(err.response.data.username[0] == "해당 사용자 이름은 이미 존재합니다.") {
-              alert(err.response.data.username[0]);
+              swal
+              .fire({
+              title: "해당 사용자 이름은 이미 존재합니다.",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
             } else {
-              alert("정보를 확인해주세요");
+              swal
+              .fire({
+              title: "정보를 확인해주세요",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
             }
           } else {
-            alert("정보를 확인해주세요");
+              swal
+              .fire({
+              title: "정보를 확인해주세요",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
           }
         });
     },
