@@ -21,7 +21,6 @@
             <v-timeline-item
               v-for="(n, i) in storeInfos"
               :key="i"
-              :src="n"
               color="deep-purple lighten-4"
               medium
             >
@@ -32,7 +31,14 @@
               <v-card>
                 <v-list-item @click="goDetail(n)">
                   <v-img
+                    v-if="n.img != ''"
                     :src="n.img"
+                    class="mr-3"
+                    style="height: 80px; max-width: 80px"
+                  ></v-img>
+                  <v-img
+                    v-else
+                    src="@/assets/img/defualt.png"
                     class="mr-3"
                     style="height: 80px; max-width: 80px"
                   ></v-img>

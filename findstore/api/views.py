@@ -49,7 +49,9 @@ class StoreViewSet(viewsets.ModelViewSet):
 def storedetail(request, store_id, choice):
     if choice == 'playing':
         store = get_object_or_404(models.EnterStore, pk=store_id)
+        
         serializer = serializers.EnterStoreSerializer(store)
+        
     else:
         store = get_object_or_404(models.Store, pk=store_id)
         serializer = serializers.StoreSerializer(store)
@@ -62,6 +64,7 @@ def storedetail(request, store_id, choice):
 def reviewlistcreate(id):
     target_store = models.TestReviews.objects.filter(res_id=id)
     serializer = serializers.TestReviewsSerializer(target_store, many=True)
+
     return serializer.data
 
 
@@ -83,12 +86,12 @@ def searchrecommend(request, choice, meeting_id):
         store = models.EnterStore.objects.all().filter(Q(address__icontains = request.data['gu']) & Q(address__icontains = request.data['dong']))
     else:
         return Response()
-    if request.data['keyword'] == '':
-        pass
-    elif request.data['selected'] == '카테고리':
-        store = store.filter(category__icontains = request.data['keyword'])
-    else:
+    if request.data['selected'] == '가게명':
         store = store.filter(name__icontains = request.data['keyword'])
+    elif request.data['selected'] == '태그':
+        store = store.filter(tags__icontains = request.data['keyword'])
+    else:
+        store = store.filter(category__icontains = request.data['keyword'])
     store = store.order_by('-rating')[:10]
     if choice == 'eating':
         serializer = serializers.RecommandSerializer(store, many=True)
@@ -111,7 +114,7 @@ def meetingCreate(meeting_id):
     store_qs = models.Store.objects.all()
     for store in store_qs:
         models.Recommand(user_id=meeting_id,rating=store.rating,res_id=store.id,
-        address=store.address,name=store.name,category=store.category, img=store.img).save()
+        address=store.address,name=store.name,category=store.category, img=store.img, tags=store.tags).save()
 
 
 def get_top_n(predictions, meeting_id):
@@ -134,7 +137,7 @@ def testreview(mid):
     print(store_qs)
     q1 = qs.values('res_id', 'user_name','rating')
     q2 = qs2.values('res_id', 'user_name','rating')
-    store_q = store_qs.values_list('id','address','name','category','img')
+    store_q = store_qs.values_list('id','address','name','category','img','tags')
 
     store_addr = {}
     for s in store_q:

@@ -45,6 +45,7 @@
             style="font-size : 18px; border-radius: 25px; text-align:left;"
           >
             <v-col
+              v-if="promise[item.idx].isfinish == 0"
               class="ml-1 mr-2"
               cols="4"
               @click="goPromise(promise[item.idx].id)"
@@ -69,17 +70,32 @@
               >
             </v-col>
 
-            <v-col cols="7" @click="goPromise(promise[item.idx].id)">
-              <v-row class="h3 mt-1"> {{ promise[item.idx].title }} </v-row>
-              <v-row v-if="promise[item.idx].reslist.length != 0" class="mt-1"
-                ><v-icon color="deep-purple">mdi-heart </v-icon> 모이는 곳 :
-                {{ promise[item.idx].reslist[0].name }}
+            <v-col
+              v-if="promise[item.idx].isfinish == 0"
+              cols="7"
+              @click="goPromise(promise[item.idx].id)"
+            >
+              <v-row class="h4 mt-1"> {{ promise[item.idx].title }} </v-row>
+              <v-row v-if="promise[item.idx].reslist.length != 0 & promise[item.idx].reslist[0].name.length > 5" class="mt-1">
+                <v-icon  color="deep-purple">mdi-heart </v-icon> 모이는 곳 : {{ promise[item.idx].reslist[0].name.substring(0,5) }} ...
+              </v-row>
+                  <v-row v-else-if="promise[item.idx].reslist.length != 0" class="mt-1">
+                <v-icon  color="deep-purple">mdi-heart </v-icon> 모이는 곳 : {{ promise[item.idx].reslist[0].name}}
               </v-row>
               <v-row class="mt-1">
-                <v-icon color="deep-purple">mdi-calendar </v-icon>
+                <v-icon  color="deep-purple">mdi-calendar </v-icon>
                 {{ promise[item.idx].date.substring(5, 7) }}월
                 {{ promise[item.idx].date.substring(8, 10) }}일
               </v-row>
+            </v-col>
+
+            <v-col v-if="promise[item.idx].isfinish == 1">
+              <v-row align="center" justify="center" class="mt-1"
+                ><img
+                  height="50px"
+                  width="50px"
+                  src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEyIDUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGlkPSJYTUxJRF8xNjAzXyI+PHBhdGggaWQ9IlhNTElEXzE1ODRfIiBkPSJtMTAgMTYyaDQ5MnYzNDBoLTQ5MnoiIGZpbGw9IiNmZmYiLz48cGF0aCBpZD0iWE1MSURfMTYwMl8iIGQ9Im02NiAyMThoOTUuMTI3djc2aC05NS4xMjd6IiBmaWxsPSIjZmZjZDY5Ii8+PHBhdGggaWQ9IlhNTElEXzI1MjRfIiBkPSJtNjYgMzcwaDk1LjEyN3Y3NmgtOTUuMTI3eiIgZmlsbD0iIzdkZDljMiIvPjxwYXRoIGlkPSJYTUxJRF8yNTI1XyIgZD0ibTI1Ni4xMjcgMzcwaDk1LjEyN3Y3NmgtOTUuMTI3eiIgZmlsbD0iIzdkZDljMiIvPjxnIGZpbGw9IiNmZjdkOTciPjxwYXRoIGlkPSJYTUxJRF8yNTIxXyIgZD0ibTY2IDI5NGg5NS4xMjd2NzZoLTk1LjEyN3oiLz48cGF0aCBpZD0iWE1MSURfMjUyMl8iIGQ9Im0xNjEuMTI3IDI5NGg5NS4xMjd2NzZoLTk1LjEyN3oiLz48cGF0aCBpZD0iWE1MSURfMjUyM18iIGQ9Im0zNTEuMTI3IDI5NGg5NS4xMjd2NzZoLTk1LjEyN3oiLz48L2c+PHBhdGggaWQ9IlhNTElEXzI1MjBfIiBkPSJtMjU2LjEyNyAyMThoOTUuMTI3djc2aC05NS4xMjd6IiBmaWxsPSIjZmZjZDY5Ii8+PHBhdGggaWQ9IlhNTElEXzEwOTlfIiBkPSJtMTAgNTBoNDkydjExMmgtNDkyeiIgZmlsbD0iIzAwY2NmMiIvPjxnIGlkPSJYTUxJRF85OTFfIiBmaWxsPSIjZTJlOWVlIj48cGF0aCBpZD0iWE1MSURfMTUzNV8iIGQ9Im0zOTYgNzZ2LTQ0YzAtMTIuMTUgOS44NS0yMiAyMi0yMiAxMi4xNSAwIDIyIDkuODUgMjIgMjJ2NDRjMCAxMi4xNS05Ljg1IDIyLTIyIDIyLTEyLjE1IDAtMjItOS44NS0yMi0yMnoiLz48cGF0aCBpZD0iWE1MSURfMTUzM18iIGQ9Im0yODggNzZ2LTQ0YzAtMTIuMTUgOS44NS0yMiAyMi0yMiAxMi4xNSAwIDIyIDkuODUgMjIgMjJ2NDRjMCAxMi4xNS05Ljg1IDIyLTIyIDIyLTEyLjE1IDAtMjItOS44NS0yMi0yMnoiLz48cGF0aCBpZD0iWE1MSURfMTQ4OF8iIGQ9Im0xODAgNzZ2LTQ0YzAtMTIuMTUgOS44NS0yMiAyMi0yMiAxMi4xNSAwIDIyIDkuODUgMjIgMjJ2NDRjMCAxMi4xNS05Ljg1IDIyLTIyIDIyLTEyLjE1IDAtMjItOS44NS0yMi0yMnoiLz48cGF0aCBpZD0iWE1MSURfOTkzXyIgZD0ibTcyIDc2di00NGMwLTEyLjE1IDkuODUtMjIgMjItMjIgMTIuMTUgMCAyMiA5Ljg1IDIyIDIydjQ0YzAgMTIuMTUtOS44NSAyMi0yMiAyMi0xMi4xNSAwLTIyLTkuODUtMjItMjJ6Ii8+PC9nPjxnIGlkPSJYTUxJRF8xNjM5XyI+PHBhdGggaWQ9IlhNTElEXzE3NDFfIiBkPSJtNTAyIDQwaC01MnYtOGMwLTE3LjY0NS0xNC4zNTUtMzItMzItMzJzLTMyIDE0LjM1NS0zMiAzMnY4aC00NHYtOGMwLTE3LjY0NS0xNC4zNTUtMzItMzItMzJzLTMyIDE0LjM1NS0zMiAzMnY4aC00NHYtOGMwLTE3LjY0NS0xNC4zNTUtMzItMzItMzJzLTMyIDE0LjM1NS0zMiAzMnY4aC00NHYtOGMwLTE3LjY0NS0xNC4zNTUtMzItMzItMzJzLTMyIDE0LjM1NS0zMiAzMnY4aC01MmMtNS41MjMgMC0xMCA0LjQ3Ny0xMCAxMHY0NTJjMCA1LjUyMyA0LjQ3NyAxMCAxMCAxMGg0OTJjNS41MjMgMCAxMC00LjQ3NyAxMC0xMHYtNDUyYzAtNS41MjMtNC40NzctMTAtMTAtMTB6bS05Ni04YzAtNi42MTcgNS4zODMtMTIgMTItMTJzMTIgNS4zODMgMTIgMTJ2NDRjMCA2LjYxNy01LjM4MyAxMi0xMiAxMnMtMTItNS4zODMtMTItMTJ6bS0xMDggMGMwLTYuNjE3IDUuMzgzLTEyIDEyLTEyczEyIDUuMzgzIDEyIDEydjQ0YzAgNi42MTctNS4zODMgMTItMTIgMTJzLTEyLTUuMzgzLTEyLTEyem0tMTA4IDBjMC02LjYxNyA1LjM4My0xMiAxMi0xMnMxMiA1LjM4MyAxMiAxMnY0NGMwIDYuNjE3LTUuMzgzIDEyLTEyIDEycy0xMi01LjM4My0xMi0xMnptLTEwOCAwYzAtNi42MTcgNS4zODMtMTIgMTItMTJzMTIgNS4zODMgMTIgMTJ2NDRjMCA2LjYxNy01LjM4MyAxMi0xMiAxMnMtMTItNS4zODMtMTItMTJ6bS02MiA0NjB2LTMyMGgxOTFjNS41MjMgMCAxMC00LjQ3NyAxMC0xMHMtNC40NzctMTAtMTAtMTBoLTE5MXYtOTJoNDJ2MTZjMCAxNy42NDUgMTQuMzU1IDMyIDMyIDMyczMyLTE0LjM1NSAzMi0zMnYtMTZoNDR2MTZjMCAxNy42NDUgMTQuMzU1IDMyIDMyIDMyczMyLTE0LjM1NSAzMi0zMnYtMTZoNDR2MTZjMCAxNy42NDUgMTQuMzU1IDMyIDMyIDMyczMyLTE0LjM1NSAzMi0zMnYtMTZoNDR2MTZjMCAxNy42NDUgMTQuMzU1IDMyIDMyIDMyczMyLTE0LjM1NSAzMi0zMnYtMTZoNDJ2OTJoLTE5MWMtNS41MjMgMC0xMCA0LjQ3Ny0xMCAxMHM0LjQ3NyAxMCAxMCAxMGgxOTF2MzIweiIvPjxwYXRoIGlkPSJYTUxJRF8xOTM5XyIgZD0ibTQ0NiAyMDhoLTM4MGMtNS41MjMgMC0xMCA0LjQ3Ny0xMCAxMHYyMjhjMCA1LjUyMyA0LjQ3NyAxMCAxMCAxMGgzODBjNS41MjMgMCAxMC00LjQ3NyAxMC0xMHYtMjI4YzAtNS41MjMtNC40NzctMTAtMTAtMTB6bS0zNzAgOTZoNzUuMTI3djU2aC03NS4xMjd6bTk1LjEyNyAwaDc1djU2aC03NXptNzUtMjBoLTc1di01Nmg3NXptMjAtNTZoNzV2NTZoLTc1em0tMjAgMTUydjU2aC03NXYtNTZ6bTIwIDBoNzV2NTZoLTc1em0wLTIwdi01Nmg3NXY1NnptOTUtNTZoNzQuODczdjU2aC03NC44NzN6bTc0Ljg3My0yMGgtNzQuODczdi01Nmg3NC44NzN6bS0yODQuODczLTU2djU2aC03NS4xMjd2LTU2em0tNzUuMTI3IDE1Mmg3NS4xMjd2NTZoLTc1LjEyN3ptMjg1LjEyNyA1NnYtNTZoNzQuODczdjU2eiIvPjxwYXRoIGlkPSJYTUxJRF8xOTcwXyIgZD0ibTI1NiAxNzJjMi42MyAwIDUuMjEtMS4wNyA3LjA3LTIuOTNzMi45My00LjQ0IDIuOTMtNy4wNy0xLjA3LTUuMjEtMi45My03LjA3LTQuNDQtMi45My03LjA3LTIuOTMtNS4yMSAxLjA3LTcuMDcgMi45My0yLjkzIDQuNDQtMi45MyA3LjA3IDEuMDcgNS4yMSAyLjkzIDcuMDcgNC40NCAyLjkzIDcuMDcgMi45M3oiLz48L2c+PC9nPjwvc3ZnPg=="
+              /></v-row>
             </v-col>
           </slideritem>
         </slider>
@@ -92,9 +108,17 @@
             small
             class="white--text"
             color="pink"
-            v-if="hotplacesite[0] >= 12"
+            v-if="hotplacesite[0] > 12"
           >
             오후 {{ hotplacesite[0] - 12 }}시
+          </v-chip>
+          <v-chip
+            small
+            class="white--text"
+            color="pink"
+            v-if="(hotplacesite[0] = 12)"
+          >
+            낮 12시
           </v-chip>
           <v-chip small class="white--text" color="pink" v-else>
             오전 {{ hotplacesite[0] }}시
@@ -343,6 +367,7 @@ export default {
         .get(SERVER_URL + "/promise/" + this.$route.params.m_id)
         .then((res) => {
           this.promise = res.data;
+          console.log(this.promise);
           this.meetingUser = res.data[0].user.username;
           for (let i = 0; i < this.promise.length; i++) {
             var object = {};
@@ -403,7 +428,6 @@ export default {
         .post(SERVER_URL + "/api/hotplace/", placeData)
         .then((res) => {
           const tmp = res.data.length;
-          console.log(tmp)
           this.hotplace = res.data.slice(0, tmp - 1);
           this.hotplacesite = res.data.slice(tmp - 1)[0];
         })

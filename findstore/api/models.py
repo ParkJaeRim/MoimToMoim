@@ -80,6 +80,7 @@ class Recommand(models.Model):
     name = models.CharField(max_length=200, null=True)
     category = models.CharField(max_length=200, null=True)
     img = models.CharField(max_length=200, null=True)
+    tags = models.CharField(max_length=200, null=True)
 
 
 class CardData(models.Model):

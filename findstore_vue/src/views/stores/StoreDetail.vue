@@ -9,18 +9,20 @@
       delimiter-icon="mdi-minus"
       height="200"
     >
-      <v-carousel-item
-        v-for="(image, i) in menuImg"
-        :key="i"
-        :src="image"
+      <v-carousel-item v-if="storeInfo.img != ''"
+        :src="storeInfo.img"
+      ></v-carousel-item>
+      <v-carousel-item v-else
+        src="@/assets/img/defualt.png"
       ></v-carousel-item>
     </v-carousel>
     <v-card-text class="text--primary text-left">
       <span class="display">{{ storeInfo.name }}</span>
-      <v-chip class="ma-2" color="success" outlined small>{{
+      <v-chip class="ma-2" color="orange" outlined small>{{
         Math.round( storeInfo.rating * 1e2 )/100
       }}</v-chip>
       <div>tel: {{ storeInfo.tel }}</div>
+      <div>주소: {{ storeInfo.address }}</div>
     </v-card-text>
     <v-img class="white--text align-end" height="200">
       <div id="map" style="height: 200px"></div>
@@ -43,7 +45,11 @@
         <thead>
           <tr>
             <th width="25%">태그</th>
-            <th>{{ storeInfo.tags }}</th>
+
+            <th>
+              {{storeInfo.tags}}
+         
+            </th>
           </tr>
         </thead>
         <thead>
@@ -203,10 +209,15 @@ export default {
         .get(SERVER_URL + "/api/store/" + store_id + "/" + choice)
         .then((res) => {
           this.storeInfo = res.data;
+          const tags = res.data.tags.split(',');
+          var tag = "";
+          for(var i = 0;i<tags.length;i++){
+            tag = tag+"#"+tags[i].trim()+" ";
+          }
+          this.storeInfo.tags = tag
           this.reviews = res.data.reviews;
           this.storeInfo.price = Number(res.data.price);
           this.menus = res.data.menu.split("//");
-          this.menuImg = res.data.img.split("|");
         })
         .catch((err) => console.error(err.response));
     },

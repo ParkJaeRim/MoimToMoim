@@ -102,6 +102,7 @@
 <script>
 import axios from "axios";
 import constants from "../../lib/constants";
+import swal from "sweetalert2";
 
 const SERVER_URL = constants.ServerUrl;
 
@@ -168,9 +169,8 @@ export default {
           axios
             .post(SERVER_URL + "/rest-auth/login/", loginData)
             .then((res) => {
-              this.$cookies.set("auth-token", res.data.key);
+              this.$cookies.set("auth-token", res.data.key, 60 * 60 * 12);
               this.createIndv(res.data.key);
-              this.$router.go();
             })
             .catch(() => {
               alert("아이디와 비밀번호를 확인하고 다시 로그인 해주세요.");
@@ -179,12 +179,30 @@ export default {
         .catch((err) => {
           if(err.response.data.username) {
             if(err.response.data.username[0] == "해당 사용자 이름은 이미 존재합니다.") {
-              alert(err.response.data.username[0]);
+              swal
+              .fire({
+              title: "해당 사용자 이름은 이미 존재합니다.",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
             } else {
-              alert("정보를 확인해주세요");
+              swal
+              .fire({
+              title: "정보를 확인해주세요",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
             }
           } else {
-            alert("정보를 확인해주세요");
+              swal
+              .fire({
+              title: "정보를 확인해주세요",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 1000,
+            })
           }
         });
     },
@@ -196,7 +214,7 @@ export default {
     },
 
     createIndv(token) {
-
+      
       const config = {
         headers: {
           Authorization: "Token " + token,
@@ -213,6 +231,7 @@ export default {
       axios
         .post(SERVER_URL + "/meeting/create/", initmeeting, config)
         .then(() => {
+          this.$router.go();
         })
         .catch((error) => {
           console.log(error.resposne);

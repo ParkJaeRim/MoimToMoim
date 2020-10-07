@@ -1,7 +1,13 @@
 <template>
   <v-container>
     <v-form ref="check">
-      <h1 class="my-5">{{ form.username }} 님</h1>
+      <h1 class="my-5"></h1>
+
+      <v-text-field
+        v-model="form.username"
+        label="아이디 (수정불가)"
+        readonly
+      ></v-text-field>
 
       <v-text-field
         v-model="form.nickname"
