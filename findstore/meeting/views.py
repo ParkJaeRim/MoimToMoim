@@ -49,7 +49,7 @@ def modify(request, m_id):
     serializer = MeetingSerializer(data=request.data)
     temp = serializer.initial_data
     meeting.title = temp['title']
-    meeting.content = temp['background_img']
+    meeting.background_img = temp['background_img']
     meeting.save()
     return Response()
 
