@@ -118,10 +118,8 @@
                     <v-card>
                       <v-row>
                         <v-col>
-                          <v-card-text class="h4">
-                            
-                            {{ promiseList[reviewid].reslist[y].name }}
-                            
+                          <v-card-text class="h4" v-if="promiseList[reviewid].reslist.length !=0">
+                            {{ promiseList[reviewid].reslist[y].name }}                            
                             <v-img
                               v-if="promiseList[reviewid].reslist[y].img !== null"
                               class="white--text"
