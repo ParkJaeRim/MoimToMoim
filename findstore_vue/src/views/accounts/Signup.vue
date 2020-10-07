@@ -168,7 +168,7 @@ export default {
           axios
             .post(SERVER_URL + "/rest-auth/login/", loginData)
             .then((res) => {
-              this.$cookies.set("auth-token", res.data.key);
+              this.$cookies.set("auth-token", res.data.key, 60 * 60 * 12);
               this.createIndv(res.data.key);
               this.$router.go();
             })
