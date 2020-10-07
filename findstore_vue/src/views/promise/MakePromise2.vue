@@ -33,7 +33,8 @@
     <v-card class="mb-3" v-for="store in searchStoreList" :key="store.id" color="deep-purple lighten-5">
       <v-btn @click="courseAdd(store.id)" small class="add" color="warning" dark>add</v-btn>
       <v-list-item @click="marker(store.address)">
-        <v-img :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
+        <v-img v-if="store.img != ''" :src="store.img" class="mr-3" style="height:80px; max-width:80px"></v-img>
+        <v-img v-else src="@/assets/img/defualt.png" class="mr-3" style="height:80px; max-width:80px"></v-img>
         <v-list-item-content>
           <v-list-item-title class="h4 mb-1">{{store.name}} <small>{{Number(store.rating).toFixed(2)}}</small></v-list-item-title>
           <div>{{store.category}}</div>
