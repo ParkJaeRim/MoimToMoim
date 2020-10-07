@@ -49,7 +49,9 @@ class StoreViewSet(viewsets.ModelViewSet):
 def storedetail(request, store_id, choice):
     if choice == 'playing':
         store = get_object_or_404(models.EnterStore, pk=store_id)
+        
         serializer = serializers.EnterStoreSerializer(store)
+        
     else:
         store = get_object_or_404(models.Store, pk=store_id)
         serializer = serializers.StoreSerializer(store)
@@ -62,6 +64,7 @@ def storedetail(request, store_id, choice):
 def reviewlistcreate(id):
     target_store = models.TestReviews.objects.filter(res_id=id)
     serializer = serializers.TestReviewsSerializer(target_store, many=True)
+
     return serializer.data
 
 
