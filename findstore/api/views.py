@@ -54,16 +54,8 @@ def storedetail(request, store_id, choice):
         
     else:
         store = get_object_or_404(models.Store, pk=store_id)
-        print(store)
         serializer = serializers.StoreSerializer(store)
     reviews = reviewlistcreate(store_id)
-    # tags = serializer.data.tags.split(',')
-    # ret_tag = ""
-    # for tag in tags:
-    #     t = "#"
-    #     t = t+tag
-    #     ret_tag = ret_tag+t
-    # print(ret_tag)
     newdict = {'reviews': reviews}
     newdict.update(serializer.data)
     return Response(newdict)
